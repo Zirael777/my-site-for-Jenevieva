@@ -243,7 +243,7 @@
         <!-- Контейнер сетки: 1 колонка на мобильных, 2 на планшетах/ПК -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
 
-<!-- КЕЙС 1: Картина маслом в подарок (ЛУЧШИЙ ПОРТРЕТ) -->
+<!-- КЕЙС 1: Картина маслом в подарок -->
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
@@ -261,15 +261,15 @@
                 <span data-lang="ua">Картина олією в подарунок</span>
             </span>
             <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                <span data-lang="ru">Живопись маслом • Сюжетный портрет</span>
-                <span data-lang="en">Oil Painting • Narrative Portrait</span>
-                <span data-lang="ua">Живопис олією • Сюжетний портрет</span>
-            </h3>
-            <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                <span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
-                <span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
-                <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
-            </p>
+    		<span data-lang="ru">Живопись маслом • Сюжетный портрет</span>
+    		<span data-lang="en">Oil Painting • Narrative Portrait</span>
+    		<span data-lang="ua">Живопис олією • Сюжетний портрет</span>
+	    </h3>
+	    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+  		<span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
+    		<span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
+    		<span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
+	</p>
         </div>
 
         <!-- Два маленьких фото -->
@@ -306,11 +306,76 @@
         </a>
     </div>
 
-    <!-- КЕЙС: Портрет карандашами (Девушка с хвостом) -->
+    <!-- КЕЙС 2 -->
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-            <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
+            <!-- aspect-[4/3] делает фото компактным, не растягивая его на весь экран по высоте -->
+            <img src="portfolio2.png" alt="Finished Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Finished+Portrait';">
+            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <span class="text-white text-3xl font-light">⊕</span>
+            </div>
+        </div>
+        
+        <!-- Надписи (flex-grow прижимает блок с маленькими фото и кнопкой к низу) -->
+        <div class="mb-6 flex-grow">
+            <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                <span data-lang="ru">Авторский портрет по фото</span>
+                <span data-lang="en">Author Portrait from Photo</span>
+                <span data-lang="ua">Авторський портрет за фото</span>
+            </span>
+            <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+    		<span data-lang="ru">Авторская графика • Сила взгляда</span>
+    		<span data-lang="en">Original Graphics • Depth of Gaze</span>
+    		<span data-lang="ua">Авторська графіка • Сила погляду</span>
+		</h3>
+	    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+    		<span data-lang="ru">В серии авторских портретов я исследую грань между детальной проработкой и выразительностью линии. Работа с традиционной графикой помогает мне тонко передать пластику лица, характер и внутреннюю харизму человека.</span>
+    		<span data-lang="en">In this series of original portraits, I explore the fine line between detailed rendering and expressive stroke. Working with traditional graphics helps me reveal facial contours, personality, and subtle charisma.</span>
+    		<span data-lang="ua">У серії авторських портретів я досліджую межу між детальною проробкою та виразністю лінії. Робота з традиційною графікою допомагає мені тонко передати пластику обличчя, характер та внутрішню харизму.</span>
+	</p>
+        </div>
+
+        <!-- Два маленьких фото -->
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio2_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio2_2.png" alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Progress';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
+            <span data-lang="ru">Смотреть проект на Behance ↗</span>
+            <span data-lang="en">View project on Behance ↗</span>
+            <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+        </a>
+    </div>
+
+
+    <!-- КЕЙС 3 -->
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+        <!-- Главное фото -->
+        <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+            <img src="portfolio3.png" alt="Finished Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Finished+Portrait';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                 <span class="text-white text-3xl font-light">⊕</span>
             </div>
@@ -319,20 +384,209 @@
         <!-- Надписи -->
         <div class="mb-6 flex-grow">
             <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
-                <span data-lang="ru">Графический портрет</span>
-                <span data-lang="en">Graphic Portrait</span>
-                <span data-lang="ua">Графічний портрет</span>
+                <span data-lang="ru">Портрет с натуры / по фото</span>
+                <span data-lang="en">Portrait from Life / Photo</span>
+                <span data-lang="ua">Портрет з натури / за фото</span>
             </span>
             <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                <span data-lang="ru">Портрет карандашами • Девушка с хвостом</span>
-                <span data-lang="en">Pencil Portrait • Girl with Ponytail</span>
-                <span data-lang="ua">Портрет олівцями • Дівчина з хвостом</span>
-            </h3>
-            <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                <span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка карандашами.</span>
-                <span data-lang="en">The main focus here is on soft light and shade and hair texture. I aimed to reveal a calm, natural beauty and an open gaze, maintaining the subtle harmony of traditional pencil drawing.</span>
-                <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та текстурі волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка олівцями.</span>
-            </p>
+    		<span data-lang="ru">Утончённый образ • Графика и свет</span>
+    		<span data-lang="en">Refined Portrait • Light & Elegance</span>
+    		<span data-lang="ua">Витончений образ • Графіка та світло</span>
+	</h3>
+	<p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+    		<span data-lang="ru">В этом портрете мне хотелось передать изящество и особую праздничную атмосферу. Робота над жестом и взглядом требовала тонкой графической проработки, чтобы сохранить нежность и естественную грацию.</span>
+    		<span data-lang="en">In this portrait, I wanted to capture elegance and a special festive atmosphere. Working on the gesture and gaze required delicate graphic rendering to preserve tenderness and grace.</span>
+    		<span data-lang="ua">У цьому портреті мені хотілося передати витонченість та особливу святкову атмосферу. Робота над жестом і поглядом вимагала тонкого графічного опрацювання, щоб зберегти ніжність та грацію.</span>
+	</p>
+        </div>
+
+        <!-- Два маленьких фото -->
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio3_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio3_2.png" alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Progress';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
+            <span data-lang="ru">Смотреть проект на Behance ↗</span>
+            <span data-lang="en">View project on Behance ↗</span>
+            <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+        </a>
+    </div>
+
+<!-- КЕЙС 4 -->
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+        <!-- Главное фото -->
+        <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+            <img src="portfolio4.png" alt="Finished Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Finished+Portrait';">
+            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <span class="text-white text-3xl font-light">⊕</span>
+            </div>
+        </div>
+        
+        <!-- Надписи -->
+        <div class="mb-6 flex-grow">
+            <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                <span data-lang="ru">Портрет с фото / по фото</span>
+                <span data-lang="en">Portrait from Life / Photo</span>
+                <span data-lang="ua">Портрет з натури / за фото</span>
+            </span>
+            <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+    		<span data-lang="ru">Графический портрет • Энергия цвета</span>
+    		<span data-lang="en">Graphic Portrait • Energy of Color</span>
+    		<span data-lang="ua">Графічний портрет • Енергія кольору</span>
+		</h3>
+	    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+    		<span data-lang="ru">Работая по фото, я часто меняю детали для лучшего раскрытия образа. На оригинале девушка была в другом головном уборе, но я добавила эту зеленую шляпку. Цветовая гамма была подобрана интуитивно, чтобы максимально точно отразить внутреннюю энергию героини.</span>
+    		<span data-lang="en">When working from a photo, I often change details to better reveal the subject's essence. In the original, she wore a different headpiece, but I added this green hat. The color palette was chosen intuitively to reflect her inner energy.</span>
+    		<span data-lang="ua">Працюючи за фото, я часто змінюю деталі для кращого розкриття образу. На оригіналі дівчина була в іншому головному уборі, але я додала цей зелений капелюшок. Колірна гама була підібрана інтуїтивно, щоб точно відобразити внутрішню енергію героїні.</span>
+	</p>
+        </div>
+
+        <!-- Два маленьких фото -->
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio4_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio4_2.png" alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Progress';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
+            <span data-lang="ru">Смотреть проект на Behance ↗</span>
+            <span data-lang="en">View project on Behance ↗</span>
+            <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+        </a>
+    </div>
+
+<!-- КЕЙС 5 -->
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+        <!-- Главное фото -->
+        <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+            <img src="portfolio5.png" alt="Finished Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Finished+Portrait';">
+            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <span class="text-white text-3xl font-light">⊕</span>
+            </div>
+        </div>
+        
+        <!-- Надписи -->
+        <div class="mb-6 flex-grow">
+            <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                <span data-lang="ru">Портрет с натуры / по фото</span>
+                <span data-lang="en">Portrait from Life / Photo</span>
+                <span data-lang="ua">Портрет з натури / за фото</span>
+            </span>
+            <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+    		<span data-lang="ru">Детский портрет • Искренняя улыбка</span>
+    		<span data-lang="en">Children's Portrait • Pure Joy</span>
+    		<span data-lang="ua">Дитячий портрет • Щира посмішка</span>
+	</h3>
+	<p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+    		<span data-lang="ru">Детские портреты всегда требуют особой легкости. Моей целью было поймать эту чистую, искреннюю улыбку и живой огонек в глазах. Мягкие переходы цвета подчёркивают непосредственность и свет эмоций.</span>
+    		<span data-lang="en">Children’s portraits always call for a light touch. My goal was capturing that pure, genuine smile and the spark in his eyes. Soft color transitions highlight the warmth of childhood joy.</span>
+    		<span data-lang="ua">Дитячі портрети завжди вимагають особливої легкості. Моєю метою было зловити цю чисту, щиру посмішку та живий вогник в очах. М'які переходи кольору підкреслюють світло емоцій.</span>
+	</p>
+        </div>
+
+        <!-- Два маленьких фото -->
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio5_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-1.5">
+                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                    <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                </span>
+                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio5_2.png" alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Progress';">
+                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="text-white text-xl">⊕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
+            <span data-lang="ru">Смотреть проект на Behance ↗</span>
+            <span data-lang="en">View project on Behance ↗</span>
+            <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+        </a>
+    </div>
+
+<!-- КЕЙС 6 -->
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+        <!-- Главное фото -->
+        <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+            <img src="portfolio6.png" alt="Finished Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Finished+Portrait';">
+            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <span class="text-white text-3xl font-light">⊕</span>
+            </div>
+        </div>
+        
+        <!-- Надписи -->
+        <div class="mb-6 flex-grow">
+            <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                <span data-lang="ru">Портрет с натуры / по фото</span>
+                <span data-lang="en">Portrait from Life / Photo</span>
+                <span data-lang="ua">Портрет з натури / за фото</span>
+            </span>
+            <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+    		<span data-lang="ru">Мягкий свет • Естественность</span>
+    		<span data-lang="en">Soft Light • Natural Charm</span>
+    		<span data-lang="ua">М'яке світло • Природність</span>
+	</h3>
+	<p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+    		<span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка.</span>
+    		<span data-lang="en">The main focus here is on soft light and shade and hair texture. I aimed to reveal a calm, natural beauty and an open gaze, maintaining the subtle harmony of traditional drawing.</span>
+    		<span data-lang="ua">Головний акцент тут — на м'якості світлотіні та текстурі волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
+	</p>
         </div>
 
         <!-- Два маленьких фото -->
@@ -353,7 +607,7 @@
                     <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
                 </span>
                 <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio6_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                    <img src="portfolio6_2.png" alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Progress';">
                     <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                         <span class="text-white text-xl">⊕</span>
                     </div>
@@ -369,7 +623,7 @@
         </a>
     </div>
 
-<!-- ПРОЕКТ: Календарь «Year of Wise Horses» -->
+<!-- ПРОЕКТ 1: Календарь «Year of Wise Horses» -->
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
@@ -425,10 +679,10 @@
     </div>
 
 
-    <!-- ПРОЕКТ: Открытки «Holiday Illustrations» -->
+    <!-- ПРОЕКТ 2: Календарь-раскраска «Monochrome Flowers» -->
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-            <img src="portfolio_cards.png" alt="Greeting Cards" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
+            <img src="portfolio_cal_flowers.png" alt="Monochrome Flowers Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Coloring+Calendar';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                 <span class="text-white text-3xl font-light">⊕</span>
             </div>
@@ -659,3 +913,851 @@
 
 </div>
                 </div>
+            </div>
+        </div>                    
+
+
+
+    </section>
+
+    <!-- ЛИД-МАГНИТ -->
+    <section class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-b border-[#6c2603]/10 relative overflow-hidden">
+        <div class="absolute left-6 top-6 opacity-20 w-8 h-10 text-[#6c2603]">
+            <svg viewBox="0 0 100 120" fill="currentColor">
+                <path d="M 50,20 Q 50,55 15,55 Q 50,55 50,90 Q 50,55 85,55 Q 50,55 50,20 Z"/>
+            </svg>
+        </div>
+        <div class="max-w-3xl mx-auto">
+            <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4">
+                <span data-lang="ru">Подарок для ценителей графики</span>
+                <span data-lang="en">A Gift for Graphics Enthusiasts</span>
+                <span data-lang="ua">Подарунок для поціновувачів графіки</span>
+            </h3>
+            <p class="text-sm md:text-base text-[#6c2603]/80 mb-8 max-w-xl mx-auto font-medium">
+                <span data-lang="ru">Получите мой авторский PDF-гайд по арт-медитации рисованием в подарок за подписку на Telegram-канал.</span>
+                <span data-lang="en">Get my custom PDF guide on art meditation drawing as a gift for subscribing to my Telegram channel.</span>
+                <span data-lang="ua">Отримайте мій авторський PDF-гайд з арт-медитації малюванням у подарунок за підписку на Telegram-канал.</span>
+            </p>
+            <button onclick="openModal('guide-modal')" class="bg-[#6c2603] text-[#fdfbf7] px-8 py-4 uppercase font-bold text-xs tracking-widest hover:opacity-90 transition-opacity">
+                <span data-lang="ru">Получить гайд бесплатно</span>
+                <span data-lang="en">Get Free Guide</span>
+                <span data-lang="ua">Отримати гайд безкоштовно</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ И ЦЕНЫ -->
+    <section id="services" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603]">
+                <span data-lang="ru">Услуги и цены</span>
+                <span data-lang="en">Services & Pricing</span>
+                <span data-lang="ua">Послуги та ціни</span>
+            </h2>
+            <div class="w-16 h-[2px] bg-[#6c2603]/20 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. Портрет по фото. Базовый -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Портрет по фото. Базовый</span>
+                        <span data-lang="en">Custom Portrait. Basic</span>
+                        <span data-lang="ua">Портрет за фото. Базовий</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: 7-14 дней</span>
+                        <span data-lang="en">Timeline: 7-14 days</span>
+                        <span data-lang="ua">Термін: 7-14 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Аккуратный монохромный портрет, выполненный вручную в авторском стиле. Подчёркивает внешность, характер и настроение. Создаётся вручную и оцифровывается в высоком качестве.</span>
+                        <span data-lang="en">Neat monochrome portrait hand-drawn in author style. Highlights appearance and character. Created by hand and digitized.</span>
+                        <span data-lang="ua">Акуратний монохромний портрет, виконаний вручную в авторському стилі. Підкреслює зовнішність та характер. Створюється вручную та оцифровується.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 flex justify-between items-baseline">
+                        <span class="text-xs uppercase tracking-wider opacity-60">
+                            <span data-lang="ru">Лист А5 (15х20)</span>
+                            <span data-lang="en">Size A5</span>
+                            <span data-lang="ua">Аркуш А5</span>
+                        </span>
+                        <span class="font-bold text-lg">
+                            <span data-lang="ru">3 000 - 5 000 ₽</span>
+                            <span data-lang="en">$40 - $70</span>
+                            <span data-lang="ua">1 500 - 2 500 ₴</span>
+                        </span>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать портрет</span><span data-lang="en">Order portrait</span><span data-lang="ua">Замовити портрет</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. Портрет по фото. Премиум -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Портрет по фото. Премиум</span>
+                        <span data-lang="en">Custom Portrait. Premium</span>
+                        <span data-lang="ua">Портрет за фото. Преміум</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: 14-21 дней</span>
+                        <span data-lang="en">Timeline: 14-21 days</span>
+                        <span data-lang="ua">Термін: 14-21 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Глубинная работа через символы, цвета и образы. При общении интуитивно считываю вашу энергию, добавляю личные смыслы, детали и визуальные метафоры. Станет личным оберегом.</span>
+                        <span data-lang="en">Deep artwork via symbols, colors and metaphors. Intuitive energy reading, custom details. Can serve as a personal talisman.</span>
+                        <span data-lang="ua">Глибока робота через символи, кольори та образи. Інтуїтивно зчитую вашу енергію, додаю особисті змісти та метафори. Може стати оберегом.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 flex justify-between items-baseline">
+                        <span class="text-xs uppercase tracking-wider opacity-60">
+                            <span data-lang="ru">Лист А5 (15х20)</span>
+                            <span data-lang="en">Size A5</span>
+                            <span data-lang="ua">Аркуш А5</span>
+                        </span>
+                        <span class="font-bold text-lg">
+                            <span data-lang="ru">5 000 - 8 000 ₽</span>
+                            <span data-lang="en">$70 - $110</span>
+                            <span data-lang="ua">2 500 - 4 000 ₴</span>
+                        </span>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать премиум</span><span data-lang="en">Order premium</span><span data-lang="ua">Замовити преміум</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. Иллюстрация для книги -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Иллюстрации & Обложки</span>
+                        <span data-lang="en">Book & Cover Art</span>
+                        <span data-lang="ua">Ілюстрації та обкладинки</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: от 7 дней</span>
+                        <span data-lang="en">Timeline: from 7 days</span>
+                        <span data-lang="ua">Термін: від 7 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Создаю иллюстрации в своём узнаваемом авторском стиле для обложек, рассказов и разворотов. Передаю атмосферу, символику и эмоциональные сцены, раскрывающие сюжет.</span>
+                        <span data-lang="en">Author style book art for covers and interior pages. Captures atmosphere, characters and symbolism to make text come alive.</span>
+                        <span data-lang="ua">Малюю унікальні ілюстрації для обкладинок, розповідей та розворотів. Передаю атмосферу та символіку, які оживляють текст.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Обложка А5</span><span data-lang="en">Cover A5</span><span data-lang="ua">Обкладинка А5</span></span>
+                            <span><span data-lang="ru">10 000 - 15 000 ₽</span><span data-lang="en">$140 - $210</span><span data-lang="ua">5 000 - 7 500 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Страница</span><span data-lang="en">Interior Page</span><span data-lang="ua">Сторінка</span></span>
+                            <span><span data-lang="ru">3 000 - 5 000 ₽</span><span data-lang="en">$40 - $70</span><span data-lang="ua">1 500 - 2 500 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Обсудить книгу</span><span data-lang="en">Discuss book</span><span data-lang="ua">Обговорити книгу</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. Принты ручной работы -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Принты ручной работы</span>
+                        <span data-lang="en">Hand-crafted Prints</span>
+                        <span data-lang="ua">Принти ручної роботи</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: 5-14 дней</span>
+                        <span data-lang="en">Timeline: 5-14 days</span>
+                        <span data-lang="ua">Термін: 5-14 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Авторские иллюстрации на любую тему (природа, магия, символы, экология). Уникальный декор для дома, открыток или текстиля. На заказ по вашей теме.</span>
+                        <span data-lang="en">Custom illustration prints on nature, magic, symbols. Perfect for decor, postcards or clothing. Custom designs matching your theme.</span>
+                        <span data-lang="ua">Авторські принти на будь-яку тему (природа, магія, символи). Декор для дому, листівок чи текстилю. На замовлення за вашою темою.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Стоимость принта</span><span data-lang="en">Print cost</span><span data-lang="ua">Вартість принта</span></span>
+                            <span><span data-lang="ru">300 - 1 000 ₽</span><span data-lang="en">$5 - $15</span><span data-lang="ua">150 - 500 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Индивидуальный</span><span data-lang="en">Custom design</span><span data-lang="ua">Індівідуальний</span></span>
+                            <span><span data-lang="ru">от 1 500 ₽</span><span data-lang="en">from $20</span><span data-lang="ua">від 750 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Обсудить принт</span><span data-lang="en">Discuss print</span><span data-lang="ua">Обговорити принт</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 5. Логотип -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Создание логотипа</span>
+                        <span data-lang="en">Logo Design</span>
+                        <span data-lang="ua">Створення логотипу</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: 7-14 дней</span>
+                        <span data-lang="en">Timeline: 7-14 days</span>
+                        <span data-lang="ua">Термін: 7-14 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Знак силы для творческих проектов и душевных брендов. Создаю логотипы вручную в теплом органическом стиле с живыми линиями. Рисуется вручную и оцифровывается.</span>
+                        <span data-lang="en">Visual sign of strength for creative soul brands. Hand-drawn in warm organic style and professionally digitized in high-res.</span>
+                        <span data-lang="ua">Знак сили для творчих проєктів та душевних брендів. Малюю логотипи вручную в теплому органічному стилі та професійно оцифровую.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Простой знак</span><span data-lang="en">Simple mark</span><span data-lang="ua">Простий знак</span></span>
+                            <span><span data-lang="ru">4 000 ₽</span><span data-lang="en">$55</span><span data-lang="ua">2 000 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Детализированный</span><span data-lang="en">Detailed art</span><span data-lang="ua">Деталізований</span></span>
+                            <span><span data-lang="ru">10 000 ₽</span><span data-lang="en">$140</span><span data-lang="ua">5 000 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать лого</span><span data-lang="en">Order logo</span><span data-lang="ua">Замовити лого</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6. Набор открыток -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Набор открыток на заказ</span>
+                        <span data-lang="en">Custom Postcard Sets</span>
+                        <span data-lang="ua">Набір листівок на замовлення</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: от 14 дней</span>
+                        <span data-lang="en">Timeline: from 14 days</span>
+                        <span data-lang="ua">Термін: від 14 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Персонализированные открытки для праздников, сезонных поводов или просто как знак внимания близким. Создам единичные варианты или серию открыток с историей.</span>
+                        <span data-lang="en">Personalized postcards for events, seasonal concepts or signs of attention. Beautifully illustrated and connected by a shared story.</span>
+                        <span data-lang="ua">Персоналізовані листівки для важливих свят, сезонних подій чи як знак уваги близьким. Малюю окремі роботи або зв'язані концептом серії.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Одна открытка</span><span data-lang="en">Single card</span><span data-lang="ua">Одна листівка</span></span>
+                            <span><span data-lang="ru">от 1 000 ₽</span><span data-lang="en">from $15</span><span data-lang="ua">від 500 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Набор (6 штук)</span><span data-lang="en">Set of 6 cards</span><span data-lang="ua">Набір (6 штук)</span></span>
+                            <span><span data-lang="ru">от 4 000 ₽</span><span data-lang="en">from $55</span><span data-lang="ua">від 2 000 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать набор</span><span data-lang="en">Order card set</span><span data-lang="ua">Замовити набір</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 7. Авторские скетчи -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Авторские скетчи</span>
+                        <span data-lang="en">Custom Sketches</span>
+                        <span data-lang="ua">Авторські скетчі</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: от 5 дней</span>
+                        <span data-lang="en">Timeline: from 5 days</span>
+                        <span data-lang="ua">Термін: від 5 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Авторские наброски на выбранную тему (персонажи, эмоции, идеи без слов). Живые выразительные материалы: тушь, линеры, акварель, гуашь. Основа для книг, мерча или подарка.</span>
+                        <span data-lang="en">Concept sketches on any topic (characters, ideas, feelings). Expressive paper graphics in ink, pencil or watercolor. Ideal for merchandise or books.</span>
+                        <span data-lang="ua">Авторські замальовки на обрану вами тему (персонажі, емоції, ідеї без слів). Малюю тушшю, лінерами, аквареллю або гуашшю.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Лист А6 / А5</span><span data-lang="en">Size A6 / A5</span><span data-lang="ua">Аркуш А6 / А5</span></span>
+                            <span><span data-lang="ru">500 - 1 000 ₽</span><span data-lang="en">$8 - $15</span><span data-lang="ua">250 - 500 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Лист А4 / А3</span><span data-lang="en">Size A4 / A3</span><span data-lang="ua">Аркуш А4 / А3</span></span>
+                            <span><span data-lang="ru">2 000 - 3 000 ₽</span><span data-lang="en">$30 - $40</span><span data-lang="ua">1 000 - 1 500 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать скетч</span><span data-lang="en">Order sketch</span><span data-lang="ua">Замовити скетч</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 8. Рисунки для раскрасок -->
+            <div class="price-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
+                        <span data-lang="ru">Рисунки для раскрасок</span>
+                        <span data-lang="en">Outline Coloring Pages</span>
+                        <span data-lang="ua">Малюнки для розмальовок</span>
+                    </h3>
+                    <p class="text-[10px] uppercase tracking-widest text-[#6c2603]/50 mb-4 font-semibold">
+                        <span data-lang="ru">Срок: 5-30 дней</span>
+                        <span data-lang="en">Timeline: 5-30 days</span>
+                        <span data-lang="ua">Термін: 5-30 днів</span>
+                    </p>
+                    <p class="text-xs text-[#6c2603]/75 mb-6 leading-relaxed">
+                        <span data-lang="ru">Чистый выразительный контур под самостоятельное раскрашивание. Используется для творческой арт-терапии, мастер-классов или полноценной печатной раскраски.</span>
+                        <span data-lang="en">Clean beautiful outlines for coloring. Excellent for art therapy, family classes, master classes, or a complete printed coloring book.</span>
+                        <span data-lang="ua">Чистий красивий контур для самостійного розфарбовування. Чудово для арт-терапії, мастер-класів чи повної друкованої книги-розмальовки.</span>
+                    </p>
+                </div>
+                <div>
+                    <div class="border-t border-[#6c2603]/10 pt-4 mb-4 space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">Простой контур</span><span data-lang="en">Simple outline</span><span data-lang="ua">Простий контур</span></span>
+                            <span><span data-lang="ru">600 ₽</span><span data-lang="en">$8</span><span data-lang="ua">300 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">С деталями</span><span data-lang="en">Detailed art</span><span data-lang="ua">З деталями</span></span>
+                            <span><span data-lang="ru">1 400 ₽</span><span data-lang="en">$20</span><span data-lang="ua">700 ₴</span></span>
+                        </div>
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span><span data-lang="ru">С легким тоном</span><span data-lang="en">Detailed & Toned</span><span data-lang="ua">З легким тоном</span></span>
+                            <span><span data-lang="ru">2 700 ₽</span><span data-lang="en">$38</span><span data-lang="ua">1 350 ₴</span></span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                        <span data-lang="ru">Заказать контур</span><span data-lang="en">Order outline</span><span data-lang="ua">Замовити контур</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- МАГАЗИН -->
+    <section id="shop" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603]">
+                <span data-lang="ru">Магазин для покупки товаров в наличии</span>
+                <span data-lang="en">Shop for available items</span>
+                <span data-lang="ua">Магазин для купівлі товарів в наявності</span>
+            </h2>
+            <div class="w-16 h-[2px] bg-[#6c2603]/20 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white border border-[#6c2603]/5 p-4 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#6c2603]/5 aspect-square mb-4 overflow-hidden">
+                        <img src="shop1.jpg" alt="Print" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/fdfbf7/6c2603?text=Art+Postcards';">
+                    </div>
+                    <h3 class="font-bold text-sm uppercase tracking-wide mb-2"><span data-lang="ru">Коллекционный принт «Древо»</span><span data-lang="en">"The Tree" Collector's Print</span><span data-lang="ua">Колекційний принт «Древо»</span></h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-[#6c2603]/10 flex justify-between items-center">
+                    <span class="font-bold text-base">
+                        <span data-lang="ru">1 500 ₽</span><span data-lang="en">$25</span><span data-lang="ua">950 ₴</span>
+                    </span>
+                    <div data-lang="ru"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                    <div data-lang="en"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                    <div data-lang="ua"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-[#6c2603]/5 p-4 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#6c2603]/5 aspect-square mb-4 overflow-hidden">
+                        <img src="shop2.jpg" alt="Original" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/fdfbf7/6c2603?text=Art+Coloring';">
+                    </div>
+                    <h3 class="font-bold text-sm uppercase tracking-wide mb-2"><span data-lang="ru">Оригинал картины «Хранитель»</span><span data-lang="en">"The Guardian" Original Painting</span><span data-lang="ua">Оригінал картини «Охоронець»</span></h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-[#6c2603]/10 flex justify-between items-center">
+                    <span class="font-bold text-base">
+                        <span data-lang="ru">12 000 ₽</span><span data-lang="en">$180</span><span data-lang="ua">6 800 ₴</span>
+                    </span>
+                    <div data-lang="ru"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                    <div data-lang="en"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                    <div data-lang="ua"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603]">
+                <span data-lang="ru">Теплые отзывы</span>
+                <span data-lang="en">Messages of Warmth</span>
+                <span data-lang="ua">Теплі відгуки</span>
+            </h2>
+            <p class="text-xs italic text-[#6c2603]/60 mt-2">
+                <span data-lang="ru">Искренние сообщения от людей, для которых создавались эти работы</span>
+                <span data-lang="en">Real letters and chats from those for whom these works were born</span>
+                <span data-lang="ua">Щирі повідомлення від людей, для яких створювалися ці роботи</span>
+            </p>
+            <div class="w-16 h-[2px] bg-[#6c2603]/20 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            
+            <!-- Отзыв 1 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Индивидуальный портрет с символами</span>
+                        <span data-lang="en">Custom Portrait with Symbolism</span>
+                        <span data-lang="ua">Індивідуальний портрет з символами</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Женечка, мне очень понравился портрет, который ты мне нарисовала. Еще очень правильно передала мою внутреннюю энергию с помощью цвета и деталей. Я балдею от подсолнуха, это мой любимый цветок. ❤️»</p>
+                    <p data-lang="en">"Zhenya, I loved the portrait you drew for me so much. You captured my inner energy so accurately with colors and details. I'm absolutely crazy about the sunflower, it's my favorite flower. ❤️"</p>
+                    <p data-lang="ua">«Женечко, мені дуже сподобався портрет, який ти мені намалювала. Ще дуже правильно передала мою внутрішню енергію за допомогою кольору та деталей. Я балдію від соняшника, це моя улюблена квітка. ❤️»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 2 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Иллюстрация для зимней открытки</span>
+                        <span data-lang="en">Winter Postcard Illustration</span>
+                        <span data-lang="ua">Ілюстрація для зимової листівки</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Смотрю на открытку Дедушки Мороза — и чувствую себя ребёнком. Такой тёплый, уютный рисунок, без лишнего — просто добро и сказка. Смотришь и начинаешь верить, что чудеса всё-таки бывают. Очень душевно, прямо в сердце. Спасибо тебе за файл! В этом году не успел распечатать, в след напечатаю и подарю жене)»</p>
+                    <p data-lang="en">"Looking at the Santa Claus card makes me feel like a child again. Such a warm, cozy drawing, nothing unnecessary — just kindness and a fairy tale. Soulful, straight to the heart. Thank you for the file! This year I didn't have time to print it, next time I'll print it and give it to my wife)"</p>
+                    <p data-lang="ua">«Дивлюся на листівку Дідуся Мороза — і почуваюся дитиною. Такий теплий, затишний малюнок, без зайвого — просто добро та казка. Дивишся і починаєш вірити, що дива все-таки бувають. Дуже душевно, просто в серце. Дякую тобі за файл! Цього року не встиг роздрукувати, наступного надрукую і подарую дружині)»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 3 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Подарочная электронная открытка</span>
+                        <span data-lang="en">Digital Postcard Commission</span>
+                        <span data-lang="ua">Подарункова електронна листівка</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Жень я в ошеломлении! Эта открытка особенная! В ней настоящие чувства, тот самый взгляд, в котором вся любовь!!! Не знаю как выразиться, но я в восторге от нее! Спасибо тебе за электронную открытку. Отправила своему мужу)»</p>
+                    <p data-lang="en">"Zhenya, I am in absolute awe! This card is so special! It captures real feelings, that exact gaze, holding all the love!!! I don't know how to express it, but I'm thrilled! Sent it to my husband)"</p>
+                    <p data-lang="ua">«Жень я приголомшена! Ця листівка особлива! У ній справжні почуття, той самый погляд, в якому все кохання!!! Не знаю як висловити це, але я в захваті від неї! Надіслала своєму чоловікові)»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 4 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Камерный графический портрет</span>
+                        <span data-lang="en">Graphite Graphic Portrait</span>
+                        <span data-lang="ua">Камерний графічний портрет</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Я получила в первый раз портрет, который ты мне нарисовала, хотела давно и мечтала об этом, теперь радуюсь. Смотрю на портрет, любуюсь, чувствую такую спокойную задумчивую о чем-то, глаза такие мудрые. Словно в умиротворении ❤️»</p>
+                    <p data-lang="en">"I received my first ever portrait drawn by you! I have dreamed of this for so long, and now I'm just full of joy. Looking at it, admiring, feeling such a calm, meditative focus, wise eyes. Pure peacefulness ❤️"</p>
+                    <p data-lang="ua">«Я задоволена! Нарешті отримала портрет, намальований тобою, про який давно мріяла, тепер тішуся. Дивлюся на нього, милуюся, відчуваю такий спокій, задуму, очі такі мудрі. Ніби в умиротворенні ❤️»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 5 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Авторский календарь и открытки</span>
+                        <span data-lang="en">Author's Calendar & Cards</span>
+                        <span data-lang="ua">Авторський календар та листівки</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Здравствуйте. Напечатали в Киеве. Получилось гуд! Спасибо большое. Календарь «Monokrome blomster» и открытка «Godt nytt år!» вышли невероятно душевными.»</p>
+                    <p data-lang="en">"Hello. We printed it in Kyiv. Turned out really good! Thank you so much. The calendar 'Monokrome blomster' and postcard 'Godt nytt år!' came out incredibly heartwarming."</p>
+                    <p data-lang="ua">«Вітаю. Надрукували у Києві. Вийшло гуд! Дуже дякую. Календар «Monokrome blomster» та листівка «Godt nytt år!» вийшли неймовірно душевними.»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 6 -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
+                <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
+                    <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
+                        <span data-lang="ru">Авторский настенный календарь</span>
+                        <span data-lang="en">Author's Wall Calendar</span>
+                        <span data-lang="ua">Авторський настінний календар</span>
+                    </span>
+                </div>
+                <div class="text-sm text-[#6c2603]/80 leading-relaxed italic">
+                    <p data-lang="ru">«Тетя Женя, календарь просто красивый очень. От него идет добро, как и от Вас. Цветочки нежные и теплые. Большое спасибо! 💋»</p>
+                    <p data-lang="en">"Aunt Jene, the calendar is just so beautiful. It radiates kindness, just like you. The flowers are so gentle and warm. Thank you so much! 💋"</p>
+                    <p data-lang="ua">«Тьотя Женя, календар просто дуже гарний. Від нього йде добро, як і від Вас. Квіточки ніжні та теплі. Дуже дякую! 💋»</p>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Отзыв 7 (Диалог — с исправленным смыслом цвета на украинском) -->
+            <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5">
+                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/40 font-bold">
+                            <span data-lang="ru">Создание логотипа для компании</span>
+                            <span data-lang="en">Company Logo Design</span>
+                            <span data-lang="ua">Створення логотипу для компанії</span>
+                        </span>
+                    </div>
+                    
+                    <!-- Сообщение художницы -->
+                    <div class="flex flex-col items-end">
+                        <div class="bg-[#6c2603]/5 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tr-none max-w-[85%] italic">
+                            <p data-lang="ru">«цвет энергии я выбрала оранжевым, и естественно подсвечивает женщину снизу энергия, этим показываем что она управляет парусом, внутренней энергией и мыслями., и заодно строит команду, деньги, дом , семью.»</p>
+                            <p data-lang="en">"I chose orange as the color of energy, and naturally the energy illuminates the woman from below. This visually shows that she controls her sail, her inner energy, and thoughts, while building team, wealth, home, and family."</p>
+                            <p data-lang="ua">«колір енергії я обрала помаранчевим, і природно підсвічує жінку знизу енергія, цим показуємо що вона керує вітрилом, внутрішньою енергією та думками, і заодно будує команду, гроші, дім, сім'ю.»</p>
+                        </div>
+                        <span class="text-[8px] text-[#6c2603]/40 mt-1 mr-2">
+                            <span data-lang="ru">Художник</span>
+                            <span data-lang="en">Artist</span>
+                            <span data-lang="ua">Художниця</span>
+                        </span>
+                    </div>
+
+                    <!-- Сообщение заказчика -->
+                    <div class="flex flex-col items-start">
+                        <div class="bg-white border border-[#6c2603]/10 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tl-none max-w-[85%] font-medium">
+                            <p data-lang="ru">«Какая красота❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️»</p>
+                            <p data-lang="en">"What beauty ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️"</p>
+                            <p data-lang="ua">«Яка краса ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️»</p>
+                        </div>
+                        <div class="bg-white border border-[#6c2603]/10 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tl-none max-w-[85%] font-medium mt-1">
+                            <p data-lang="ru">«У меня слов нет»</p>
+                            <p data-lang="en">"I am speechless"</p>
+                            <p data-lang="ua">«У мене слів немає»</p>
+                        </div>
+                        <span class="text-[8px] text-[#6c2603]/40 mt-1 ml-2">
+                            <span data-lang="ru">Заказчик</span>
+                            <span data-lang="en">Client</span>
+                            <span data-lang="ua">Замовник</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="absolute bottom-3 right-4 opacity-40">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L5 9L15 1" stroke="#6c2603" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+            </div>
+
+            <!-- БЛОК ВИДЕООТЗЫВОВ -->
+            <div class="md:col-span-2 mt-12 pt-12 border-t border-[#6c2603]/10 w-full">
+                <h3 class="text-lg md:text-xl font-bold uppercase tracking-wider text-[#6c2603] text-center mb-8">
+                    <span data-lang="ru">Теплые видео-отзывы</span>
+                    <span data-lang="en">Video Testimonials</span>
+                    <span data-lang="ua">Теплі відеовідгуки</span>
+                </h3>
+                
+                <!-- Заменили max-w-4xl на max-w-2xl, чтобы вертикальные видео не были слишком огромными на ПК -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    
+                    <!-- Видеоотзыв 1 -->
+                    <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
+                        <!-- Заменили aspect-video на aspect-[9/16] -->
+                        <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
+                            <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
+                                <source src="video_otzyv1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="text-center pb-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span data-lang="ru">Отзыв о картине маслом в подарок</span>
+                                <span data-lang="en">Oil Painting Commission Review</span>
+                                <span data-lang="ua">Відгук про картину олією в подарунок</span>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Видеоотзыв 2 -->
+                    <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
+                        <!-- Заменили aspect-video на aspect-[9/16] -->
+                        <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
+                            <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
+                                <source src="video_otzyv2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="text-center pb-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span data-lang="ru">Отзыв о картине маслом в подарок 2</span>
+                                <span data-lang="en">Oil Painting Commission Review 2</span>
+                                <span data-lang="ua">Відгук про картину олією в подарунок 2</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ И СОЦСЕТИ -->
+    <footer class="bg-[#6c2603] text-[#fdfbf7] py-20 px-6 text-center border-t border-[#6c2603]/10 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-light italic mb-2">
+                    <span data-lang="ru">Присоединяйтесь к мастерской</span>
+                    <span data-lang="en">Join the Creative Space</span>
+                    <span data-lang="ua">Приєднуйтесь до майстерні</span>
+                </h2>
+            </div>
+            
+            <!-- СОЦСЕТИ (СТРОГО 5 ТОЧНЫХ ССЫЛОК) -->
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-3xl mx-auto pt-4">
+                
+                <!-- 1. Telegram (Канал Мастерская Женевьевы) -->
+                <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 border border-[#fdfbf7]/25 group-hover:border-[#fdfbf7] transition duration-300 rounded-full flex items-center justify-center relative">
+                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M21 5L2 12.5L9 15M21 5L18.5 20L9 15M21 5L9 15M9 15L10 20L13 17" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Telegram</span>
+                </a>
+
+                <!-- 2. Behance -->
+                <a href="https://www.behance.net/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 border border-[#fdfbf7]/25 group-hover:border-[#fdfbf7] transition duration-300 rounded-full flex items-center justify-center relative">
+                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M4.5 10.5h3a2 2 0 0 1 0 4h-3zm0-4h2.5a2 2 0 0 1 0 4h-2.5z M13.5 12.5h5 M12.5 10.5 a3 3 0 0 1 6 0 v3a3 3 0 0 1 -6 0 z" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Behance</span>
+                </a>
+
+                <!-- 3. Pinterest -->
+                <a href="https://www.pinterest.com/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 border border-[#fdfbf7]/25 group-hover:border-[#fdfbf7] transition duration-300 rounded-full flex items-center justify-center relative">
+                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8c-2 0-3 1.5-3 3 0 1 0.5 2 1.5 2.5 M12 8c2 0 3 1.5 3 3 0 3-2 6-2 6" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Pinterest</span>
+                </a>
+
+                <!-- 4. Cara -->
+                <a href="https://cara.app/artjenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 border border-[#fdfbf7]/25 group-hover:border-[#fdfbf7] transition duration-300 rounded-full flex items-center justify-center relative">
+                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M15 9c-1.5-1-3.5-1-5 0-2 1.5-2 4.5 0 6 1.5 1 3.5 1 5 0" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Cara</span>
+                </a>
+
+                <!-- 5. Ютуб -->
+                <a href="https://www.youtube.com/@art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 border border-[#fdfbf7]/25 group-hover:border-[#fdfbf7] transition duration-300 rounded-full flex items-center justify-center relative">
+                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <rect x="2" y="4" width="20" height="16" rx="4" />
+                            <polygon points="10 9 15 12 10 15" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">YouTube</span>
+                </a>
+
+            </div>
+
+            <!-- Копирайт -->
+            <div class="opacity-30 text-[9px] uppercase tracking-[0.3em] space-y-2 pt-4">
+                <p>Art Jenevieva © <span id="year">2026</span></p>
+                <p>MADE WITH MAGIC AND INK BY <a href="https://t.me/zirael777" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80 transition-opacity">Zirael777</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛЬНЫЕ ОКНА -->
+    <div id="guide-modal" class="modal">
+        <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
+            <button onclick="closeModal('guide-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
+            <h4 class="text-lg font-bold uppercase tracking-wider mb-4">
+                <span data-lang="ru">Ваш гайд почти готов</span>
+                <span data-lang="en">Your Guide is Ready</span>
+                <span data-lang="ua">Ваш гайд майже готовий</span>
+            </h4>
+            <p class="text-xs text-[#6c2603]/70 mb-6">
+                <span data-lang="ru">Нажмите кнопку ниже, чтобы перейти в Telegram. Наш бот вышлет PDF-книгу мгновенно прямо в чат.</span>
+                <span data-lang="en">Click below to open Telegram. Our bot will send you the PDF book instantly in chat.</span>
+                <span data-lang="ua">Натисніть кнопку нижче, щоб перейти в Telegram. Наш бот надішле PDF-книгу миттєво просто у чат.</span>
+            </p>
+            <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#6c2603] text-[#fdfbf7] py-3 uppercase font-bold text-xs tracking-wider">
+                <span data-lang="ru">Открыть Telegram</span><span data-lang="en">Open Telegram</span><span data-lang="ua">Вiдкрити Telegram</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal">
+        <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
+            <button onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
+            <h4 class="text-lg font-bold uppercase tracking-wider mb-4">
+                <span data-lang="ru">Обсудить проект</span>
+                <span data-lang="en">Discuss the Project</span>
+                <span data-lang="ua">Обговорити проєкт</span>
+            </h4>
+            <p class="text-xs text-[#6c2603]/70 mb-6">
+                <span data-lang="ru">Напишите мне напрямую в Telegram, чтобы рассчитать точную стоимость и сроки под ваши задачи.</span>
+                <span data-lang="en">Message me directly on Telegram to estimate the exact price and timeline for your request.</span>
+                <span data-lang="ua">Напишіть мені напряму в Telegram, щоб розрахувати точну вартість та терміни під ваші завдання.</span>
+            </p>
+            <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#6c2603] text-[#fdfbf7] py-3 uppercase font-bold text-xs tracking-wider">
+                <span data-lang="ru">Написать в Telegram</span><span data-lang="en">Message on Telegram</span><span data-lang="ua">Написати в Telegram</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ИЗОБРАЖЕНИЙ -->
+	<div id="image-viewer-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" onclick="closeImageViewerModal()">
+    	<!-- Кнопка закрытия -->
+    	<span class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors z-10">&times;</span>
+    
+    	<!-- Картинка -->
+    	<img id="image-viewer-modal-img" src="" alt="Full screen" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm" onclick="event.stopPropagation()">
+	</div>
+
+    <!-- СКРИПТЫ -->
+    <script>
+        // Функция переключения языков
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-switch').forEach(el => el.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Фиксируем активный язык на тэге body для корректной работы CSS
+            document.body.setAttribute('data-active-lang', lang);
+            localStorage.setItem('selectedLang', lang); // Сохраняем выбранный язык
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === lang) {
+                    // Используем '' для возврата к естественному CSS-отображению элемента (inline для span, block для div и т.д.)
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        // Модальные окна для форм/гайдов
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Функции для модального окна просмотра изображений
+        function openImageViewerModal(src) {
+            document.getElementById('image-viewer-modal-img').src = src;
+            const modal = document.getElementById('image-viewer-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Запрещаем прокрутку сайта
+        }
+
+        function closeImageViewerModal() {
+            const modal = document.getElementById('image-viewer-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+        }
+
+        // Общий обработчик закрытия по клику вне модального окна
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            } else if (event.target.id === 'image-viewer-modal') {
+                closeImageViewerModal();
+            }
+        }
+
+        // JAVASCRIPT ЗАЩИТА АВТОРСКИХ ПРАВ (Блокировка контекстного меню и drag-and-drop)
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+
+        // Закрытие модального окна по кнопке Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const guideModal = document.getElementById('guide-modal');
+                const orderModal = document.getElementById('order-modal');
+                const imageViewer = document.getElementById('image-viewer-modal');
+
+                if (guideModal && guideModal.classList.contains('active')) {
+                    closeModal('guide-modal');
+                } else if (orderModal && orderModal.classList.contains('active')) {
+                    closeModal('order-modal');
+                } else if (imageViewer && !imageViewer.classList.contains('hidden')) {
+                    closeImageViewerModal();
+                }
+            }
+        });
+
+        // Инициализация при загрузке
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLang') || 'ru';
+            setLanguage(savedLang);
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
