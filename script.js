@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const guideModal = document.getElementById('guide-modal');
             const orderModal = document.getElementById('order-modal');
             const imageViewer = document.getElementById('image-viewer-modal');
+            const guidePageModal = document.getElementById('guide-page-modal');
 
             if (guideModal && guideModal.classList.contains('active')) {
                 closeModal('guide-modal');
@@ -97,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal('order-modal');
             } else if (imageViewer && !imageViewer.classList.contains('hidden')) {
                 closeImageViewerModal();
+            } else if (guidePageModal && !guidePageModal.classList.contains('hidden')) {
+                closeGuidePageModal();
             }
         }
     });
@@ -116,6 +119,94 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openGuideModal = function() {
         console.log('Открытие модального окна');
         // Здесь будет логика открытия модального окна в будущем
+    };
+
+    /**
+     * Функции для модального окна просмотра страниц гайда
+     */
+    const guidePageData = {
+        1: {
+            number: '01',
+            title: {
+                ru: 'Арт-медитация',
+                en: 'Art Meditation',
+                ua: 'Арт-медитація'
+            },
+            footer: {
+                ru: 'Основы осознанного рисования',
+                en: 'Mindful Drawing Basics',
+                ua: 'Основи усвідомленого малювання'
+            },
+            svg: `<svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                    <path d="M50,20 Q50,55 15,55 Q50,55 50,90 Q50,55 85,55 Q50,55 50,20 Z" fill="#6c2603" fill-opacity="0.15"/>
+                    <circle cx="50" cy="45" r="8" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                    <path d="M35,70 Q50,85 65,70" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                  </svg>`
+        },
+        2: {
+            number: '02',
+            title: {
+                ru: 'Материалы',
+                en: 'Materials',
+                ua: 'Матеріали'
+            },
+            footer: {
+                ru: 'Выбор инструментов',
+                en: 'Choosing Your Tools',
+                ua: 'Вибір інструментів'
+            },
+            svg: `<svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                    <rect x="30" y="25" width="40" height="60" rx="3" fill="#6c2603" fill-opacity="0.1" stroke="#6c2603" stroke-width="1.2"/>
+                    <line x1="40" y1="40" x2="60" y2="40" stroke="#6c2603" stroke-width="1"/>
+                    <line x1="40" y1="50" x2="60" y2="50" stroke="#6c2603" stroke-width="1"/>
+                    <line x1="40" y1="60" x2="60" y2="60" stroke="#6c2603" stroke-width="1"/>
+                    <circle cx="75" cy="35" r="10" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                    <path d="M70,30 L80,40 M80,30 L70,40" stroke="#6c2603" stroke-width="1.2"/>
+                  </svg>`
+        },
+        3: {
+            number: '03',
+            title: {
+                ru: 'Практика',
+                en: 'Practice',
+                ua: 'Практика'
+            },
+            footer: {
+                ru: 'Техники и упражнения',
+                en: 'Techniques & Exercises',
+                ua: 'Техніки та вправи'
+            },
+            svg: `<svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                    <path d="M25,80 Q35,60 50,60 Q65,60 75,80" fill="none" stroke="#6c2603" stroke-width="1.5"/>
+                    <path d="M30,70 Q40,55 50,55 Q60,55 70,70" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                    <circle cx="50" cy="40" r="12" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                    <path d="M45,35 L50,42 L55,35" fill="none" stroke="#6c2603" stroke-width="1"/>
+                  </svg>`
+        }
+    };
+
+    window.openGuidePageModal = function(pageNum) {
+        const data = guidePageData[pageNum];
+        if (!data) return;
+
+        const activeLang = document.body.getAttribute('data-active-lang') || 'ru';
+
+        document.getElementById('modal-page-number').textContent = data.number;
+        document.getElementById('modal-page-title').textContent = data.title[activeLang];
+        document.getElementById('modal-page-art').innerHTML = data.svg;
+        document.getElementById('modal-page-footer').textContent = data.footer[activeLang];
+
+        const modal = document.getElementById('guide-page-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeGuidePageModal = function() {
+        const modal = document.getElementById('guide-page-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
     };
 
 });
