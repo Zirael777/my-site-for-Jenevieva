@@ -241,10 +241,10 @@
         </div>
         
         <!-- Контейнер сетки: 1 колонка на мобильных, 2 на планшетах/ПК -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 justify-items-center">
 
 <!-- КЕЙС 1: Картина маслом в подарок -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio1.png" alt="Finished Oil Painting" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
@@ -308,7 +308,7 @@
 
 
     <!-- КЕЙС 2: Карандашный портрет девушки с хвостом -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
@@ -372,7 +372,7 @@
 
 
 <!-- ПРОЕКТ 1: Календарь «Year of Wise Horses» -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -428,7 +428,7 @@
 
 
 <!-- ПРОЕКТ 3: Праздничные открытки -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cards.png" alt="Greeting Cards" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -483,65 +483,9 @@
     </div>
 
 
-    <!-- ПРОЕКТ 4: Гайд «The Quiet Art of Being Yourself» -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full">
-        <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-            <img src="portfolio_guide.png" alt="Author Guide" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Author+Guide';">
-            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                <span class="text-white text-3xl font-light">⊕</span>
-            </div>
-        </div>
-        
-        <div class="mb-6 flex-grow">
-            <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
-                <span data-lang="ru">Иллюстрированный гайд</span>
-                <span data-lang="en">Illustrated Guide</span>
-                <span data-lang="ua">Ілюстрований гайд</span>
-            </span>
-            <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                <span data-lang="ru">«The Quiet Art of Being Yourself»</span>
-                <span data-lang="en">"The Quiet Art of Being Yourself"</span>
-                <span data-lang="ua">«The Quiet Art of Being Yourself»</span>
-            </h3>
-            <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                <span data-lang="ru">Личный и очень тонкий проект о поиске гармонии и тишины внутри. Я создала серию концептуальных графических иллюстраций, которые бережно дополняют текст и помогают настроиться на волну вдохновения и принятия себя.</span>
-                <span data-lang="en">A deeply personal and nuanced project about inner peace and harmony. I designed a series of conceptual graphic illustrations that complement the text and help embrace self-acceptance and quiet inspiration.</span>
-                <span data-lang="ua">Особистий та дуже тонкий проєкт про пошук гармонії та внутрішньої тиші. Я створила серію концептуальних графічних ілюстрацій, які дбайливо доповнюють текст і допомагають налаштуватися на хвилю натхнення.</span>
-            </p>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-5">
-            <div class="space-y-1.5">
-                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
-                    <span data-lang="ru">Страницы</span><span data-lang="en">Pages</span><span data-lang="ua">Сторінки</span>
-                </span>
-                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_guide_1.png" alt="Guide Pages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Pages';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                </div>
-            </div>
-            <div class="space-y-1.5">
-                <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
-                    <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
-                </span>
-                <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_guide_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                </div>
-            </div>
-        </div>
-
-        <a href="https://www.behance.net/gallery/241931097/The-Quiet-Art-of-Being-Yourself-Author-Guide" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
-            <span data-lang="ru">Смотреть проект на Behance ↗</span>
-            <span data-lang="en">View project on Behance ↗</span>
-            <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-        </a>
-    </div>
-
-
 
 <!-- Кнопка перехода в полное портфолио -->
-<div class="text-center mt-12 mb-8">
+<div class="text-center mt-12 mb-8 w-full">
     <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 shadow-sm">
         <span data-lang="ru">Смотреть все работы →</span>
         <span data-lang="en">View all works →</span>
