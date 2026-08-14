@@ -241,10 +241,10 @@
         </div>
         
         <!-- Контейнер сетки: 1 колонка на мобильных, 2 на планшетах/ПК -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 justify-items-center">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 justify-items-center max-w-6xl mx-auto">
 
 <!-- КЕЙС 1: Картина маслом в подарок -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio1.png" alt="Finished Oil Painting" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
@@ -308,7 +308,7 @@
 
 
     <!-- КЕЙС 2: Карандашный портрет девушки с хвостом -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <!-- Главное фото -->
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
@@ -372,7 +372,7 @@
 
 
 <!-- ПРОЕКТ 1: Календарь «Year of Wise Horses» -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -428,7 +428,7 @@
 
 
 <!-- ПРОЕКТ 3: Праздничные открытки -->
-    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-md">
+    <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cards.png" alt="Greeting Cards" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -482,25 +482,17 @@
         </a>
     </div>
 
-
+</div>
 
 <!-- Кнопка перехода в полное портфолио -->
-<div class="text-center mt-12 mb-8 w-full">
+<div class="flex justify-center items-center w-full mt-12 mb-8">
     <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 shadow-sm">
         <span data-lang="ru">Смотреть все работы →</span>
         <span data-lang="en">View all works →</span>
         <span data-lang="ua">Дивитись усі роботи →</span>
     </a>
 </div>
-
-</div>
-                </div>
-            </div>
-        </div>                    
-
-
-
-    </section>
+</section>
 
     <!-- ЛИД-МАГНИТ -->
     <section class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-b border-[#6c2603]/10 relative overflow-hidden">
