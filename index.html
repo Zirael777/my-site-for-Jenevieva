@@ -1287,14 +1287,17 @@
                 <form id="guideForm" onsubmit="handleGuideSubmit(event)">
                     <div class="form-group">
                         <input type="text" id="guideName" required placeholder="Как к вам обращаться" class="modal-input">
+                        <span class="error-message">Пожалуйста, введите ваше имя</span>
                     </div>
                     
                     <div class="form-group">
                         <input type="tel" id="guidePhone" required placeholder="+7 (___) ___-__-__" class="modal-input">
+                        <span class="error-message">Введите корректный номер телефона</span>
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" id="guideEmail" required placeholder="Ваш E-mail для получения скидки" class="modal-input">
+                        <input type="email" id="guideEmail" required placeholder="Ваш E-mail" class="modal-input">
+                        <span class="error-message">Введите корректный E-mail</span>
                     </div>
                     
                     <div class="form-group">
@@ -1309,10 +1312,6 @@
                                 <span class="messenger-badge">WhatsApp</span>
                             </label>
                             <label class="messenger-option">
-                                <input type="radio" name="messenger" value="vk">
-                                <span class="messenger-badge">ВКонтакте</span>
-                            </label>
-                            <label class="messenger-option">
                                 <input type="radio" name="messenger" value="email">
                                 <span class="messenger-badge">E-mail</span>
                             </label>
@@ -1322,6 +1321,7 @@
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="privacyConsent" checked class="modal-checkbox">
                         <label for="privacyConsent" class="checkbox-label">Согласен(на) на обработку персональных данных</label>
+                        <span class="error-message" style="display:block; margin-top:5px;">Необходимо согласие</span>
                     </div>
                     
                     <!-- Honeypot -->
@@ -1344,14 +1344,15 @@
                     <button class="btn-copy" onclick="copyPromoCode()">Скопировать</button>
                 </div>
                 
-                <p class="form-hint">Промокод продублирован в ваш выбранный способ связи и активен в течение 7 дней.</p>
+                <p class="form-hint">Промокод продублирован в ваш выбранный способ связи.</p>
                 
-                <a href="#catalog" id="toCatalogLink" class="catalog-link">Перейти в каталог за покупками →</a>
+                <a href="#services" id="toCatalogLink" class="catalog-link">Перейти к заказу →</a>
             </div>
         </div>
     </div>
 
-    <!-- СКРИПТЫ -->
+    <!-- Подключаем IMask для маски телефона -->
+    <script src="https://unpkg.com/imask"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
