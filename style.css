@@ -1,16 +1,40 @@
-/* Глобальные CSS-переменные бренда */
+/* Глобальные CSS-переменные бренда — эстетика крафтовой мастерской */
 :root {
-    --bg-main: #fdfbf7;
-    --text-color: #6c2603;
+    --bg-main: #FDFBF7; /* тёплый фон небелёной бумаги */
+    --text-main: #2B2A29; /* мягкий цвет туши вместо строгого чёрного */
+    --accent-pink: #C86B83; /* пыльно-розовый / брусничный для кнопок и элементов */
+    --accent-olive: #8A9A74; /* оливковый для деталей */
+    --border-color: rgba(43, 42, 41, 0.2); /* тонкие графеновые контуры */
     --white: #ffffff;
-    --border-color: rgba(108, 38, 3, 0.2);
 }
 
+/* Подключение шрифтов Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lora', serif;
     background-color: var(--bg-main);
-    color: var(--text-color);
+    color: var(--text-main);
     scroll-behavior: smooth;
+}
+
+/* Заголовки с декоративными элементами */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Декоративный заголовок с искорками */
+.decorative-heading::before {
+    content: '✦⪼ ';
+    color: var(--accent-pink);
+    font-size: 0.9em;
+}
+.decorative-heading::after {
+    content: ' ⪻✦';
+    color: var(--accent-pink);
+    font-size: 0.9em;
 }
 
 /* Текстурированный фон бумаги */
@@ -32,7 +56,7 @@ body {
 .lang-switch.active {
     opacity: 1;
     font-weight: 700;
-    border-bottom: 1.5px solid var(--text-color);
+    border-bottom: 1.5px solid var(--text-main);
 }
 
 /* Оформление всплывающих модальных окон */
@@ -43,7 +67,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(108, 38, 3, 0.45);
+    background-color: rgba(43, 42, 41, 0.45);
     backdrop-filter: blur(4px);
     z-index: 1000;
     justify-content: center;
@@ -53,23 +77,108 @@ body {
     display: flex;
 }
 
-/* Тонкие винтажные карточки прайса */
-.price-card {
-    border: 1.5px solid rgba(108, 38, 3, 0.15);
-    background-color: rgba(255, 255, 255, 0.45);
+/* Тонкие винтажные карточки — эстетика крафтовой мастерской */
+.price-card, .portfolio-item {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
-.price-card:hover {
-    border-color: var(--text-color);
+.price-card:hover, .portfolio-item:hover {
+    border-color: var(--accent-pink);
     transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 10px 30px rgba(108, 38, 3, 0.04);
+    background-color: var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* Кнопки фильтра */
+/* Кнопки фильтра — тонкая рамка с hover-эффектом */
+.filter-btn {
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover {
+    border-color: var(--accent-pink) !important;
+    color: var(--accent-pink) !important;
+    transform: scale(1.02);
+}
 .filter-btn.active {
-    background-color: var(--text-color);
-    color: var(--bg-main);
+    background-color: var(--accent-pink) !important;
+    color: var(--white) !important;
+    border-color: var(--accent-pink) !important;
+}
+
+/* Кнопки и элементы .btn — тонкая рамка с плавным hover */
+button, .btn, a.btn, input[type="submit"], .lead-magnet-btn {
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-main);
+    padding: 12px 24px;
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover {
+    background-color: var(--accent-pink);
+    color: var(--white);
+    border-color: var(--accent-pink);
+    transform: scale(1.02);
+}
+
+/* Списки с кастомными искорками */
+ul {
+    list-style: none;
+    padding-left: 1.2em;
+}
+ul li {
+    position: relative;
+}
+ul li::before {
+    content: '✦';
+    color: var(--accent-pink);
+    position: absolute;
+    left: -1.2em;
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+/* Разделители hr с искоркой по центру */
+hr, .decorative-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 2em 0;
+    position: relative;
+}
+hr::after, .decorative-divider::after {
+    content: '✦';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-pink);
+    font-size: 0.9em;
+    background-color: var(--bg-main);
+    padding: 0 8px;
+}
+.decorative-divider {
+    width: 16rem; /* w-16 = 4rem = 64px, но здесь нужно больше для центрирования */
+    margin: 1rem auto;
+}
+
+/* Карточки — аккуратная тонкая рамка, светлый бумажный фон */
+.card, .bg-white {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+.card:hover, .bg-white:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border-color: var(--accent-pink);
 }
 
 /* CSS ЗАЩИТА ИЗОБРАЖЕНИЙ: блокируем выделение, перетаскивание и системные мобильные контекстные меню */
@@ -89,10 +198,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
     display: none; 
 }
 
-/* --- Lead Magnet Section Styles (Full-Width Premium) --- */
+/* --- Lead Magnet Section Styles (Full-Width Premium) — эстетика крафтовой мастерской --- */
 .lead-magnet-section {
   width: 100%;
-  background-color: #6c2603;
+  background-color: var(--text-main);
   padding: 80px 0;
   display: flex;
   justify-content: center;
@@ -118,13 +227,14 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-title {
   font-size: 2.5rem;
-  color: #fdfbf7;
+  color: var(--bg-main);
   margin: 0 0 8px 0;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: left;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .lead-magnet-subtitle {
@@ -134,6 +244,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  font-family: 'Lora', serif;
 }
 
 .lead-magnet-description {
@@ -144,29 +255,31 @@ body:not([data-active-lang]) [data-lang="ua"] {
   max-width: 540px;
   font-weight: 400;
   text-align: left;
+  font-family: 'Lora', serif;
 }
 
 .lead-magnet-btn {
   display: inline-block;
-  background-color: #fdfbf7;
-  color: #6c2603;
-  border: none;
+  background-color: transparent;
+  color: var(--bg-main);
+  border: 1px solid var(--bg-main);
   padding: 18px 42px;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  font-family: 'Lora', serif;
 }
 
 .lead-magnet-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  transform: scale(1.02);
+  background-color: var(--accent-pink);
+  border-color: var(--accent-pink);
+  color: var(--white);
 }
 
 .lead-magnet-btn:active {
@@ -193,13 +306,13 @@ body:not([data-active-lang]) [data-lang="ua"] {
   position: absolute;
   width: 260px;
   height: 340px;
-  background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e6 100%);
+  background: linear-gradient(135deg, var(--bg-main) 0%, #f5f0e6 100%);
   border-radius: 4px;
-  box-shadow: 0 8px 30px rgba(108, 38, 3, 0.2);
+  box-shadow: 0 8px 30px rgba(43, 42, 41, 0.15);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
-  border: 1px solid rgba(108, 38, 3, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .guide-page-inner {
@@ -214,7 +327,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #6c2603;
+  border-bottom: 2px solid var(--text-main);
   padding-bottom: 12px;
   margin-bottom: 15px;
 }
@@ -222,16 +335,18 @@ body:not([data-active-lang]) [data-lang="ua"] {
 .guide-page-number {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #6c2603;
+  color: var(--text-main);
   letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .guide-page-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #6c2603;
+  color: var(--text-main);
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Lora', serif;
 }
 
 .guide-page-art {
@@ -239,8 +354,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(108, 38, 3, 0.03);
-  border: 1px dashed rgba(108, 38, 3, 0.2);
+  background: rgba(43, 42, 41, 0.03);
+  border: 1px dashed var(--border-color);
   border-radius: 4px;
   margin-bottom: 15px;
   padding: 15px;
@@ -253,7 +368,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .guide-page-footer {
   font-size: 0.75rem;
-  color: rgba(108, 38, 3, 0.7);
+  color: rgba(43, 42, 41, 0.7);
   text-align: center;
   font-style: italic;
   line-height: 1.4;
@@ -261,7 +376,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .guide-page-footer-large {
   font-size: 1rem;
-  color: rgba(108, 38, 3, 0.7);
+  color: rgba(43, 42, 41, 0.7);
   text-align: center;
   font-style: italic;
   line-height: 1.5;
@@ -285,7 +400,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
   transform: rotate(6deg) scale(1);
   opacity: 1;
   z-index: 2;
-  box-shadow: 0 15px 50px rgba(108, 38, 3, 0.25);
+  box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2);
 }
 
 /* Страница 3 (дополнительная) */
@@ -302,7 +417,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 .guide-page:hover {
   transform: scale(1.08) rotate(0deg) !important;
   z-index: 10 !important;
-  box-shadow: 0 20px 60px rgba(108, 38, 3, 0.3);
+  box-shadow: 0 20px 60px rgba(43, 42, 41, 0.25);
 }
 
 .guide-fan-hint {
@@ -315,14 +430,15 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 /* Модальное окно для просмотра страниц */
 .guide-page-modal-content {
-  background: #fdfbf7;
+  background: var(--bg-main);
   border-radius: 8px;
   max-width: 900px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 25px 80px rgba(108, 38, 3, 0.3);
+  box-shadow: 0 25px 80px rgba(43, 42, 41, 0.25);
+  border: 1px solid var(--border-color);
 }
 
 .guide-page-modal-close {
@@ -330,13 +446,14 @@ body:not([data-active-lang]) [data-lang="ua"] {
   top: 15px;
   right: 20px;
   font-size: 2.5rem;
-  color: #6c2603;
+  color: var(--text-main);
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .guide-page-modal-close:hover {
@@ -362,8 +479,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(108, 38, 3, 0.03);
-  border: 2px dashed rgba(108, 38, 3, 0.2);
+  background: rgba(43, 42, 41, 0.03);
+  border: 2px dashed var(--border-color);
   border-radius: 6px;
   padding: 30px;
 }
@@ -375,18 +492,20 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .guide-page-modal-info h3 {
   font-size: 1.4rem;
-  color: #6c2603;
+  color: var(--text-main);
   margin: 0 0 15px 0;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .guide-page-modal-info p {
   font-size: 0.95rem;
-  color: rgba(108, 38, 3, 0.8);
+  color: rgba(43, 42, 41, 0.8);
   line-height: 1.6;
   margin: 0;
+  font-family: 'Lora', serif;
 }
 
 /* Адаптивность для мобильных устройств */
