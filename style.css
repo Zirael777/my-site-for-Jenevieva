@@ -809,6 +809,16 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-style: italic;
 }
 
+/* Описание модалки */
+.modal-description {
+    font-size: 0.95rem;
+    color: #2B2A29;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-family: 'Lora', serif;
+}
+
 /* Акцентная кнопка */
 .btn-accent {
     display: inline-block;
@@ -908,6 +918,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
     
     .modal-title {
         font-size: 1.3rem;
+    }
+    
+    .modal-description {
+        font-size: 0.85rem;
     }
     
     .messenger-options {
