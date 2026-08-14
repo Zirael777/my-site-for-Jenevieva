@@ -9,59 +9,8 @@
     <!-- Подключаем Montserrat для качественной винтажной типографики -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --sepia: #6c2603;
-            --paper: #fdfbf7;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--paper);
-            color: var(--sepia);
-            scroll-behavior: smooth;
-        }
-
-        /* Текстурированный фон бумаги */
-        .paper-bg {
-            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
-        }
-
-        /* Логика локализации: скрываем элементы других языков до активации скрипта */
-        body:not([data-active-lang]) [data-lang="en"], 
-        body:not([data-active-lang]) [data-lang="ua"] { 
-            display: none; 
-        }
-
-        /* Стилизация языкового переключателя */
-        .lang-switch {
-            cursor: pointer;
-            opacity: 0.4;
-            transition: opacity 0.3s ease;
-        }
-        .lang-switch.active {
-            opacity: 1;
-            font-weight: 700;
-            border-bottom: 1.5px solid var(--sepia);
-        }
-
-        /* Кнопки фильтра */
-        .filter-btn.active {
-            background-color: var(--sepia);
-            color: var(--paper);
-        }
-
-        /* CSS ЗАЩИТА ИЗОБРАЖЕНИЙ */
-        img, video {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-user-drag: none;
-        }
-    </style>
+    <!-- Подключение внешних стилей -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="paper-bg min-h-screen flex flex-col">
 
@@ -569,86 +518,6 @@
     </div>
 
     <!-- СКРИПТЫ -->
-    <script>
-        // Функция переключения языков
-        function setLanguage(lang) {
-            document.querySelectorAll('.lang-switch').forEach(el => el.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
-            
-            document.body.setAttribute('data-active-lang', lang);
-            localStorage.setItem('selectedLang', lang);
-            
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                if (el.getAttribute('data-lang') === lang) {
-                    el.style.display = '';
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-        }
-
-        // Функции для модального окна просмотра изображений
-        function openImageViewerModal(src) {
-            document.getElementById('image-viewer-modal-img').src = src;
-            const modal = document.getElementById('image-viewer-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Блокируем скролл фона
-        }
-
-        function closeImageViewerModal() {
-            const modal = document.getElementById('image-viewer-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto'; // Возвращаем скролл
-        }
-
-        // Фильтрация категорий
-        function filterSelection(category, element) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // JS защита авторских прав (Блокировка контекстного меню и drag-and-drop)
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-                e.preventDefault();
-            }
-        });
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-                e.preventDefault();
-            }
-        });
-
-        // Закрытие модального окна по кнопке Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                const imageViewer = document.getElementById('image-viewer-modal');
-                if (imageViewer && !imageViewer.classList.contains('hidden')) {
-                    closeImageViewerModal();
-                }
-            }
-        });
-
-        // Инициализация при загрузке
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLang') || 'ru';
-            setLanguage(savedLang);
-            // Устанавливаем текущий год в футере
-            document.getElementById('year').textContent = new Date().getFullYear();
-        });
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
