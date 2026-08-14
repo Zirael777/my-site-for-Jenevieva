@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Як до вас звертатися'
             },
             'guidePhone': {
-                ru: '+7 (___) ___-__-__',
-                en: '+7 (___) ___-__-__',
-                ua: '+7 (___) ___-__-__'
+                ru: "+7 (___) ___-__-__",
+                en: "+1 (___) ___-__-__",
+                ua: "+380 (___) ___-__-__"
             },
             'guideEmail': {
                 ru: 'Ваш E-mail',
@@ -72,7 +72,112 @@ document.addEventListener('DOMContentLoaded', () => {
         const toOrderLink = document.querySelector('#modalSuccessBlock .catalog-link');
         const downloadBtn = document.querySelector('#modalSuccessBlock .download-btn');
         
-        const translations = {
+const translations = {
+            guide_banner_badge: {
+                ru: '✦ АРТ-ПРАКТИКУМ + СКИДКА 20% ✦',
+                en: '✦ ART PRACTICUM + 20% OFF ✦',
+                ua: '✦ АРТ-ПРАКТИКУМ + ЗНИЖКА 20% ✦'
+            },
+            guide_banner_title: {
+                ru: '«Тихое искусство быть собой»',
+                en: '"The Quiet Art of Being Yourself"',
+                ua: '«Тихе мистецтво бути собою»'
+            },
+            guide_banner_subtitle: {
+                ru: 'Пошаговый путь к себе через медитативное рисование',
+                en: 'A step-by-step path to yourself through meditative drawing',
+                ua: 'Покроковий шлях до себе через медитативне малювання'
+            },
+            guide_banner_desc: {
+                ru: 'Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.',
+                en: "Author's guide with practices and exercises that help you slow down, calm your mind and feel inner support. It is created for those who are tired of haste and want to gently return to themselves — through attention, observation and simple creative practices.",
+                ua: "Авторський гайд з практиками та вправами, які допомагають сповільнитися, заспокоїти розум і відчути внутрішню опору. Він створений для тих, хто втомився від поспіху і хоче м'яко повернутися до себе — через увагу, спостереження і прості творчі практики."
+            },
+            guide_banner_btn: {
+                ru: '✦ Забрать гайд и скидку 20% ✦',
+                en: '✦ Get the Guide and 20% Discount ✦',
+                ua: '✦ Отримати гайд і знижку 20% ✦'
+            },
+            guide_modal_title: {
+                ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
+                en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
+                ua: '✦⪼ «Тихе мистецтво бути собою» ⪻✦'
+            },
+            guide_modal_desc: {
+                ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.',
+                en: "A step-by-step journey to yourself through meditative drawing. Author's guide with practices to help you slow down, calm your mind and find inner support.",
+                ua: 'Покроковий шлях до себе через медитативне малювання. Авторський гайд з практиками, які допоможуть сповільнитися, заспокоїти розум і знайти внутрішню опору.'
+            },
+            guide_ph_name: {
+                ru: 'Как к вам обращаться',
+                en: 'Your Name',
+                ua: 'Як до вас звертатися'
+            },
+            guide_ph_phone: {
+                ru: "+7 (___) ___-__-__",
+                en: "+1 (___) ___-__-__",
+                ua: "+380 (___) ___-__-__"
+            },
+            guide_ph_email: {
+                ru: 'Ваш E-mail',
+                en: 'Your E-mail',
+                ua: 'Ваш E-mail'
+            },
+            guide_contact_label: {
+                ru: 'Предпочитаемый способ связи:',
+                en: 'Preferred contact method:',
+                ua: "Бажаний спосіб зв'язку:"
+            },
+            guide_privacy_text: {
+                ru: 'Согласен(на) на обработку персональных данных',
+                en: 'I agree to the processing of personal data',
+                ua: 'Згоден(на) на обробку персональних даних'
+            },
+            guide_form_hint: {
+                ru: 'После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.',
+                en: 'After submitting the form you can immediately download the PDF guide and get a 20% promo code for your first purchase.',
+                ua: 'Після відправки форми ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.'
+            },
+            guide_submit_btn: {
+                ru: '✦ Забрать гайд и скидку 20% ✦',
+                en: '✦ Get Guide & 20% Off ✦',
+                ua: '✦ Забрати гайд та знижку 20% ✦'
+            },
+            guide_success_title: {
+                ru: '✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦',
+                en: '✦⪼ Your guide "The Quiet Art of Being Yourself" is ready! ⪻✦',
+                ua: '✦⪼ Ваш гайд «Тихе мистецтво бути собою» готовий! ⪻✦'
+            },
+            guide_download_btn: {
+                ru: '✦ СКАЧАТЬ PDF-ГАЙД ✦',
+                en: '✦ DOWNLOAD PDF GUIDE ✦',
+                ua: '✦ ЗАВАНТАЖИТИ PDF-ГАЙД ✦'
+            },
+            guide_copy_btn: {
+                ru: 'Скопировать',
+                en: 'Copy',
+                ua: 'Скопіювати'
+            },
+            guide_success_desc: {
+                ru: 'Вы можете скачать PDF прямо сейчас, а ваш промокод на 20% скопировать ниже:',
+                en: 'You can download the PDF right now, and copy your 20% promo code below:',
+                ua: 'Ви можете завантажити PDF просто зараз, а ваш промокод на 20% скопіювати нижче:'
+            },
+            guide_promo_label: {
+                ru: 'Ваш промокод:',
+                en: 'Your promo code:',
+                ua: 'Ваш промокод:'
+            },
+            guide_promo_hint: {
+                ru: 'Промокод продублирован в ваш выбранный способ связи.',
+                en: 'Promo code has been sent to your preferred contact method.',
+                ua: "Промокод продубльовано у ваш обраний спосіб зв'язку."
+            },
+            guide_services_btn: {
+                ru: 'Перейти к заказу →',
+                en: 'Go to Services →',
+                ua: 'Перейти до послуг →'
+            },
             modalTitle: {
                 ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
                 en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
@@ -80,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             modalDescription: {
                 ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.',
-                en: 'A step-by-step journey to yourself through meditative drawing. Author\'s guide with practices to help you slow down, calm your mind and find inner support.',
+                en: "A step-by-step journey to yourself through meditative drawing. Author's guide with practices to help you slow down, calm your mind and find inner support.",
                 ua: 'Покроковий шлях до себе через медитативне малювання. Авторський гайд з практиками, які допоможуть сповільнитися, заспокоїти розум і знайти внутрішню опору.'
             },
             formHint: {
@@ -101,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messengerLabel: {
                 ru: 'Предпочитаемый способ связи:',
                 en: 'Preferred contact method:',
-                ua: 'Бажаний спосіб зв\'язку:'
+                ua: "Бажаний спосіб зв'язку:"
             },
             successTitle: {
                 ru: '✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦',
@@ -121,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             promoHint: {
                 ru: 'Промокод продублирован в ваш выбранный способ связи.',
                 en: 'Promo code has been sent to your preferred contact method.',
-                ua: 'Промокод продубльовано у ваш обраний спосіб зв\'язку.'
+                ua: "Промокод продубльовано у ваш обраний спосіб зв'язку."
             },
             toOrderLink: {
                 ru: 'Перейти к заказу →',
@@ -134,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Скопійовано! ✦'
             }
         };
-        
         if (modalTitle) modalTitle.textContent = translations.modalTitle[lang] || translations.modalTitle.ru;
         if (modalDesc) modalDesc.textContent = translations.modalDescription[lang] || translations.modalDescription.ru;
         if (formHint) formHint.textContent = translations.formHint[lang] || translations.formHint.ru;
@@ -152,6 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (promoHint) promoHint.textContent = translations.promoHint[lang] || translations.promoHint.ru;
         if (toOrderLink) toOrderLink.textContent = translations.toOrderLink[lang] || translations.toOrderLink.ru;
+
+        // Обновляем текст описания успеха и лейбл промокода
+        const successDesc = document.querySelector('#modalSuccessBlock .modal-description');
+        const promoLabel = document.querySelector('#modalSuccessBlock .promo-label');
+        if (successDesc) successDesc.textContent = translations.guide_success_desc[lang] || translations.guide_success_desc.ru;
+        if (promoLabel) promoLabel.textContent = translations.guide_promo_label[lang] || translations.guide_promo_label.ru;
         
         // Обновляем бейджи мессенджеров
         document.querySelectorAll('.messenger-badge').forEach(badge => {
