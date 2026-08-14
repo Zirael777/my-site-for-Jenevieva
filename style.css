@@ -201,7 +201,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
 /* --- Lead Magnet Section Styles (Full-Width Premium) — эстетика крафтовой мастерской --- */
 .lead-magnet-section {
   width: 100%;
-  background-color: var(--text-main);
+  background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
+  border: 1px solid rgba(200, 107, 131, 0.25);
   padding: 80px 0;
   display: flex;
   justify-content: center;
@@ -225,9 +226,19 @@ body:not([data-active-lang]) [data-lang="ua"] {
   align-items: flex-start;
 }
 
+.lead-magnet-badge {
+  font-size: 0.75rem;
+  color: var(--accent-pink);
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Lora', serif;
+}
+
 .lead-magnet-title {
   font-size: 2.5rem;
-  color: var(--bg-main);
+  color: var(--text-main);
   margin: 0 0 8px 0;
   line-height: 1.2;
   font-weight: 700;
@@ -239,7 +250,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-subtitle {
   font-size: 1.2rem;
-  color: rgba(253, 251, 247, 0.9);
+  color: var(--text-main);
   margin: 0 0 24px 0;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -249,7 +260,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-description {
   font-size: 1.05rem;
-  color: rgba(253, 251, 247, 0.85);
+  color: var(--text-main);
   line-height: 1.7;
   margin: 0 0 40px 0;
   max-width: 540px;
@@ -260,9 +271,9 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-btn {
   display: inline-block;
-  background-color: transparent;
-  color: var(--bg-main);
-  border: 1px solid var(--bg-main);
+  background-color: var(--accent-pink);
+  color: var(--white);
+  border: 1px solid var(--accent-pink);
   padding: 18px 42px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -277,8 +288,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-btn:hover {
   transform: scale(1.02);
-  background-color: var(--accent-pink);
-  border-color: var(--accent-pink);
+  background-color: #b85a72;
+  border-color: #b85a72;
   color: var(--white);
 }
 
@@ -521,6 +532,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
     text-align: center;
   }
   
+  .lead-magnet-badge {
+    text-align: center;
+  }
+  
   .lead-magnet-title {
     text-align: center;
     font-size: 2rem;
@@ -554,6 +569,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
   .lead-magnet-content {
     padding: 0 20px;
     gap: 40px;
+  }
+  
+  .lead-magnet-badge {
+    font-size: 0.65rem;
   }
   
   .lead-magnet-title {
