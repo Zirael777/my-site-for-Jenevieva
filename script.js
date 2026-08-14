@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             event.target.classList.remove('active');
         } else if (event.target.id === 'image-viewer-modal') {
             closeImageViewerModal();
+        } else if (event.target.id === 'guideModal') {
+            closeGuideModal();
         }
     };
 
@@ -87,12 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Закрытие модального окна по кнопке Escape
     document.addEventListener('keydown', function(event) {
         if (event.key === "Escape") {
-            const guideModal = document.getElementById('guide-modal');
+            const guideModal = document.getElementById('guideModal');
+            const guideModalOld = document.getElementById('guide-modal');
             const orderModal = document.getElementById('order-modal');
             const imageViewer = document.getElementById('image-viewer-modal');
             const guidePageModal = document.getElementById('guide-page-modal');
 
             if (guideModal && guideModal.classList.contains('active')) {
+                closeGuideModal();
+            } else if (guideModalOld && guideModalOld.classList.contains('active')) {
                 closeModal('guide-modal');
             } else if (orderModal && orderModal.classList.contains('active')) {
                 closeModal('order-modal');
@@ -112,14 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
-
-    /**
-     * Функция открытия модального окна для гайда
-     */
-    window.openGuideModal = function() {
-        console.log('Открытие модального окна');
-        // Здесь будет логика открытия модального окна в будущем
-    };
 
     /**
      * Функции для модального окна просмотра страниц гайда
@@ -207,6 +204,62 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
         document.body.style.overflow = 'auto';
+    };
+
+    /**
+     * Функции для модального окна гайда #guideModal
+     */
+    window.openGuideModal = function() {
+        const modal = document.getElementById('guideModal');
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeGuideModal = function() {
+        const modal = document.getElementById('guideModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    window.handleGuideSubmit = function(event) {
+        event.preventDefault();
+        
+        // Проверка honeypot (защита от ботов)
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value) {
+            return;
+        }
+        
+        // Скрываем форму, показываем экран успеха
+        const formBlock = document.getElementById('modalFormBlock');
+        const successBlock = document.getElementById('modalSuccessBlock');
+        
+        if (formBlock && successBlock) {
+            formBlock.style.display = 'none';
+            successBlock.style.display = 'block';
+        }
+    };
+
+    window.copyPromoCode = function() {
+        const promoCode = document.getElementById('promoCode');
+        if (promoCode) {
+            navigator.clipboard.writeText(promoCode.textContent).then(function() {
+                const copyBtn = document.querySelector('.btn-copy');
+                if (copyBtn) {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Скопировано!';
+                    setTimeout(function() {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                }
+            }).catch(function(err) {
+                console.error('Ошибка копирования: ', err);
+            });
+        }
     };
 
 });

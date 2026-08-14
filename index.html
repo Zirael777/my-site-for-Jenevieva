@@ -1287,5 +1287,84 @@
 
     <!-- СКРИПТЫ -->
     <script src="script.js" defer></script>
+
+    <!-- НОВОЕ МОДАЛЬНОЕ ОКНО ГАЙДА #guideModal -->
+    <div id="guideModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeGuideModal()">&times;</button>
+            
+            <!-- Блок 1: Форма сбора -->
+            <div id="modalFormBlock">
+                <h3 class="modal-title">✦⪼ Получить гайд и скидку 20% ⪻✦</h3>
+                
+                <form id="guideForm" onsubmit="handleGuideSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="guideName" required placeholder="Как к вам обращаться" class="modal-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="guidePhone" required placeholder="+7 (___) ___-__-__" class="modal-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="guideEmail" required placeholder="Ваш E-mail для получения скидки" class="modal-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="messenger-label">Выберите мессенджер:</label>
+                        <div class="messenger-options">
+                            <label class="messenger-option">
+                                <input type="radio" name="messenger" value="telegram" checked>
+                                <span class="messenger-badge">Telegram</span>
+                            </label>
+                            <label class="messenger-option">
+                                <input type="radio" name="messenger" value="whatsapp">
+                                <span class="messenger-badge">WhatsApp</span>
+                            </label>
+                            <label class="messenger-option">
+                                <input type="radio" name="messenger" value="viber">
+                                <span class="messenger-badge">Viber</span>
+                            </label>
+                            <label class="messenger-option">
+                                <input type="radio" name="messenger" value="sms">
+                                <span class="messenger-badge">SMS</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacyConsent" checked class="modal-checkbox">
+                        <label for="privacyConsent" class="checkbox-label">Согласен(на) на обработку персональных данных</label>
+                    </div>
+                    
+                    <!-- Honeypot -->
+                    <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                    
+                    <p class="form-hint">После отправки формы вы сможете сразу скачать гайд, а промокод 20% придет на указанный E-mail.</p>
+                    
+                    <button type="submit" class="btn-accent">✦ Забрать подарок ✦</button>
+                </form>
+            </div>
+            
+            <!-- Блок 2: Экран успеха -->
+            <div id="modalSuccessBlock" style="display: none;">
+                <h3 class="modal-title">✦⪼ Ваш гайд готов к скачиванию! ⪻✦</h3>
+                
+                <a href="guide.pdf" download class="btn-accent download-btn">✦ СКАЧАТЬ PDF-ГАЙД ✦</a>
+                
+                <div class="promo-block">
+                    <span class="promo-code" id="promoCode">MEDITATION20</span>
+                    <button class="btn-copy" onclick="copyPromoCode()">Скопировать</button>
+                </div>
+                
+                <p class="form-hint">Промокод также отправлен на вашу почту и активен в течение 7 дней.</p>
+                
+                <a href="#catalog" id="toCatalogLink" class="catalog-link">Перейти в каталог за покупками →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- СКРИПТЫ -->
+    <script src="script.js" defer></script>
 </body>
 </html>
