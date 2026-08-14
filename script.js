@@ -225,12 +225,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.handleGuideSubmit = function(event) {
-        event.preventDefault();
+    // Инициализация маски телефона с помощью IMask
+    let phoneMask;
+    function initPhoneMask() {
+        const phoneInput = document.getElementById('guidePhone');
+        if (phoneInput && typeof IMask !== 'undefined') {
+            phoneMask = IMask(phoneInput, {
+                mask: '+{7} (000) 000-00-00',
+                lazy: false,
+                placeholder: '+7 (___) ___-__-__'
+            });
+        }
+    }
+
+    // Валидация формы
+    function validateForm() {
+        let isValid = true;
         
         // Проверка honeypot (защита от ботов)
         const honeypot = document.getElementById('website');
         if (honeypot && honeypot.value) {
+            // Бот заполнил скрытое поле - игнорируем форму
+            return false;
+        }
+        
+        // Валидация имени
+        const nameInput = document.getElementById('guideName');
+        const nameGroup = nameInput ? nameInput.closest('.form-group') : null;
+        if (!nameInput || !nameInput.value.trim()) {
+            if (nameGroup) nameGroup.classList.add('error');
+            isValid = false;
+        } else if (nameGroup) {
+            nameGroup.classList.remove('error');
+        }
+        
+        // Валидация телефона (должен быть полностью заполнен по маске)
+        const phoneInput = document.getElementById('guidePhone');
+        const phoneGroup = phoneInput ? phoneInput.closest('.form-group') : null;
+        const phoneValue = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+        if (!phoneInput || phoneValue.length !== 11) {
+            if (phoneGroup) phoneGroup.classList.add('error');
+            isValid = false;
+        } else if (phoneGroup) {
+            phoneGroup.classList.remove('error');
+        }
+        
+        // Валидация email
+        const emailInput = document.getElementById('guideEmail');
+        const emailGroup = emailInput ? emailInput.closest('.form-group') : null;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
+            if (emailGroup) emailGroup.classList.add('error');
+            isValid = false;
+        } else if (emailGroup) {
+            emailGroup.classList.remove('error');
+        }
+        
+        // Валидация чекбокса согласия
+        const consentCheckbox = document.getElementById('privacyConsent');
+        const consentGroup = consentCheckbox ? consentCheckbox.closest('.checkbox-group') : null;
+        if (!consentCheckbox || !consentCheckbox.checked) {
+            if (consentGroup) consentGroup.classList.add('error');
+            isValid = false;
+        } else if (consentGroup) {
+            consentGroup.classList.remove('error');
+        }
+        
+        return isValid;
+    }
+
+    window.handleGuideSubmit = function(event) {
+        event.preventDefault();
+        
+        // Проверяем валидность формы
+        if (!validateForm()) {
             return;
         }
         
@@ -261,5 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     };
+
+    // Инициализация маски при загрузке страницы
+    initPhoneMask();
 
 });
