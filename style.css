@@ -92,38 +92,26 @@ body:not([data-active-lang]) [data-lang="ua"] {
 /* --- Lead Magnet Section Styles --- */
 .lead-magnet-section {
   width: 100%;
-  padding: 60px 20px;
-  background-color: var(--bg-main);
+  padding: 60px 24px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
 }
 
 .lead-magnet-container {
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
-  border: 1px solid var(--border-color);
-  padding: 40px;
+  background-color: #6c2603;
+  padding: 48px 24px;
   text-align: center;
-  background-color: var(--white);
-  box-shadow: 0 10px 30px rgba(108, 38, 3, 0.05);
-  border-radius: 4px;
-}
-
-.lead-magnet-label {
-  display: block;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: var(--text-color);
-  opacity: 0.8;
-  margin-bottom: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
+  border-radius: 8px;
+  margin: 60px auto;
+  box-shadow: 0 10px 30px rgba(108, 38, 3, 0.15);
 }
 
 .lead-magnet-title {
   font-size: 2rem;
-  color: var(--text-color);
+  color: #fdfbf7;
   margin: 0 0 20px 0;
   line-height: 1.3;
   font-weight: 700;
@@ -133,37 +121,38 @@ body:not([data-active-lang]) [data-lang="ua"] {
 
 .lead-magnet-description {
   font-size: 1.1rem;
-  color: var(--text-color);
+  color: #fdfbf7;
   line-height: 1.6;
   margin: 0 0 32px 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .lead-magnet-btn {
   display: inline-block;
-  background-color: var(--text-color);
-  color: var(--white);
+  background-color: #fdfbf7;
+  color: #6c2603;
   border: none;
-  padding: 16px 32px;
+  padding: 14px 28px;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .lead-magnet-btn:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
+  transform: scale(1.05);
+  opacity: 0.95;
 }
 
 .lead-magnet-btn:active {
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 /* Адаптивность для мобильных устройств */
@@ -173,7 +162,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
   }
 
   .lead-magnet-container {
-    padding: 25px 20px;
+    padding: 32px 20px;
+    margin: 40px auto;
   }
 
   .lead-magnet-title {
