@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ССЫЛКИ И ПЕРЕМЕННЫЕ ДЛЯ ИНТЕГРАЦИИ
+    const GOOGLE_DRIVE_LINK = 'https://drive.google.com/file/d/11nVx2ksJ_mQkzvfGd7Ess4x6J-C1PENF/view';
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxuJ4Cyiyj50xcxeEnIZPTKsxhbJjQS4jOaltBgREshSg9JUSRfDIkv7pNph2fLXvbx/exec';
+
     // Функция переключения языков
     function setLanguage(lang) {
         document.querySelectorAll('.lang-switch').forEach(el => el.classList.remove('active'));
@@ -70,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (event.target.id === 'image-viewer-modal') {
             closeImageViewerModal();
         } else if (event.target.id === 'guideModal') {
+            closeGuideModal();
+        } else if (event.target.classList.contains('modal-overlay')) {
             closeGuideModal();
         }
     };
@@ -220,8 +226,55 @@ document.addEventListener('DOMContentLoaded', () => {
     window.closeGuideModal = function() {
         const modal = document.getElementById('guideModal');
         if (modal) {
+            // С задержкой 300ms очищаем поля формы и возвращаем экран к форме
+            setTimeout(() => {
+                const formBlock = document.getElementById('modalFormBlock');
+                const successBlock = document.getElementById('modalSuccessBlock');
+                
+                // Очищаем поля формы
+                const nameInput = document.getElementById('guideName');
+                const phoneInput = document.getElementById('guidePhone');
+                const emailInput = document.getElementById('guideEmail');
+                const consentCheckbox = document.getElementById('privacyConsent');
+                
+                if (nameInput) nameInput.value = '';
+                if (phoneInput) phoneInput.value = '';
+                if (emailInput) emailInput.value = '';
+                if (consentCheckbox) consentCheckbox.checked = true;
+                
+                // Сбрасываем ошибки валидации
+                document.querySelectorAll('.form-group.error').forEach(el => {
+                    el.classList.remove('error');
+                });
+                
+                // Возвращаем экран к форме
+                if (formBlock) formBlock.style.display = 'block';
+                if (successBlock) successBlock.style.display = 'none';
+                
+                // Сбрасываем текст кнопки копирования
+                const copyBtn = document.querySelector('.btn-copy');
+                if (copyBtn) {
+                    copyBtn.textContent = 'Скопировать';
+                }
+            }, 300);
+            
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
+        }
+    };
+    
+    // Функция для перехода к заказу из экрана успеха
+    window.goToServices = function() {
+        const modal = document.getElementById('guideModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Плавный скролл к блоку услуг
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -302,32 +355,66 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Скрываем форму, показываем экран успеха
+        // Собираем данные формы
+        const leadData = {
+            name: document.getElementById('guideName').value,
+            phone: document.getElementById('guidePhone').value,
+            email: document.getElementById('guideEmail').value,
+            preferredContact: getSelectedContactMethod(),
+            promoCode: 'MEDITATION20',
+            date: new Date().toLocaleString('ru-RU')
+        };
+
+        // Отправляем данные в Google Таблицу (без ожидания ответа)
+        fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadData)
+        }).catch(err => console.error('Ошибка отправки:', err));
+        
+        // Сразу переключаем интерфейс на экран успеха
         const formBlock = document.getElementById('modalFormBlock');
         const successBlock = document.getElementById('modalSuccessBlock');
         
         if (formBlock && successBlock) {
             formBlock.style.display = 'none';
             successBlock.style.display = 'block';
+            
+            // Настраиваем ссылку на гайд
+            const downloadBtn = successBlock.querySelector('.download-btn');
+            if (downloadBtn) {
+                downloadBtn.href = GOOGLE_DRIVE_LINK;
+                downloadBtn.target = '_blank';
+            }
         }
     };
+    
+    // Функция получения выбранного способа связи
+    function getSelectedContactMethod() {
+        const selected = document.querySelector('input[name="messenger"]:checked');
+        if (selected) {
+            const value = selected.value;
+            if (value === 'telegram') return 'Telegram';
+            if (value === 'whatsapp') return 'WhatsApp';
+            if (value === 'email') return 'E-mail';
+        }
+        return '';
+    }
 
     window.copyPromoCode = function() {
-        const promoCode = document.getElementById('promoCode');
-        if (promoCode) {
-            navigator.clipboard.writeText(promoCode.textContent).then(function() {
-                const copyBtn = document.querySelector('.btn-copy');
-                if (copyBtn) {
-                    const originalText = copyBtn.textContent;
-                    copyBtn.textContent = 'Скопировано!';
-                    setTimeout(function() {
-                        copyBtn.textContent = originalText;
-                    }, 2000);
-                }
-            }).catch(function(err) {
-                console.error('Ошибка копирования: ', err);
-            });
-        }
+        navigator.clipboard.writeText('MEDITATION20').then(function() {
+            const copyBtn = document.querySelector('.btn-copy');
+            if (copyBtn) {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Скопировано! ✦';
+                setTimeout(function() {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            }
+        }).catch(function(err) {
+            console.error('Ошибка копирования: ', err);
+        });
     };
 
     // Инициализация маски при загрузке страницы
