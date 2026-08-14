@@ -1295,7 +1295,9 @@
             
             <!-- Блок 1: Форма сбора -->
             <div id="modalFormBlock">
-                <h3 class="modal-title">✦⪼ Получить гайд и скидку 20% ⪻✦</h3>
+                <h3 class="modal-title">✦⪼ «Тихое искусство быть собой» ⪻✦</h3>
+                
+                <p class="modal-description">Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.</p>
                 
                 <form id="guideForm" onsubmit="handleGuideSubmit(event)">
                     <div class="form-group">
@@ -1311,7 +1313,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="messenger-label">Выберите мессенджер:</label>
+                        <label class="messenger-label">Предпочитаемый способ связи:</label>
                         <div class="messenger-options">
                             <label class="messenger-option">
                                 <input type="radio" name="messenger" value="telegram" checked>
@@ -1322,12 +1324,12 @@
                                 <span class="messenger-badge">WhatsApp</span>
                             </label>
                             <label class="messenger-option">
-                                <input type="radio" name="messenger" value="viber">
-                                <span class="messenger-badge">Viber</span>
+                                <input type="radio" name="messenger" value="vk">
+                                <span class="messenger-badge">ВКонтакте</span>
                             </label>
                             <label class="messenger-option">
-                                <input type="radio" name="messenger" value="sms">
-                                <span class="messenger-badge">SMS</span>
+                                <input type="radio" name="messenger" value="email">
+                                <span class="messenger-badge">E-mail</span>
                             </label>
                         </div>
                     </div>
@@ -1340,15 +1342,15 @@
                     <!-- Honeypot -->
                     <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     
-                    <p class="form-hint">После отправки формы вы сможете сразу скачать гайд, а промокод 20% придет на указанный E-mail.</p>
+                    <p class="form-hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
                     
-                    <button type="submit" class="btn-accent">✦ Забрать подарок ✦</button>
+                    <button type="submit" class="btn-accent">✦ Забрать гайд и скидку 20% ✦</button>
                 </form>
             </div>
             
             <!-- Блок 2: Экран успеха -->
             <div id="modalSuccessBlock" style="display: none;">
-                <h3 class="modal-title">✦⪼ Ваш гайд готов к скачиванию! ⪻✦</h3>
+                <h3 class="modal-title">✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦</h3>
                 
                 <a href="guide.pdf" download class="btn-accent download-btn">✦ СКАЧАТЬ PDF-ГАЙД ✦</a>
                 
@@ -1357,7 +1359,7 @@
                     <button class="btn-copy" onclick="copyPromoCode()">Скопировать</button>
                 </div>
                 
-                <p class="form-hint">Промокод также отправлен на вашу почту и активен в течение 7 дней.</p>
+                <p class="form-hint">Промокод продублирован в ваш выбранный способ связи и активен в течение 7 дней.</p>
                 
                 <a href="#catalog" id="toCatalogLink" class="catalog-link">Перейти в каталог за покупками →</a>
             </div>
