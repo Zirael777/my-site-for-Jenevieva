@@ -109,4 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
+
+    /**
+     * Функция открытия модального окна для гайда
+     */
+    window.openGuideModal = function() {
+        console.log('Открытие модального окна');
+        // Здесь будет логика открытия модального окна в будущем
+    };
+
 });
