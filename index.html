@@ -414,28 +414,16 @@
 
 </section>
 
-    <!-- ЛИД-МАГНИТ -->
-    <section class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-b border-[#6c2603]/10 relative overflow-hidden">
-        <div class="absolute left-6 top-6 opacity-20 w-8 h-10 text-[#6c2603]">
-            <svg viewBox="0 0 100 120" fill="currentColor">
-                <path d="M 50,20 Q 50,55 15,55 Q 50,55 50,90 Q 50,55 85,55 Q 50,55 50,20 Z"/>
-            </svg>
-        </div>
-        <div class="max-w-3xl mx-auto">
-            <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4">
-                <span data-lang="ru">Подарок для ценителей графики</span>
-                <span data-lang="en">A Gift for Graphics Enthusiasts</span>
-                <span data-lang="ua">Подарунок для поціновувачів графіки</span>
-            </h3>
-            <p class="text-sm md:text-base text-[#6c2603]/80 mb-8 max-w-xl mx-auto font-medium">
-                <span data-lang="ru">Получите мой авторский PDF-гайд по арт-медитации рисованием в подарок за подписку на Telegram-канал.</span>
-                <span data-lang="en">Get my custom PDF guide on art meditation drawing as a gift for subscribing to my Telegram channel.</span>
-                <span data-lang="ua">Отримайте мій авторський PDF-гайд з арт-медитації малюванням у подарунок за підписку на Telegram-канал.</span>
+    <!-- ЛИД-МАГНИТ: ГАЙД + СКИДКА -->
+    <section id="lead-magnet" class="lead-magnet-section">
+        <div class="lead-magnet-container">
+            <span class="lead-magnet-label">ПОДАРОК ДЛЯ ЦЕНИТЕЛЕЙ ИСКУССТВА</span>
+            <h2 class="lead-magnet-title">ПОДАРОК ДЛЯ ЦЕНИТЕЛЕЙ ИСКУССТВА: ГАЙД + СКИДКА 20%</h2>
+            <p class="lead-magnet-description">
+                Скачайте авторский PDF-гайд по арт-медитации рисованием и получите персональный промокод 20% на ваш первый заказ картины, принта или календаря.
             </p>
-            <button onclick="openModal('guide-modal')" class="bg-[#6c2603] text-[#fdfbf7] px-8 py-4 uppercase font-bold text-xs tracking-widest hover:opacity-90 transition-opacity">
-                <span data-lang="ru">Получить гайд бесплатно</span>
-                <span data-lang="en">Get Free Guide</span>
-                <span data-lang="ua">Отримати гайд безкоштовно</span>
+            <button class="lead-magnet-btn" onclick="openGuideModal()">
+                ПОЛУЧИТЬ ГАЙД И СКИДКУ
             </button>
         </div>
     </section>
