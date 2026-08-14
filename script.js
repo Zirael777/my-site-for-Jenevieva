@@ -4,21 +4,164 @@ document.addEventListener('DOMContentLoaded', () => {
     const GOOGLE_DRIVE_LINK = 'https://drive.google.com/file/d/11nVx2ksJ_mQkzvfGd7Ess4x6J-C1PENF/view';
     const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxuJ4Cyiyj50xcxeEnIZPTKsxhbJjQS4jOaltBgREshSg9JUSRfDIkv7pNph2fLXvbx/exec';
 
-    // Функция переключения языков
-    function setLanguage(lang) {
+    // Функция переключения языков - ГЛОБАЛЬНАЯ
+    window.setLanguage = function(lang) {
+        // Обновляем активный класс у кнопок переключателя
         document.querySelectorAll('.lang-switch').forEach(el => el.classList.remove('active'));
-        document.getElementById('btn-' + lang).classList.add('active');
+        const btnElement = document.getElementById('btn-' + lang);
+        if (btnElement) {
+            btnElement.classList.add('active');
+        }
         
         // Фиксируем активный язык на тэге body для корректной работы CSS
         document.body.setAttribute('data-active-lang', lang);
-        localStorage.setItem('selectedLang', lang); // Сохраняем выбранный язык
+        localStorage.setItem('site_lang', lang); // Сохраняем выбранный язык
 
+        // Переключаем видимость элементов с data-lang
         document.querySelectorAll('[data-lang]').forEach(el => {
             if (el.getAttribute('data-lang') === lang) {
-                // Используем '' для возврата к естественному CSS-отображению элемента (inline для span, block для div и т.д.)
                 el.style.display = '';
             } else {
                 el.style.display = 'none';
+            }
+        });
+        
+        // Обновляем плейсхолдеры у инпутов если есть data-i18n-placeholder
+        updatePlaceholders(lang);
+    };
+    
+    // Функция обновления плейсхолдеров
+    function updatePlaceholders(lang) {
+        const placeholders = {
+            'guideName': {
+                ru: 'Как к вам обращаться',
+                en: 'Your name',
+                ua: 'Як до вас звертатися'
+            },
+            'guidePhone': {
+                ru: '+7 (___) ___-__-__',
+                en: '+7 (___) ___-__-__',
+                ua: '+7 (___) ___-__-__'
+            },
+            'guideEmail': {
+                ru: 'Ваш E-mail',
+                en: 'Your E-mail',
+                ua: 'Ваш E-mail'
+            }
+        };
+        
+        for (const [id, texts] of Object.entries(placeholders)) {
+            const input = document.getElementById(id);
+            if (input && texts[lang]) {
+                input.placeholder = texts[lang];
+            }
+        }
+    }
+    
+    // Функция обновления текстов в модальном окне гайда
+    function updateModalTexts(lang) {
+        const modalTitle = document.querySelector('#guideModal .modal-title');
+        const modalDesc = document.querySelector('#guideModal .modal-description');
+        const formHint = document.querySelector('#guideModal .form-hint');
+        const submitBtn = document.querySelector('#guideModal .btn-accent');
+        const checkboxLabel = document.querySelector('#guideModal .checkbox-label');
+        const messengerLabel = document.querySelector('#guideModal .messenger-label');
+        const successTitle = document.querySelector('#modalSuccessBlock .modal-title');
+        const copyBtn = document.querySelector('#modalSuccessBlock .btn-copy');
+        const promoHint = document.querySelector('#modalSuccessBlock .form-hint');
+        const toOrderLink = document.querySelector('#modalSuccessBlock .catalog-link');
+        const downloadBtn = document.querySelector('#modalSuccessBlock .download-btn');
+        
+        const translations = {
+            modalTitle: {
+                ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
+                en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
+                ua: '✦⪼ «Тихе мистецтво бути собою» ⪻✦'
+            },
+            modalDescription: {
+                ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.',
+                en: 'A step-by-step journey to yourself through meditative drawing. Author\'s guide with practices to help you slow down, calm your mind and find inner support.',
+                ua: 'Покроковий шлях до себе через медитативне малювання. Авторський гайд з практиками, які допоможуть сповільнитися, заспокоїти розум і знайти внутрішню опору.'
+            },
+            formHint: {
+                ru: 'После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.',
+                en: 'After submitting the form you can immediately download the PDF guide and get a 20% promo code for your first purchase.',
+                ua: 'Після відправки форми ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.'
+            },
+            submitBtn: {
+                ru: '✦ Забрать гайд и скидку 20% ✦',
+                en: '✦ Get the Guide and 20% Discount ✦',
+                ua: '✦ Отримати гайд і знижку 20% ✦'
+            },
+            checkboxLabel: {
+                ru: 'Согласен(на) на обработку персональных данных',
+                en: 'I agree to the processing of personal data',
+                ua: 'Згоден(на) на обробку персональних даних'
+            },
+            messengerLabel: {
+                ru: 'Предпочитаемый способ связи:',
+                en: 'Preferred contact method:',
+                ua: 'Бажаний спосіб зв\'язку:'
+            },
+            successTitle: {
+                ru: '✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦',
+                en: '✦⪼ Your Guide "The Quiet Art of Being Yourself" is Ready! ⪻✦',
+                ua: '✦⪼ Ваш гайд «Тихе мистецтво бути собою» готовий! ⪻✦'
+            },
+            downloadBtn: {
+                ru: '✦ СКАЧАТЬ PDF-ГАЙД ✦',
+                en: '✦ DOWNLOAD PDF GUIDE ✦',
+                ua: '✦ ЗАВАНТАЖИТИ PDF-ГАЙД ✦'
+            },
+            copyBtn: {
+                ru: 'Скопировать',
+                en: 'Copy',
+                ua: 'Копіювати'
+            },
+            promoHint: {
+                ru: 'Промокод продублирован в ваш выбранный способ связи.',
+                en: 'Promo code has been sent to your preferred contact method.',
+                ua: 'Промокод продубльовано у ваш обраний спосіб зв\'язку.'
+            },
+            toOrderLink: {
+                ru: 'Перейти к заказу →',
+                en: 'Proceed to Order →',
+                ua: 'Перейти до замовлення →'
+            },
+            copiedMsg: {
+                ru: 'Скопировано! ✦',
+                en: 'Copied! ✦',
+                ua: 'Скопійовано! ✦'
+            }
+        };
+        
+        if (modalTitle) modalTitle.textContent = translations.modalTitle[lang] || translations.modalTitle.ru;
+        if (modalDesc) modalDesc.textContent = translations.modalDescription[lang] || translations.modalDescription.ru;
+        if (formHint) formHint.textContent = translations.formHint[lang] || translations.formHint.ru;
+        if (submitBtn) submitBtn.textContent = translations.submitBtn[lang] || translations.submitBtn.ru;
+        if (checkboxLabel) checkboxLabel.textContent = translations.checkboxLabel[lang] || translations.checkboxLabel.ru;
+        if (messengerLabel) messengerLabel.textContent = translations.messengerLabel[lang] || translations.messengerLabel.ru;
+        if (successTitle) successTitle.textContent = translations.successTitle[lang] || translations.successTitle.ru;
+        if (downloadBtn) downloadBtn.textContent = translations.downloadBtn[lang] || translations.downloadBtn.ru;
+        if (copyBtn) {
+            // Сохраняем оригинальный текст если кнопка еще не была нажата
+            if (!copyBtn.dataset.original) {
+                copyBtn.dataset.original = copyBtn.textContent;
+            }
+            copyBtn.textContent = translations.copyBtn[lang] || translations.copyBtn.ru;
+        }
+        if (promoHint) promoHint.textContent = translations.promoHint[lang] || translations.promoHint.ru;
+        if (toOrderLink) toOrderLink.textContent = translations.toOrderLink[lang] || translations.toOrderLink.ru;
+        
+        // Обновляем бейджи мессенджеров
+        document.querySelectorAll('.messenger-badge').forEach(badge => {
+            const text = badge.textContent.trim();
+            if (text === 'Telegram') {
+                badge.textContent = lang === 'en' ? 'Telegram' : lang === 'ua' ? 'Telegram' : 'Telegram';
+            } else if (text === 'WhatsApp') {
+                badge.textContent = lang === 'en' ? 'WhatsApp' : lang === 'ua' ? 'WhatsApp' : 'WhatsApp';
+            } else if (text === 'E-mail') {
+                badge.textContent = lang === 'en' ? 'E-mail' : lang === 'ua' ? 'E-mail' : 'E-mail';
             }
         });
     }
@@ -116,8 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Инициализация при загрузке
-    const savedLang = localStorage.getItem('selectedLang') || 'ru';
+    const savedLang = localStorage.getItem('site_lang') || 'ru';
     setLanguage(savedLang);
+    
+    // Вызываем updateModalTexts после установки языка для модального окна
+    updateModalTexts(savedLang);
     
     const yearElement = document.getElementById('year');
     if (yearElement) {
@@ -218,6 +364,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openGuideModal = function() {
         const modal = document.getElementById('guideModal');
         if (modal) {
+            // Обновляем тексты модального окна при открытии
+            const currentLang = document.body.getAttribute('data-active-lang') || 'ru';
+            updateModalTexts(currentLang);
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -251,10 +401,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (formBlock) formBlock.style.display = 'block';
                 if (successBlock) successBlock.style.display = 'none';
                 
-                // Сбрасываем текст кнопки копирования
+                // Сбрасываем текст кнопки копирования с учетом текущего языка
+                const currentLang = document.body.getAttribute('data-active-lang') || 'ru';
                 const copyBtn = document.querySelector('.btn-copy');
                 if (copyBtn) {
-                    copyBtn.textContent = 'Скопировать';
+                    const copyTexts = { ru: 'Скопировать', en: 'Copy', ua: 'Копіювати' };
+                    copyBtn.textContent = copyTexts[currentLang] || copyTexts.ru;
                 }
             }, 300);
             
@@ -403,11 +555,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.copyPromoCode = function() {
+        const activeLang = document.body.getAttribute('data-active-lang') || 'ru';
+        const copiedMsg = {
+            ru: 'Скопировано! ✦',
+            en: 'Copied! ✦',
+            ua: 'Скопійовано! ✦'
+        };
+        
         navigator.clipboard.writeText('MEDITATION20').then(function() {
             const copyBtn = document.querySelector('.btn-copy');
             if (copyBtn) {
                 const originalText = copyBtn.textContent;
-                copyBtn.textContent = 'Скопировано! ✦';
+                copyBtn.textContent = copiedMsg[activeLang] || copiedMsg.ru;
                 setTimeout(function() {
                     copyBtn.textContent = originalText;
                 }, 2000);
