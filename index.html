@@ -414,18 +414,145 @@
 
 </section>
 
-    <!-- ЛИД-МАГНИТ: ГАЙД + СКИДКА -->
+    <!-- ЛИД-МАГНИТ: ГАЙД + СКИДКА (Полноширинная секция) -->
     <section id="lead-magnet" class="lead-magnet-section">
-        <div class="lead-magnet-container">
-            <h2 class="lead-magnet-title">ПОДАРОК ДЛЯ ЦЕНИТЕЛЕЙ ИСКУССТВА: ГАЙД + СКИДКА 20%</h2>
-            <p class="lead-magnet-description">
-                Скачайте авторский PDF-гайд по арт-медитации рисованием и получите персональный промокод 20% на ваш первый заказ картины, принта или календаря.
-            </p>
-            <button class="lead-magnet-btn" onclick="openGuideModal()">
-                ПОЛУЧИТЬ ГАЙД И СКИДКУ
-            </button>
+        <div class="lead-magnet-content">
+            <!-- Левая колонка: Текст и кнопка -->
+            <div class="lead-magnet-text-col">
+                <h2 class="lead-magnet-title">
+                    <span data-lang="ru">ПОДАРОК ДЛЯ ЦЕНИТЕЛЕЙ ИСКУССТВА</span>
+                    <span data-lang="en">GIFT FOR ART LOVERS</span>
+                    <span data-lang="ua">ПОДАРУНОК ДЛЯ ЦІНІТЕЛІВ МИСТЕЦТВА</span>
+                </h2>
+                <p class="lead-magnet-subtitle">
+                    <span data-lang="ru">ГАЙД + СКИДКА 20%</span>
+                    <span data-lang="en">GUIDE + 20% OFF</span>
+                    <span data-lang="ua">ГАЙД + ЗНИЖКА 20%</span>
+                </p>
+                <p class="lead-magnet-description">
+                    <span data-lang="ru">Скачайте авторский PDF-гайд по арт-медитации рисованием и получите персональный промокод 20% на ваш первый заказ картины, принта или календаря.</span>
+                    <span data-lang="en">Download the author's PDF guide on art meditation through drawing and receive a personal 20% promo code for your first order of a painting, print, or calendar.</span>
+                    <span data-lang="ua">Завантажте авторський PDF-гайд з арт-медитації малюванням та отримайте персональний промокод 20% на ваше перше замовлення картини, принта або календаря.</span>
+                </p>
+                <button class="lead-magnet-btn" onclick="openGuideModal()">
+                    <span data-lang="ru">ПОЛУЧИТЬ ГАЙД И СКИДКУ</span>
+                    <span data-lang="en">GET GUIDE & DISCOUNT</span>
+                    <span data-lang="ua">ОТРИМАТИ ГАЙД І ЗНИЖКУ</span>
+                </button>
+            </div>
+            
+            <!-- Правая колонка: Интерактивный веер страниц гайда -->
+            <div class="lead-magnet-fan-col">
+                <div class="guide-fan-container">
+                    <!-- Страница 1 (задняя, наклонена влево) -->
+                    <div class="guide-page guide-page-1" onclick="openGuidePageModal(1)">
+                        <div class="guide-page-inner">
+                            <div class="guide-page-header">
+                                <span class="guide-page-number">01</span>
+                                <span class="guide-page-title">Арт-медитация</span>
+                            </div>
+                            <div class="guide-page-art">
+                                <svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                                    <path d="M50,20 Q50,55 15,55 Q50,55 50,90 Q50,55 85,55 Q50,55 50,20 Z" fill="#6c2603" fill-opacity="0.15"/>
+                                    <circle cx="50" cy="45" r="8" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                                    <path d="M35,70 Q50,85 65,70" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                                </svg>
+                            </div>
+                            <div class="guide-page-footer">
+                                <span data-lang="ru">Основы осознанного рисования</span>
+                                <span data-lang="en">Mindful Drawing Basics</span>
+                                <span data-lang="ua">Основи усвідомленого малювання</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Страница 2 (передняя, наклонена вправо) -->
+                    <div class="guide-page guide-page-2" onclick="openGuidePageModal(2)">
+                        <div class="guide-page-inner">
+                            <div class="guide-page-header">
+                                <span class="guide-page-number">02</span>
+                                <span class="guide-page-title">Материалы</span>
+                            </div>
+                            <div class="guide-page-art">
+                                <svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                                    <rect x="30" y="25" width="40" height="60" rx="3" fill="#6c2603" fill-opacity="0.1" stroke="#6c2603" stroke-width="1.2"/>
+                                    <line x1="40" y1="40" x2="60" y2="40" stroke="#6c2603" stroke-width="1"/>
+                                    <line x1="40" y1="50" x2="60" y2="50" stroke="#6c2603" stroke-width="1"/>
+                                    <line x1="40" y1="60" x2="60" y2="60" stroke="#6c2603" stroke-width="1"/>
+                                    <circle cx="75" cy="35" r="10" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                                    <path d="M70,30 L80,40 M80,30 L70,40" stroke="#6c2603" stroke-width="1.2"/>
+                                </svg>
+                            </div>
+                            <div class="guide-page-footer">
+                                <span data-lang="ru">Выбор инструментов</span>
+                                <span data-lang="en">Choosing Your Tools</span>
+                                <span data-lang="ua">Вибір інструментів</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Страница 3 (дополнительная, для объема) -->
+                    <div class="guide-page guide-page-3" onclick="openGuidePageModal(3)">
+                        <div class="guide-page-inner">
+                            <div class="guide-page-header">
+                                <span class="guide-page-number">03</span>
+                                <span class="guide-page-title">Практика</span>
+                            </div>
+                            <div class="guide-page-art">
+                                <svg viewBox="0 0 100 120" fill="none" stroke="#6c2603" stroke-width="1.5">
+                                    <path d="M25,80 Q35,60 50,60 Q65,60 75,80" fill="none" stroke="#6c2603" stroke-width="1.5"/>
+                                    <path d="M30,70 Q40,55 50,55 Q60,55 70,70" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                                    <circle cx="50" cy="40" r="12" fill="none" stroke="#6c2603" stroke-width="1.2"/>
+                                    <path d="M45,35 L50,42 L55,35" fill="none" stroke="#6c2603" stroke-width="1"/>
+                                </svg>
+                            </div>
+                            <div class="guide-page-footer">
+                                <span data-lang="ru">Техники и упражнения</span>
+                                <span data-lang="en">Techniques & Exercises</span>
+                                <span data-lang="ua">Техніки та вправи</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="guide-fan-hint">
+                    <span data-lang="ru">Нажмите на страницу для просмотра</span>
+                    <span data-lang="en">Click page to preview</span>
+                    <span data-lang="ua">Натисніть на сторінку для перегляду</span>
+                </p>
+            </div>
         </div>
     </section>
+    
+    <!-- Модальное окно для просмотра страниц гайда -->
+    <div id="guide-page-modal" class="modal" onclick="closeGuidePageModal()">
+        <div class="guide-page-modal-content" onclick="event.stopPropagation()">
+            <button class="guide-page-modal-close" onclick="closeGuidePageModal()">×</button>
+            <div class="guide-page-modal-body">
+                <div class="guide-page-preview">
+                    <div class="guide-page-inner">
+                        <div class="guide-page-header">
+                            <span class="guide-page-number" id="modal-page-number">01</span>
+                            <span class="guide-page-title" id="modal-page-title">Арт-медитация</span>
+                        </div>
+                        <div class="guide-page-art-large" id="modal-page-art">
+                            <!-- Контент будет заполнен через JS -->
+                        </div>
+                        <div class="guide-page-footer-large" id="modal-page-footer">
+                            <!-- Контент будет заполнен через JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-page-modal-info">
+                    <h3 data-lang="ru">Страница гайда</h3>
+                    <h3 data-lang="en">Guide Page</h3>
+                    <h3 data-lang="ua">Сторінка гайда</h3>
+                    <p data-lang="ru">Это превью страницы из авторского гайда по арт-медитации. Получите полную версию, оставив свои контактные данные.</p>
+                    <p data-lang="en">This is a preview of a page from the author's art meditation guide. Get the full version by providing your contact details.</p>
+                    <p data-lang="ua">Це попередній перегляд сторінки з авторського гайда з арт-медитації. Отримайте повну версію, надавши свої контактні дані.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- УСЛУГИ И ЦЕНЫ -->
     <section id="services" class="max-w-7xl mx-auto px-6 py-20">
