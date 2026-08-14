@@ -419,11 +419,11 @@
         <div class="lead-magnet-content">
             <!-- Левая колонка: Текст и кнопка -->
             <div class="lead-magnet-text-col">
-                <span class="lead-magnet-badge">✦ АРТ-ПРАКТИКУМ + СКИДКА 20% ✦</span>
-                <h2 class="lead-magnet-title">«Тихое искусство быть собой»</h2>
-                <p class="lead-magnet-subtitle">Пошаговый путь к себе через медитативное рисование</p>
-                <p class="lead-magnet-description">Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.</p>
-                <button class="lead-magnet-btn" onclick="openGuideModal()">✦ Забрать гайд и скидку 20% ✦</button>
+                <span class="lead-magnet-badge" data-i18n="guide_banner_badge">✦ АРТ-ПРАКТИКУМ + СКИДКА 20% ✦</span>
+                <h2 class="lead-magnet-title" data-i18n="guide_banner_title">«Тихое искусство быть собой»</h2>
+                <p class="lead-magnet-subtitle" data-i18n="guide_banner_subtitle">Пошаговый путь к себе через медитативное рисование</p>
+                <p class="lead-magnet-description" data-i18n="guide_banner_desc">Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.</p>
+                <button class="lead-magnet-btn" onclick="openGuideModal()" data-i18n="guide_banner_btn">✦ Забрать гайд и скидку 20% ✦</button>
             </div>
             
             <!-- Правая колонка: Интерактивный веер страниц гайда -->
@@ -1280,28 +1280,28 @@
             
             <!-- Блок 1: Форма сбора -->
             <div id="modalFormBlock">
-                <h3 class="modal-title">✦⪼ «Тихое искусство быть собой» ⪻✦</h3>
+                <h3 class="modal-title" data-i18n="guide_modal_title">✦⪼ «Тихое искусство быть собой» ⪻✦</h3>
                 
-                <p class="modal-description">Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.</p>
+                <p class="modal-description" data-i18n="guide_modal_desc">Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.</p>
                 
                 <form id="guideForm" onsubmit="handleGuideSubmit(event)">
                     <div class="form-group">
-                        <input type="text" id="guideName" required placeholder="Как к вам обращаться" class="modal-input">
+                        <input type="text" id="guideName" required placeholder="Как к вам обращаться" class="modal-input" data-i18n-placeholder="guide_ph_name">
                         <span class="error-message">Пожалуйста, введите ваше имя</span>
                     </div>
                     
                     <div class="form-group">
-                        <input type="tel" id="guidePhone" required placeholder="+7 (___) ___-__-__" class="modal-input">
+                        <input type="tel" id="guidePhone" required placeholder="+7 (___) ___-__-__" class="modal-input" data-i18n-placeholder="guide_ph_phone">
                         <span class="error-message">Введите корректный номер телефона</span>
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" id="guideEmail" required placeholder="Ваш E-mail" class="modal-input">
+                        <input type="email" id="guideEmail" required placeholder="Ваш E-mail" class="modal-input" data-i18n-placeholder="guide_ph_email">
                         <span class="error-message">Введите корректный E-mail</span>
                     </div>
                     
                     <div class="form-group">
-                        <label class="messenger-label">Предпочитаемый способ связи:</label>
+                        <label class="messenger-label" data-i18n="guide_contact_label">Предпочитаемый способ связи:</label>
                         <div class="messenger-options">
                             <label class="messenger-option">
                                 <input type="radio" name="messenger" value="telegram" checked>
@@ -1320,33 +1320,36 @@
                     
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="privacyConsent" checked class="modal-checkbox">
-                        <label for="privacyConsent" class="checkbox-label">Согласен(на) на обработку персональных данных</label>
+                        <label for="privacyConsent" class="checkbox-label" data-i18n="guide_privacy_text">Согласен(на) на обработку персональных данных</label>
                         <span class="error-message" style="display:block; margin-top:5px;">Необходимо согласие</span>
                     </div>
                     
                     <!-- Honeypot -->
                     <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     
-                    <p class="form-hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
+                    <p class="form-hint" data-i18n="guide_form_hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
                     
-                    <button type="submit" class="btn-accent">✦ Забрать гайд и скидку 20% ✦</button>
+                    <button type="submit" class="btn-accent" data-i18n="guide_submit_btn">✦ Забрать гайд и скидку 20% ✦</button>
                 </form>
             </div>
             
             <!-- Блок 2: Экран успеха -->
             <div id="modalSuccessBlock" style="display: none;">
-                <h3 class="modal-title">✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦</h3>
+                <h3 class="modal-title" data-i18n="guide_success_title">✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦</h3>
                 
-                <a href="#" class="btn-accent download-btn" target="_blank">✦ СКАЧАТЬ PDF-ГАЙД ✦</a>
+                <p class="modal-description" data-i18n="guide_success_desc">Вы можете скачать PDF прямо сейчас, а ваш промокод на 20% скопировать ниже:</p>
+
+                <a href="#" class="btn-accent download-btn" target="_blank" data-i18n="guide_download_btn">✦ СКАЧАТЬ PDF-ГАЙД ✦</a>
                 
                 <div class="promo-block">
+                    <span class="promo-label" data-i18n="guide_promo_label">Ваш промокод:</span>
                     <span class="promo-code" id="promoCode">MEDITATION20</span>
-                    <button class="btn-copy" onclick="copyPromoCode()">Скопировать</button>
+                    <button class="btn-copy" onclick="copyPromoCode()" data-i18n="guide_copy_btn">Скопировать</button>
                 </div>
                 
-                <p class="form-hint">Промокод продублирован в ваш выбранный способ связи.</p>
+                <p class="form-hint" data-i18n="guide_promo_hint">Промокод продублирован в ваш выбранный способ связи.</p>
                 
-                <a href="javascript:void(0)" id="toCatalogLink" class="catalog-link" onclick="goToServices()">Перейти к заказу →</a>
+                <a href="javascript:void(0)" id="toCatalogLink" class="catalog-link" onclick="goToServices()" data-i18n="guide_services_btn">Перейти к заказу →</a>
             </div>
         </div>
     </div>
