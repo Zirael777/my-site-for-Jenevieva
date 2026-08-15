@@ -128,16 +128,28 @@ button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-
 .nav-btn-guide {
     background-color: var(--accent-pink);
     color: var(--white) !important;
-    padding: 6px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
 }
 .nav-btn-guide:hover {
     opacity: 0.9;
     transform: scale(1.03);
+}
+
+/* Выравнивание ссылок меню по одной оси */
+nav a:not(.nav-btn-guide) {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 /* Списки с кастомными искорками */
@@ -569,6 +581,12 @@ body:not([data-active-lang]) [data-lang="ua"] {
   .nav-btn-guide {
     padding: 5px 14px;
     font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
   }
 }
 
@@ -630,6 +648,12 @@ body:not([data-active-lang]) [data-lang="ua"] {
   .nav-btn-guide {
     padding: 4px 12px;
     font-size: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
   }
 }
 
