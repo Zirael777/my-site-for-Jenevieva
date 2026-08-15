@@ -119,15 +119,16 @@ button, .btn, a.btn, input[type="submit"], .lead-magnet-btn,
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 50px; /* Единое овальное скругление для всех кнопок */
+    border-radius: 50px !important; /* Единое овальное скругление для всех кнопок */
 }
 button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover,
 .price-card button:hover, .portfolio-item button:hover,
 .price-card a.btn:hover, .portfolio-item a.btn:hover {
-    background-color: var(--accent-pink);
+    background-color: var(--text-main);
     color: var(--white);
-    border-color: var(--accent-pink);
-    transform: scale(1.02);
+    border-color: var(--text-main);
+    transform: translateY(-2px);
+    opacity: 0.92;
 }
 
 /* Навигационная кнопка «Бесплатный гайд» — брусничный акцент */
