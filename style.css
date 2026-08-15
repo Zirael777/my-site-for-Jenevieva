@@ -844,3 +844,25 @@ button:active, .btn:active, a:active {
     font-weight: 600 !important;
     color: var(--chocolate, #4a2c11) !important;
 }
+/* Жесткое центрирование кнопки и ссылки на втором экране */
+#guideModal .download-btn,
+#guideModal a[href*="download"],
+#guideModal .btn-accent {
+    display: flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+    float: none !important;
+}
+
+#guideModal a[href*="order"],
+#guideModal .order-link,
+#guideModal a:last-child {
+    display: block !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    float: none !important;
+}
