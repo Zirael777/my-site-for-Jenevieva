@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Як до вас звертатися'
             },
             'guidePhone': {
-                ru: "+7 (___) ___-__-__",
-                en: "+1 (___) ___-__-__",
-                ua: "+380 (___) ___-__-__"
+                ru: " (___) ___-__-__",
+                en: " (___) ___-__-__",
+                ua: " (___) ___-__-__"
             },
             'guideEmail': {
                 ru: 'Ваш E-mail',
