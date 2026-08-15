@@ -99,11 +99,16 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-pink) !important;
 }
 
-/* Навигация */
+/* Навигация - обычные ссылки без фона и рамок */
 nav a:not(.nav-btn-guide) {
     display: inline-block;
     line-height: 1;
     vertical-align: middle;
+    background: transparent !important;
+    color: #6c2603 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
 }
 
 /* Списки */
@@ -464,7 +469,8 @@ a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn
 .price-card a:hover,
 .portfolio-item a:hover,
 .btn-copy:hover,
-.catalog-link:hover {
+.catalog-link:hover,
+a[href="#services"].hero-btn:hover {
     background-color: #5c2412 !important; /* Шоколадная заливка */
     background: #5c2412 !important;
     color: #FDFBF7 !important;            /* Светло-кремовый текст */
@@ -473,13 +479,31 @@ a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn
     box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
 }
 
+/* 2b. Кнопка "Смотреть услуги" в Hero - шоколадный фон */
+a[href="#services"].hero-btn,
+.hero-btn {
+    border-radius: 9999px !important;
+    background-color: #6c2603 !important;
+    background: #6c2603 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #6c2603 !important;
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 32px !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 /* 3. КНОПКИ ГАЙДА (Единственный брусничный акцент) */
 .nav-btn-guide,
 .lead-magnet-btn,
 .btn-accent,
 .guide-banner-btn,
-.guide-modal-btn,
-a[href="#services"] {
+.guide-modal-btn {
     border-radius: 50px !important;
     background-color: #C86B83 !important;
     background: #C86B83 !important;
