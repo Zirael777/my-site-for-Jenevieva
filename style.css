@@ -744,3 +744,103 @@ button:active, .btn:active, a:active {
     .lead-magnet-btn { width: 100%; }
     .nav-btn-guide { padding: 6px 14px; font-size: 10px; }
 }
+/* 1. КРЕСТИК ЗАКРЫТИЯ (убирает овал и рамки) */
+.modal-close {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    color: var(--chocolate, #4a2c11) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+}
+
+/* 2. КНОПКА СКАЧАТЬ И ССЫЛКА НА 2-М ЭКРАНЕ (по центру) */
+.modal-content .download-btn,
+.modal-content button[onclick*="download"],
+.modal-content .lead-magnet-btn {
+    display: flex !important;
+    margin: 0 auto 20px auto !important;
+    justify-content: center;
+}
+
+.modal-content a[href*="order"],
+.modal-content .order-link {
+    display: block !important;
+    text-align: center !important;
+    margin: 16px auto 0 auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--chocolate, #4a2c11);
+    text-decoration: underline;
+}
+
+/* 3. ЧЕКБОКС СОГЛАСИЯ (галочка вплотную к тексту) */
+.privacy-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0 12px;
+    width: 100%;
+}
+
+.privacy-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px !important; /* Маленький отступ между галочкой и текстом */
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dark, #333);
+}
+
+.privacy-label input[type="checkbox"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* 4. КНОПКА «СМОТРЕТЬ УСЛУГИ» В HERO-СЕКЦИИ */
+.hero-btn, 
+.services-btn {
+    background: transparent !important;
+    border: 1px solid var(--chocolate, #4a2c11) !important;
+    color: var(--chocolate, #4a2c11) !important;
+    transition: all 0.3s ease !important;
+}
+
+.hero-btn:hover, 
+.services-btn:hover {
+    background: var(--chocolate, #4a2c11) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* 5. БЛОК «ОБО МНЕ» (фото и читаемость) */
+.about-section img {
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07) !important;
+    border: none !important;
+}
+
+.about-section p {
+    line-height: 1.68 !important;
+    color: var(--text-dark, #2b2b2b) !important;
+    margin-bottom: 16px;
+}
+
+.about-section .about-lead {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--chocolate, #4a2c11) !important;
+}
