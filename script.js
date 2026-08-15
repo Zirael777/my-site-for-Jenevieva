@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Як до вас звертатися'
             },
             guide_ph_phone: {
-                ru: "+7 (___) ___-__-__",
-                en: "+1 (___) ___-__-__",
-                ua: "+380 (___) ___-__-__"
+                ru: "(___) ___-__-__",
+                en: "(___) ___-__-__",
+                ua: "(___) ___-__-__"
             },
             guide_ph_email: {
                 ru: 'Ваш E-mail',
