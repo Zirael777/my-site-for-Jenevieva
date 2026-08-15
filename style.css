@@ -107,7 +107,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Кнопки и элементы .btn — тонкая рамка с плавным hover */
-button, .btn, a.btn, input[type="submit"], .lead-magnet-btn {
+button, .btn, a.btn, input[type="submit"], .lead-magnet-btn,
+.price-card button, .portfolio-item button,
+.price-card a.btn, .portfolio-item a.btn {
     border: 1px solid var(--border-color);
     background-color: transparent;
     color: var(--text-main);
@@ -119,7 +121,9 @@ button, .btn, a.btn, input[type="submit"], .lead-magnet-btn {
     transition: all 0.3s ease;
     border-radius: 50px; /* Единое овальное скругление для всех кнопок */
 }
-button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover {
+button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover,
+.price-card button:hover, .portfolio-item button:hover,
+.price-card a.btn:hover, .portfolio-item a.btn:hover {
     background-color: var(--accent-pink);
     color: var(--white);
     border-color: var(--accent-pink);
@@ -987,6 +991,28 @@ body:not([data-active-lang]) [data-lang="ua"] {
 /* Кнопка скачивания */
 .download-btn {
     margin-bottom: 20px;
+    display: inline-block;
+    border-radius: 50px; /* Овальное скругление */
+}
+
+/* Ссылка на каталог — стилизация под кнопку */
+.catalog-link {
+    display: inline-block;
+    text-align: center;
+    color: #2B2A29;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px; /* Овальное скругление */
+    transition: all 0.3s ease;
+}
+
+.catalog-link:hover {
+    color: #C86B83;
+    border-color: #C86B83;
+    transform: scale(1.02);
 }
 
 /* Адаптивность для мобильных */
