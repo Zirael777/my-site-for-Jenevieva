@@ -297,7 +297,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Модальные окна для форм/гайдов
     window.openModal = function(id) {
-        document.getElementById(id).classList.add('active');
+        const modal = document.getElementById(id);
+        modal.classList.add('active');
+        
+        // Принудительно обновляем переводы при открытии модалки
+        const currentLang = localStorage.getItem('site_lang') || 'ru';
+        setLanguage(currentLang);
+        
+        // Переинициализируем intl-tel-input если это модалка гайда
+        if (id === 'guideModal') {
+            setTimeout(function() {
+                initPhoneInput();
+            }, 100);
+        }
     };
 
     window.closeModal = function(id) {
@@ -557,15 +569,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Инициализация маски телефона с помощью IMask
-    let phoneMask;
-    function initPhoneMask() {
+    // Инициализация intl-tel-input для поля телефона
+    let phoneInputInstance;
+    function initPhoneInput() {
         const phoneInput = document.getElementById('guidePhone');
-        if (phoneInput && typeof IMask !== 'undefined') {
-            phoneMask = IMask(phoneInput, {
-                mask: '+{7} (000) 000-00-00',
-                lazy: false,
-                placeholder: '+7 (___) ___-__-__'
+        if (phoneInput && typeof intlTelInput !== 'undefined') {
+            // Уничтожаем предыдущий инстанс если есть
+            if (phoneInputInstance) {
+                phoneInputInstance.destroy();
+            }
+            
+            phoneInputInstance = intlTelInput(phoneInput, {
+                initialCountry: 'auto',
+                geoIpLookup: function(callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(function(res) { return res.json(); })
+                        .then(function(data) { callback(data.country_code); })
+                        .catch(function() { callback('ru'); });
+                },
+                preferredCountries: ['ru', 'ua', 'us', 'de', 'kz'],
+                separateDialCode: true,
+                utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js'
             });
         }
     }
@@ -591,11 +615,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nameGroup.classList.remove('error');
         }
         
-        // Валидация телефона (должен быть полностью заполнен по маске)
+        // Валидация телефона через intl-tel-input
         const phoneInput = document.getElementById('guidePhone');
         const phoneGroup = phoneInput ? phoneInput.closest('.form-group') : null;
-        const phoneValue = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
-        if (!phoneInput || phoneValue.length !== 11) {
+        if (!phoneInput || !phoneInputInstance || !phoneInputInstance.isValidNumber()) {
             if (phoneGroup) phoneGroup.classList.add('error');
             isValid = false;
         } else if (phoneGroup) {
@@ -637,7 +660,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Собираем данные формы
         const leadData = {
             name: document.getElementById('guideName').value,
-            phone: document.getElementById('guidePhone').value,
+            phone: phoneInputInstance ? phoneInputInstance.getNumber() : document.getElementById('guidePhone').value,
             email: document.getElementById('guideEmail').value,
             preferredContact: getSelectedContactMethod(),
             promoCode: 'MEDITATION20',
@@ -703,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Инициализация маски при загрузке страницы
-    initPhoneMask();
+    // Инициализация intl-tel-input при загрузке страницы
+    initPhoneInput();
 
 });
