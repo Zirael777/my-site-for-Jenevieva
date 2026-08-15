@@ -372,30 +372,140 @@ body:not([data-active-lang]) [data-lang="ua"] {
     background: #FFFFFF;
     border: 1px solid rgba(43, 42, 41, 0.2);
     padding: 12px 16px;
-    border-radius: 4px;
+    border-radius: 8px;
     font-family: 'Lora', serif;
     font-size: 0.95rem;
     color: #2B2A29;
     box-sizing: border-box;
 }
-.modal-input:focus { border-color: #C86B83; outline: none; }
+.modal-input:focus { border-color: var(--accent-pink); outline: none; }
 
 .messenger-options { display: flex; flex-wrap: wrap; gap: 10px; }
 .messenger-option input[type="radio"] { display: none; }
 .messenger-badge {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border: 1px solid rgba(43, 42, 41, 0.15);
-    border-radius: 4px;
+    border-radius: 50px;
     font-size: 0.85rem;
     color: #2B2A29;
     background: #FFFFFF;
     transition: all 0.3s ease;
+    cursor: pointer;
+}
+.messenger-option:hover .messenger-badge {
+    border-color: var(--accent-pink);
 }
 .messenger-option input[type="radio"]:checked + .messenger-badge {
-    background: #C86B83;
+    background: var(--accent-pink);
     color: #FFFFFF;
-    border-color: #C86B83;
+    border-color: var(--accent-pink);
+}
+
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.form-group.checkbox-group .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #2B2A29;
+}
+.form-group.checkbox-group .error-consent {
+    color: var(--accent-pink);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+.form-group.error .modal-input,
+.form-group.error .messenger-badge {
+    border-color: var(--accent-pink);
+}
+.form-group.error .error-message {
+    display: block !important;
+    color: var(--accent-pink);
+    font-size: 0.8rem;
+    margin-top: 6px;
+}
+.form-group:not(.error) .error-message {
+    display: none;
+}
+
+.honeypot-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.btn-submit-guide {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.success-block {
+    display: none;
+}
+.success-block.active {
+    display: block;
+}
+
+.promo-block {
+    background: #fdf2f4;
+    border: 1px dashed var(--accent-pink);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.promo-label {
+    font-size: 0.9rem;
+    color: #2B2A29;
+}
+.promo-code {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-pink);
+    letter-spacing: 1px;
+}
+.btn-copy-outline {
+    border-radius: 50px !important;
+    background: transparent !important;
+    border: 1px solid var(--accent-pink) !important;
+    color: var(--accent-pink) !important;
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+.btn-copy-outline:hover {
+    background: var(--accent-pink) !important;
+    color: #FFFFFF !important;
+}
+
+.promo-hint {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(43, 42, 41, 0.6);
+    margin-bottom: 16px;
+}
+
+.success-title {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.modal-card #modalFormBlock.hidden,
+.modal-card .success-block.hidden {
+    display: none;
 }
 
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
@@ -455,13 +565,13 @@ a[href="#services"].hero-btn:hover {
     box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
 }
 
-a[href="#services"].hero-btn,
-.hero-btn {
+a[href="#services"].hero-btn-outline,
+.hero-btn-outline {
     border-radius: 9999px !important;
-    background-color: #6c2603 !important;
-    background: #6c2603 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #6c2603 !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    color: var(--chocolate) !important;
+    border: 1px solid var(--chocolate) !important;
     font-family: 'Lora', serif !important;
     font-weight: 600;
     cursor: pointer;
@@ -471,6 +581,16 @@ a[href="#services"].hero-btn,
     align-items: center;
     justify-content: center;
     text-decoration: none;
+}
+
+a[href="#services"].hero-btn-outline:hover,
+.hero-btn-outline:hover {
+    background-color: var(--chocolate) !important;
+    background: var(--chocolate) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--chocolate) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
 }
 
 .nav-btn-guide,

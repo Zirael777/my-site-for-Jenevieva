@@ -80,7 +80,7 @@
             <span data-lang="ua">Оживляю ваші сенси та почуття на папері. Галерея авторських робіт та умови замовлення — від затишних портретів до сакральних сюжетів.</span>
         </p>
         
-        <a href="#services" class="hero-btn">
+        <a href="#services" class="hero-btn-outline">
             <span data-lang="ru">Смотреть услуги</span>
             <span data-lang="en">View services</span>
             <span data-lang="ua">Дивитись послуги</span>
@@ -1308,39 +1308,43 @@
                                 <input type="radio" name="messenger" value="email">
                                 <span class="messenger-badge">E-mail</span>
                             </label>
+                            <label class="messenger-option">
+                                <input type="radio" name="messenger" value="gmail">
+                                <span class="messenger-badge">Gmail-чат</span>
+                            </label>
                         </div>
                     </div>
                     
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="privacyConsent" checked class="modal-checkbox">
                         <label for="privacyConsent" class="checkbox-label" data-i18n="guide_privacy_text">Согласен(на) на обработку персональных данных</label>
-                        <span class="error-message" style="display:block; margin-top:5px;">Необходимо согласие</span>
+                        <span class="error-message error-consent">Необходимо согласие</span>
                     </div>
                     
                     
-                    <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                    <input type="text" id="website" name="website" class="honeypot-field" tabindex="-1" autocomplete="off">
                     
                     <p class="form-hint" data-i18n="guide_form_hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
                     
-                    <button type="submit" class="btn-accent" data-i18n="guide_submit_btn">Забрать гайд и скидку 20%</button>
+                    <button type="submit" class="btn-accent btn-submit-guide" data-i18n="guide_submit_btn">✦ ЗАБРАТЬ ГАЙД И СКИДКУ 20% ✦</button>
                 </form>
             </div>
             
             
-            <div id="modalSuccessBlock" style="display: none;">
-                <h3 class="modal-title" data-i18n="guide_success_title">Ваш гайд Тихое искусство быть собой готов!</h3>
+            <div id="modalSuccessBlock" class="success-block">
+                <h3 class="modal-title success-title" data-i18n="guide_success_title">✦✦ Ваш гайд «Тихое искусство быть собой» готов! ✦✦</h3>
                 
                 <p class="modal-description" data-i18n="guide_success_desc">Вы можете скачать PDF прямо сейчас, а ваш промокод на 20% скопировать ниже:</p>
 
-                <a href="#" class="btn-accent download-btn" target="_blank" data-i18n="guide_download_btn">СКАЧАТЬ PDF-ГАЙД</a>
+                <a href="#" class="btn-accent download-btn" target="_blank" data-i18n="guide_download_btn">✦ СКАЧАТЬ PDF-ГАЙД ✦</a>
                 
                 <div class="promo-block">
                     <span class="promo-label" data-i18n="guide_promo_label">Ваш промокод:</span>
                     <span class="promo-code" id="promoCode">MEDITATION20</span>
-                    <button class="btn-copy" onclick="copyPromoCode()" data-i18n="guide_copy_btn">Скопировать</button>
+                    <button class="btn-copy-outline" onclick="copyPromoCode()" data-i18n="guide_copy_btn">Скопировать</button>
                 </div>
                 
-                <p class="form-hint" data-i18n="guide_promo_hint">Промокод продублирован в ваш выбранный способ связи.</p>
+                <p class="form-hint promo-hint" data-i18n="guide_promo_hint">Промокод продублирован в ваш выбранный способ связи.</p>
                 
                 <a href="javascript:void(0)" id="toCatalogLink" class="catalog-link" onclick="goToServices()" data-i18n="guide_services_btn">Перейти к заказу →</a>
             </div>
