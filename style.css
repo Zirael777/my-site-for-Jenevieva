@@ -975,3 +975,122 @@ body:not([data-active-lang]) [data-lang="ua"] {
         gap: 10px;
     }
 }
+/* ============================================ */
+/* СТИЛИ ДЛЯ intl-tel-input (библиотека телефона) */
+/* ============================================ */
+
+/* Основной контейнер библиотеки — гармонично вписываем в дизайн */
+.iti {
+    width: 100%;
+    display: block;
+}
+
+.iti__flag {
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.1), (min-resolution: 106dpi) {
+    .iti__flag {
+        background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags@2x.png");
+    }
+}
+
+/* Поле ввода с флагом — стилизуем под общий дизайн модалки */
+.iti input {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(43, 42, 41, 0.2);
+    padding: 12px 16px 12px 56px; /* отступ слева для флага */
+    border-radius: 4px;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #2B2A29;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.iti input:focus {
+    outline: none;
+    border-color: var(--accent-pink);
+}
+
+.iti input::placeholder {
+    color: rgba(43, 42, 41, 0.4);
+}
+
+/* Выпадающий список стран */
+.iti__country-list {
+    background: #FDFBF7;
+    border: 1px solid rgba(43, 42, 41, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1001;
+}
+
+.iti__country {
+    padding: 8px 12px;
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: #2B2A29;
+    transition: background-color 0.2s ease;
+}
+
+.iti__country:hover {
+    background-color: rgba(200, 107, 131, 0.1);
+}
+
+.iti__highlight {
+    background-color: rgba(200, 107, 131, 0.15) !important;
+}
+
+.iti__country-name {
+    color: #2B2A29;
+}
+
+/* Блок с кодом страны рядом с флагом */
+.iti__selected-flag {
+    background: transparent;
+    border-right: 1px solid rgba(43, 42, 41, 0.1);
+    padding: 0 8px;
+}
+
+.iti__selected-flag:hover,
+.iti__selected-flag:focus {
+    background-color: rgba(200, 107, 131, 0.05);
+}
+
+/* Стрелочка dropdown */
+.iti__arrow {
+    border-top: 4px solid #2B2A29;
+}
+
+.iti__arrow--up {
+    border-bottom: 4px solid #2B2A29;
+    border-top: none;
+}
+
+/* Ошибка валидации — красная рамка */
+.form-group.error .iti input {
+    border-color: #C86B83;
+}
+
+/* Скроллбар для списка стран */
+.iti__country-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.iti__country-list::-webkit-scrollbar-track {
+    background: rgba(43, 42, 41, 0.05);
+    border-radius: 3px;
+}
+
+.iti__country-list::-webkit-scrollbar-thumb {
+    background: rgba(43, 42, 41, 0.2);
+    border-radius: 3px;
+}
+
+.iti__country-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(43, 42, 41, 0.3);
+}
