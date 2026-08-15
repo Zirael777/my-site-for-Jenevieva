@@ -1,54 +1,102 @@
-/* Глобальные CSS-переменные бренда — эстетика крафтовой мастерской */
 :root {
-    --bg-main: #FDFBF7; /* тёплый фон небелёной бумаги */
-    --text-main: #2B2A29; /* мягкий цвет туши вместо строгого чёрного */
-    --accent-pink: #C86B83; /* пыльно-розовый / брусничный для кнопок и элементов */
-    --accent-olive: #8A9A74; /* оливковый для деталей */
-    --border-color: rgba(43, 42, 41, 0.2); /* тонкие графеновые контуры */
+    --bg-main: #fcfaf7;
+    --chocolate: #5c2412;
+    --chocolate-light: rgba(92, 36, 18, 0.08);
+    --accent-pink: #c86b83;
+    --accent-pink-hover: #b85a72;
     --white: #ffffff;
-    --chocolate: #5c2412; /* Тёплый шоколадный цвет кнопок */
+    --text-dark: #2c2c2c;
+    --text-muted: #766e65;
+    --border-color: #e8e2d9;
+    --shadow-sm: 0 4px 12px rgba(92, 36, 18, 0.05);
+    --shadow-md: 0 10px 30px rgba(92, 36, 18, 0.08);
 }
-
-/* Подключение шрифтов Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-    font-family: 'Lora', serif;
     background-color: var(--bg-main);
-    color: var(--text-main);
-    scroll-behavior: smooth;
+    color: var(--text-dark);
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Заголовки с декоративными элементами */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+/* ==========================================================================
+   Е Д И Н А Я   С И С Т Е М А   К Н О П О К
+   ========================================================================== */
+
+/* 1. Все обычные кнопки (Контурный шоколадный стиль) */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+.btn-copy,
+.catalog-link {
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid var(--chocolate);
+    color: var(--chocolate);
     font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-/* Текстурированный фон бумаги */
-.paper-bg {
-    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
-}
-
-/* Органическое смешивание логотипа с бумагой */
-.logo-blend {
-    mix-blend-mode: multiply;
-}
-
-/* Стилизация языкового переключателя */
-.lang-switch {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
-}
-.lang-switch.active {
-    opacity: 1;
-    font-weight: 700;
-    border-bottom: 1.5px solid var(--text-main);
+    padding: 12px 28px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-/* Оформление всплывающих модальных окон */
+/* Hover для обычных кнопок */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
+.btn-copy:hover,
+.catalog-link:hover {
+    background: var(--chocolate);
+    color: var(--bg-main);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
+}
+
+/* 2. Кнопки Гайда и Акцентные (Брусничный стиль) */
+.nav-btn-guide,
+.lead-magnet-btn,
+.btn-accent,
+.guide-banner-btn,
+.guide-modal-btn,
+.download-btn {
+    border-radius: 50px;
+    background: var(--accent-pink);
+    color: var(--white);
+    border: 1px solid var(--accent-pink);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 28px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.nav-btn-guide:hover,
+.lead-magnet-btn:hover,
+.btn-accent:hover,
+.guide-banner-btn:hover,
+.guide-modal-btn:hover,
+.download-btn:hover {
+    background: var(--accent-pink-hover);
+    border-color: var(--accent-pink-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
+}
+
+/* ==========================================================================
+   МОДАЛЬНЫЕ ОКНА И ФОРМЫ
+   ========================================================================== */
+
 .modal {
     display: none;
     position: fixed;
@@ -56,492 +104,109 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(43, 42, 41, 0.45);
+    background: rgba(44, 44, 44, 0.6);
     backdrop-filter: blur(4px);
     z-index: 1000;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
+
 .modal.active {
     display: flex;
 }
 
-/* Тонкие винтажные карточки — эстетика крафтовой мастерской */
-.price-card, .portfolio-item {
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-main);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-}
-.price-card:hover, .portfolio-item:hover {
-    border-color: var(--accent-pink);
-    transform: translateY(-2px);
-    background-color: var(--white);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-/* Кнопки фильтра */
-.filter-btn {
-    border: 1px solid var(--border-color) !important;
-    background-color: var(--bg-main) !important;
-    color: var(--text-main) !important;
-    transition: all 0.3s ease;
-    border-radius: 50px !important;
-}
-.filter-btn:hover {
-    border-color: var(--accent-pink) !important;
-    color: var(--accent-pink) !important;
-    transform: scale(1.02);
-}
-.filter-btn.active {
-    background-color: var(--accent-pink) !important;
-    color: var(--white) !important;
-    border-color: var(--accent-pink) !important;
-}
-
-/* Навигация - обычные ссылки без фона и рамок */
-nav a:not(.nav-btn-guide) {
-    display: inline-block;
-    line-height: 1;
-    vertical-align: middle;
-    background: transparent !important;
-    color: #6c2603 !important;
-    padding: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-}
-
-/* Списки */
-ul {
-    list-style: none;
-    padding-left: 1.2em;
-}
-
-/* Разделители hr */
-hr, .decorative-divider {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
-    margin: 2em 0;
-    position: relative;
-}
-.decorative-divider {
-    width: 16rem;
-    margin: 1rem auto;
-}
-
-/* Карточки */
-.card, .bg-white {
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-main);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
-}
-.card:hover, .bg-white:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    border-color: var(--accent-pink);
-}
-
-/* CSS ЗАЩИТА ИЗОБРАЖЕНИЙ */
-img, video {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* Логика локализации */
-body:not([data-active-lang]) [data-lang="en"], 
-body:not([data-active-lang]) [data-lang="ua"] { 
-    display: none; 
-}
-
-/* --- Lead Magnet Section Styles --- */
-.lead-magnet-section {
-  width: 100%;
-  background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
-  border: 1px solid rgba(200, 107, 131, 0.25);
-  padding: 80px 0;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.lead-magnet-content {
-  max-width: 1400px;
-  width: 100%;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.lead-magnet-text-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.lead-magnet-badge {
-  font-size: 0.75rem;
-  color: var(--accent-pink);
-  margin: 0 0 12px 0;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: 'Lora', serif;
-}
-
-.lead-magnet-title {
-  font-size: 2.5rem;
-  color: var(--text-main);
-  margin: 0 0 8px 0;
-  line-height: 1.2;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: left;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.lead-magnet-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-main);
-  margin: 0 0 24px 0;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-family: 'Lora', serif;
-}
-
-.lead-magnet-description {
-  font-size: 1.05rem;
-  color: var(--text-main);
-  line-height: 1.7;
-  margin: 0 0 40px 0;
-  max-width: 540px;
-  font-weight: 400;
-  text-align: left;
-  font-family: 'Lora', serif;
-}
-
-.lead-magnet-fan-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.guide-fan-container {
-  position: relative;
-  width: 320px;
-  height: 420px;
-  perspective: 1000px;
-}
-
-.guide-page {
-  position: absolute;
-  width: 260px;
-  height: 340px;
-  background: linear-gradient(135deg, var(--bg-main) 0%, #f5f0e6 100%);
-  border-radius: 4px;
-  box-shadow: 0 8px 30px rgba(43, 42, 41, 0.15);
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-}
-
-.guide-page-inner {
-  padding: 20px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.guide-page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--text-main);
-  padding-bottom: 12px;
-  margin-bottom: 15px;
-}
-
-.guide-page-number {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 1px;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.guide-page-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Lora', serif;
-}
-
-.guide-page-art {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(43, 42, 41, 0.03);
-  border: 1px dashed var(--border-color);
-  border-radius: 4px;
-  margin-bottom: 15px;
-  padding: 15px;
-}
-
-.guide-page-art svg {
-  width: 80%;
-  height: 80%;
-}
-
-.guide-page-footer {
-  font-size: 0.75rem;
-  color: rgba(43, 42, 41, 0.7);
-  text-align: center;
-  font-style: italic;
-  line-height: 1.4;
-}
-
-/* Страницы веера */
-.guide-page-1 { top: 30px; left: 20px; transform: rotate(-12deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
-.guide-page-2 { top: 10px; left: 40px; transform: rotate(6deg) scale(1); opacity: 1; z-index: 2; box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2); }
-.guide-page-3 { top: 50px; left: 10px; transform: rotate(-8deg) scale(0.92); opacity: 0.8; z-index: 0; filter: brightness(0.88); }
-
-.guide-page:hover {
-  transform: scale(1.08) rotate(0deg) !important;
-  z-index: 10 !important;
-  box-shadow: 0 20px 60px rgba(43, 42, 41, 0.25);
-}
-
-/* СТИЛИ МОДАЛЬНЫХ ОКНА ГАЙДА */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(43, 42, 41, 0.5);
-    backdrop-filter: blur(3px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-.modal-overlay.active { display: flex; }
-
-.modal-card {
-    background: #FDFBF7;
-    color: #2B2A29;
-    border: 1px solid rgba(43, 42, 41, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+.modal-content {
+    background: var(--bg-main);
+    border-radius: 20px;
+    padding: 40px;
     max-width: 500px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 40px 30px;
+    width: 90%;
     position: relative;
-    font-family: 'Lora', serif;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 .modal-close {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
     background: none;
     border: none;
-    font-size: 28px;
-    color: #2B2A29;
+    font-size: 1.5rem;
+    color: var(--text-muted);
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
 }
-.modal-close:hover { opacity: 1; }
 
 .modal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 0 0 25px 0;
-    color: #2B2A29;
+    font-size: 1.6rem;
+    color: var(--chocolate);
+    margin-bottom: 10px;
 }
 
-.form-group { margin-bottom: 18px; }
-
-.modal-input {
-    width: 100%;
-    background: #FFFFFF;
-    border: 1px solid rgba(43, 42, 41, 0.2);
-    padding: 12px 16px;
-    border-radius: 4px;
-    font-family: 'Lora', serif;
+.modal-description {
     font-size: 0.95rem;
-    color: #2B2A29;
-    box-sizing: border-box;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
-.modal-input:focus { border-color: #C86B83; outline: none; }
 
-.messenger-options { display: flex; flex-wrap: wrap; gap: 10px; }
-.messenger-option input[type="radio"] { display: none; }
-.messenger-badge {
-    display: inline-block;
-    padding: 8px 16px;
-    border: 1px solid rgba(43, 42, 41, 0.15);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    color: #2B2A29;
-    background: #FFFFFF;
-    transition: all 0.3s ease;
+.form-group {
+    margin-bottom: 15px;
 }
-.messenger-option input[type="radio"]:checked + .messenger-badge {
-    background: #C86B83;
-    color: #FFFFFF;
-    border-color: #C86B83;
+
+.form-group input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-group.error input {
+    border-color: #d9534f;
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.promo-block {
+    background: var(--chocolate-light);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.promo-code {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--chocolate);
+    letter-spacing: 0.1em;
 }
 
 /* ==========================================================================
-   Е Д И Н А Я   С И С Т Е М А   К Н О П О К   (ПОЛНЫЙ ПРИОРИТЕТ)
+   ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
    ========================================================================== */
 
-/* 1. ВСЕ ОБЫЧНЫЕ КНОПКИ: Контурный стиль по умолчанию (Outline) */
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-.hero-section a,
-#portfolio a,
-#services button,
-#services a,
-#shop a,
-#shop button,
-.price-card button,
-.portfolio-item button,
-.price-card a,
-.portfolio-item a,
-.btn-copy,
-.catalog-link {
-    border-radius: 50px !important;
-    background-color: transparent !important;
-    background: transparent !important;
-    border: 1px solid #5c2412 !important; /* Тёплый шоколадный контур */
-    color: #5c2412 !important;            /* Текст в цвет контура */
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+.lang-switch {
+    background: none;
+    border: none;
+    color: var(--text-muted);
     cursor: pointer;
-    padding: 12px 28px;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-sizing: border-box;
+    font-weight: 500;
+    padding: 4px 8px;
 }
 
-/* 2. HOVER ДЛЯ ОБЫЧНЫХ КНОПОК: ШОКОЛАДНАЯ ЗАЛИВКА + КРЕМОВЫЙ ТЕКСТ */
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-.hero-section a:hover,
-#portfolio a:hover,
-#services button:hover,
-#services a:hover,
-#shop a:hover,
-#shop button:hover,
-.price-card button:hover,
-.portfolio-item button:hover,
-.price-card a:hover,
-.portfolio-item a:hover,
-.btn-copy:hover,
-.catalog-link:hover,
-a[href="#services"].hero-btn:hover {
-    background-color: #5c2412 !important; /* Шоколадная заливка */
-    background: #5c2412 !important;
-    color: #FDFBF7 !important;            /* Светло-кремовый текст */
-    border-color: #5c2412 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
-}
-
-/* 2b. Кнопка "Смотреть услуги" в Hero - шоколадный фон */
-a[href="#services"].hero-btn,
-.hero-btn {
-    border-radius: 9999px !important;
-    background-color: #6c2603 !important;
-    background: #6c2603 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #6c2603 !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 12px 32px !important;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-/* 3. КНОПКИ ГАЙДА (Единственный брусничный акцент) */
-.nav-btn-guide,
-.lead-magnet-btn,
-.btn-accent,
-.guide-banner-btn,
-.guide-modal-btn {
-    border-radius: 50px !important;
-    background-color: #C86B83 !important;
-    background: #C86B83 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #C86B83 !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 12px 28px;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-/* HOVER для кнопок Гайда */
-.nav-btn-guide:hover,
-.lead-magnet-btn:hover,
-.btn-accent:hover,
-.guide-banner-btn:hover,
-.guide-modal-btn:hover {
-    background-color: #b85a72 !important;
-    background: #b85a72 !important;
-    border-color: #b85a72 !important;
-    color: #FFFFFF !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
-}
-
-/* Нажатие на любую кнопку */
-button:active, .btn:active, a:active {
-    transform: translateY(0) !important;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .lead-magnet-content { grid-template-columns: 1fr; padding: 0 20px; }
-    .lead-magnet-btn { width: 100%; }
-    .nav-btn-guide { padding: 6px 14px; font-size: 10px; }
+.lang-switch.active {
+    color: var(--chocolate);
+    font-weight: 700;
+    border-bottom: 2px solid var(--chocolate);
 }
