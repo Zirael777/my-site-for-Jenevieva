@@ -4,35 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Jenevieva — Мастерская Женевьевы</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Подключаем шрифты Cormorant Garamond и Lora для эстетики крафтовой мастерской -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Фирменная иконка сайта (Favicon) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,25 C50,45 42,65 52,80 M52,80 C40,85 35,75 42,65' fill='none' stroke='%236c2603' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M42,65 Q30,70 38,55 Q46,40 50,55' fill='none' stroke='%236c2603' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='5' fill='none' stroke='%236c2603' stroke-width='3'/%3E%3Cpath d='M45,20 Q50,15 55,20 Q50,25 45,20' fill='none' stroke='%236c2603' stroke-width='2'/%3E%3Cpath d='M50,15 Q50,25 50,20 Q40,20 50,20' fill='none' stroke='%236c2603' stroke-width='2'/%3E%3Cpath d='M38,55 C42,50 48,58 45,62 Z' fill='%236c2603' fill-opacity='0.3' stroke='%236c2603' stroke-width='1.5'/%3E%3Cpath d='M54,45 C58,40 64,48 61,52 Z' fill='%236c2603' fill-opacity='0.3' stroke='%236c2603' stroke-width='1.5'/%3E%3C/svg%3E">
-
-    <!-- Подключение внешних стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="paper-bg">
 
-    <!-- ХУДОЖЕСТВЕННЫЙ БАННЕР -->
+    
     <div class="w-full h-[200px] sm:h-[300px] md:h-[450px] overflow-hidden relative border-b border-[#6c2603]/10 bg-[#fdfbf7]">
         <img src="ava.jpg" alt="Art Jenevieva Illustration" class="w-full h-full object-cover object-center opacity-90 filter brightness-[1.08] contrast-[0.96]" onerror="this.src='https://placehold.co/1200x450/fdfbf7/6c2603?text=Art+Jenevieva+Banner';">
     </div>
 
-    <!-- НАВИГАЦИЯ -->
+    
     <nav class="sticky top-0 z-[100] bg-[#fdfbf7]/95 backdrop-blur-md border-b border-[#6c2603]/5 px-6 py-4">
         <div class="max-w-7xl mx-auto flex flex-col space-y-4">
             <div class="flex justify-between items-center w-full">
-                <!-- Смешивающийся логотип -->
+                
                 <a href="#" class="flex items-center">
                     <img src="logo.jpg" alt="Art Jenevieva" class="h-10 md:h-12 w-auto logo-blend" onerror="this.style.display='none'; document.getElementById('txt-logo').style.display='inline-block';">
                     <span id="txt-logo" class="hidden font-bold tracking-[0.2em] text-sm uppercase">Art Jenevieva</span>
                 </a>
                 
-                <!-- Переключатель RU / EN / UA -->
+                
                 <div class="flex space-x-2 pl-4 uppercase font-bold text-xs tracking-wider text-[#6c2603]">
                     <span id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</span>
                     <span class="opacity-30">/</span>
@@ -42,7 +36,7 @@
                 </div>
             </div>
             
-            <!-- Ссылки на разделы -->
+            
             <div class="flex justify-center border-t border-[#6c2603]/10 pt-4">
                 <div class="flex flex-wrap justify-center items-center gap-4 md:gap-10 uppercase font-bold text-[10px] md:text-xs tracking-[0.2em] text-[#6c2603]">
                     <a href="#about" class="hover:opacity-60 transition-opacity"><span data-lang="ru">Обо мне</span><span data-lang="en">About Me</span><span data-lang="ua">Про мене</span></a>
@@ -56,9 +50,9 @@
         </div>
     </nav>
 
-    <!-- ПРИВЕТСТВЕННЫЙ ЭКРАН С РЕТРО-ЗВЕЗДАМИ -->
+    
     <section class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center relative">
-        <!-- Левая ретро-звезда -->
+        
         <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-25 hidden lg:block w-16 h-20 text-[#6c2603]">
             <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2">
                 <line x1="80" y1="10" x2="80" y2="110" stroke="currentColor" stroke-width="1.2" />
@@ -92,7 +86,7 @@
             <span data-lang="ua">Дивитись послуги</span>
         </a>
 
-        <!-- Правая ретро-звезда -->
+        
         <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-25 hidden lg:block w-16 h-20 text-[#6c2603] transform scale-x-[-1]">
             <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2">
                 <line x1="80" y1="10" x2="80" y2="110" stroke="currentColor" stroke-width="1.2" />
@@ -103,7 +97,7 @@
         </div>
     </section>
 
-    <!-- БЛОК ОБО МНЕ -->
+    
     <section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             
@@ -149,7 +143,7 @@
         </div>
     </section>
 
-    <!-- ПОРТФОЛИО / ГАЛЕРЕЯ ЖИВЫХ ИСТОРИЙ -->
+    
     <section id="portfolio" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -160,12 +154,12 @@
             <hr class="decorative-divider" />
         </div>
         
-        <!-- Контейнер сетки: 1 колонка на мобильных, 2 на планшетах/ПК -->
+        
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 justify-items-center max-w-6xl mx-auto">
 
-<!-- КЕЙС 1: Картина маслом в подарок -->
+
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
-        <!-- Главное фото -->
+        
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio1.png" alt="Finished Oil Painting" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -173,7 +167,7 @@
             </div>
         </div>
         
-        <!-- Надписи -->
+        
         <div class="mb-6 flex-grow">
             <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
                 <span data-lang="ru">Картина маслом в подарок</span>
@@ -192,7 +186,7 @@
 	</p>
         </div>
 
-        <!-- Два маленьких фото -->
+        
         <div class="grid grid-cols-2 gap-4 mb-5">
             <div class="space-y-1.5">
                 <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
@@ -218,7 +212,7 @@
             </div>
         </div>
 
-        <!-- Кнопка -->
+        
         <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
             <span data-lang="ru">Смотреть проект на Behance ↗</span>
             <span data-lang="en">View project on Behance ↗</span>
@@ -227,9 +221,9 @@
     </div>
 
 
-    <!-- КЕЙС 2: Карандашный портрет девушки с хвостом -->
+    
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
-        <!-- Главное фото -->
+        
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
             <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -237,7 +231,7 @@
             </div>
         </div>
         
-        <!-- Надписи -->
+        
         <div class="mb-6 flex-grow">
             <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
                 <span data-lang="ru">Портрет карандашами</span>
@@ -256,7 +250,7 @@
             </p>
         </div>
 
-        <!-- Два маленьких фото -->
+        
         <div class="grid grid-cols-2 gap-4 mb-5">
             <div class="space-y-1.5">
                 <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
@@ -282,7 +276,7 @@
             </div>
         </div>
 
-        <!-- Кнопка -->
+        
         <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 text-center">
             <span data-lang="ru">Смотреть проект на Behance ↗</span>
             <span data-lang="en">View project on Behance ↗</span>
@@ -291,7 +285,7 @@
     </div>
 
 
-<!-- ПРОЕКТ 1: Календарь «Year of Wise Horses» -->
+
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
@@ -347,7 +341,7 @@
     </div>
 
 
-<!-- ПРОЕКТ 3: Праздничные открытки -->
+
     <div class="bg-white border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full w-full max-w-xs">
         <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
             <img src="portfolio_cards.png" alt="Greeting Cards" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
@@ -404,7 +398,7 @@
 
 </div>
 
-<!-- Кнопка перехода в полное портфолио -->
+
 <div class="flex justify-center w-full mt-12">
     <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300 shadow-sm">
         <span data-lang="ru">Смотреть все работы →</span>
@@ -415,10 +409,9 @@
 
 </section>
 
-    <!-- ЛИД-МАГНИТ: ГАЙД + СКИДКА (Полноширинная секция) -->
     <section id="lead-magnet" class="lead-magnet-section">
         <div class="lead-magnet-content">
-            <!-- Левая колонка: Текст и кнопка -->
+            
             <div class="lead-magnet-text-col">
                 <span class="lead-magnet-badge" data-i18n="guide_banner_badge">АРТ-ПРАКТИКУМ + СКИДКА 20%</span>
                 <h2 class="lead-magnet-title" data-i18n="guide_banner_title">Тихое искусство быть собой</h2>
@@ -427,10 +420,10 @@
                 <button class="lead-magnet-btn" onclick="openGuideModal()" data-i18n="guide_banner_btn">Забрать гайд и скидку 20%</button>
             </div>
             
-            <!-- Правая колонка: Интерактивный веер страниц гайда -->
+            
             <div class="lead-magnet-fan-col">
                 <div class="guide-fan-container">
-                    <!-- Страница 1 (задняя, наклонена влево) -->
+                    
                     <div class="guide-page guide-page-1" onclick="openGuidePageModal(1)">
                         <div class="guide-page-inner">
                             <div class="guide-page-header">
@@ -452,7 +445,7 @@
                         </div>
                     </div>
                     
-                    <!-- Страница 2 (передняя, наклонена вправо) -->
+                    
                     <div class="guide-page guide-page-2" onclick="openGuidePageModal(2)">
                         <div class="guide-page-inner">
                             <div class="guide-page-header">
@@ -477,7 +470,7 @@
                         </div>
                     </div>
                     
-                    <!-- Страница 3 (дополнительная, для объема) -->
+                    
                     <div class="guide-page guide-page-3" onclick="openGuidePageModal(3)">
                         <div class="guide-page-inner">
                             <div class="guide-page-header">
@@ -509,7 +502,7 @@
         </div>
     </section>
     
-    <!-- Модальное окно для просмотра страниц гайда -->
+    
     <div id="guide-page-modal" class="modal" onclick="closeGuidePageModal()">
         <div class="guide-page-modal-content" onclick="event.stopPropagation()">
             <button class="guide-page-modal-close" onclick="closeGuidePageModal()">×</button>
@@ -521,10 +514,10 @@
                             <span class="guide-page-title" id="modal-page-title">Арт-медитация</span>
                         </div>
                         <div class="guide-page-art-large" id="modal-page-art">
-                            <!-- Контент будет заполнен через JS -->
+                            
                         </div>
                         <div class="guide-page-footer-large" id="modal-page-footer">
-                            <!-- Контент будет заполнен через JS -->
+                            
                         </div>
                     </div>
                 </div>
@@ -540,7 +533,7 @@
         </div>
     </div>
 
-    <!-- УСЛУГИ И ЦЕНЫ -->
+    
     <section id="services" class="max-w-7xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -553,7 +546,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- 1. Портрет по фото. Базовый -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -591,7 +584,7 @@
                 </div>
             </div>
 
-            <!-- 2. Портрет по фото. Премиум -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -629,7 +622,7 @@
                 </div>
             </div>
 
-            <!-- 3. Иллюстрация для книги -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -665,7 +658,7 @@
                 </div>
             </div>
 
-            <!-- 4. Принты ручной работы -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -701,7 +694,7 @@
                 </div>
             </div>
 
-            <!-- 5. Логотип -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -737,7 +730,7 @@
                 </div>
             </div>
 
-            <!-- 6. Набор открыток -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -773,7 +766,7 @@
                 </div>
             </div>
 
-            <!-- 7. Авторские скетчи -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -809,7 +802,7 @@
                 </div>
             </div>
 
-            <!-- 8. Рисунки для раскрасок -->
+            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -852,7 +845,7 @@
         </div>
     </section>
 
-    <!-- МАГАЗИН -->
+    
     <section id="shop" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -900,7 +893,7 @@
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
+    
     <section id="reviews" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -918,7 +911,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             
-            <!-- Отзыв 1 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -937,7 +930,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 2 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -956,7 +949,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 3 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -975,7 +968,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 4 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -994,7 +987,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 5 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -1013,7 +1006,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 6 -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -1032,7 +1025,7 @@
                 </div>
             </div>
 
-            <!-- Отзыв 7 (Диалог — с исправленным смыслом цвета на украинском) -->
+            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5">
@@ -1043,7 +1036,7 @@
                         </span>
                     </div>
                     
-                    <!-- Сообщение художницы -->
+                    
                     <div class="flex flex-col items-end">
                         <div class="bg-[#6c2603]/5 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tr-none max-w-[85%] italic">
                             <p data-lang="ru">«цвет энергии я выбрала оранжевым, и естественно подсвечивает женщину снизу энергия, этим показываем что она управляет парусом, внутренней энергией и мыслями., и заодно строит команду, деньги, дом , семью.»</p>
@@ -1057,7 +1050,7 @@
                         </span>
                     </div>
 
-                    <!-- Сообщение заказчика -->
+                    
                     <div class="flex flex-col items-start">
                         <div class="bg-white border border-[#6c2603]/10 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tl-none max-w-[85%] font-medium">
                             <p data-lang="ru">«Какая красота❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️»</p>
@@ -1081,7 +1074,7 @@
                 </div>
             </div>
 
-            <!-- БЛОК ВИДЕООТЗЫВОВ -->
+            
             <div class="md:col-span-2 mt-12 pt-12 border-t border-[#6c2603]/10 w-full">
                 <h3 class="text-lg md:text-xl font-bold uppercase tracking-wider text-[#6c2603] text-center mb-8">
                     <span data-lang="ru">Теплые видео-отзывы</span>
@@ -1089,12 +1082,12 @@
                     <span data-lang="ua">Теплі відеовідгуки</span>
                 </h3>
                 
-                <!-- Заменили max-w-4xl на max-w-2xl, чтобы вертикальные видео не были слишком огромными на ПК -->
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
                     
-                    <!-- Видеоотзыв 1 -->
+                    
                     <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
-                        <!-- Заменили aspect-video на aspect-[9/16] -->
+                        
                         <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
                             <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
                                 <source src="video_otzyv1.mp4" type="video/mp4">
@@ -1110,9 +1103,9 @@
                         </div>
                     </div>
 
-                    <!-- Видеоотзыв 2 -->
+                    
                     <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
-                        <!-- Заменили aspect-video на aspect-[9/16] -->
+                        
                         <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
                             <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
                                 <source src="video_otzyv2.mp4" type="video/mp4">
@@ -1132,7 +1125,7 @@
         </div>
     </section>
 
-    <!-- КАК СО МНОЙ СВЯЗАТЬСЯ (Перенесено из подвала) -->
+    
     <section id="contact" class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-[#6c2603]/10">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 text-[#6c2603] decorative-heading">
@@ -1147,10 +1140,10 @@
                 <span data-lang="ua">Приєднуйтесь до майстерні в соціальних мережах:</span>
             </p>
 
-            <!-- СОЦСЕТИ (СТРОГО 5 ТОЧНЫХ ССЫЛОК) -->
+            
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-3xl mx-auto pt-4">
                 
-                <!-- 1. Telegram (Канал Мастерская Женевьевы) -->
+                
                 <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1161,7 +1154,7 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Telegram</span>
                 </a>
 
-                <!-- 2. Behance -->
+                
                 <a href="https://www.behance.net/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1172,7 +1165,7 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Behance</span>
                 </a>
 
-                <!-- 3. Pinterest -->
+                
                 <a href="https://www.pinterest.com/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1184,7 +1177,7 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Pinterest</span>
                 </a>
 
-                <!-- 4. Cara -->
+                
                 <a href="https://cara.app/artjenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1196,7 +1189,7 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Cara</span>
                 </a>
 
-                <!-- 5. Ютуб -->
+                
                 <a href="https://www.youtube.com/@art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1212,10 +1205,10 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ (Очищен от соцсетей) -->
+    
     <footer class="bg-[#6c2603] text-[#fdfbf7] py-12 px-6 text-center border-t border-[#6c2603]/10 relative overflow-hidden">
         <div class="max-w-4xl mx-auto space-y-6">
-            <!-- Копирайт -->
+            
             <div class="opacity-30 text-[9px] uppercase tracking-[0.3em] space-y-2">
                 <p>Art Jenevieva © <span id="year">2026</span></p>
                 <p>MADE WITH MAGIC AND INK BY <a href="https://t.me/zirael777" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80 transition-opacity">Zirael777</a></p>
@@ -1223,7 +1216,7 @@
         </div>
     </footer>
 
-    <!-- МОДАЛЬНЫЕ ОКНА -->
+    
     <div id="guide-modal" class="modal">
         <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
             <button onclick="closeModal('guide-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
@@ -1262,23 +1255,23 @@
         </div>
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ИЗОБРАЖЕНИЙ -->
+    
 	<div id="image-viewer-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" onclick="closeImageViewerModal()">
-    	<!-- Кнопка закрытия -->
+    	
     	<span class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors z-10">&times;</span>
     
-    	<!-- Картинка -->
+    	
     	<img id="image-viewer-modal-img" src="" alt="Full screen" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm" onclick="event.stopPropagation()">
 	</div>
 
-    <!-- СКРИПТЫ -->
+    
 
-    <!-- НОВОЕ МОДАЛЬНОЕ ОКНО ГАЙДА #guideModal -->
+    
     <div id="guideModal" class="modal-overlay">
         <div class="modal-card">
             <button class="modal-close" onclick="closeGuideModal()">&times;</button>
             
-            <!-- Блок 1: Форма сбора -->
+            
             <div id="modalFormBlock">
                 <h3 class="modal-title" data-i18n="guide_modal_title">Тихое искусство быть собой</h3>
                 
@@ -1324,7 +1317,7 @@
                         <span class="error-message" style="display:block; margin-top:5px;">Необходимо согласие</span>
                     </div>
                     
-                    <!-- Honeypot -->
+                    
                     <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     
                     <p class="form-hint" data-i18n="guide_form_hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
@@ -1333,7 +1326,7 @@
                 </form>
             </div>
             
-            <!-- Блок 2: Экран успеха -->
+            
             <div id="modalSuccessBlock" style="display: none;">
                 <h3 class="modal-title" data-i18n="guide_success_title">Ваш гайд Тихое искусство быть собой готов!</h3>
                 
@@ -1354,7 +1347,7 @@
         </div>
     </div>
 
-    <!-- Подключаем intl-tel-input для выбора кода страны с флагом -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
