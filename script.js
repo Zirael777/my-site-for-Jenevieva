@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Обновляем плейсхолдеры у инпутов если есть data-i18n-placeholder
         updatePlaceholders(lang);
+        
+        // Обновляем тексты элементов с data-i18n (баннер гайда и другие)
+        updateI18nElements(lang);
+        
+        // Обновляем тексты модального окна гайда
+        updateModalTexts(lang);
     };
     
     // Функция обновления плейсхолдеров
@@ -58,21 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Функция обновления текстов в модальном окне гайда
-    function updateModalTexts(lang) {
-        const modalTitle = document.querySelector('#guideModal .modal-title');
-        const modalDesc = document.querySelector('#guideModal .modal-description');
-        const formHint = document.querySelector('#guideModal .form-hint');
-        const submitBtn = document.querySelector('#guideModal .btn-accent');
-        const checkboxLabel = document.querySelector('#guideModal .checkbox-label');
-        const messengerLabel = document.querySelector('#guideModal .messenger-label');
-        const successTitle = document.querySelector('#modalSuccessBlock .modal-title');
-        const copyBtn = document.querySelector('#modalSuccessBlock .btn-copy');
-        const promoHint = document.querySelector('#modalSuccessBlock .form-hint');
-        const toOrderLink = document.querySelector('#modalSuccessBlock .catalog-link');
-        const downloadBtn = document.querySelector('#modalSuccessBlock .download-btn');
-        
-const translations = {
+    // Функция обновления текстов элементов с data-i18n (баннер гайда и другие)
+    function updateI18nElements(lang) {
+        const translations = {
             guide_banner_badge: {
                 ru: '✦ АРТ-ПРАКТИКУМ + СКИДКА 20% ✦',
                 en: '✦ ART PRACTICUM + 20% OFF ✦',
@@ -97,7 +91,32 @@ const translations = {
                 ru: '✦ Забрать гайд и скидку 20% ✦',
                 en: '✦ Get the Guide and 20% Discount ✦',
                 ua: '✦ Отримати гайд і знижку 20% ✦'
-            },
+            }
+        };
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[key] && translations[key][lang]) {
+                el.textContent = translations[key][lang];
+            }
+        });
+    }
+    
+    // Функция обновления текстов в модальном окне гайда
+    function updateModalTexts(lang) {
+        const modalTitle = document.querySelector('#guideModal .modal-title');
+        const modalDesc = document.querySelector('#guideModal .modal-description');
+        const formHint = document.querySelector('#guideModal .form-hint');
+        const submitBtn = document.querySelector('#guideModal .btn-accent');
+        const checkboxLabel = document.querySelector('#guideModal .checkbox-label');
+        const messengerLabel = document.querySelector('#guideModal .messenger-label');
+        const successTitle = document.querySelector('#modalSuccessBlock .modal-title');
+        const copyBtn = document.querySelector('#modalSuccessBlock .btn-copy');
+        const promoHint = document.querySelector('#modalSuccessBlock .form-hint');
+        const toOrderLink = document.querySelector('#modalSuccessBlock .catalog-link');
+        const downloadBtn = document.querySelector('#modalSuccessBlock .download-btn');
+        
+        const translations = {
             guide_modal_title: {
                 ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
                 en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
@@ -372,8 +391,6 @@ const translations = {
     const savedLang = localStorage.getItem('site_lang') || 'ru';
     setLanguage(savedLang);
     
-    // Вызываем updateModalTexts после установки языка для модального окна
-    updateModalTexts(savedLang);
     
     const yearElement = document.getElementById('year');
     if (yearElement) {
