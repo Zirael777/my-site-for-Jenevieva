@@ -91,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ru: 'Забрать гайд и скидку 20%',
                 en: 'Get the Guide and 20% Discount',
                 ua: 'Отримати гайд і знижку 20%'
+            },
+            nav_guide: {
+                ru: 'Бесплатный гайд',
+                en: 'Free Guide',
+                ua: 'Безкоштовний гайд'
             }
         };
         
