@@ -478,7 +478,8 @@ a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn
 .lead-magnet-btn,
 .btn-accent,
 .guide-banner-btn,
-.guide-modal-btn {
+.guide-modal-btn,
+a[href="#services"] {
     border-radius: 50px !important;
     background-color: #C86B83 !important;
     background: #C86B83 !important;
