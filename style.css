@@ -124,6 +124,22 @@ button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-
     transform: scale(1.02);
 }
 
+/* Навигационная кнопка «Бесплатный гайд» — брусничный акцент */
+.nav-btn-guide {
+    background-color: var(--accent-pink);
+    color: var(--white) !important;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.nav-btn-guide:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
 /* Списки с кастомными искорками */
 ul {
     list-style: none;
@@ -548,6 +564,12 @@ body:not([data-active-lang]) [data-lang="ua"] {
     width: 230px;
     height: 300px;
   }
+  
+  /* Навигационная кнопка «Бесплатный гайд» на планшетах */
+  .nav-btn-guide {
+    padding: 5px 14px;
+    font-size: 9px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -602,6 +624,12 @@ body:not([data-active-lang]) [data-lang="ua"] {
   .guide-page-art-large {
     min-height: 200px;
     padding: 20px;
+  }
+  
+  /* Навигационная кнопка «Бесплатный гайд» на мобильных */
+  .nav-btn-guide {
+    padding: 4px 12px;
+    font-size: 8px;
   }
 }
 
