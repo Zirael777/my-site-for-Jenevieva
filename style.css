@@ -350,10 +350,11 @@ body:not([data-active-lang]) [data-lang="ua"] {
     height: 32px;
     background: transparent !important;
     border: none !important;
-    outline: none;
+    outline: none !important;
+    box-shadow: none !important;
     font-size: 24px;
     line-height: 1;
-    color: var(--text-muted, #8B8884);
+    color: var(--chocolate);
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -498,8 +499,22 @@ input:-webkit-autofill {
     margin-top: 8px;
 }
 
-.download-btn {
-    margin-bottom: 20px;
+.download-btn,
+.modal-success-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+/* Нижняя ссылка */
+.modal-content .order-link,
+.modal-content a[href*="order"] {
+    display: block;
+    text-align: center;
+    margin: 16px auto 0 auto;
+    width: 100%;
 }
 
 .success-block {
