@@ -93,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bg-main) !important;
     color: var(--text-main) !important;
     transition: all 0.3s ease;
+    border-radius: 50px; /* Овальное скругление */
 }
 .filter-btn:hover {
     border-color: var(--accent-pink) !important;
@@ -116,6 +117,7 @@ button, .btn, a.btn, input[type="submit"], .lead-magnet-btn {
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 50px; /* Единое овальное скругление для всех кнопок */
 }
 button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover {
     background-color: var(--accent-pink);
@@ -129,7 +131,7 @@ button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-
     background-color: var(--accent-pink);
     color: var(--white) !important;
     padding: 8px 18px;
-    border-radius: 20px;
+    border-radius: 50px; /* Овальное скругление */
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -299,7 +301,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  border-radius: 0;
+  border-radius: 50px; /* Овальное скругление */
   font-family: 'Lora', serif;
 }
 
@@ -910,7 +912,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px; /* Овальное скругление */
     transition: all 0.3s ease;
     text-align: center;
     text-decoration: none;
@@ -957,7 +959,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-size: 0.85rem;
     color: #2B2A29;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px; /* Овальное скругление */
     transition: all 0.3s ease;
 }
 
