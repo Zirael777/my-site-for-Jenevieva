@@ -25,16 +25,12 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.02em;
 }
 
-/* Декоративный заголовок с искорками */
+/* Декоративный заголовок */
 .decorative-heading::before {
-    content: '✦⪼ ';
-    color: var(--accent-pink);
-    font-size: 0.9em;
+    content: '';
 }
 .decorative-heading::after {
-    content: ' ⪻✦';
-    color: var(--accent-pink);
-    font-size: 0.9em;
+    content: '';
 }
 
 /* Текстурированный фон бумаги */
@@ -137,12 +133,7 @@ ul li {
     position: relative;
 }
 ul li::before {
-    content: '✦';
-    color: var(--accent-pink);
-    position: absolute;
-    left: -1.2em;
-    font-size: 0.8em;
-    line-height: 1.4;
+    content: '';
 }
 
 /* Разделители hr с искоркой по центру */
@@ -154,13 +145,11 @@ hr, .decorative-divider {
     position: relative;
 }
 hr::after, .decorative-divider::after {
-    content: '✦';
+    content: '';
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: var(--accent-pink);
-    font-size: 0.9em;
     background-color: var(--bg-main);
     padding: 0 8px;
 }

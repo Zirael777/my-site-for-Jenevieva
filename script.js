@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateI18nElements(lang) {
         const translations = {
             guide_banner_badge: {
-                ru: '✦ АРТ-ПРАКТИКУМ + СКИДКА 20% ✦',
-                en: '✦ ART PRACTICUM + 20% OFF ✦',
-                ua: '✦ АРТ-ПРАКТИКУМ + ЗНИЖКА 20% ✦'
+                ru: 'АРТ-ПРАКТИКУМ + СКИДКА 20%',
+                en: 'ART PRACTICUM + 20% OFF',
+                ua: 'АРТ-ПРАКТИКУМ + ЗНИЖКА 20%'
             },
             guide_banner_title: {
-                ru: '«Тихое искусство быть собой»',
-                en: '"The Quiet Art of Being Yourself"',
-                ua: '«Тихе мистецтво бути собою»'
+                ru: 'Тихое искусство быть собой',
+                en: 'The Quiet Art of Being Yourself',
+                ua: 'Тихе мистецтво бути собою'
             },
             guide_banner_subtitle: {
                 ru: 'Пошаговый путь к себе через медитативное рисование',
@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: "Авторський гайд з практиками та вправами, які допомагають сповільнитися, заспокоїти розум і відчути внутрішню опору. Він створений для тих, хто втомився від поспіху і хоче м'яко повернутися до себе — через увагу, спостереження і прості творчі практики."
             },
             guide_banner_btn: {
-                ru: '✦ Забрать гайд и скидку 20% ✦',
-                en: '✦ Get the Guide and 20% Discount ✦',
-                ua: '✦ Отримати гайд і знижку 20% ✦'
+                ru: 'Забрать гайд и скидку 20%',
+                en: 'Get the Guide and 20% Discount',
+                ua: 'Отримати гайд і знижку 20%'
             }
         };
         
@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const translations = {
             guide_modal_title: {
-                ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
-                en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
-                ua: '✦⪼ «Тихе мистецтво бути собою» ⪻✦'
+                ru: 'Тихое искусство быть собой',
+                en: 'The Quiet Art of Being Yourself',
+                ua: 'Тихе мистецтво бути собою'
             },
             guide_modal_desc: {
                 ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.',
@@ -158,19 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Після відправки форми ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.'
             },
             guide_submit_btn: {
-                ru: '✦ Забрать гайд и скидку 20% ✦',
-                en: '✦ Get Guide & 20% Off ✦',
-                ua: '✦ Забрати гайд та знижку 20% ✦'
+                ru: 'Забрать гайд и скидку 20%',
+                en: 'Get Guide & 20% Off',
+                ua: 'Забрати гайд та знижку 20%'
             },
             guide_success_title: {
-                ru: '✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦',
-                en: '✦⪼ Your guide "The Quiet Art of Being Yourself" is ready! ⪻✦',
-                ua: '✦⪼ Ваш гайд «Тихе мистецтво бути собою» готовий! ⪻✦'
+                ru: 'Ваш гайд Тихое искусство быть собой готов!',
+                en: 'Your guide The Quiet Art of Being Yourself is ready!',
+                ua: 'Ваш гайд Тихе мистецтво бути собою готовый!'
             },
             guide_download_btn: {
-                ru: '✦ СКАЧАТЬ PDF-ГАЙД ✦',
-                en: '✦ DOWNLOAD PDF GUIDE ✦',
-                ua: '✦ ЗАВАНТАЖИТИ PDF-ГАЙД ✦'
+                ru: 'СКАЧАТЬ PDF-ГАЙД',
+                en: 'DOWNLOAD PDF GUIDE',
+                ua: 'ЗАВАНТАЖИТИ PDF-ГАЙД'
             },
             guide_copy_btn: {
                 ru: 'Скопировать',
@@ -198,9 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Перейти до послуг →'
             },
             modalTitle: {
-                ru: '✦⪼ «Тихое искусство быть собой» ⪻✦',
-                en: '✦⪼ "The Quiet Art of Being Yourself" ⪻✦',
-                ua: '✦⪼ «Тихе мистецтво бути собою» ⪻✦'
+                ru: 'Тихое искусство быть собой',
+                en: 'The Quiet Art of Being Yourself',
+                ua: 'Тихе мистецтво бути собою'
             },
             modalDescription: {
                 ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.',
@@ -213,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Після відправки форми ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.'
             },
             submitBtn: {
-                ru: '✦ Забрать гайд и скидку 20% ✦',
-                en: '✦ Get the Guide and 20% Discount ✦',
-                ua: '✦ Отримати гайд і знижку 20% ✦'
+                ru: 'Забрать гайд и скидку 20%',
+                en: 'Get the Guide and 20% Discount',
+                ua: 'Отримати гайд і знижку 20%'
             },
             checkboxLabel: {
                 ru: 'Согласен(на) на обработку персональных данных',
@@ -228,14 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: "Бажаний спосіб зв'язку:"
             },
             successTitle: {
-                ru: '✦⪼ Ваш гайд «Тихое искусство быть собой» готов! ⪻✦',
-                en: '✦⪼ Your Guide "The Quiet Art of Being Yourself" is Ready! ⪻✦',
-                ua: '✦⪼ Ваш гайд «Тихе мистецтво бути собою» готовий! ⪻✦'
+                ru: 'Ваш гайд Тихое искусство быть собой готов!',
+                en: 'Your Guide The Quiet Art of Being Yourself is Ready!',
+                ua: 'Ваш гайд Тихе мистецтво бути собою готовый!'
             },
             downloadBtn: {
-                ru: '✦ СКАЧАТЬ PDF-ГАЙД ✦',
-                en: '✦ DOWNLOAD PDF GUIDE ✦',
-                ua: '✦ ЗАВАНТАЖИТИ PDF-ГАЙД ✦'
+                ru: 'СКАЧАТЬ PDF-ГАЙД',
+                en: 'DOWNLOAD PDF GUIDE',
+                ua: 'ЗАВАНТАЖИТИ PDF-ГАЙД'
             },
             copyBtn: {
                 ru: 'Скопировать',
@@ -253,9 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ua: 'Перейти до замовлення →'
             },
             copiedMsg: {
-                ru: 'Скопировано! ✦',
-                en: 'Copied! ✦',
-                ua: 'Скопійовано! ✦'
+                ru: 'Скопировано!',
+                en: 'Copied!',
+                ua: 'Скопійовано!'
             }
         };
         if (modalTitle) modalTitle.textContent = translations.modalTitle[lang] || translations.modalTitle.ru;
@@ -708,9 +708,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.copyPromoCode = function() {
         const activeLang = document.body.getAttribute('data-active-lang') || 'ru';
         const copiedMsg = {
-            ru: 'Скопировано! ✦',
-            en: 'Copied! ✦',
-            ua: 'Скопійовано! ✦'
+            ru: 'Скопировано!',
+            en: 'Copied!',
+            ua: 'Скопійовано!'
         };
         
         navigator.clipboard.writeText('MEDITATION20').then(function() {
