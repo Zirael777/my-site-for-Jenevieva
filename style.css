@@ -109,7 +109,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Кнопки и элементы .btn — тонкая рамка с плавным hover */
 button, .btn, a.btn, input[type="submit"], .lead-magnet-btn,
 .price-card button, .portfolio-item button,
-.price-card a.btn, .portfolio-item a.btn {
+.price-card a.btn, .portfolio-item a.btn,
+/* Кнопки в портфолио и магазине */
+#portfolio a, #shop a,
+/* Кнопки на главном экране */
+.hero-section a,
+/* Кнопки в услугах */
+#services button {
     border: 1px solid var(--border-color);
     background-color: transparent;
     color: var(--text-main);
@@ -123,12 +129,43 @@ button, .btn, a.btn, input[type="submit"], .lead-magnet-btn,
 }
 button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover,
 .price-card button:hover, .portfolio-item button:hover,
-.price-card a.btn:hover, .portfolio-item a.btn:hover {
+.price-card a.btn:hover, .portfolio-item a.btn:hover,
+#portfolio a:hover, #shop a:hover,
+.hero-section a:hover,
+#services button:hover {
     background-color: var(--text-main);
     color: var(--white);
     border-color: var(--text-main);
     transform: translateY(-2px);
     opacity: 0.92;
+}
+
+/* Кнопки в секции Услуги — тёплый шоколадный цвет */
+#services button {
+    background-color: #6c2603 !important;
+    color: #fdfbf7 !important;
+    border: none !important;
+}
+#services button:hover {
+    background-color: #5a1f02 !important;
+    color: #fdfbf7 !important;
+    border: none !important;
+    opacity: 0.92;
+}
+
+/* Принудительное скругление для всех кнопок и ссылок-кнопок на сайте */
+#portfolio a[class*="border"], 
+#shop a[class*="bg-"],
+.hero-section a[class*="border"],
+a[class*="border"][href="#services"],
+a.inline-block[class*="border"] {
+    border-radius: 50px !important;
+}
+
+/* Кнопки магазина — явное скругление */
+#shop a[class*="bg-"],
+a[class*="bg-["] {
+    border-radius: 50px !important;
 }
 
 /* Навигационная кнопка «Бесплатный гайд» — брусничный акцент */
@@ -983,6 +1020,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
     text-decoration: none;
     margin-top: 20px;
     transition: color 0.3s ease;
+    border-radius: 50px !important; /* Овальное скругление */
 }
 
 .catalog-link:hover {
@@ -993,7 +1031,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 .download-btn {
     margin-bottom: 20px;
     display: inline-block;
-    border-radius: 50px; /* Овальное скругление */
+    border-radius: 50px !important; /* Овальное скругление */
 }
 
 /* Ссылка на каталог — стилизация под кнопку */
@@ -1006,7 +1044,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
     margin-top: 20px;
     padding: 12px 24px;
     border: 1px solid var(--border-color);
-    border-radius: 50px; /* Овальное скругление */
+    border-radius: 50px !important; /* Овальное скругление */
     transition: all 0.3s ease;
 }
 
