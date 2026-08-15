@@ -1202,3 +1202,61 @@ body:not([data-active-lang]) [data-lang="ua"] {
 .iti__country-list::-webkit-scrollbar-thumb:hover {
     background: rgba(43, 42, 41, 0.3);
 }
+
+/* ==========================================
+   ЕДИНЫЙ КОНТУРНЫЙ СТИЛЬ КНОПОК (OUTLINE -> SOLID)
+   ========================================== */
+
+/* 1. БАЗОВОЕ СОСТОЯНИЕ (Контурное) */
+button:not(.nav-btn-guide):not(.guide-btn), 
+.btn:not(.nav-btn-guide):not(.guide-btn), 
+.hero-btn, 
+.portfolio-card button, .portfolio-card a,
+.service-card button, .service-card a,
+.shop-card button, .shop-card a,
+.modal button:not(.guide-btn) {
+  border-radius: 50px !important;
+  background-color: transparent !important;
+  border: 1px solid #4a1a0c !important; /* Тёплый шоколадный контур */
+  color: #4a1a0c !important;            /* Текст в цвет контура */
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 26px;
+  transition: all 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* 2. HOVER (При наведении — заливка шоколадом и светлый текст) */
+button:not(.nav-btn-guide):not(.guide-btn):hover, 
+.btn:not(.nav-btn-guide):not(.guide-btn):hover, 
+.hero-btn:hover, 
+.portfolio-card button:hover, .portfolio-card a:hover,
+.service-card button:hover, .service-card a:hover,
+.shop-card button:hover, .shop-card a:hover,
+.modal button:not(.guide-btn):hover {
+  background-color: #4a1a0c !important; /* Шоколадная заливка */
+  color: #fdfbf7 !important;            /* Светло-кремовый текст */
+  transform: translateY(-2px) !important;
+}
+
+/* 3. БРУСНИЧНАЯ КНОПКА ГАЙДА (Исключение — остаётся залитой) */
+.nav-btn-guide, 
+.guide-banner-btn,
+.guide-modal-btn {
+  border-radius: 50px !important;
+  background-color: #c46274 !important;
+  color: #ffffff !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-btn-guide:hover, 
+.guide-banner-btn:hover,
+.guide-modal-btn:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-2px) !important;
+}
