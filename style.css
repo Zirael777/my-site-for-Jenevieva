@@ -430,24 +430,44 @@ input:-webkit-autofill {
     border-color: var(--accent-pink);
 }
 
-.form-group.checkbox-group {
+/* Privacy checkbox styles */
+.privacy-wrap {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 12px;
+    margin: 16px 0 12px;
+    width: 100%;
 }
-.form-group.checkbox-group .checkbox-label {
-    display: flex;
+
+.privacy-label {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.9rem;
-    color: #2B2A29;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    user-select: none;
 }
-.form-group.checkbox-group .error-consent {
+
+.privacy-label input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.privacy-wrap .error-consent {
     color: var(--accent-pink);
     font-size: 0.85rem;
     white-space: nowrap;
+    display: none;
+    margin-left: auto;
+}
+
+.privacy-wrap.error .error-consent {
+    display: block;
 }
 .form-group.error .modal-input,
 .form-group.error .messenger-badge {

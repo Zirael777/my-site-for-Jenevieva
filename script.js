@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'guideName', validator: val => val.trim(), errorClass: '.form-group' },
             { id: 'guidePhone', validator: () => phoneInputInstance?.isValidNumber(), errorClass: '.form-group' },
             { id: 'guideEmail', validator: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()), errorClass: '.form-group' },
-            { id: 'privacyConsent', validator: () => document.getElementById('privacyConsent')?.checked, errorClass: '.checkbox-group' }
+            { id: 'privacyConsent', validator: () => document.getElementById('privacyConsent')?.checked, errorClass: '.privacy-wrap' }
         ];
 
         fields.forEach(({ id, validator, errorClass }) => {
