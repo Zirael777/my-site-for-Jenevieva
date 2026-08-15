@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         set('#modalSuccessBlock .modal-description', 'guide_success_desc');
         set('#modalSuccessBlock .promo-label', 'guide_promo_label');
 
-        const copyBtn = document.querySelector('#modalSuccessBlock .btn-copy');
+        const copyBtn = document.querySelector('#modalSuccessBlock .btn-copy-outline');
         if (copyBtn) {
             if (!copyBtn.dataset.original) copyBtn.dataset.original = copyBtn.textContent;
             copyBtn.textContent = t.copyBtn?.[lang] || t.copyBtn?.ru;
@@ -223,9 +223,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.form-group.error').forEach(el => el.classList.remove('error'));
                 const formBlock = document.getElementById('modalFormBlock');
                 const successBlock = document.getElementById('modalSuccessBlock');
-                if (formBlock) formBlock.style.display = 'block';
-                if (successBlock) successBlock.style.display = 'none';
-                const copyBtn = document.querySelector('.btn-copy');
+                if (formBlock) formBlock.classList.remove('hidden');
+                if (successBlock) successBlock.classList.remove('active');
+                const copyBtn = document.querySelector('.btn-copy-outline');
                 if (copyBtn) {
                     const lang = document.body.getAttribute('data-active-lang') || 'ru';
                     copyBtn.textContent = translations.modal.copyBtn?.[lang] || translations.modal.copyBtn?.ru;
@@ -324,8 +324,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const formBlock = document.getElementById('modalFormBlock');
         const successBlock = document.getElementById('modalSuccessBlock');
         if (formBlock && successBlock) {
-            formBlock.style.display = 'none';
-            successBlock.style.display = 'block';
+            formBlock.classList.add('hidden');
+            successBlock.classList.add('active');
             const downloadBtn = successBlock.querySelector('.download-btn');
             if (downloadBtn) {
                 downloadBtn.href = GOOGLE_DRIVE_LINK;
