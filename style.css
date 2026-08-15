@@ -6,6 +6,7 @@
     --accent-olive: #8A9A74; /* оливковый для деталей */
     --border-color: rgba(43, 42, 41, 0.2); /* тонкие графеновые контуры */
     --white: #ffffff;
+    --chocolate: #5c2412; /* Тёплый шоколадный цвет кнопок */
 }
 
 /* Подключение шрифтов Google Fonts */
@@ -23,14 +24,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     letter-spacing: 0.02em;
-}
-
-/* Декоративный заголовок */
-.decorative-heading::before {
-    content: '';
-}
-.decorative-heading::after {
-    content: '';
 }
 
 /* Текстурированный фон бумаги */
@@ -87,13 +80,13 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* Кнопки фильтра — тонкая рамка с hover-эффектом */
+/* Кнопки фильтра */
 .filter-btn {
     border: 1px solid var(--border-color) !important;
     background-color: var(--bg-main) !important;
     color: var(--text-main) !important;
     transition: all 0.3s ease;
-    border-radius: 50px; /* Овальное скругление */
+    border-radius: 50px !important;
 }
 .filter-btn:hover {
     border-color: var(--accent-pink) !important;
@@ -106,109 +99,20 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-pink) !important;
 }
 
-/* Кнопки и элементы .btn — тонкая рамка с плавным hover */
-button, .btn, a.btn, input[type="submit"], .lead-magnet-btn,
-.price-card button, .portfolio-item button,
-.price-card a.btn, .portfolio-item a.btn,
-/* Кнопки в портфолио и магазине */
-#portfolio a, #shop a,
-/* Кнопки на главном экране */
-.hero-section a,
-/* Кнопки в услугах */
-#services button {
-    border: 1px solid var(--border-color);
-    background-color: transparent;
-    color: var(--text-main);
-    padding: 12px 24px;
-    font-family: 'Lora', serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 50px !important; /* Единое овальное скругление для всех кнопок */
-}
-button:hover, .btn:hover, a.btn:hover, input[type="submit"]:hover, .lead-magnet-btn:hover,
-.price-card button:hover, .portfolio-item button:hover,
-.price-card a.btn:hover, .portfolio-item a.btn:hover,
-#portfolio a:hover, #shop a:hover,
-.hero-section a:hover,
-#services button:hover {
-    background-color: var(--text-main);
-    color: var(--white);
-    border-color: var(--text-main);
-    transform: translateY(-2px);
-    opacity: 0.92;
-}
-
-/* Кнопки в секции Услуги — тёплый шоколадный цвет */
-#services button {
-    background-color: #6c2603 !important;
-    color: #fdfbf7 !important;
-    border: none !important;
-}
-#services button:hover {
-    background-color: #5a1f02 !important;
-    color: #fdfbf7 !important;
-    border: none !important;
-    opacity: 0.92;
-}
-
-/* Принудительное скругление для всех кнопок и ссылок-кнопок на сайте */
-#portfolio a[class*="border"], 
-#shop a[class*="bg-"],
-.hero-section a[class*="border"],
-a[class*="border"][href="#services"],
-a.inline-block[class*="border"] {
-    border-radius: 50px !important;
-}
-
-/* Кнопки магазина — явное скругление */
-#shop a[class*="bg-"],
-a[class*="bg-["] {
-    border-radius: 50px !important;
-}
-
-/* Навигационная кнопка «Бесплатный гайд» — брусничный акцент */
-.nav-btn-guide {
-    background-color: var(--accent-pink);
-    color: var(--white) !important;
-    padding: 8px 18px;
-    border-radius: 50px; /* Овальное скругление */
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-    vertical-align: middle;
-}
-.nav-btn-guide:hover {
-    opacity: 0.9;
-    transform: scale(1.03);
-}
-
-/* Выравнивание ссылок меню по одной оси */
+/* Навигация */
 nav a:not(.nav-btn-guide) {
     display: inline-block;
     line-height: 1;
     vertical-align: middle;
 }
 
-/* Списки с кастомными искорками */
+/* Списки */
 ul {
     list-style: none;
     padding-left: 1.2em;
 }
-ul li {
-    position: relative;
-}
-ul li::before {
-    content: '';
-}
 
-/* Разделители hr с искоркой по центру */
+/* Разделители hr */
 hr, .decorative-divider {
     border: none;
     height: 1px;
@@ -216,21 +120,12 @@ hr, .decorative-divider {
     margin: 2em 0;
     position: relative;
 }
-hr::after, .decorative-divider::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-main);
-    padding: 0 8px;
-}
 .decorative-divider {
-    width: 16rem; /* w-16 = 4rem = 64px, но здесь нужно больше для центрирования */
+    width: 16rem;
     margin: 1rem auto;
 }
 
-/* Карточки — аккуратная тонкая рамка, светлый бумажный фон */
+/* Карточки */
 .card, .bg-white {
     border: 1px solid var(--border-color);
     background-color: var(--bg-main);
@@ -242,24 +137,24 @@ hr::after, .decorative-divider::after {
     border-color: var(--accent-pink);
 }
 
-/* CSS ЗАЩИТА ИЗОБРАЖЕНИЙ: блокируем выделение, перетаскивание и системные мобильные контекстные меню */
+/* CSS ЗАЩИТА ИЗОБРАЖЕНИЙ */
 img, video {
-    -webkit-touch-callout: none;      /* отключить вызов меню при долгом нажатии на iOS */
-    -webkit-user-select: none;        /* Safari */
-    -khtml-user-select: none;         /* Konqueror HTML */
-    -moz-user-select: none;            /* Firefox */
-    -ms-user-select: none;             /* Internet Explorer/Edge */
-    user-select: none;                 /* Стандартное свойство */
-    -webkit-user-drag: none;           /* Блокировка перетаскивания в Safari/Chrome */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-/* Логика локализации: скрываем элементы других языков до активации скрипта */
+/* Логика локализации */
 body:not([data-active-lang]) [data-lang="en"], 
 body:not([data-active-lang]) [data-lang="ua"] { 
     display: none; 
 }
 
-/* --- Lead Magnet Section Styles (Full-Width Premium) — эстетика крафтовой мастерской --- */
+/* --- Lead Magnet Section Styles --- */
 .lead-magnet-section {
   width: 100%;
   background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
@@ -280,7 +175,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
   align-items: center;
 }
 
-/* Левая колонка: Типографика */
 .lead-magnet-text-col {
   display: flex;
   flex-direction: column;
@@ -330,35 +224,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
   font-family: 'Lora', serif;
 }
 
-.lead-magnet-btn {
-  display: inline-block;
-  background-color: var(--accent-pink);
-  color: var(--white);
-  border: 1px solid var(--accent-pink);
-  padding: 18px 42px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  border-radius: 50px; /* Овальное скругление */
-  font-family: 'Lora', serif;
-}
-
-.lead-magnet-btn:hover {
-  transform: scale(1.02);
-  background-color: #b85a72;
-  border-color: #b85a72;
-  color: var(--white);
-}
-
-.lead-magnet-btn:active {
-  transform: translateY(0);
-}
-
-/* Правая колонка: Веер страниц гайда */
 .lead-magnet-fan-col {
   display: flex;
   flex-direction: column;
@@ -446,299 +311,18 @@ body:not([data-active-lang]) [data-lang="ua"] {
   line-height: 1.4;
 }
 
-.guide-page-footer-large {
-  font-size: 1rem;
-  color: rgba(43, 42, 41, 0.7);
-  text-align: center;
-  font-style: italic;
-  line-height: 1.5;
-  margin-top: 20px;
-}
+/* Страницы веера */
+.guide-page-1 { top: 30px; left: 20px; transform: rotate(-12deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
+.guide-page-2 { top: 10px; left: 40px; transform: rotate(6deg) scale(1); opacity: 1; z-index: 2; box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2); }
+.guide-page-3 { top: 50px; left: 10px; transform: rotate(-8deg) scale(0.92); opacity: 0.8; z-index: 0; filter: brightness(0.88); }
 
-/* Страница 1 (задняя) */
-.guide-page-1 {
-  top: 30px;
-  left: 20px;
-  transform: rotate(-12deg) scale(0.95);
-  opacity: 0.85;
-  z-index: 1;
-  filter: brightness(0.92);
-}
-
-/* Страница 2 (передняя) */
-.guide-page-2 {
-  top: 10px;
-  left: 40px;
-  transform: rotate(6deg) scale(1);
-  opacity: 1;
-  z-index: 2;
-  box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2);
-}
-
-/* Страница 3 (дополнительная) */
-.guide-page-3 {
-  top: 50px;
-  left: 10px;
-  transform: rotate(-8deg) scale(0.92);
-  opacity: 0.8;
-  z-index: 0;
-  filter: brightness(0.88);
-}
-
-/* Hover эффекты для веера */
 .guide-page:hover {
   transform: scale(1.08) rotate(0deg) !important;
   z-index: 10 !important;
   box-shadow: 0 20px 60px rgba(43, 42, 41, 0.25);
 }
 
-.guide-fan-hint {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: rgba(253, 251, 247, 0.6);
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-/* Модальное окно для просмотра страниц */
-.guide-page-modal-content {
-  background: var(--bg-main);
-  border-radius: 8px;
-  max-width: 900px;
-  width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 25px 80px rgba(43, 42, 41, 0.25);
-  border: 1px solid var(--border-color);
-}
-
-.guide-page-modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 2.5rem;
-  color: var(--text-main);
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.guide-page-modal-close:hover {
-  opacity: 1;
-}
-
-.guide-page-modal-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 40px;
-}
-
-.guide-page-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.guide-page-art-large {
-  width: 100%;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(43, 42, 41, 0.03);
-  border: 2px dashed var(--border-color);
-  border-radius: 6px;
-  padding: 30px;
-}
-
-.guide-page-art-large svg {
-  width: 70%;
-  height: 70%;
-}
-
-.guide-page-modal-info h3 {
-  font-size: 1.4rem;
-  color: var(--text-main);
-  margin: 0 0 15px 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.guide-page-modal-info p {
-  font-size: 0.95rem;
-  color: rgba(43, 42, 41, 0.8);
-  line-height: 1.6;
-  margin: 0;
-  font-family: 'Lora', serif;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 992px) {
-  .lead-magnet-content {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    padding: 0 30px;
-  }
-  
-  .lead-magnet-text-col {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .lead-magnet-badge {
-    text-align: center;
-  }
-  
-  .lead-magnet-title {
-    text-align: center;
-    font-size: 2rem;
-  }
-  
-  .lead-magnet-subtitle {
-    text-align: center;
-  }
-  
-  .lead-magnet-description {
-    text-align: center;
-    max-width: 100%;
-  }
-  
-  .guide-fan-container {
-    width: 280px;
-    height: 380px;
-  }
-  
-  .guide-page {
-    width: 230px;
-    height: 300px;
-  }
-  
-  /* Навигационная кнопка «Бесплатный гайд» на планшетах */
-  .nav-btn-guide {
-    padding: 5px 14px;
-    font-size: 9px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-    vertical-align: middle;
-  }
-}
-
-@media (max-width: 768px) {
-  .lead-magnet-section {
-    padding: 50px 0;
-  }
-  
-  .lead-magnet-content {
-    padding: 0 20px;
-    gap: 40px;
-  }
-  
-  .lead-magnet-badge {
-    font-size: 0.65rem;
-  }
-  
-  .lead-magnet-title {
-    font-size: 1.6rem;
-    letter-spacing: 1.2px;
-  }
-  
-  .lead-magnet-subtitle {
-    font-size: 1rem;
-  }
-  
-  .lead-magnet-description {
-    font-size: 0.95rem;
-  }
-  
-  .lead-magnet-btn {
-    width: 100%;
-    padding: 16px 30px;
-    font-size: 0.9rem;
-  }
-  
-  .guide-fan-container {
-    width: 240px;
-    height: 320px;
-  }
-  
-  .guide-page {
-    width: 200px;
-    height: 260px;
-  }
-  
-  .guide-page-modal-body {
-    grid-template-columns: 1fr;
-    padding: 25px;
-    gap: 25px;
-  }
-  
-  .guide-page-art-large {
-    min-height: 200px;
-    padding: 20px;
-  }
-  
-  /* Навигационная кнопка «Бесплатный гайд» на мобильных */
-  .nav-btn-guide {
-    padding: 4px 12px;
-    font-size: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-    vertical-align: middle;
-  }
-}
-
-@media (max-width: 480px) {
-  .guide-fan-container {
-    width: 200px;
-    height: 280px;
-  }
-  
-  .guide-page {
-    width: 170px;
-    height: 230px;
-  }
-  
-  .guide-page-inner {
-    padding: 15px;
-  }
-  
-  .guide-page-header {
-    padding-bottom: 10px;
-    margin-bottom: 12px;
-  }
-  
-  .guide-page-number {
-    font-size: 1.2rem;
-  }
-  
-  .guide-page-title {
-    font-size: 0.75rem;
-  }
-  
-  .guide-page-footer {
-    font-size: 0.7rem;
-  }
-}
-
-/* ============================================ */
-/* СТИЛИ МОДАЛЬНОГО ОКНА ГАЙДА #guideModal      */
-/* ============================================ */
-
-/* Оверлей модального окна */
+/* СТИЛИ МОДАЛЬНЫХ ОКНА ГАЙДА */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -753,12 +337,8 @@ body:not([data-active-lang]) [data-lang="ua"] {
     align-items: center;
     padding: 20px;
 }
+.modal-overlay.active { display: flex; }
 
-.modal-overlay.active {
-    display: flex;
-}
-
-/* Карточка модального окна */
 .modal-card {
     background: #FDFBF7;
     color: #2B2A29;
@@ -774,7 +354,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-family: 'Lora', serif;
 }
 
-/* Кнопка закрытия (крестик) */
 .modal-close {
     position: absolute;
     top: 15px;
@@ -786,16 +365,9 @@ body:not([data-active-lang]) [data-lang="ua"] {
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    line-height: 1;
-    padding: 0;
-    font-family: 'Cormorant Garamond', serif;
 }
+.modal-close:hover { opacity: 1; }
 
-.modal-close:hover {
-    opacity: 1;
-}
-
-/* Заголовок модального окна */
 .modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
@@ -803,15 +375,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
     text-align: center;
     margin: 0 0 25px 0;
     color: #2B2A29;
-    letter-spacing: 0.02em;
 }
 
-/* Группы полей формы */
-.form-group {
-    margin-bottom: 18px;
-}
+.form-group { margin-bottom: 18px; }
 
-/* Поля ввода */
 .modal-input {
     width: 100%;
     background: #FFFFFF;
@@ -822,61 +389,11 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-size: 0.95rem;
     color: #2B2A29;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
 }
+.modal-input:focus { border-color: #C86B83; outline: none; }
 
-.modal-input::placeholder {
-    color: rgba(43, 42, 41, 0.5);
-}
-
-.modal-input:focus {
-    border-color: #C86B83;
-    outline: none;
-}
-
-/* Стили для ошибок валидации */
-.form-group.error .modal-input {
-    border-color: #d9534f;
-}
-
-.error-message {
-    display: none;
-    color: #d9534f;
-    font-size: 0.75rem;
-    margin-top: 5px;
-    font-style: italic;
-}
-
-.form-group.error .error-message {
-    display: block;
-}
-
-/* Лейбл для мессенджеров */
-.messenger-label {
-    display: block;
-    font-size: 0.85rem;
-    color: #2B2A29;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-/* Опции мессенджеров */
-.messenger-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.messenger-option {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.messenger-option input[type="radio"] {
-    display: none;
-}
-
+.messenger-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.messenger-option input[type="radio"] { display: none; }
 .messenger-badge {
     display: inline-block;
     padding: 8px 16px;
@@ -887,376 +404,119 @@ body:not([data-active-lang]) [data-lang="ua"] {
     background: #FFFFFF;
     transition: all 0.3s ease;
 }
-
 .messenger-option input[type="radio"]:checked + .messenger-badge {
     background: #C86B83;
     color: #FFFFFF;
     border-color: #C86B83;
 }
 
-.messenger-option:hover .messenger-badge {
-    border-color: #C86B83;
-}
+/* ==========================================================================
+   Е Д И Н А Я   С И С Т Е М А   К Н О П О К   (ПОЛНЫЙ ПРИОРИТЕТ)
+   ========================================================================== */
 
-/* Чекбокс согласия */
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.modal-checkbox {
-    margin-top: 3px;
-    accent-color: #C86B83;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.checkbox-label {
+/* 1. ВСЕ ОБЫЧНЫЕ КНОПКИ: Контурный стиль по умолчанию (Outline) */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
+.hero-section a,
+#portfolio a,
+#services button,
+#services a,
+#shop a,
+#shop button,
+.price-card button,
+.portfolio-item button,
+.price-card a,
+.portfolio-item a,
+.btn-copy,
+.catalog-link {
+    border-radius: 50px !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: 1px solid #5c2412 !important; /* Тёплый шоколадный контур */
+    color: #5c2412 !important;            /* Текст в цвет контура */
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
     font-size: 0.85rem;
-    color: #2B2A29;
-    line-height: 1.4;
-    cursor: pointer;
-}
-
-/* Подсказка под формой */
-.form-hint {
-    font-size: 0.8rem;
-    color: rgba(43, 42, 41, 0.7);
-    text-align: center;
-    margin: 20px 0;
-    line-height: 1.5;
-    font-style: italic;
-}
-
-/* Описание модалки */
-.modal-description {
-    font-size: 0.95rem;
-    color: #2B2A29;
-    text-align: center;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    font-family: 'Lora', serif;
-}
-
-/* Акцентная кнопка */
-.btn-accent {
-    display: inline-block;
-    width: 100%;
-    background: #C86B83;
-    color: #FFFFFF;
-    border: 1px solid #C86B83;
-    padding: 14px 24px;
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
-    border-radius: 50px; /* Овальное скругление */
-    transition: all 0.3s ease;
-    text-align: center;
+    padding: 12px 28px;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     box-sizing: border-box;
 }
 
-.btn-accent:hover {
-    background: #b85a72;
-    border-color: #b85a72;
-    transform: scale(1.02);
+/* 2. HOVER ДЛЯ ОБЫЧНЫХ КНОПОК: ШОКОЛАДНАЯ ЗАЛИВКА + КРЕМОВЫЙ ТЕКСТ */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
+a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
+.hero-section a:hover,
+#portfolio a:hover,
+#services button:hover,
+#services a:hover,
+#shop a:hover,
+#shop button:hover,
+.price-card button:hover,
+.portfolio-item button:hover,
+.price-card a:hover,
+.portfolio-item a:hover,
+.btn-copy:hover,
+.catalog-link:hover {
+    background-color: #5c2412 !important; /* Шоколадная заливка */
+    background: #5c2412 !important;
+    color: #FDFBF7 !important;            /* Светло-кремовый текст */
+    border-color: #5c2412 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
+}
+
+/* 3. КНОПКИ ГАЙДА (Единственный брусничный акцент) */
+.nav-btn-guide,
+.lead-magnet-btn,
+.btn-accent,
+.guide-banner-btn,
+.guide-modal-btn {
+    border-radius: 50px !important;
+    background-color: #C86B83 !important;
+    background: #C86B83 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #C86B83 !important;
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 28px;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* HOVER для кнопок Гайда */
+.nav-btn-guide:hover,
+.lead-magnet-btn:hover,
+.btn-accent:hover,
+.guide-banner-btn:hover,
+.guide-modal-btn:hover {
+    background-color: #b85a72 !important;
+    background: #b85a72 !important;
+    border-color: #b85a72 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
     box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
 }
 
-.btn-accent:active {
-    transform: scale(0.98);
+/* Нажатие на любую кнопку */
+button:active, .btn:active, a:active {
+    transform: translateY(0) !important;
 }
 
-/* Блок промокода */
-.promo-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 25px 0;
-    padding: 15px;
-    background: rgba(200, 107, 131, 0.08);
-    border: 1px dashed rgba(200, 107, 131, 0.4);
-    border-radius: 4px;
-}
-
-.promo-code {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #C86B83;
-    letter-spacing: 0.1em;
-}
-
-.btn-copy {
-    background: transparent;
-    border: 1px solid rgba(43, 42, 41, 0.2);
-    padding: 8px 16px;
-    font-family: 'Lora', serif;
-    font-size: 0.85rem;
-    color: #2B2A29;
-    cursor: pointer;
-    border-radius: 50px; /* Овальное скругление */
-    transition: all 0.3s ease;
-}
-
-.btn-copy:hover {
-    border-color: #C86B83;
-    color: #C86B83;
-    background: rgba(200, 107, 131, 0.05);
-}
-
-/* Ссылка на каталог */
-.catalog-link {
-    display: block;
-    text-align: center;
-    color: #2B2A29;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: color 0.3s ease;
-    border-radius: 50px !important; /* Овальное скругление */
-}
-
-.catalog-link:hover {
-    color: #C86B83;
-}
-
-/* Кнопка скачивания */
-.download-btn {
-    margin-bottom: 20px;
-    display: inline-block;
-    border-radius: 50px !important; /* Овальное скругление */
-}
-
-/* Ссылка на каталог — стилизация под кнопку */
-.catalog-link {
-    display: inline-block;
-    text-align: center;
-    color: #2B2A29;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-top: 20px;
-    padding: 12px 24px;
-    border: 1px solid var(--border-color);
-    border-radius: 50px !important; /* Овальное скругление */
-    transition: all 0.3s ease;
-}
-
-.catalog-link:hover {
-    color: #C86B83;
-    border-color: #C86B83;
-    transform: scale(1.02);
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 540px) {
-    .modal-card {
-        padding: 30px 20px;
-    }
-    
-    .modal-title {
-        font-size: 1.3rem;
-    }
-    
-    .modal-description {
-        font-size: 0.85rem;
-    }
-    
-    .messenger-options {
-        flex-direction: column;
-    }
-    
-    .messenger-badge {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-    
-    .promo-block {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-/* ============================================ */
-/* СТИЛИ ДЛЯ intl-tel-input (библиотека телефона) */
-/* ============================================ */
-
-/* Основной контейнер библиотеки — гармонично вписываем в дизайн */
-.iti {
-    width: 100%;
-    display: block;
-}
-
-.iti__flag {
-    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png");
-}
-
-@media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.1), (min-resolution: 106dpi) {
-    .iti__flag {
-        background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags@2x.png");
-    }
-}
-
-/* Поле ввода с флагом — стилизуем под общий дизайн модалки */
-.iti input {
-    width: 100%;
-    background: #FFFFFF;
-    border: 1px solid rgba(43, 42, 41, 0.2);
-    padding: 12px 16px 12px 56px; /* отступ слева для флага */
-    border-radius: 4px;
-    font-family: 'Lora', serif;
-    font-size: 0.95rem;
-    color: #2B2A29;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-.iti input:focus {
-    outline: none;
-    border-color: var(--accent-pink);
-}
-
-.iti input::placeholder {
-    color: rgba(43, 42, 41, 0.4);
-}
-
-/* Выпадающий список стран */
-.iti__country-list {
-    background: #FDFBF7;
-    border: 1px solid rgba(43, 42, 41, 0.2);
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-height: 300px;
-    overflow-y: auto;
-    z-index: 1001;
-}
-
-.iti__country {
-    padding: 8px 12px;
-    font-family: 'Lora', serif;
-    font-size: 0.9rem;
-    color: #2B2A29;
-    transition: background-color 0.2s ease;
-}
-
-.iti__country:hover {
-    background-color: rgba(200, 107, 131, 0.1);
-}
-
-.iti__highlight {
-    background-color: rgba(200, 107, 131, 0.15) !important;
-}
-
-.iti__country-name {
-    color: #2B2A29;
-}
-
-/* Блок с кодом страны рядом с флагом */
-.iti__selected-flag {
-    background: transparent;
-    border-right: 1px solid rgba(43, 42, 41, 0.1);
-    padding: 0 8px;
-}
-
-.iti__selected-flag:hover,
-.iti__selected-flag:focus {
-    background-color: rgba(200, 107, 131, 0.05);
-}
-
-/* Стрелочка dropdown */
-.iti__arrow {
-    border-top: 4px solid #2B2A29;
-}
-
-.iti__arrow--up {
-    border-bottom: 4px solid #2B2A29;
-    border-top: none;
-}
-
-/* Ошибка валидации — красная рамка */
-.form-group.error .iti input {
-    border-color: #C86B83;
-}
-
-/* Скроллбар для списка стран */
-.iti__country-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.iti__country-list::-webkit-scrollbar-track {
-    background: rgba(43, 42, 41, 0.05);
-    border-radius: 3px;
-}
-
-.iti__country-list::-webkit-scrollbar-thumb {
-    background: rgba(43, 42, 41, 0.2);
-    border-radius: 3px;
-}
-
-.iti__country-list::-webkit-scrollbar-thumb:hover {
-    background: rgba(43, 42, 41, 0.3);
-}
-
-/* ==========================================
-   ЕДИНЫЙ КОНТУРНЫЙ СТИЛЬ КНОПОК (OUTLINE -> SOLID)
-   ========================================== */
-
-/* 1. БАЗОВОЕ СОСТОЯНИЕ (Контурное) */
-button:not(.nav-btn-guide):not(.guide-btn), 
-.btn:not(.nav-btn-guide):not(.guide-btn), 
-.hero-btn, 
-.portfolio-card button, .portfolio-card a,
-.service-card button, .service-card a,
-.shop-card button, .shop-card a,
-.modal button:not(.guide-btn) {
-  border-radius: 50px !important;
-  background-color: transparent !important;
-  border: 1px solid #4a1a0c !important; /* Тёплый шоколадный контур */
-  color: #4a1a0c !important;            /* Текст в цвет контура */
-  font-family: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 10px 26px;
-  transition: all 0.3s ease !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* 2. HOVER (При наведении — заливка шоколадом и светлый текст) */
-button:not(.nav-btn-guide):not(.guide-btn):hover, 
-.btn:not(.nav-btn-guide):not(.guide-btn):hover, 
-.hero-btn:hover, 
-.portfolio-card button:hover, .portfolio-card a:hover,
-.service-card button:hover, .service-card a:hover,
-.shop-card button:hover, .shop-card a:hover,
-.modal button:not(.guide-btn):hover {
-  background-color: #4a1a0c !important; /* Шоколадная заливка */
-  color: #fdfbf7 !important;            /* Светло-кремовый текст */
-  transform: translateY(-2px) !important;
-}
-
-/* 3. БРУСНИЧНАЯ КНОПКА ГАЙДА (Исключение — остаётся залитой) */
-.nav-btn-guide, 
-.guide-banner-btn,
-.guide-modal-btn {
-  border-radius: 50px !important;
-  background-color: #c46274 !important;
-  color: #ffffff !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
-}
-
-.nav-btn-guide:hover, 
-.guide-banner-btn:hover,
-.guide-modal-btn:hover {
-  opacity: 0.9 !important;
-  transform: translateY(-2px) !important;
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .lead-magnet-content { grid-template-columns: 1fr; padding: 0 20px; }
+    .lead-magnet-btn { width: 100%; }
+    .nav-btn-guide { padding: 6px 14px; font-size: 10px; }
 }
