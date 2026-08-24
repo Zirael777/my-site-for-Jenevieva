@@ -178,13 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Открытие модального окна страницы гайда
     window.openGuidePageModal = function(pageNum) {
-        const data = translations.guidePages[pageNum];
-        if (!data) return;
-        const lang = document.body.getAttribute('data-active-lang') || 'ru';
-        document.getElementById('modal-page-number').textContent = data.number;
-        document.getElementById('modal-page-title').textContent = data.title[lang];
-        document.getElementById('modal-page-art').innerHTML = data.svg;
-        document.getElementById('modal-page-footer').textContent = data.footer[lang];
+        const imgSrc = `guide-page-${pageNum}.png`;
+        document.getElementById('modal-page-img').src = imgSrc;
         const modal = document.getElementById('guide-page-modal');
         modal.classList.remove('hidden');
         modal.classList.add('flex');
@@ -196,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('guide-page-modal');
         modal.classList.add('hidden');
         modal.classList.remove('flex');
+        document.getElementById('modal-page-img').src = '';
         document.body.style.overflow = 'auto';
     };
 
