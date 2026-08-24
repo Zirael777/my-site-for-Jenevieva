@@ -76,15 +76,31 @@
         </div>
 
         <!-- СЕТКА КАРТОЧЕК ПОРТФОЛИО -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+        <div class="flex flex-col gap-16 lg:gap-20">
 
             <!-- 1. ПОРТРЕТ: Масло (Мужчина за пианино) -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio1.png" alt="Oil Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Portrait';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <!-- Блок фотографий: 2 колонки -->
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <!-- Левая колонка: Главное фото -->
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio1.png" alt="Oil Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Portrait';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <!-- Правая колонка: 2 маленьких фото -->
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio1_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio1_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <!-- Текстовый блок -->
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Картина маслом</span><span data-lang="en">Oil Painting</span><span data-lang="ua">Картина олією</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Живопись маслом • Сюжетный портрет</span>
@@ -97,32 +113,31 @@
                         <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
                     </p>
                 </div>
-                <!-- Маленькие фото -->
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio1_1.png" alt="Source Photo" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio1_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- 2. ПОРТРЕТ: Девушка в зеленой шляпке -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio4.png" alt="Graphic Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Green+Hat';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio4.png" alt="Graphic Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Green+Hat';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio4_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio4_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Графический портрет</span><span data-lang="en">Graphic Portrait</span><span data-lang="ua">Графічний портрет</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Графический портрет • Энергия цвета</span>
@@ -135,31 +150,31 @@
                         <span data-lang="ua">Працюючи за фото, я часто змінюю деталі для кращого розкриття образу. На оригіналі дівчина була в іншому головному уборі, але я додала цей зелений капелюшок. Колірна гама була підібрана інтуїтивно, щоб точно відобразити внутрішню енергію героїні.</span>
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio4_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio4_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- 3. ПОРТРЕТ: Девушка с гирляндой (утонченный образ) -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio3.png" alt="Refined Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Garland';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio3.png" alt="Refined Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Garland';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio3_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio3_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Графический портрет</span><span data-lang="en">Graphic Portrait</span><span data-lang="ua">Графічний портрет</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Утончённый образ • Графика и свет</span>
@@ -172,31 +187,31 @@
                         <span data-lang="ua">У цьому портреті мені хотілося передати витонченість та особливу святкову атмосферу. Робота над жестом і поглядом вимагала тонкого графічного опрацювання, щоб зберегти ніжність та грацію.</span>
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio3_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio3_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- 4. ПОРТРЕТ: Мальчик (искренняя улыбка) -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio5.png" alt="Child Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Boy';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio5.png" alt="Child Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Boy';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio5_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio5_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Детский портрет</span><span data-lang="en">Child's Portrait</span><span data-lang="ua">Дитячий портрет</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Детский портрет • Искренняя улыбка</span>
@@ -204,36 +219,36 @@
                         <span data-lang="ua">Дитячий портрет • Щира посмішка</span>
                     </h3>
                     <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Детские портреты всегда требуют особой легкости. Моей целью было поймать эту чистую, искреннюю улыбку и живой огонек в глазах. Мягкие переходы цвета подчёркивают непосредственность и свет эмоций.</span>
-                        <span data-lang="en">Children’s portraits always call for a light touch. My goal was capturing that pure, genuine smile and the spark in his eyes. Soft color transitions highlight the warmth of childhood joy.</span>
-                        <span data-lang="ua">Дитячі портрети завжди вимагають особливої легкості. Моєю метою было зловити цю чисту, щиру посмішку та живий вогник в очах. М'які переходи кольору підкреслюють світло емоцій.</span>
+                        <span data-lang="ru">Детские портреты — особенное направление в моем творчестве. Здесь важнее всего поймать живой эмоциональный импульс. В этой работе я сосредоточилась на искренней детской улыбке и мягком освещении, которое подчеркивает нежность возраста.</span>
+                        <span data-lang="en">Children's portraits are a special direction in my work. The most important thing is to capture a live emotional impulse. In this piece, I focused on a sincere child's smile and soft lighting that emphasizes the tenderness of age.</span>
+                        <span data-lang="ua">Дитячі портрети — особливий напрям у моїй творчості. Тут найважливіше спіймати живий емоційний імпульс. У цій роботі я зосередилася на щирій дитячій посмішці та м'якому освітленні, яке підкреслює ніжність віку.</span>
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio5_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio5_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- 5. ПОРТРЕТ: Девушка с длинными волосами (мягкий свет) -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio6.png" alt="Soft Light Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Long+Hair';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio6.png" alt="Soft Light Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Long+Hair';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio6_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio6_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Графический портрет</span><span data-lang="en">Graphic Portrait</span><span data-lang="ua">Графічний портрет</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Мягкий свет • Естественность</span>
@@ -246,31 +261,31 @@
                         <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та текстурі волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio6_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio6_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- 6. ПОРТРЕТ: Девушка с кудрями (сила взгляда) -->
-            <div class="portfolio-item portraits bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio2.png" alt="Curly Hair Portrait" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Curly+Hair';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+            <div class="portfolio-item portraits w-full flex flex-col">
+                <div class="grid grid-cols-2 gap-0 mb-8">
+                    <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                        <img src="portfolio2.png" alt="Curly Hair Portrait" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Curly+Hair';">
+                        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-0">
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio2_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Source';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                        <div class="overflow-hidden cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                            <img src="portfolio2_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x300/fdfbf7/6c2603?text=Details';">
+                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-6 flex-grow">
+                <div class="mb-4">
                     <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Авторский портрет</span><span data-lang="en">Original Portrait</span><span data-lang="ua">Авторський портрет</span></span>
                     <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
                         <span data-lang="ru">Авторская графика • Сила взгляда</span>
@@ -283,221 +298,9 @@
                         <span data-lang="ua">У серії авторських портретів я досліджую межу між детальною проробкою та виразністю лінії. Робота з традиційною графікою допомагає мені тонко передати пластику обличчя, характер та внутрішню харизму.</span>
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio2_1.png" alt="Source" class="w-full h-full object-cover filter grayscale transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio2_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. КАЛЕНДАРЬ: Year of Wise Horses -->
-            <div class="portfolio-item calendars bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
-                </div>
-                <div class="mb-6 flex-grow">
-                    <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Авторский календарь</span><span data-lang="en">Author Calendar</span><span data-lang="ua">Авторський календар</span></span>
-                    <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                        <span data-lang="ru">«Год мудрых лошадей» • Графика</span>
-                        <span data-lang="en">"Year of Wise Horses" • Pencil Graphics</span>
-                        <span data-lang="ua">«Рік мудрих коней» • Графіка</span>
-                    </h3>
-                    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Особенный для меня проект. Каждая иллюстрация в этом календаре полностью нарисована цветными и графитными карандашами. Мне хотелось передать благородство, грацию и внутреннюю силу этих животных.</span>
-                        <span data-lang="en">A very special project for me. Every illustration in this calendar was entirely drawn with colored and graphite pencils. I wanted to convey the grace and inner power of these animals.</span>
-                        <span data-lang="ua">Особливий для мене проєкт. Кожна ілюстрація в цьому календарі повністю намальована кольоровими та графітними олівцями. Мені хотілося передати благородство, грацію та внутрішню силу цих тварин.</span>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Эскизы</span><span data-lang="en">Sketches</span><span data-lang="ua">Ескізи</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_horses_1.png" alt="Sketches" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Sketch';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_horses_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://www.behance.net/gallery/242494125/Year-of-Wise-Horses-Author-Calendar" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all text-center">
-                    <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                </a>
-            </div>
-
-            <!-- 8. КАЛЕНДАРЬ: Monochrome Flowers -->
-            <div class="portfolio-item calendars bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_cal_flowers.png" alt="Monochrome Flowers Calendar" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Coloring+Calendar';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
-                </div>
-                <div class="mb-6 flex-grow">
-                    <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Календарь-раскраска</span><span data-lang="en">Coloring Calendar</span><span data-lang="ua">Календар-розмальовка</span></span>
-                    <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                        <span data-lang="ru">«Монохромные цветы» • Раскраска</span>
-                        <span data-lang="en">"Monochrome Flowers" • Traditional Art</span>
-                        <span data-lang="ua">«Монохромні квіти» • Розмальовка</span>
-                    </h3>
-                    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Этот календарь задуман как приглашение к творчеству и медитации. Все ботанические иллюстрации я рисовала карандашами от руки. Монохромную графику цветов можно оставить в стильной минималистичной эстетике или раскрасить.</span>
-                        <span data-lang="en">This calendar was created as an invitation to art and meditation. All botanical illustrations were hand-drawn with pencils. The monochrome floral graphics can be enjoyed as minimal art or filled with your own colors.</span>
-                        <span data-lang="ua">Цей календар задуманий як запрошення до творчості та медитації. Усі ботанічні ілюстрації я малювала олівцями від руки. Монохромну графіку квітів можна залишити у стильному мінімалізмі або розфарбувати.</span>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Фрагмент</span><span data-lang="en">Fragment</span><span data-lang="ua">Фрагмент</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_flowers_1.png" alt="Fragment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Fragment';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_flowers_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://www.behance.net/gallery/241665513/Monochrome-Flowers-Coloring-Calendar" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all text-center">
-                    <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                </a>
-            </div>
-
-            <!-- 9. ПРИНТЫ: Открытки -->
-            <div class="portfolio-item prints bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_cards.png" alt="Greeting Cards" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
-                </div>
-                <div class="mb-6 flex-grow">
-                    <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Авторские открытки</span><span data-lang="en">Greeting Cards</span><span data-lang="ua">Авторські листівки</span></span>
-                    <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                        <span data-lang="ru">Праздничные иллюстрации</span>
-                        <span data-lang="en">Holiday Illustrations</span>
-                        <span data-lang="ua">Святкові ілюстрації</span>
-                    </h3>
-                    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Для меня открытка — это маленький хранитель больших чувств. В этой серии иллюстраций мне хотелось передать уют и тепло праздника. Каждая карточка создавалась вручную, чтобы стать особенным дополнением к важным словам.</span>
-                        <span data-lang="en">For me, a postcard is a tiny keeper of big emotions. In this illustration series, I aimed to capture holiday warmth and comfort. Every card was created by hand to gently accompany your kind words.</span>
-                        <span data-lang="ua">Для мене листівка — це маленький берегиня великих почуттів. У цій серії ілюстрацій мені хотілося передати затишок та тепло свята. Кожна картка створювалася вручну.</span>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Серия</span><span data-lang="en">Series</span><span data-lang="ua">Серія</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cards_1.png" alt="Series" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Series';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cards_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://www.behance.net/gallery/241929963/Author-Holiday-Greeting-Cards-Illustrations" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all text-center">
-                    <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                </a>
-            </div>
-
-            <!-- 10. ГАЙД: Тихое искусство быть собой -->
-            <div class="portfolio-item guides bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_guide.png" alt="Author Guide" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Guide';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
-                </div>
-                <div class="mb-6 flex-grow">
-                    <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Иллюстрированный гайд</span><span data-lang="en">Illustrated Guide</span><span data-lang="ua">Ілюстрований гайд</span></span>
-                    <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                        <span data-lang="ru">«Тихое искусство быть собой»</span>
-                        <span data-lang="en">"The Quiet Art of Being Yourself"</span>
-                        <span data-lang="ua">«Тихе мистецтво бути собою»</span>
-                    </h3>
-                    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Личный и очень тонкий проект о поиске гармонии и тишины внутри. Я создала серию концептуальных графических иллюстраций, которые бережно дополняют текст и помогают настроиться на волну вдохновения и принятия себя.</span>
-                        <span data-lang="en">A deeply personal and nuanced project about inner peace and harmony. I designed a series of conceptual graphic illustrations that complement the text and help embrace self-acceptance and quiet inspiration.</span>
-                        <span data-lang="ua">Особистий та дуже тонкий проєкт про пошук гармонії та внутрішньої тиші. Я створила серію концептуальних графічних ілюстрацій, які дбайливо доповнюють текст і допомагають налаштуватися на хвилю натхнення.</span>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Страницы</span><span data-lang="en">Pages</span><span data-lang="ua">Сторінки</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_guide_1.png" alt="Pages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Pages';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_guide_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://www.behance.net/gallery/241931097/The-Quiet-Art-of-Being-Yourself-Author-Guide" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all text-center">
-                    <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                </a>
-            </div>
-
-            <!-- 11. ПРИНТЫ: Ботаническая графика -->
-            <div class="portfolio-item prints bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_prints.png" alt="Monochrome Prints" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Prints';">
-                    <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-3xl font-light">⊕</span></div>
-                </div>
-                <div class="mb-6 flex-grow">
-                    <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2"><span data-lang="ru">Авторские принты</span><span data-lang="en">Author Prints</span><span data-lang="ua">Авторські принти</span></span>
-                    <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
-                        <span data-lang="ru">«Монохромные цветы» • Интерьер</span>
-                        <span data-lang="en">"Monochrome Flowers" • Interior Prints</span>
-                        <span data-lang="ua">«Монохромні квіти» • Інтер'єр</span>
-                    </h3>
-                    <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Ботаника — мой постоянный источник вдохновения. Эти графические принты рождались карандаш за карандашом, где каждый лепесток прорисован вручную. Они созданы для того, чтобы приносить эстетику в современный интерьер.</span>
-                        <span data-lang="en">Botanicals are my constant source of inspiration. These graphic prints were drawn stroke by stroke, with every petal crafted by hand. Designed to bring minimalist aesthetic and elegance to any modern interior.</span>
-                        <span data-lang="ua">Ботаніка — моє постійне джерело натхнення. Ці графічні принти народжувалися олівець за олівцем, де кожна пелюстка промальована вручную. Вони створені для того, щоб приносити лаконічність та естетику в будь-який інтер'єр.</span>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-5">
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Пример</span><span data-lang="en">Preview</span><span data-lang="ua">Приклад</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_prints_1.png" alt="Preview" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Preview';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                    <div class="space-y-1.5">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center"><span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span></span>
-                        <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_prints_2.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                            <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none"><span class="text-white text-xl">⊕</span></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://www.behance.net/gallery/242110097/Author-Prints-Monochrome-Flowers" target="_blank" rel="noopener noreferrer" class="block border border-[#6c2603] px-4 py-3 uppercase font-bold text-[10px] tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all text-center">
-                    <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-block text-xs uppercase tracking-widest font-bold text-[#6c2603] hover:text-[#6c2603]/60 transition-colors relative group">
+                    View project on Behance ↗
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-[#6c2603] transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </div>
 
