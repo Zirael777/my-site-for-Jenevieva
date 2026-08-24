@@ -163,34 +163,65 @@ document.addEventListener('DOMContentLoaded', () => {
         if (['IMG', 'VIDEO'].includes(e.target.tagName)) e.preventDefault();
     });
 
-    // Закрытие модальных окон по Escape
+    // Закрытие модальных окон по Escape и навигация стрелками
     document.addEventListener('keydown', event => {
-        if (event.key !== 'Escape') return;
-        const modals = [
-            { id: 'guideModal', checker: () => document.getElementById('guideModal')?.classList.contains('active'), closer: closeGuideModal },
-            { id: 'guide-modal', checker: () => document.getElementById('guide-modal')?.classList.contains('active'), closer: () => closeModal('guide-modal') },
-            { id: 'order-modal', checker: () => document.getElementById('order-modal')?.classList.contains('active'), closer: () => closeModal('order-modal') },
-            { id: 'image-viewer-modal', checker: () => !document.getElementById('image-viewer-modal')?.classList.contains('hidden'), closer: closeImageViewerModal },
-            { id: 'guide-page-modal', checker: () => !document.getElementById('guide-page-modal')?.classList.contains('hidden'), closer: closeGuidePageModal }
-        ];
-        modals.forEach(({ checker, closer }) => { if (checker()) closer(); });
+        const modal = document.getElementById('guide-page-modal');
+        const isGuidePageModalOpen = modal && !modal.classList.contains('hidden');
+        
+        if (event.key === 'Escape') {
+            const modals = [
+                { id: 'guideModal', checker: () => document.getElementById('guideModal')?.classList.contains('active'), closer: closeGuideModal },
+                { id: 'guide-modal', checker: () => document.getElementById('guide-modal')?.classList.contains('active'), closer: () => closeModal('guide-modal') },
+                { id: 'order-modal', checker: () => document.getElementById('order-modal')?.classList.contains('active'), closer: () => closeModal('order-modal') },
+                { id: 'image-viewer-modal', checker: () => !document.getElementById('image-viewer-modal')?.classList.contains('hidden'), closer: closeImageViewerModal },
+                { id: 'guide-page-modal', checker: () => !document.getElementById('guide-page-modal')?.classList.contains('hidden'), closer: closeGuidePageModal }
+            ];
+            modals.forEach(({ checker, closer }) => { if (checker()) closer(); });
+        }
+        
+        // Навигация стрелками влево/вправо при открытом модальном окне гайда
+        if (isGuidePageModalOpen) {
+            if (event.key === 'ArrowLeft') {
+                navigateGuidePage(-1);
+            } else if (event.key === 'ArrowRight') {
+                navigateGuidePage(1);
+            }
+        }
     });
+
+    // Текущая страница в модальном окне гайда
+    let currentGuidePage = 1;
+    const totalGuidePages = 3;
 
     // Открытие модального окна страницы гайда
     window.openGuidePageModal = function(pageNum) {
-        const imgSrc = `guide-page-${pageNum}.png`;
-        document.getElementById('modal-page-img').src = imgSrc;
+        currentGuidePage = pageNum || 1;
+        updateModalImage();
         const modal = document.getElementById('guide-page-modal');
+        modal.classList.add('active');
         modal.classList.remove('hidden');
-        modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
+    };
+
+    // Обновление изображения в модальном окне
+    function updateModalImage() {
+        const imgSrc = `guide-page-${currentGuidePage}.png`;
+        document.getElementById('modal-page-img').src = imgSrc;
+    }
+
+    // Навигация по страницам гайда
+    window.navigateGuidePage = function(direction) {
+        currentGuidePage += direction;
+        if (currentGuidePage < 1) currentGuidePage = totalGuidePages;
+        else if (currentGuidePage > totalGuidePages) currentGuidePage = 1;
+        updateModalImage();
     };
 
     // Закрытие модального окна страницы гайда
     window.closeGuidePageModal = function() {
         const modal = document.getElementById('guide-page-modal');
+        modal.classList.remove('active');
         modal.classList.add('hidden');
-        modal.classList.remove('flex');
         document.getElementById('modal-page-img').src = '';
         document.body.style.overflow = 'auto';
     };

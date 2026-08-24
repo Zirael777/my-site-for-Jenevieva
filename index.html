@@ -428,16 +428,16 @@
             <div class="lead-magnet-fan-col">
                 <div class="guide-fan-container">
                     
-                    <div class="guide-page guide-page-1" onclick="openGuidePageModal(1)">
+                    <div class="guide-page guide-page-2" onclick="openGuidePageModal(2)">
                         <div class="guide-page-inner">
-                            <img src="guide-page-1.png" alt="Страница 1: Арт-медитация" class="guide-page-img">
+                            <img src="guide-page-2.png" alt="Страница 1: Арт-медитация" class="guide-page-img">
                         </div>
                     </div>
                     
                     
-                    <div class="guide-page guide-page-2" onclick="openGuidePageModal(2)">
+                    <div class="guide-page guide-page-1" onclick="openGuidePageModal(1)">
                         <div class="guide-page-inner">
-                            <img src="guide-page-2.png" alt="Страница 2: Материалы" class="guide-page-img">
+                            <img src="guide-page-1.png" alt="Страница 2: Материалы" class="guide-page-img">
                         </div>
                     </div>
                     
@@ -458,22 +458,13 @@
     </section>
     
     
-    <div id="guide-page-modal" class="modal" onclick="closeGuidePageModal()">
-        <div class="guide-page-modal-content" onclick="event.stopPropagation()">
-            <button class="guide-page-modal-close" onclick="closeGuidePageModal()">×</button>
-            <div class="guide-page-modal-body">
-                <div class="guide-page-preview">
-                    <img id="modal-page-img" src="" alt="Страница гайда" class="guide-page-preview-img">
-                </div>
-                <div class="guide-page-modal-info">
-                    <h3 data-lang="ru">Страница гайда</h3>
-                    <h3 data-lang="en">Guide Page</h3>
-                    <h3 data-lang="ua">Сторінка гайда</h3>
-                    <p data-lang="ru">Это превью страницы из авторского гайда по арт-медитации. Получите полную версию, оставив свои контактные данные.</p>
-                    <p data-lang="en">This is a preview of a page from the author's art meditation guide. Get the full version by providing your contact details.</p>
-                    <p data-lang="ua">Це попередній перегляд сторінки з авторського гайда з арт-медитації. Отримайте повну версію, надавши свої контактні дані.</p>
-                </div>
-            </div>
+    <!-- Модальное окно для просмотра страниц гайда (лайтбокс с навигацией) -->
+    <div id="guide-page-modal" class="guide-page-modal-overlay" onclick="closeGuidePageModal()">
+        <button class="guide-page-modal-close-btn" onclick="closeGuidePageModal()">×</button>
+        <button class="guide-page-modal-nav guide-page-modal-prev" onclick="navigateGuidePage(-1)">‹</button>
+        <button class="guide-page-modal-nav guide-page-modal-next" onclick="navigateGuidePage(1)">›</button>
+        <div class="guide-page-modal-image-container" onclick="event.stopPropagation()">
+            <img id="modal-page-img" src="" alt="Страница гайда" class="guide-page-modal-img">
         </div>
     </div>
 
