@@ -1,4 +1,6 @@
-/* Brand CSS Variables */
+/* ==========================================================================
+   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
+   ========================================================================== */
 :root {
     --bg-main: #FDFBF7;
     --text-main: #2B2A29;
@@ -24,12 +26,35 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.02em;
 }
 
-.paper-bg {
-    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+img, video {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }
 
-.logo-blend {
-    mix-blend-mode: multiply;
+ul {
+    list-style: none;
+    padding-left: 1.2em;
+}
+
+hr, .decorative-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 2em 0;
+}
+.decorative-divider {
+    width: 16rem;
+    margin: 1rem auto;
+}
+
+.paper-bg { background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); }
+.logo-blend { mix-blend-mode: multiply; }
+
+/* Локализация */
+body:not([data-active-lang]) [data-lang="en"], 
+body:not([data-active-lang]) [data-lang="ua"] { 
+    display: none; 
 }
 
 .lang-switch {
@@ -43,36 +68,87 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1.5px solid var(--text-main);
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(43, 42, 41, 0.45);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    justify-content: center;
+/* ==========================================================================
+   2. КНОПКИ И ССЫЛКИ (Единый блок)
+   ========================================================================== */
+
+/* Навигация (базовая) */
+nav a:not(.nav-btn-guide) {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    background: transparent !important;
+    color: #6c2603 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Стандартные контурные кнопки (Шоколадный стиль) */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close),
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link),
+.hero-btn-outline {
+    border-radius: 50px !important;
+    background: transparent !important;
+    border: 1px solid var(--chocolate) !important;
+    color: var(--chocolate) !important;
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 12px 28px;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
     align-items: center;
-}
-.modal.active {
-    display: flex;
-}
-
-.price-card, .portfolio-item {
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-main);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-}
-.price-card:hover, .portfolio-item:hover {
-    border-color: var(--accent-pink);
-    transform: translateY(-2px);
-    background-color: var(--white);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    text-decoration: none;
 }
 
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):hover,
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):hover,
+.hero-btn-outline:hover {
+    background: var(--chocolate) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--chocolate) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
+}
+
+/* Акцентные розовые кнопки */
+.nav-btn-guide,
+.lead-magnet-btn,
+.btn-accent,
+.guide-banner-btn,
+.guide-modal-btn {
+    border-radius: 50px !important;
+    background: var(--accent-pink) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--accent-pink) !important;
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 28px;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-btn-guide:hover,
+.lead-magnet-btn:hover,
+.btn-accent:hover,
+.guide-banner-btn:hover,
+.guide-modal-btn:hover {
+    background: #b85a72 !important;
+    border-color: #b85a72 !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
+}
+
+/* Кнопки фильтров */
 .filter-btn {
     border: 1px solid var(--border-color) !important;
     background-color: var(--bg-main) !important;
@@ -91,60 +167,76 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-pink) !important;
 }
 
-nav a:not(.nav-btn-guide) {
-    display: inline-block;
-    line-height: 1;
-    vertical-align: middle;
+/* Чистые текстовые ссылки (Behance и Каталог) — без рамок и обводок */
+.behance-link,
+#portfolio a.behance-link,
+.catalog-link {
     background: transparent !important;
-    color: #6c2603 !important;
-    padding: 0 !important;
     border: none !important;
+    padding: 0 !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #6c2603 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    font-family: 'Lora', serif !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    display: inline-block;
+    transition: opacity 0.2s ease !important;
 }
 
-ul {
-    list-style: none;
-    padding-left: 1.2em;
+.behance-link:hover,
+#portfolio a.behance-link:hover,
+.catalog-link:hover {
+    background: transparent !important;
+    border: none !important;
+    color: #6c2603 !important;
+    opacity: 0.7 !important;
+    text-decoration: underline !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
-hr, .decorative-divider {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
-    margin: 2em 0;
-    position: relative;
-}
-.decorative-divider {
-    width: 16rem;
-    margin: 1rem auto;
+button:active, .btn:active, a:active {
+    transform: translateY(0) !important;
 }
 
-.card, .bg-white {
+/* ==========================================================================
+   3. КАРТОЧКИ И СЕКЦИИ
+   ========================================================================== */
+.price-card, .portfolio-item, .card, .bg-white {
     border: 1px solid var(--border-color);
     background-color: var(--bg-main);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
 }
-.card:hover, .bg-white:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+.price-card:hover, .portfolio-item:hover, .card:hover, .bg-white:hover {
     border-color: var(--accent-pink);
+    transform: translateY(-2px);
+    background-color: var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-img, video {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
+.about-section img {
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07) !important;
+    border: none !important;
+}
+.about-section p {
+    line-height: 1.68 !important;
+    color: var(--text-main) !important;
+    margin-bottom: 16px;
+}
+.about-section .about-lead {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--chocolate) !important;
 }
 
-body:not([data-active-lang]) [data-lang="en"], 
-body:not([data-active-lang]) [data-lang="ua"] { 
-    display: none; 
-}
-
+/* ==========================================================================
+   4. LEAD MAGNET И ВЕЕР СТРАНИЦ
+   ========================================================================== */
 .lead-magnet-section {
     width: 100%;
     background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
@@ -178,7 +270,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-family: 'Lora', serif;
 }
 
 .lead-magnet-title {
@@ -189,8 +280,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: left;
-    font-family: 'Cormorant Garamond', serif;
 }
 
 .lead-magnet-subtitle {
@@ -200,7 +289,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-family: 'Lora', serif;
 }
 
 .lead-magnet-description {
@@ -209,9 +297,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     line-height: 1.7;
     margin: 0 0 40px 0;
     max-width: 540px;
-    font-weight: 400;
-    text-align: left;
-    font-family: 'Lora', serif;
 }
 
 .lead-magnet-fan-col {
@@ -278,133 +363,31 @@ body:not([data-active-lang]) [data-lang="ua"] {
     color: rgba(43, 42, 41, 0.6);
     text-align: center;
     white-space: nowrap;
-    letter-spacing: 0.5px;
 }
 
-/* Guide Page Modal Styles - New Lightbox */
-.guide-page-modal-overlay {
+/* ==========================================================================
+   5. МОДАЛЬНЫЕ ОКНА И ФОРМЫ
+   ========================================================================== */
+.modal-overlay, .modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-}
-
-.guide-page-modal-overlay.active {
-    display: flex;
-}
-
-.guide-page-modal-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    background: transparent;
-    border: none;
-    font-size: 40px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 2010;
-    transition: opacity 0.3s ease, color 0.3s ease;
-    line-height: 1;
-    padding: 0;
-}
-
-.guide-page-modal-close-btn:hover {
-    opacity: 0.7;
-    color: #cccccc;
-}
-
-.guide-page-modal-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 48px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 2010;
-    transition: opacity 0.3s ease, color 0.3s ease;
-    padding: 10px 20px;
-    opacity: 0.7;
-}
-
-.guide-page-modal-nav:hover {
-    opacity: 1;
-    color: #ffffff;
-}
-
-.guide-page-modal-prev {
-    left: 20px;
-}
-
-.guide-page-modal-next {
-    right: 20px;
-}
-
-.guide-page-modal-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    max-height: 90vh;
-}
-
-.guide-page-modal-img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .guide-page-modal-nav {
-        font-size: 36px;
-        padding: 5px 10px;
-    }
-    
-    .guide-page-modal-close-btn {
-        font-size: 32px;
-        top: 15px;
-        right: 20px;
-    }
-    
-    .guide-page-modal-prev {
-        left: 10px;
-    }
-    
-    .guide-page-modal-next {
-        right: 10px;
-    }
-}
-
-/* Guide Page Modal Styles - New Lightbox */
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(43, 42, 41, 0.5);
-    backdrop-filter: blur(3px);
+    background-color: rgba(43, 42, 41, 0.5);
+    backdrop-filter: blur(4px);
     z-index: 1000;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-.modal-overlay.active { display: flex; }
+.modal-overlay.active, .modal.active { display: flex; }
 
 .modal-card {
-    background: #FDFBF7;
-    color: #2B2A29;
-    border: 1px solid rgba(43, 42, 41, 0.2);
+    background: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     max-width: 500px;
@@ -413,28 +396,27 @@ body:not([data-active-lang]) [data-lang="ua"] {
     overflow-y: auto;
     padding: 30px 24px;
     position: relative;
-    font-family: 'Lora', serif;
 }
 
+/* Единственное верное правило для крестика закрытия */
 .modal-close {
     position: absolute;
     top: 16px;
-    right: 16px;
+    right: 20px;
     background: transparent !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    font-size: 24px;
-    line-height: 1;
-    color: var(--chocolate);
-    cursor: pointer;
-    padding: 0;
-    transition: opacity 0.3s ease, color 0.3s ease;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    color: var(--chocolate) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    transition: opacity 0.3s ease;
 }
-.modal-close:hover { 
-    opacity: 1;
-    color: var(--text-main, #2B2A29);
-}
+.modal-close:hover { opacity: 0.7; }
 
 .modal-title {
     font-family: 'Cormorant Garamond', serif;
@@ -442,21 +424,28 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-size: 1.5rem;
     text-align: center;
     margin: 0 0 20px 0;
-    color: #2B2A29;
     line-height: 1.3;
 }
 
+.modal-description {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+/* Формы */
 .form-group { margin-bottom: 16px; }
 
 .modal-input {
     width: 100%;
-    background: #FFFFFF;
-    border: 1px solid rgba(43, 42, 41, 0.2);
+    background: var(--white);
+    border: 1px solid var(--border-color);
     padding: 12px 16px;
     border-radius: 8px;
     font-family: 'Lora', serif;
     font-size: 0.95rem;
-    color: #2B2A29;
+    color: var(--text-main);
     box-sizing: border-box;
 }
 .modal-input:focus { 
@@ -464,13 +453,13 @@ body:not([data-active-lang]) [data-lang="ua"] {
     outline: none; 
 }
 
-/* Fix browser autofill blue background */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
-    -webkit-text-fill-color: #2B2A29 !important;
+    -webkit-text-fill-color: var(--text-main) !important;
 }
 
+/* Мессенджеры */
 .messenger-options { 
     display: flex; 
     flex-wrap: wrap; 
@@ -485,22 +474,20 @@ input:-webkit-autofill {
     border: 1px solid rgba(43, 42, 41, 0.15);
     border-radius: 50px;
     font-size: 0.8rem;
-    color: #2B2A29;
-    background: #FFFFFF;
+    color: var(--text-main);
+    background: var(--white);
     transition: all 0.3s ease;
     cursor: pointer;
     white-space: nowrap;
 }
-.messenger-option:hover .messenger-badge {
-    border-color: var(--accent-pink);
-}
+.messenger-option:hover .messenger-badge { border-color: var(--accent-pink); }
 .messenger-option input[type="radio"]:checked + .messenger-badge {
     background: var(--accent-pink);
-    color: #FFFFFF;
+    color: var(--white);
     border-color: var(--accent-pink);
 }
 
-/* Privacy checkbox styles */
+/* Чекбокс согласия */
 .privacy-wrap {
     display: flex;
     justify-content: center;
@@ -508,26 +495,25 @@ input:-webkit-autofill {
     margin: 16px 0 12px;
     width: 100%;
 }
-
 .privacy-label {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px !important;
     cursor: pointer;
     font-size: 0.85rem;
-    color: var(--text-dark);
+    color: var(--text-main);
     user-select: none;
 }
-
 .privacy-label input[type="checkbox"] {
-    margin: 0;
-    padding: 0;
-    width: 16px;
-    height: 16px;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
     flex-shrink: 0;
     cursor: pointer;
 }
 
+/* Ошибки валидации */
 .privacy-wrap .error-consent {
     color: var(--accent-pink);
     font-size: 0.85rem;
@@ -535,23 +521,16 @@ input:-webkit-autofill {
     display: none;
     margin-left: auto;
 }
-
-.privacy-wrap.error .error-consent {
-    display: block;
-}
+.privacy-wrap.error .error-consent { display: block; }
 .form-group.error .modal-input,
-.form-group.error .messenger-badge {
-    border-color: var(--accent-pink);
-}
+.form-group.error .messenger-badge { border-color: var(--accent-pink); }
 .form-group.error .error-message {
     display: block !important;
     color: var(--accent-pink);
     font-size: 0.8rem;
     margin-top: 6px;
 }
-.form-group:not(.error) .error-message {
-    display: none;
-}
+.form-group:not(.error) .error-message { display: none; }
 
 .honeypot-field {
     position: absolute;
@@ -561,37 +540,9 @@ input:-webkit-autofill {
     width: 0;
 }
 
-.btn-submit-guide {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    margin-top: 8px;
-}
-
-.download-btn,
-.modal-success-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px auto;
-    text-align: center;
-}
-
-/* Нижняя ссылка */
-.modal-content .order-link,
-.modal-content a[href*="order"] {
-    display: block;
-    text-align: center;
-    margin: 16px auto 0 auto;
-    width: 100%;
-}
-
-.success-block {
-    display: none;
-}
-.success-block.active {
-    display: block;
-}
+/* Экраны Успеха и Промокоды */
+.success-block { display: none; }
+.success-block.active { display: block; }
 
 .promo-block {
     background: #fdf2f4;
@@ -603,13 +554,8 @@ input:-webkit-autofill {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    flex-wrap: nowrap;
 }
-.promo-label {
-    font-size: 0.9rem;
-    color: #2B2A29;
-    white-space: nowrap;
-}
+.promo-label { font-size: 0.9rem; white-space: nowrap; }
 .promo-code {
     font-size: 1.1rem;
     font-weight: 700;
@@ -631,395 +577,87 @@ input:-webkit-autofill {
 }
 .btn-copy-outline:hover {
     background: var(--accent-pink) !important;
-    color: #FFFFFF !important;
+    color: var(--white) !important;
 }
 
-.promo-hint {
-    font-style: italic;
-    font-size: 0.85rem;
-    color: rgba(43, 42, 41, 0.6);
-    margin-bottom: 12px;
-    text-align: center;
-}
-
-.success-title {
-    font-size: 1.3rem;
-    line-height: 1.4;
-    margin-bottom: 16px;
-}
-
-/* Add styles for modal description */
-.modal-description {
-    font-size: 0.95rem;
-    text-align: center;
-    margin: 0 0 20px 0;
-    color: #2B2A29;
-    line-height: 1.5;
-}
-
-.form-hint {
-    font-style: italic;
-    font-size: 0.8rem;
-    color: rgba(43, 42, 41, 0.6);
-    text-align: center;
-    margin-top: 12px;
+/* Выравнивание кнопок в модалке */
+.modal-content .download-btn,
+.modal-content .order-link,
+#guideModal .download-btn,
+#guideModal .order-link {
+    display: flex !important;
+    margin: 16px auto !important;
+    justify-content: center !important;
+    text-align: center !important;
 }
 
 .modal-card #modalFormBlock.hidden,
-.modal-card .success-block.hidden {
+.modal-card .success-block.hidden { display: none; }
+
+/* ==========================================================================
+   6. LIGHTBOX МОДАЛКА (Просмотр гайда)
+   ========================================================================== */
+.guide-page-modal-overlay {
     display: none;
-}
-
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn),
-.hero-section a,
-#portfolio a,
-#services button,
-#services a,
-#shop a,
-#shop button,
-.price-card button,
-.portfolio-item button,
-.price-card a,
-.portfolio-item a,
-.btn-copy {
-    border-radius: 50px !important;
-    background-color: transparent !important;
-    background: transparent !important;
-    border: 1px solid #5c2412 !important;
-    color: #5c2412 !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    padding: 12px 28px;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
     justify-content: center;
-    text-decoration: none;
-}
-
-/* Catalog link - text style without border */
-.catalog-link {
-    background: transparent !important;
-    border: none !important;
-    color: var(--accent-pink) !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 500;
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 8px 0;
-    transition: all 0.3s ease !important;
-    display: inline-block;
-    text-decoration: none;
-}
-.catalog-link:hover {
-    background: transparent !important;
-    color: var(--chocolate) !important;
-    transform: none !important;
-    box-shadow: none !important;
-    text-decoration: underline;
-}
-
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-a.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):hover,
-.hero-section a:hover,
-#portfolio a:hover,
-#services button:hover,
-#services a:hover,
-#shop a:hover,
-#shop button:hover,
-.price-card button:hover,
-.portfolio-item button:hover,
-.price-card a:hover,
-.portfolio-item a:hover,
-.btn-copy:hover,
-a[href="#services"].hero-btn:hover {
-    background-color: #5c2412 !important;
-    background: #5c2412 !important;
-    color: #FDFBF7 !important;
-    border-color: #5c2412 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
-}
-
-a[href="#services"].hero-btn-outline,
-.hero-btn-outline {
-    border-radius: 9999px !important;
-    background-color: transparent !important;
-    background: transparent !important;
-    color: var(--chocolate) !important;
-    border: 1px solid var(--chocolate) !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 12px 32px !important;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
 }
+.guide-page-modal-overlay.active { display: flex; }
 
-a[href="#services"].hero-btn-outline:hover,
-.hero-btn-outline:hover {
-    background-color: var(--chocolate) !important;
-    background: var(--chocolate) !important;
-    color: var(--bg-main) !important;
-    border-color: var(--chocolate) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
-}
-
-.nav-btn-guide,
-.lead-magnet-btn,
-.btn-accent,
-.guide-banner-btn,
-.guide-modal-btn {
-    border-radius: 50px !important;
-    background-color: #C86B83 !important;
-    background: #C86B83 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #C86B83 !important;
-    font-family: 'Lora', serif !important;
-    font-weight: 600;
+.guide-page-modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    font-size: 40px;
+    color: var(--white);
     cursor: pointer;
-    padding: 12px 28px;
-    transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    z-index: 2010;
+    padding: 0;
 }
 
-.nav-btn-guide:hover,
-.lead-magnet-btn:hover,
-.btn-accent:hover,
-.guide-banner-btn:hover,
-.guide-modal-btn:hover {
-    background-color: #b85a72 !important;
-    background: #b85a72 !important;
-    border-color: #b85a72 !important;
-    color: #FFFFFF !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
+.guide-page-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 48px;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 2010;
+    padding: 10px 20px;
+    opacity: 0.7;
+}
+.guide-page-modal-nav:hover { opacity: 1; }
+.guide-page-modal-prev { left: 20px; }
+.guide-page-modal-next { right: 20px; }
+
+.guide-page-modal-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
 }
 
-button:active, .btn:active, a:active {
-    transform: translateY(0) !important;
-}
-
+/* ==========================================================================
+   7. АДАПТИВНОСТЬ (Media Queries)
+   ========================================================================== */
 @media (max-width: 768px) {
     .lead-magnet-content { grid-template-columns: 1fr; padding: 0 20px; }
     .lead-magnet-btn { width: 100%; }
     .nav-btn-guide { padding: 6px 14px; font-size: 10px; }
-}
-/* 1. КРЕСТИК ЗАКРЫТИЯ (убирает овал и рамки) */
-.modal-close {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    font-size: 26px !important;
-    line-height: 1 !important;
-    color: var(--chocolate, #4a2c11) !important;
-    cursor: pointer !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-}
-
-/* 2. КНОПКА СКАЧАТЬ И ССЫЛКА НА 2-М ЭКРАНЕ (по центру) */
-.modal-content .download-btn,
-.modal-content button[onclick*="download"],
-.modal-content .lead-magnet-btn {
-    display: flex !important;
-    margin: 0 auto 20px auto !important;
-    justify-content: center;
-}
-
-.modal-content a[href*="order"],
-.modal-content .order-link {
-    display: block !important;
-    text-align: center !important;
-    margin: 16px auto 0 auto !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: var(--chocolate, #4a2c11);
-    text-decoration: underline;
-}
-
-/* 3. ЧЕКБОКС СОГЛАСИЯ (галочка вплотную к тексту) */
-.privacy-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 0 12px;
-    width: 100%;
-}
-
-.privacy-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px !important; /* Маленький отступ между галочкой и текстом */
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: var(--text-dark, #333);
-}
-
-.privacy-label input[type="checkbox"] {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 16px !important;
-    height: 16px !important;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
-/* 4. КНОПКА «СМОТРЕТЬ УСЛУГИ» В HERO-СЕКЦИИ */
-.hero-btn, 
-.services-btn {
-    background: transparent !important;
-    border: 1px solid var(--chocolate, #4a2c11) !important;
-    color: var(--chocolate, #4a2c11) !important;
-    transition: all 0.3s ease !important;
-}
-
-.hero-btn:hover, 
-.services-btn:hover {
-    background: var(--chocolate, #4a2c11) !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-}
-
-/* 5. БЛОК «ОБО МНЕ» (фото и читаемость) */
-.about-section img {
-    border-radius: 16px !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07) !important;
-    border: none !important;
-}
-
-.about-section p {
-    line-height: 1.68 !important;
-    color: var(--text-dark, #2b2b2b) !important;
-    margin-bottom: 16px;
-}
-
-.about-section .about-lead {
-    font-size: 1.1rem !important;
-    font-weight: 600 !important;
-    color: var(--chocolate, #4a2c11) !important;
-}
-/* Жесткое центрирование кнопки и ссылки на втором экране */
-#guideModal .download-btn,
-#guideModal a[href*="download"],
-#guideModal .btn-accent {
-    display: flex !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    justify-content: center !important;
-    text-align: center !important;
-    float: none !important;
-}
-
-#guideModal a[href*="order"],
-#guideModal .order-link,
-#guideModal a:last-child {
-    display: block !important;
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 100% !important;
-    float: none !important;
-}
-/* ==========================================
-   Единое оформление изображений портфолио
-   ========================================== */
-
-/* Контейнер-обёртка для любого фото */
-.portfolio-img-wrapper {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Общие эффекты при наведении */
-.portfolio-img-wrapper img {
-    width: 100%;
-    display: block;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.portfolio-img-wrapper:hover img {
-    transform: scale(1.02);
-}
-
-/* Главная картина (слева): сохраняет пропорции, ограниченная высота */
-.portfolio-img-main {
-    height: auto;
-    max-height: 480px;
-    object-fit: contain;
-}
-
-/* Дополнительные фото (справа): всегда квадратные и одинаковые */
-.portfolio-img-thumb {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 100%;
-}
-
-/* Исходное фото (делаем черно-белым до наведения) */
-.portfolio-thumb-source img {
-    filter: grayscale(100%);
-    opacity: 0.85;
-    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.5s ease;
-}
-
-.portfolio-thumb-source:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Иконка «плюс» при наведении на любое фото */
-.portfolio-img-wrapper::after {
-    content: "⊕";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: #ffffff;
-    background-color: rgba(108, 38, 3, 0.15);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-/* Принудительное удаление рамок и фона у ссылок Behance */
-#portfolio a[target="_blank"] {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-
-#portfolio a[target="_blank"]:hover {
-    text-decoration: underline !important;
-}
-
-.portfolio-img-wrapper:hover::after {
-    opacity: 1;
+    
+    .guide-page-modal-nav { font-size: 36px; padding: 5px 10px; }
+    .guide-page-modal-close-btn { font-size: 32px; top: 15px; right: 20px; }
+    .guide-page-modal-prev { left: 10px; }
+    .guide-page-modal-next { right: 10px; }
 }
