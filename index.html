@@ -149,6 +149,7 @@
 
     
     <!-- СЕКЦИЯ ПОРТФОЛИО -->
+<!-- СЕКЦИЯ ПОРТФОЛИО -->
 <section id="portfolio" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
     <div class="text-center mb-16">
         <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -160,14 +161,18 @@
     </div>
     
     <!-- Список из 4 проектов -->
-    <div class="flex flex-col space-y-20 max-w-5xl mx-auto">
+    <div class="flex flex-col space-y-24 max-w-5xl mx-auto">
 
         <!-- Проект 1: Картина маслом -->
-        <div class="w-full flex flex-col space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio1.png" alt="Finished Oil Painting" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
-                </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Левая колонка: Главное фото -->
+            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="portfolio1.png" alt="Finished Oil Painting" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
+            </div>
+
+            <!-- Правая колонка: Миниатюры + Текст -->
+            <div class="flex flex-col space-y-6">
+                <!-- Миниатюры -->
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-2 text-center">
                         <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
@@ -186,33 +191,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="space-y-3 pt-2">
-                <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                    <span data-lang="ru">Картина маслом в подарок</span><span data-lang="en">Oil Painting Gift</span><span data-lang="ua">Картина олією в подарунок</span>
-                </span>
-                <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#6c2603]">
-                    <span data-lang="ru">Живопись маслом • Сюжетный портрет</span><span data-lang="en">Oil Painting • Narrative Portrait</span><span data-lang="ua">Живопис олією • Сюжетний портрет</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium max-w-4xl">
-                    <span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
-                    <span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
-                    <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline">
-                        <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                    </a>
+
+                <!-- Текстовое описание -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                        <span data-lang="ru">Картина маслом в подарок</span><span data-lang="en">Oil Painting Gift</span><span data-lang="ua">Картина олією в подарунок</span>
+                    </span>
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                        <span data-lang="ru">Живопись маслом • Сюжетный портрет</span><span data-lang="en">Oil Painting • Narrative Portrait</span><span data-lang="ua">Живопис олією • Сюжетний портрет</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                        <span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
+                        <span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
+                        <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Проект 2: Портрет карандашами -->
-        <div class="w-full flex flex-col space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
-                </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Левая колонка: Главное фото -->
+            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
+            </div>
+
+            <!-- Правая колонка: Миниатюры + Текст -->
+            <div class="flex flex-col space-y-6">
+                <!-- Миниатюры -->
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-2 text-center">
                         <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
@@ -231,33 +242,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="space-y-3 pt-2">
-                <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                    <span data-lang="ru">Портрет карандашами</span><span data-lang="en">Pencil Portrait</span><span data-lang="ua">Портрет олівцями</span>
-                </span>
-                <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#6c2603]">
-                    <span data-lang="ru">Мягкий свет • Естественность</span><span data-lang="en">Soft Light • Naturalness</span><span data-lang="ua">М'яке світло • Природність</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium max-w-4xl">
-                    <span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка.</span>
-                    <span data-lang="en">The main focus here is on soft light and shade and hair detail. I aimed to convey a calm, natural beauty and an open gaze, preserving the subtle harmony of traditional drawing.</span>
-                    <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та деталізації волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline">
-                        <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                    </a>
+
+                <!-- Текстовое описание -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                        <span data-lang="ru">Портрет карандашами</span><span data-lang="en">Pencil Portrait</span><span data-lang="ua">Портрет олівцями</span>
+                    </span>
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                        <span data-lang="ru">Мягкий свет • Естественность</span><span data-lang="en">Soft Light • Naturalness</span><span data-lang="ua">М'яке світло • Природність</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                        <span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка.</span>
+                        <span data-lang="en">The main focus here is on soft light and shade and hair detail. I aimed to convey a calm, natural beauty and an open gaze, preserving the subtle harmony of traditional drawing.</span>
+                        <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та деталізації волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Проект 3: Календарь Wise Horses -->
-        <div class="w-full flex flex-col space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
-                </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Левая колонка: Главное фото -->
+            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
+            </div>
+
+            <!-- Правая колонка: Миниатюры + Текст -->
+            <div class="flex flex-col space-y-6">
+                <!-- Миниатюры -->
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-2 text-center">
                         <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
@@ -276,33 +293,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="space-y-3 pt-2">
-                <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                    <span data-lang="ru">Авторский календарь</span><span data-lang="en">Author Calendar</span><span data-lang="ua">Авторський календар</span>
-                </span>
-                <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#6c2603]">
-                    <span data-lang="ru">«Wise Horses» • Графика карандашом</span><span data-lang="en">"Wise Horses" • Pencil Graphics</span><span data-lang="ua">«Wise Horses» • Графіка олівцем</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium max-w-4xl">
-                    <span data-lang="ru">Особенный для меня проект. Каждая иллюстрация в этом календаре полностью нарисована цветными и графитными карандашами. Мне хотелось передать благородство, грацию и внутреннюю силу этих животных через мягкие переходы тона и точность традиционного штриха.</span>
-                    <span data-lang="en">A very special project for me. Every illustration in this calendar was entirely drawn with colored and graphite pencils. I wanted to convey the grace and inner power of these animals through subtle tonal transitions and fine traditional linework.</span>
-                    <span data-lang="ua">Особливий для мене проєкт. Кожна ілюстрація в цьому календарі повністю намальована кольоровими та графітними олівцями. Мені хотілося передати благородство, грацію та внутрішню силу цих тварин через м'які переходи тону та точність традиційного штриха.</span>
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.behance.net/gallery/242494125/Year-of-Wise-Horses-Author-Calendar" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline">
-                        <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                    </a>
+
+                <!-- Текстовое описание -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                        <span data-lang="ru">Авторский календарь</span><span data-lang="en">Author Calendar</span><span data-lang="ua">Авторський календар</span>
+                    </span>
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                        <span data-lang="ru">«Wise Horses» • Графика карандашом</span><span data-lang="en">"Wise Horses" • Pencil Graphics</span><span data-lang="ua">«Wise Horses» • Графіка олівцем</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                        <span data-lang="ru">Особенный для меня проект. Каждая иллюстрация в этом календаре полностью нарисована цветными и графитными карандашами. Мне хотелось передать благородство, грацию и внутреннюю силу этих животных через мягкие переходы тона и точность традиционного штриха.</span>
+                        <span data-lang="en">A very special project for me. Every illustration in this calendar was entirely drawn with colored and graphite pencils. I wanted to convey the grace and inner power of these animals through subtle tonal transitions and fine traditional linework.</span>
+                        <span data-lang="ua">Особливий для мене проєкт. Кожна ілюстрація в цьому календарі повністю намальована кольоровими та графітними олівцями. Мені хотілося передати благородство, грацію та внутрішню силу цих тварин через м'які переходи тону та точність традиційного штриха.</span>
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.behance.net/gallery/242494125/Year-of-Wise-Horses-Author-Calendar" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Проект 4: Открытки -->
-        <div class="w-full flex flex-col space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                    <img src="portfolio_cards.png" alt="Greeting Cards" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
-                </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Левая колонка: Главное фото -->
+            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="portfolio_cards.png" alt="Greeting Cards" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
+            </div>
+
+            <!-- Правая колонка: Миниатюры + Текст -->
+            <div class="flex flex-col space-y-6">
+                <!-- Миниатюры -->
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-2 text-center">
                         <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
@@ -321,23 +344,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="space-y-3 pt-2">
-                <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                    <span data-lang="ru">Авторские открытки</span><span data-lang="en">Greeting Cards</span><span data-lang="ua">Авторські листівки</span>
-                </span>
-                <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#6c2603]">
-                    <span data-lang="ru">Праздничные иллюстрации • Атмосфера</span><span data-lang="en">Holiday Illustrations • Atmosphere</span><span data-lang="ua">Святкові ілюстрації • Атмосфера</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium max-w-4xl">
-                    <span data-lang="ru">Для меня открытка — это маленький хранитель больших чувств. В этой серии иллюстраций мне хотелось передать уютом и теплом праздника. Каждая карточка создавалась вручную, чтобы стать особенным дополнением к важным словами.</span>
-                    <span data-lang="en">For me, a postcard is a tiny keeper of big emotions. In this illustration series, I aimed to capture holiday warmth and comfort. Every card was created by hand to gently accompany your kind words.</span>
-                    <span data-lang="ua">Для мене листівка — це маленький берегиня великих почуттів. У цій серії ілюстрацій мені хотілося передати затишок та тепло свята. Кожна картка створювалася вручну, щоб стати особливим доповненням до важливих слів.</span>
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.behance.net/gallery/241929963/Author-Holiday-Greeting-Cards-Illustrations" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline">
-                        <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                    </a>
+
+                <!-- Текстовое описание -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                        <span data-lang="ru">Авторские открытки</span><span data-lang="en">Greeting Cards</span><span data-lang="ua">Авторські листівки</span>
+                    </span>
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                        <span data-lang="ru">Праздничные иллюстрации • Атмосфера</span><span data-lang="en">Holiday Illustrations • Atmosphere</span><span data-lang="ua">Святкові ілюстрації • Атмосфера</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                        <span data-lang="ru">Для меня открытка — это маленький хранитель больших чувств. В этой серии иллюстраций мне хотелось передать уютом и теплом праздника. Каждая карточка создавалась вручную, чтобы стать особенным дополнением к важным словами.</span>
+                        <span data-lang="en">For me, a postcard is a tiny keeper of big emotions. In this illustration series, I aimed to capture holiday warmth and comfort. Every card was created by hand to gently accompany your kind words.</span>
+                        <span data-lang="ua">Для мене листівка — це маленький берегиня великих почуттів. У цій серії ілюстрацій мені хотілося передати затишок та тепло свята. Кожна картка створювалася вручну, щоб стати особливим доповненням до важливих слів.</span>
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.behance.net/gallery/241929963/Author-Holiday-Greeting-Cards-Illustrations" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,7 +370,7 @@
     </div>
 
     <!-- Кнопка перехода в полноформатное портфолио -->
-    <div class="flex justify-center w-full mt-16">
+    <div class="flex justify-center w-full mt-20">
         <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300">
             <span data-lang="ru">Смотреть все работы →</span><span data-lang="en">View all works →</span><span data-lang="ua">Дивитись усі роботи →</span>
         </a>
