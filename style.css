@@ -1007,6 +1007,18 @@ button:active, .btn:active, a:active {
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
+/* Принудительное удаление рамок и фона у ссылок Behance */
+#portfolio a[target="_blank"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+#portfolio a[target="_blank"]:hover {
+    text-decoration: underline !important;
+}
 
 .portfolio-img-wrapper:hover::after {
     opacity: 1;
