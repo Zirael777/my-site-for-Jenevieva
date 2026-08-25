@@ -661,3 +661,26 @@ input:-webkit-autofill {
     .guide-page-modal-prev { left: 10px; }
     .guide-page-modal-next { right: 10px; }
 }
+/* ==========================================================================
+   Чистый стиль для всех изображений (без рамок, теней и эффектов)
+   ========================================================================== */
+img,
+.portfolio-img-wrapper,
+.portfolio-img-main,
+.portfolio-img-thumb,
+.about-section img {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    filter: none !important;
+    border-radius: 0 !important; /* Убирает скругления углов */
+    background: transparent !important;
+}
+
+/* Сброс тени и рамки при наведении на обертку картинки */
+.portfolio-img-wrapper:hover,
+.portfolio-item:hover img {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
