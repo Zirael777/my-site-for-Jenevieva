@@ -940,3 +940,74 @@ button:active, .btn:active, a:active {
     width: 100% !important;
     float: none !important;
 }
+/* ==========================================
+   Единое оформление изображений портфолио
+   ========================================== */
+
+/* Контейнер-обёртка для любого фото */
+.portfolio-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Общие эффекты при наведении */
+.portfolio-img-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-img-wrapper:hover img {
+    transform: scale(1.02);
+}
+
+/* Главная картина (слева): сохраняет пропорции, ограниченная высота */
+.portfolio-img-main {
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+}
+
+/* Дополнительные фото (справа): всегда квадратные и одинаковые */
+.portfolio-img-thumb {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Исходное фото (делаем черно-белым до наведения) */
+.portfolio-thumb-source img {
+    filter: grayscale(100%);
+    opacity: 0.85;
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.5s ease;
+}
+
+.portfolio-thumb-source:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Иконка «плюс» при наведении на любое фото */
+.portfolio-img-wrapper::after {
+    content: "⊕";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: rgba(108, 38, 3, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.portfolio-img-wrapper:hover::after {
+    opacity: 1;
+}
