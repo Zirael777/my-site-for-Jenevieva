@@ -684,3 +684,54 @@ img,
     box-shadow: none !important;
     transform: none !important;
 }
+/* ==========================================================================
+   ВОССТАНОВЛЕНИЕ КАРТОЧЕК ПОРТФОЛИО (Выравнивание и Zoom)
+   ========================================================================== */
+
+/* 1. Возвращаем контейнерам обрезку для плавного зума внутри карточек */
+#portfolio .portfolio-item,
+#portfolio .portfolio-img-wrapper,
+#portfolio .overflow-hidden {
+    overflow: hidden !important;
+    border-radius: 4px;
+}
+
+/* 2. Идеальное выравнивание миниатюр (Исходное фото / Детали) */
+/* Делает обе картинки сверху одинаковой квадратной формы и высоты */
+#portfolio .grid-cols-2 img,
+#portfolio .grid img,
+#portfolio .thumb-img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* 3. Возвращаем плавный зум изображений */
+#portfolio img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Эффект увеличения картинки при наведении */
+#portfolio .portfolio-item:hover img,
+#portfolio .group:hover img,
+#portfolio a:hover img {
+    transform: scale(1.04) !important;
+}
+
+/* 4. Безопасность ссылки Behance (текстовый вид без превращения в кнопку) */
+#portfolio a.behance-link,
+#portfolio a[target="_blank"] {
+    transform: none !important; /* На саму ссылку эффект зума не действует */
+    color: #6c2603 !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    border: none !important;
+}
+#portfolio a.behance-link:hover,
+#portfolio a[target="_blank"]:hover {
+    color: #6c2603 !important;
+    opacity: 0.75 !important;
+    background: transparent !important;
+}
