@@ -85,44 +85,44 @@ nav a:not(.nav-btn-guide) {
 }
 
 /* Стандартные контурные кнопки (Овальные с заливкой шоколадным) */
+/* Стандартные контурные кнопки — ОВАЛЫ (Смотреть все работы, Купить и др.) */
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close),
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link),
 .hero-btn-outline,
 .hero-btn,
-.price-card button,
+.catalog-link,
 .price-card a,
-.card button,
-.card a:not(.behance-link) {
-    border-radius: 50px !important;
+.price-card button {
+    border-radius: 50px !important; /* Делает кнопку овалами */
     background: transparent !important;
     border: 1px solid var(--chocolate) !important;
     color: var(--chocolate) !important;
     font-family: 'Lora', serif !important;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.05em !important;
     cursor: pointer;
-    padding: 12px 28px;
+    padding: 12px 28px !important;
     transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     text-decoration: none !important;
 }
 
+/* Наведение — полное окрашивание в шоколадный цвет */
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close):hover,
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):hover,
 .hero-btn-outline:hover,
 .hero-btn:hover,
-.price-card button:hover,
+.catalog-link:hover,
 .price-card a:hover,
-.card button:hover,
-.card a:not(.behance-link):hover {
+.price-card button:hover {
     background: var(--chocolate) !important;
     color: var(--bg-main) !important;
     border-color: var(--chocolate) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2) !important;
 }
 
 /* Акцентные розовые кнопки */
@@ -178,9 +178,9 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 }
 
 /* Чистые текстовые ссылки (Behance и Каталог) — без рамок и обводок */
+/* Только для ссылки Behance — остаётся текстовой строчкой с подчеркиванием */
 .behance-link,
-#portfolio a.behance-link,
-.catalog-link {
+#portfolio a.behance-link {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -197,8 +197,7 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 }
 
 .behance-link:hover,
-#portfolio a.behance-link:hover,
-.catalog-link:hover {
+#portfolio a.behance-link:hover {
     background: transparent !important;
     border: none !important;
     color: #6c2603 !important;
