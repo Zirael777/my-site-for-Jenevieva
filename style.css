@@ -72,6 +72,10 @@ body:not([data-active-lang]) [data-lang="ua"] {
    2. КНОПКИ И ССЫЛКИ (Единый блок)
    ========================================================================== */
 
+/* ==========================================================================
+   2. КНОПКИ И ССЫЛКИ (Единый блок)
+   ========================================================================== */
+
 /* Навигация (базовая) */
 nav a:not(.nav-btn-guide) {
     display: inline-block;
@@ -84,8 +88,7 @@ nav a:not(.nav-btn-guide) {
     border-radius: 0 !important;
 }
 
-/* Стандартные контурные кнопки (Овальные с заливкой шоколадным) */
-/* Стандартные контурные кнопки — ОВАЛЫ (Смотреть все работы, Купить и др.) */
+/* Стандартные контурные кнопки — ОВАЛЫ (Смотреть услуги, Смотреть все работы, Купить и др.) */
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close),
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link),
 .hero-btn-outline,
@@ -93,14 +96,15 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 .catalog-link,
 .price-card a,
 .price-card button {
-    border-radius: 50px !important; /* Делает кнопку овалами */
+    border-radius: 50px !important;
     background: transparent !important;
     border: 1px solid var(--chocolate) !important;
     color: var(--chocolate) !important;
     font-family: 'Lora', serif !important;
     font-weight: 600 !important;
     font-size: 0.85rem !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important; /* Все буквы заглавные */
     cursor: pointer;
     padding: 12px 28px !important;
     transition: all 0.3s ease !important;
@@ -136,14 +140,17 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     color: var(--white) !important;
     border: 1px solid var(--accent-pink) !important;
     font-family: 'Lora', serif !important;
-    font-weight: 600;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important; /* Все буквы заглавные */
     cursor: pointer;
-    padding: 12px 28px;
+    padding: 12px 28px !important;
     transition: all 0.3s ease !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
 }
 
 .nav-btn-guide:hover,
@@ -155,7 +162,7 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     border-color: #b85a72 !important;
     color: var(--white) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
+    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3) !important;
 }
 
 /* Кнопки фильтров */
@@ -163,13 +170,19 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     border: 1px solid var(--border-color) !important;
     background-color: var(--bg-main) !important;
     color: var(--text-main) !important;
-    transition: all 0.3s ease;
+    font-family: 'Lora', serif !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important; /* Все буквы заглавные */
+    transition: all 0.3s ease !important;
     border-radius: 50px !important;
+    padding: 10px 22px !important;
 }
 .filter-btn:hover {
     border-color: var(--accent-pink) !important;
     color: var(--accent-pink) !important;
-    transform: scale(1.02);
+    transform: scale(1.02) !important;
 }
 .filter-btn.active {
     background-color: var(--accent-pink) !important;
@@ -177,8 +190,7 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     border-color: var(--accent-pink) !important;
 }
 
-/* Чистые текстовые ссылки (Behance и Каталог) — без рамок и обводок */
-/* Только для ссылки Behance — остаётся текстовой строчкой с подчеркиванием */
+/* Текстовая ссылка Behance */
 .behance-link,
 #portfolio a.behance-link {
     background: transparent !important;
