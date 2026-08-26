@@ -379,24 +379,35 @@ button:active, .btn:active, a:active {
     z-index: 10;
 }
 
-/* Формат слева, цена справа */
+/* Контейнер строки с ценой */
 .price-row {
     display: flex !important;
-    justify-content: space-between !important;
     align-items: baseline !important;
     width: 100% !important;
     margin-bottom: 6px !important;
 }
 
-/* Название формата (левая колонка) */
+/* 1. Название формата (слева) */
 .price-row > span:first-child {
+    order: 1 !important;
+    white-space: nowrap !important;
     color: #5c2412 !important;
     font-size: 0.85rem !important;
     font-weight: 500 !important;
 }
 
-/* Цена (правая колонка) */
+/* 2. Пунктирная линия (посередине) */
+.price-row::after {
+    content: "" !important;
+    order: 2 !important;
+    flex-grow: 1 !important;
+    border-bottom: 1px dotted rgba(92, 36, 18, 0.4) !important;
+    margin: 0 8px !important;
+}
+
+/* 3. Цена (справа) */
 .price-row > span:last-child {
+    order: 3 !important;
     white-space: nowrap !important;
     color: #1a1a1a !important;
     opacity: 1 !important;
