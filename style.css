@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ (Типографика)
+   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
    ========================================================================== */
 :root {
     --bg-main: #FDFBF7;
@@ -11,54 +11,71 @@
     --chocolate: #5c2412;
 }
 
-/* Подключаем Cormorant Garamond (для заголовков) и Montserrat (для обычного текста) */
+/* Подключаем Cormorant Garamond (заголовки) и Montserrat (текст) */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500&display=swap');
 
-/* ОБЩИЙ ТЕКСТ САЙТА (Без засечек, аккуратный мелкий размер, без курсива) */
-body, p, li, blockquote {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.6;
+/* Главный фон сайта */
+body {
     background-color: var(--bg-main);
     color: var(--text-main);
     scroll-behavior: smooth;
 }
 
-/* 1. ГЛАВНЫЕ ЗАГОЛОВКИ (Cormorant Garamond, ЖИРНЫЙ, Крупный) */
+/* ОБЩИЙ ТЕКСТ САЙТА (Без белых плашек, прозрачный фон) */
+p, li, blockquote, span, div {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Убираем случайно возникший фон у любых текстовых элементов */
+p, li, blockquote, h1, h2, h3, h4, h5, h6, .lead-magnet-description, .modal-description {
+    background-color: transparent !important;
+}
+
+/* 1. ГЛАВНЫЕ ЗАГОЛОВКИ (Cormorant Garamond, ЖИРНЫЙ) */
 h1, h2, h3, 
-.lead-magnet-title, 
 .main-title, 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700; /* Bold */
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--text-main);
 }
 
 h1 { 
-    font-size: clamp(28px, 4vw, 42px); 
-    line-height: 1.2; 
+    font-size: clamp(28px, 4vw, 42px) !important; 
+    line-height: 1.25 !important; 
 }
 
-h2, .lead-magnet-title { 
-    font-size: clamp(22px, 3vw, 32px); 
-    line-height: 1.3; 
+h2 { 
+    font-size: clamp(22px, 3vw, 32px) !important; 
+    line-height: 1.3 !important; 
 }
 
-/* 2. ПОДЗАГОЛОВКИ (Cormorant Garamond, НЕ жирный, Средний размер) */
+/* Заголовок гайда (розовый блок) */
+.lead-magnet-title {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(24px, 3.5vw, 36px) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #4d101e !important;
+}
+
+/* 2. ПОДЗАГОЛОВКИ (Cormorant Garamond, НЕ жирный) */
 h4, h5, h6,
 .lead-magnet-subtitle, 
 .hero-subtitle, 
 .section-subtitle, 
 .guide-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400; /* Regular */
-    font-style: normal;
-    font-size: clamp(18px, 2.5vw, 22px);
-    line-height: 1.4;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: clamp(18px, 2.5vw, 22px) !important;
+    line-height: 1.4 !important;
 }
 
 /* Технические элементы */
@@ -103,7 +120,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     font-weight: 700;
     border-bottom: 1.5px solid var(--text-main);
 }
-
 
 /* ==========================================================================
    2. КНОПКИ И ССЫЛКИ (Единый блок)
