@@ -85,10 +85,14 @@ nav a:not(.nav-btn-guide) {
 }
 
 /* Стандартные контурные кнопки (Овальные с заливкой шоколадным) */
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close),
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link),
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close),
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link),
 .hero-btn-outline,
-.hero-btn {
+.hero-btn,
+.price-card button,
+.price-card a,
+.card button,
+.card a:not(.behance-link) {
     border-radius: 50px !important;
     background: transparent !important;
     border: 1px solid var(--chocolate) !important;
@@ -103,13 +107,17 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):hover,
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):hover,
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close):hover,
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):hover,
 .hero-btn-outline:hover,
-.hero-btn:hover {
+.hero-btn:hover,
+.price-card button:hover,
+.price-card a:hover,
+.card button:hover,
+.card a:not(.behance-link):hover {
     background: var(--chocolate) !important;
     color: var(--bg-main) !important;
     border-color: var(--chocolate) !important;
