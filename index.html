@@ -8,34 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,25 C50,45 42,65 52,80 M52,80 C40,85 35,75 42,65' fill='none' stroke='%236c2603' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M42,65 Q30,70 38,55 Q46,40 50,55' fill='none' stroke='%236c2603' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='5' fill='none' stroke='%236c2603' stroke-width='3'/%3E%3Cpath d='M45,20 Q50,15 55,20 Q50,25 45,20' fill='none' stroke='%236c2603' stroke-width='2'/%3E%3Cpath d='M50,15 Q50,25 50,20 Q40,20 50,20' fill='none' stroke='%236c2603' stroke-width='2'/%3E%3Cpath d='M38,55 C42,50 48,58 45,62 Z' fill='%236c2603' fill-opacity='0.3' stroke='%236c2603' stroke-width='1.5'/%3E%3Cpath d='M54,45 C58,40 64,48 61,52 Z' fill='%236c2603' fill-opacity='0.3' stroke='%236c2603' stroke-width='1.5'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
 </head>
 <body class="paper-bg">
 
-    
     <div class="w-full h-[200px] sm:h-[300px] md:h-[450px] overflow-hidden relative border-b border-[#6c2603]/10 bg-[#fdfbf7]">
         <img src="ava.jpg" alt="Art Jenevieva Illustration" class="w-full h-full object-cover object-center opacity-90 filter brightness-[1.08] contrast-[0.96]" onerror="this.src='https://placehold.co/1200x450/fdfbf7/6c2603?text=Art+Jenevieva+Banner';">
     </div>
 
-    
     <nav class="sticky top-0 z-[100] bg-[#fdfbf7]/95 backdrop-blur-md border-b border-[#6c2603]/5 px-6 py-4">
         <div class="max-w-7xl mx-auto flex flex-col space-y-4">
             <div class="flex justify-between items-center w-full">
-                
                 <a href="#" class="flex items-center">
                     <img src="logo.jpg" alt="Art Jenevieva" class="h-10 md:h-12 w-auto logo-blend" onerror="this.style.display='none'; document.getElementById('txt-logo').style.display='inline-block';">
                     <span id="txt-logo" class="hidden font-bold tracking-[0.2em] text-sm uppercase">Art Jenevieva</span>
                 </a>
                 
-                
                 <div class="flex space-x-2 pl-4 uppercase font-bold text-xs tracking-wider text-[#6c2603]">
-                    <span id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</span>
+                    <button type="button" id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</button>
                     <span class="opacity-30">/</span>
-                    <span id="btn-en" class="lang-switch" onclick="setLanguage('en')">EN</span>
+                    <button type="button" id="btn-en" class="lang-switch" onclick="setLanguage('en')">EN</button>
                     <span class="opacity-30">/</span>
-                    <span id="btn-ua" class="lang-switch" onclick="setLanguage('ua')">UA</span>
+                    <button type="button" id="btn-ua" class="lang-switch" onclick="setLanguage('ua')">UA</button>
                 </div>
             </div>
-            
             
             <div class="flex justify-center border-t border-[#6c2603]/10 pt-4">
                 <div class="flex flex-wrap justify-center items-center gap-4 md:gap-10 uppercase font-bold text-[10px] md:text-xs tracking-[0.2em] text-[#6c2603]">
@@ -50,9 +46,7 @@
         </div>
     </nav>
 
-    
     <section class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center relative">
-        
         <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-25 hidden lg:block w-16 h-20 text-[#6c2603]">
             <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2">
                 <line x1="80" y1="10" x2="80" y2="110" stroke="currentColor" stroke-width="1.2" />
@@ -86,7 +80,6 @@
             <span data-lang="ua">Дивитись послуги</span>
         </a>
 
-        
         <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-25 hidden lg:block w-16 h-20 text-[#6c2603] transform scale-x-[-1]">
             <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2">
                 <line x1="80" y1="10" x2="80" y2="110" stroke="currentColor" stroke-width="1.2" />
@@ -97,10 +90,8 @@
         </div>
     </section>
 
-    
     <section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            
             <div class="flex justify-center items-center">
                 <div class="bg-white p-3 shadow-sm border border-[#6c2603]/10 max-w-sm">
                     <img src="photo_jenevieva.jpg" alt="Женевьева" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/400x500/fdfbf7/6c2603?text=Art+Jenevieva';">
@@ -114,306 +105,269 @@
                     <span data-lang="ua">Мій шлях до творчості</span>
                 </h2>
                 
-               <div class="text-sm md:text-[14px] text-[#6c2603] font-normal leading-relaxed">
-    <!-- RU -->
-    <div data-lang="ru" class="space-y-4">
-        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">Меня зовут Женевьева — я художник и иллюстратор.</p>
-        <p>Художественное образование я получила в театрально-художественном колледже, а свой настоящий творческий путь начала <b>в 2022 году</b> — в момент, когда рисование стало для меня не просто искусством, а важной частью моей жизни.</p>
-        <p>Для меня искусство — это язык, через который можно передавать эмоции и чувства. Я создаю иллюстрации, в которых важны не только линии и детали, но и ощущения, которые остаются после просмотра работы.</p>
-        <p>Сознательно выбираю <b>традиционные живые материалы</b> — бумагу, механический карандаш, тонкие линеры и краски. Век цифровых технологий прекрасен, но для меня именно ручной труд, прикосновение грифеля к листу, движение кисти и создание сложных, кропотливых узоров — это настоящая медитация. Это способ остановиться, выдохнуть и дать себе пространство просто быть.</p>
-        <p>Под именем Art Jenevieva я соединяю творчество, символизм и тёплую <b>атмосферу в стиле ретро</b>. Каждая работа — это маленькая история, созданная с вниманием к деталям и внутреннему смыслу.</p>
-    </div>
+                <div class="text-sm md:text-[14px] text-[#6c2603] font-normal leading-relaxed">
+                    <div data-lang="ru" class="space-y-4">
+                        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">Меня зовут Женевьева — я художник и иллюстратор.</p>
+                        <p>Художественное образование я получила в театрально-художественном колледже, а свой настоящий творческий путь начала <b>в 2022 году</b> — в момент, когда рисование стало для меня не просто искусством, а важной частью моей жизни.</p>
+                        <p>Для меня искусство — это язык, через который можно передавать эмоции и чувства. Я создаю иллюстрации, в которых важны не только линии и детали, но и ощущения, которые остаются после просмотра работы.</p>
+                        <p>Сознательно выбираю <b>традиционные живые материалы</b> — бумагу, механический карандаш, тонкие линеры и краски. Век цифровых технологий прекрасен, но для меня именно ручной труд, прикосновение грифеля к листу, движение кисти и создание сложных, кропотливых узоров — это настоящая медитация. Это способ остановиться, выдохнуть и дать себе пространство просто быть.</p>
+                        <p>Под именем Art Jenevieva я соединяю творчество, символизм и тёплую <b>атмосферу в стиле ретро</b>. Каждая работа — это маленькая история, созданная с вниманием к деталям и внутреннему смыслу.</p>
+                    </div>
 
-    <!-- EN -->
-    <div data-lang="en" class="space-y-4">
-        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">My name is Jenevieva — I am an artist and illustrator.</p>
-        <p>I received my art education at the theater and art college, and my real creative journey began <b>in 2022</b> — the moment when drawing became not just art for me, but an essential part of my life.</p>
-        <p>For me, art is a language through which we convey emotions and feelings. I create illustrations where not only lines and details matter, but also the aftertaste and sensations left behind.</p>
-        <p>I consciously choose <b>traditional handcraft materials</b> — paper, mechanical pencils, fine liners, and paints. The digital age is beautiful, but hand labor, the touch of lead on paper, the flow of a brush, and compiling complex, intricate patterns — is a true meditation. A way to slow down, breathe out, and give myself space to simply exist.</p>
-        <p>Under the name Art Jenevieva, I combine creativity, symbolism, and a <b>warm retro atmosphere</b>. Each work is a small story created with attention to detail and inner meaning.</p>
-    </div>
+                    <div data-lang="en" class="space-y-4">
+                        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">My name is Jenevieva — I am an artist and illustrator.</p>
+                        <p>I received my art education at the theater and art college, and my real creative journey began <b>in 2022</b> — the moment when drawing became not just art for me, but an essential part of my life.</p>
+                        <p>For me, art is a language through which we convey emotions and feelings. I create illustrations where not only lines and details matter, but also the aftertaste and sensations left behind.</p>
+                        <p>I consciously choose <b>traditional handcraft materials</b> — paper, mechanical pencils, fine liners, and paints. The digital age is beautiful, but hand labor, the touch of lead on paper, the flow of a brush, and compiling complex, intricate patterns — is a true meditation. A way to slow down, breathe out, and give myself space to simply exist.</p>
+                        <p>Under the name Art Jenevieva, I combine creativity, symbolism, and a <b>warm retro atmosphere</b>. Each work is a small story created with attention to detail and inner meaning.</p>
+                    </div>
 
-    <!-- UA -->
-    <div data-lang="ua" class="space-y-4">
-        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">Мене звати Женев'єва — я художниця та ілюстраторка.</p>
-        <p>Художню освіту я здобула в театрально-художньому коледжі, а свій справжній творчий шлях розпочала <b>у 2022 році</b> — у момент, коли малювання стало для мене не просто мистецтвом, а важливою частиною мого життя.</p>
-        <p>Для мене мистецтво — це мова, через яку можна передавати емоції та почуття. Я створюю ілюстрації, в яких важливі не лише лінії та деталі, але й відчуття, які залишаються після перегляду роботи.</p>
-        <p>Свідомо обираю <b>традиційні живі матеріали</b> — папір, механічний олівець, тонкі лінери та фарби. Вік цифрових технологій прекрасний, але для мене саме ручна праця, дотик грифеля до аркуша, рух пензля та створення складних, кропітких візерунків — це справжня медитація. Це спосіб зупинитися, видихнути та дати собі простір просто бути.</p>
-        <p>Під ім'ям Art Jenevieva я поєдную творчість, символізм та теплу <b>атмосферу в стилі ретро</b>. Кожна робота — це маленька історія, створена з увагою до деталей та внутрішнього сенсу.</p>
-    </div>
-</div>          
-			</div>
+                    <div data-lang="ua" class="space-y-4">
+                        <p class="text-base md:text-[16px] font-medium text-[#6c2603]">Мене звати Женев'єва — я художниця та ілюстраторка.</p>
+                        <p>Художню освіту я здобула в театрально-художньому коледжі, а свій справжній творчий шлях розпочала <b>у 2022 році</b> — у момент, коли малювання стало для мене не просто мистецтвом, а важливою частиною мого життя.</p>
+                        <p>Для мене мистецтво — це мова, через яку можна передавати емоції та почуття. Я створюю ілюстрації, в яких важливі не лише лінії та деталі, але й відчуття, які залишаються після перегляду роботи.</p>
+                        <p>Свідомо обираю <b>традиційні живі матеріали</b> — папір, механічний олівець, тонкі лінери та фарби. Вік цифрових технологій прекрасний, але для мене саме ручна праця, дотик грифеля до аркуша, рух пензля та створення складних, кропітких візерунків — це справжня медитація. Це спосіб зупинитися, видихнути та дати собі простір просто бути.</p>
+                        <p>Під ім'ям Art Jenevieva я поєдную творчість, символізм та теплу <b>атмосферу в стилі ретро</b>. Кожна робота — це маленька історія, створена з увагою до деталей та внутрішнього сенсу.</p>
+                    </div>
+                </div>          
             </div>
         </div>
     </section>
 
-    
-    <!-- СЕКЦИЯ ПОРТФОЛИО -->
-<!-- СЕКЦИЯ ПОРТФОЛИО -->
-<section id="portfolio" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
-    <div class="text-center mb-16">
-        <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
-            <span data-lang="ru">Галерея живых историй</span>
-            <span data-lang="en">Gallery of Living Stories</span>
-            <span data-lang="ua">Галерея живих історій</span>
-        </h2>
-        <hr class="decorative-divider" />
-    </div>
-    
-    <!-- Список из 4 проектов -->
-    <div class="flex flex-col space-y-24 max-w-5xl mx-auto">
+    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
+                <span data-lang="ru">Галерея живых историй</span>
+                <span data-lang="en">Gallery of Living Stories</span>
+                <span data-lang="ua">Галерея живих історій</span>
+            </h2>
+            <hr class="decorative-divider" />
+        </div>
+        
+        <div class="flex flex-col space-y-24 max-w-5xl mx-auto">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio1.png" alt="Finished Oil Painting" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
+                </button>
 
-        <!-- Проект 1: Картина маслом -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Левая колонка: Главное фото -->
-            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                <img src="portfolio1.png" alt="Finished Oil Painting" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Oil+Painting';">
-            </div>
-
-            <!-- Правая колонка: Миниатюры + Текст -->
-            <div class="flex flex-col space-y-6">
-                <!-- Миниатюры -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
-                        </span>
-                        <div class="portfolio-img-wrapper portfolio-thumb-source" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio1_1.png" alt="Source Photo" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                <div class="flex flex-col space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper portfolio-thumb-source text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio1_1.png" alt="Source Photo" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                            </button>
+                        </div>
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio1_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                            </button>
                         </div>
                     </div>
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+
+                    <div class="space-y-3 pt-2">
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                            <span data-lang="ru">Картина маслом в подарок</span><span data-lang="en">Oil Painting Gift</span><span data-lang="ua">Картина олією в подарунок</span>
                         </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio1_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                            <span data-lang="ru">Живопись маслом • Сюжетный портрет</span><span data-lang="en">Oil Painting • Narrative Portrait</span><span data-lang="ua">Живопис олією • Сюжетний портрет</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                            <span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
+                            <span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
+                            <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#6c2603] bg-transparent border-0 p-0 shadow-none hover:underline focus:outline-none">
+                               <span data-lang="ru">Смотреть проект на Behance ↗</span>
+                               <span data-lang="en">View project on Behance ↗</span>
+                               <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Текстовое описание -->
-                <div class="space-y-3 pt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                        <span data-lang="ru">Картина маслом в подарок</span><span data-lang="en">Oil Painting Gift</span><span data-lang="ua">Картина олією в подарунок</span>
-                    </span>
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
-                        <span data-lang="ru">Живопись маслом • Сюжетный портрет</span><span data-lang="en">Oil Painting • Narrative Portrait</span><span data-lang="ua">Живопис олією • Сюжетний портрет</span>
-                    </h3>
-                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Для меня портрет — это всегда пространство для творчества. На исходном фото мужчина просто стоял, но по задумке для этого подарка я поместила его за фортепиано. Так родилась атмосферная сюжетная композиция, в которой классическая живописная традиция гармонично соединилась с новой идеей.</span>
-                        <span data-lang="en">For me, a portrait is always a space for creativity. In the reference photo, the man was simply standing, but following the gift's concept, I placed him at the piano. This is how an atmospheric narrative composition was born, blending classical painting tradition with a fresh idea.</span>
-                        <span data-lang="ua">Для мене портрет — це завжди простір для творчості. На вихідному фото чоловік просто стояв, але за задумом для цього подарунка я зобразила його за фортепіано. Так народилася атмосферна сюжетна композиція, в якій класична живописна традиція гармонійно поєдналася з новою ідеєю.</span>
-                    </p>
-                    <div class="pt-2">
-                        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#6c2603] bg-transparent border-0 p-0 shadow-none hover:underline focus:outline-none">
-                           <span data-lang="ru">Смотреть проект на Behance ↗</span>
-                           <span data-lang="en">View project on Behance ↗</span>
-                           <span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                         </a>
-						
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
+                </button>
+
+                <div class="flex flex-col space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper portfolio-thumb-source text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio6_1.png" alt="Source Photo" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
+                            </button>
+                        </div>
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio6_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                            <span data-lang="ru">Портрет карандашами</span><span data-lang="en">Pencil Portrait</span><span data-lang="ua">Портрет олівцями</span>
+                        </span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                            <span data-lang="ru">Мягкий свет • Естественность</span><span data-lang="en">Soft Light • Naturalness</span><span data-lang="ua">М'яке світло • Природність</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                            <span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка.</span>
+                            <span data-lang="en">The main focus here is on soft light and shade and hair detail. I aimed to convey a calm, natural beauty and an open gaze, preserving the subtle harmony of traditional drawing.</span>
+                            <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та деталізації волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                                <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
+                </button>
+
+                <div class="flex flex-col space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Эскизы</span><span data-lang="en">Sketches</span><span data-lang="ua">Ескізи</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio_cal_horses_1.png" alt="Sketches" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Sketch';">
+                            </button>
+                        </div>
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio_cal_horses_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                            <span data-lang="ru">Авторский календарь</span><span data-lang="en">Author Calendar</span><span data-lang="ua">Авторський календар</span>
+                        </span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                            <span data-lang="ru">«Wise Horses» • Графика карандашом</span><span data-lang="en">"Wise Horses" • Pencil Graphics</span><span data-lang="ua">«Wise Horses» • Графіка олівцем</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                            <span data-lang="ru">Особенный для меня проект. Каждая иллюстрация в этом календаре полностью нарисована цветными и графитными карандашами. Мне хотелось передать благородство, грацию и внутреннюю силу этих животных через мягкие переходы тона и точность традиционного штриха.</span>
+                            <span data-lang="en">A very special project for me. Every illustration in this calendar was entirely drawn with colored and graphite pencils. I wanted to convey the grace and inner power of these animals through subtle tonal transitions and fine traditional linework.</span>
+                            <span data-lang="ua">Особливий для мене проєкт. Кожна ілюстрація в цьому календарі повністю намальована кольоровими та графітними олівцями. Мені хотілося передати благородство, грацію та внутрішню силу цих тварин через м'які переходи тону та точність традиційного штриха.</span>
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://www.behance.net/gallery/242494125/Year-of-Wise-Horses-Author-Calendar" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                                <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                    <img src="portfolio_cards.png" alt="Greeting Cards" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
+                </button>
+
+                <div class="flex flex-col space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Серия</span><span data-lang="en">Series</span><span data-lang="ua">Серія</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio_cards_1.png" alt="Card Series" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Series';">
+                            </button>
+                        </div>
+                        <div class="space-y-2 text-center">
+                            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
+                                <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
+                            </span>
+                            <button type="button" class="portfolio-img-wrapper text-left w-full border-0 p-0 bg-transparent cursor-pointer block" onclick="openImageViewerModal(this.querySelector('img').src)">
+                                <img src="portfolio_cards_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
+                            <span data-lang="ru">Авторские открытки</span><span data-lang="en">Greeting Cards</span><span data-lang="ua">Авторські листівки</span>
+                        </span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
+                            <span data-lang="ru">Праздничные иллюстрации • Атмосфера</span><span data-lang="en">Holiday Illustrations • Atmosphere</span><span data-lang="ua">Святкові ілюстрації • Атмосфера</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+                            <span data-lang="ru">Для меня открытка — это маленький хранитель больших чувств. В этой серии иллюстраций мне хотелось передать уютом и теплом праздника. Каждая карточка создавалась вручную, чтобы стать особенным дополнением к важным словами.</span>
+                            <span data-lang="en">For me, a postcard is a tiny keeper of big emotions. In this illustration series, I aimed to capture holiday warmth and comfort. Every card was created by hand to gently accompany your kind words.</span>
+                            <span data-lang="ua">Для мене листівка — це маленький берегиня великих почуттів. У цій серії ілюстрацій мені хотілося передати затишок та тепло свята. Кожна картка створювалася вручну, щоб стати особливим доповненням до важливих слів.</span>
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://www.behance.net/gallery/241929963/Author-Holiday-Greeting-Cards-Illustrations" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
+                                <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Проект 2: Портрет карандашами -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Левая колонка: Главное фото -->
-            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                <img src="portfolio6.png" alt="Pencil Portrait with Ponytail" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Pencil+Portrait';">
-            </div>
-
-            <!-- Правая колонка: Миниатюры + Текст -->
-            <div class="flex flex-col space-y-6">
-                <!-- Миниатюры -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Исходное фото</span><span data-lang="en">Source Photo</span><span data-lang="ua">Вихідне фото</span>
-                        </span>
-                        <div class="portfolio-img-wrapper portfolio-thumb-source" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio6_1.png" alt="Source Photo" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Source';">
-                        </div>
-                    </div>
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
-                        </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio6_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Текстовое описание -->
-                <div class="space-y-3 pt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                        <span data-lang="ru">Портрет карандашами</span><span data-lang="en">Pencil Portrait</span><span data-lang="ua">Портрет олівцями</span>
-                    </span>
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
-                        <span data-lang="ru">Мягкий свет • Естественность</span><span data-lang="en">Soft Light • Naturalness</span><span data-lang="ua">М'яке світло • Природність</span>
-                    </h3>
-                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Главный акцент здесь — на мягкости светотени и детализации волос. Я старалась передать спокойную, естественную красоту и открытый взгляд, сохраняя тонкую гармонию традиционного рисунка.</span>
-                        <span data-lang="en">The main focus here is on soft light and shade and hair detail. I aimed to convey a calm, natural beauty and an open gaze, preserving the subtle harmony of traditional drawing.</span>
-                        <span data-lang="ua">Головний акцент тут — на м'якості світлотіні та деталізації волосся. Я намагалася передати спокійну, природну красу та відкритий погляд, зберігаючи тонку гармонію традиційного малюнка.</span>
-                    </p>
-                    <div class="pt-2">
-                        <a href="https://www.behance.net/gallery/204799831/Author-Portraits-from-Life-and-Photo" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
-                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="flex justify-center w-full mt-20">
+            <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300">
+                <span data-lang="ru">Смотреть все работы →</span><span data-lang="en">View all works →</span><span data-lang="ua">Дивитись усі роботи →</span>
+            </a>
         </div>
-
-        <!-- Проект 3: Календарь Wise Horses -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Левая колонка: Главное фото -->
-            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                <img src="portfolio_cal_horses.png" alt="Wise Horses Calendar" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Wise+Horses+Calendar';">
-            </div>
-
-            <!-- Правая колонка: Миниатюры + Текст -->
-            <div class="flex flex-col space-y-6">
-                <!-- Миниатюры -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Эскизы</span><span data-lang="en">Sketches</span><span data-lang="ua">Ескізи</span>
-                        </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_horses_1.png" alt="Sketches" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Sketch';">
-                        </div>
-                    </div>
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
-                        </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cal_horses_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Текстовое описание -->
-                <div class="space-y-3 pt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                        <span data-lang="ru">Авторский календарь</span><span data-lang="en">Author Calendar</span><span data-lang="ua">Авторський календар</span>
-                    </span>
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
-                        <span data-lang="ru">«Wise Horses» • Графика карандашом</span><span data-lang="en">"Wise Horses" • Pencil Graphics</span><span data-lang="ua">«Wise Horses» • Графіка олівцем</span>
-                    </h3>
-                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Особенный для меня проект. Каждая иллюстрация в этом календаре полностью нарисована цветными и графитными карандашами. Мне хотелось передать благородство, грацию и внутреннюю силу этих животных через мягкие переходы тона и точность традиционного штриха.</span>
-                        <span data-lang="en">A very special project for me. Every illustration in this calendar was entirely drawn with colored and graphite pencils. I wanted to convey the grace and inner power of these animals through subtle tonal transitions and fine traditional linework.</span>
-                        <span data-lang="ua">Особливий для мене проєкт. Кожна ілюстрація в цьому календарі повністю намальована кольоровими та графітними олівцями. Мені хотілося передати благородство, грацію та внутрішню силу цих тварин через м'які переходи тону та точність традиційного штриха.</span>
-                    </p>
-                    <div class="pt-2">
-                        <a href="https://www.behance.net/gallery/242494125/Year-of-Wise-Horses-Author-Calendar" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
-                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Проект 4: Открытки -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Левая колонка: Главное фото -->
-            <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                <img src="portfolio_cards.png" alt="Greeting Cards" class="portfolio-img-main" onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Greeting+Cards';">
-            </div>
-
-            <!-- Правая колонка: Миниатюры + Текст -->
-            <div class="flex flex-col space-y-6">
-                <!-- Миниатюры -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Серия</span><span data-lang="en">Series</span><span data-lang="ua">Серія</span>
-                        </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cards_1.png" alt="Card Series" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Series';">
-                        </div>
-                    </div>
-                    <div class="space-y-2 text-center">
-                        <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block">
-                            <span data-lang="ru">Детали</span><span data-lang="en">Details</span><span data-lang="ua">Деталі</span>
-                        </span>
-                        <div class="portfolio-img-wrapper" onclick="openImageViewerModal(this.querySelector('img').src)">
-                            <img src="portfolio_cards_2.png" alt="Details" class="portfolio-img-thumb" onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Текстовое описание -->
-                <div class="space-y-3 pt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block">
-                        <span data-lang="ru">Авторские открытки</span><span data-lang="en">Greeting Cards</span><span data-lang="ua">Авторські листівки</span>
-                    </span>
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603]">
-                        <span data-lang="ru">Праздничные иллюстрации • Атмосфера</span><span data-lang="en">Holiday Illustrations • Atmosphere</span><span data-lang="ua">Святкові ілюстрації • Атмосфера</span>
-                    </h3>
-                    <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
-                        <span data-lang="ru">Для меня открытка — это маленький хранитель больших чувств. В этой серии иллюстраций мне хотелось передать уютом и теплом праздника. Каждая карточка создавалась вручную, чтобы стать особенным дополнением к важным словами.</span>
-                        <span data-lang="en">For me, a postcard is a tiny keeper of big emotions. In this illustration series, I aimed to capture holiday warmth and comfort. Every card was created by hand to gently accompany your kind words.</span>
-                        <span data-lang="ua">Для мене листівка — це маленький берегиня великих почуттів. У цій серії ілюстрацій мені хотілося передати затишок та тепло свята. Кожна картка створювалася вручну, щоб стати особливим доповненням до важливих слів.</span>
-                    </p>
-                    <div class="pt-2">
-                        <a href="https://www.behance.net/gallery/241929963/Author-Holiday-Greeting-Cards-Illustrations" target="_blank" rel="noopener noreferrer" class="inline-block uppercase font-bold text-xs tracking-widest text-[#6c2603] hover:underline transition-all">
-                            <span data-lang="ru">Смотреть проект на Behance ↗</span><span data-lang="en">View project on Behance ↗</span><span data-lang="ua">Дивитись проєкт на Behance ↗</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Кнопка перехода в полноформатное портфолио -->
-    <div class="flex justify-center w-full mt-20">
-        <a href="portfolio.html" class="inline-block border-2 border-[#6c2603] px-8 py-4 uppercase font-bold text-xs md:text-sm tracking-widest text-[#6c2603] hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all duration-300">
-            <span data-lang="ru">Смотреть все работы →</span><span data-lang="en">View all works →</span><span data-lang="ua">Дивитись усі роботи →</span>
-        </a>
-    </div>
-</section>
+    </section>
 
     <section id="lead-magnet" class="lead-magnet-section">
         <div class="lead-magnet-content">
-            
             <div class="lead-magnet-text-col">
                 <span class="lead-magnet-badge" data-i18n="guide_banner_badge">АРТ-ПРАКТИКУМ + СКИДКА 20%</span>
                 <h2 class="lead-magnet-title" data-i18n="guide_banner_title">Тихое искусство быть собой</h2>
                 <p class="lead-magnet-subtitle" data-i18n="guide_banner_subtitle">Пошаговый путь к себе через медитативное рисование</p>
                 <p class="lead-magnet-description" data-i18n="guide_banner_desc">Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.</p>
-                <button class="lead-magnet-btn" onclick="openGuideModal()" data-i18n="guide_banner_btn">Забрать гайд и скидку 20%</button>
+                <button type="button" class="lead-magnet-btn" onclick="openGuideModal()" data-i18n="guide_banner_btn">Забрать гайд и скидку 20%</button>
             </div>
-            
             
             <div class="lead-magnet-fan-col">
                 <div class="guide-fan-container">
-                    
-                    <div class="guide-page guide-page-2" onclick="openGuidePageModal(2)">
+                    <button type="button" class="guide-page guide-page-2 text-left border-0 p-0 bg-transparent cursor-pointer block" onclick="openGuidePageModal(2)">
                         <div class="guide-page-inner">
                             <img src="guide-page-2.png" alt="Страница 1: Арт-медитация" class="guide-page-img">
                         </div>
-                    </div>
+                    </button>
                     
-                    
-                    <div class="guide-page guide-page-1" onclick="openGuidePageModal(1)">
+                    <button type="button" class="guide-page guide-page-1 text-left border-0 p-0 bg-transparent cursor-pointer block" onclick="openGuidePageModal(1)">
                         <div class="guide-page-inner">
                             <img src="guide-page-1.png" alt="Страница 2: Материалы" class="guide-page-img">
                         </div>
-                    </div>
+                    </button>
                     
-                    
-                    <div class="guide-page guide-page-3" onclick="openGuidePageModal(3)">
+                    <button type="button" class="guide-page guide-page-3 text-left border-0 p-0 bg-transparent cursor-pointer block" onclick="openGuidePageModal(3)">
                         <div class="guide-page-inner">
                             <img src="guide-page-3.png" alt="Страница 3: Практика" class="guide-page-img">
                         </div>
-                    </div>
+                    </button>
                 </div>
                 <p class="guide-fan-hint">
                     <span data-lang="ru">✦ Нажмите на страницу для просмотра</span>
@@ -424,18 +378,15 @@
         </div>
     </section>
     
-    
-    <!-- Модальное окно для просмотра страниц гайда (лайтбокс с навигацией) -->
     <div id="guide-page-modal" class="guide-page-modal-overlay" onclick="closeGuidePageModal()">
-        <button class="guide-page-modal-close-btn" onclick="closeGuidePageModal()">×</button>
-        <button class="guide-page-modal-nav guide-page-modal-prev" onclick="navigateGuidePage(-1)">‹</button>
-        <button class="guide-page-modal-nav guide-page-modal-next" onclick="navigateGuidePage(1)">›</button>
+        <button type="button" class="guide-page-modal-close-btn" onclick="closeGuidePageModal()">×</button>
+        <button type="button" class="guide-page-modal-nav guide-page-modal-prev" onclick="navigateGuidePage(-1)">‹</button>
+        <button type="button" class="guide-page-modal-nav guide-page-modal-next" onclick="navigateGuidePage(1)">›</button>
         <div class="guide-page-modal-image-container" onclick="event.stopPropagation()">
             <img id="modal-page-img" src="" alt="Страница гайда" class="guide-page-modal-img">
         </div>
     </div>
 
-    
     <section id="services" class="max-w-7xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -447,8 +398,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -480,13 +429,12 @@
                             <span data-lang="ua">1 500 - 2 500 ₴</span>
                         </span>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать портрет</span><span data-lang="en">Order portrait</span><span data-lang="ua">Замовити портрет</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -518,13 +466,12 @@
                             <span data-lang="ua">2 500 - 4 000 ₴</span>
                         </span>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать премиум</span><span data-lang="en">Order premium</span><span data-lang="ua">Замовити преміум</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -554,13 +501,12 @@
                             <span><span data-lang="ru">3 000 - 5 000 ₽</span><span data-lang="en">$40 - $70</span><span data-lang="ua">1 500 - 2 500 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Обсудить книгу</span><span data-lang="en">Discuss book</span><span data-lang="ua">Обговорити книгу</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -590,13 +536,12 @@
                             <span><span data-lang="ru">от 1 500 ₽</span><span data-lang="en">from $20</span><span data-lang="ua">від 750 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Обсудить принт</span><span data-lang="en">Discuss print</span><span data-lang="ua">Обговорити принт</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -626,13 +571,12 @@
                             <span><span data-lang="ru">10 000 ₽</span><span data-lang="en">$140</span><span data-lang="ua">5 000 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать лого</span><span data-lang="en">Order logo</span><span data-lang="ua">Замовити лого</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -662,13 +606,12 @@
                             <span><span data-lang="ru">от 4 000 ₽</span><span data-lang="en">from $55</span><span data-lang="ua">від 2 000 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать набор</span><span data-lang="en">Order card set</span><span data-lang="ua">Замовити набір</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -698,13 +641,12 @@
                             <span><span data-lang="ru">2 000 - 3 000 ₽</span><span data-lang="en">$30 - $40</span><span data-lang="ua">1 000 - 1 500 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать скетч</span><span data-lang="en">Order sketch</span><span data-lang="ua">Замовити скетч</span>
                     </button>
                 </div>
             </div>
 
-            
             <div class="price-card p-8 flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold uppercase tracking-wider mb-2">
@@ -738,16 +680,14 @@
                             <span><span data-lang="ru">2 700 ₽</span><span data-lang="en">$38</span><span data-lang="ua">1 350 ₴</span></span>
                         </div>
                     </div>
-                    <button onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
+                    <button type="button" onclick="openModal('order-modal')" class="w-full text-center border border-[#6c2603] py-3 uppercase font-bold text-[10px] tracking-wider hover:bg-[#6c2603] hover:text-[#fdfbf7] transition-all">
                         <span data-lang="ru">Заказать контур</span><span data-lang="en">Order outline</span><span data-lang="ua">Замовити контур</span>
                     </button>
                 </div>
             </div>
-
         </div>
     </section>
 
-    
     <section id="shop" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -770,9 +710,11 @@
                     <span class="font-bold text-base">
                         <span data-lang="ru">1 500 ₽</span><span data-lang="en">$25</span><span data-lang="ua">950 ₴</span>
                     </span>
-                    <div data-lang="ru"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
-                    <div data-lang="en"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Buy</a></div>
-                    <div data-lang="ua"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купити</a></div>
+                    <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">
+                        <span data-lang="ru">Купить</span>
+                        <span data-lang="en">Buy</span>
+                        <span data-lang="ua">Купити</span>
+                    </a>
                 </div>
             </div>
 
@@ -787,15 +729,16 @@
                     <span class="font-bold text-base">
                         <span data-lang="ru">12 000 ₽</span><span data-lang="en">$180</span><span data-lang="ua">6 800 ₴</span>
                     </span>
-                    <div data-lang="ru"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купить</a></div>
-                    <div data-lang="en"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Buy</a></div>
-                    <div data-lang="ua"><a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">Купити</a></div>
+                    <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="text-xs bg-[#6c2603] text-[#fdfbf7] px-4 py-2 uppercase font-bold tracking-wider">
+                        <span data-lang="ru">Купить</span>
+                        <span data-lang="en">Buy</span>
+                        <span data-lang="ua">Купити</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <section id="reviews" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -812,8 +755,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -832,7 +773,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -851,7 +791,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -870,7 +809,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -889,7 +827,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -908,7 +845,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5 mb-4">
                     <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold">
@@ -927,7 +863,6 @@
                 </div>
             </div>
 
-            
             <div class="bg-white border border-[#6c2603]/10 p-6 shadow-sm rounded-2xl relative md:col-span-2">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between pb-2 border-b border-[#6c2603]/5">
@@ -937,7 +872,6 @@
                             <span data-lang="ua">Створення логотипу для компанії</span>
                         </span>
                     </div>
-                    
                     
                     <div class="flex flex-col items-end">
                         <div class="bg-[#6c2603]/5 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tr-none max-w-[85%] italic">
@@ -952,7 +886,6 @@
                         </span>
                     </div>
 
-                    
                     <div class="flex flex-col items-start">
                         <div class="bg-white border border-[#6c2603]/10 text-[#6c2603] text-xs p-3 rounded-2xl rounded-tl-none max-w-[85%] font-medium">
                             <p data-lang="ru">«Какая красота❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️»</p>
@@ -976,7 +909,6 @@
                 </div>
             </div>
 
-            
             <div class="md:col-span-2 mt-12 pt-12 border-t border-[#6c2603]/10 w-full">
                 <h3 class="text-lg md:text-xl font-bold uppercase tracking-wider text-[#6c2603] text-center mb-8">
                     <span data-lang="ru">Теплые видео-отзывы</span>
@@ -984,12 +916,8 @@
                     <span data-lang="ua">Теплі відеовідгуки</span>
                 </h3>
                 
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                    
-                    
                     <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
-                        
                         <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
                             <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
                                 <source src="video_otzyv1.mp4" type="video/mp4">
@@ -1005,9 +933,7 @@
                         </div>
                     </div>
 
-                    
                     <div class="bg-white border border-[#6c2603]/10 p-4 shadow-sm rounded-2xl flex flex-col justify-between">
-                        
                         <div class="overflow-hidden rounded-xl border border-[#6c2603]/10 bg-black aspect-[9/16] mb-4 relative">
                             <video class="w-full h-full object-cover" controls playsinline controlsList="nodownload" preload="metadata">
                                 <source src="video_otzyv2.mp4" type="video/mp4">
@@ -1027,7 +953,6 @@
         </div>
     </section>
 
-    
     <section id="contact" class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-[#6c2603]/10">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 text-[#6c2603] decorative-heading">
@@ -1042,10 +967,7 @@
                 <span data-lang="ua">Приєднуйтесь до майстерні в соціальних мережах:</span>
             </p>
 
-            
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-3xl mx-auto pt-4">
-                
-                
                 <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1056,7 +978,6 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Telegram</span>
                 </a>
 
-                
                 <a href="https://www.behance.net/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1067,7 +988,6 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Behance</span>
                 </a>
 
-                
                 <a href="https://www.pinterest.com/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1079,7 +999,6 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Pinterest</span>
                 </a>
 
-                
                 <a href="https://cara.app/artjenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1091,7 +1010,6 @@
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Cara</span>
                 </a>
 
-                
                 <a href="https://www.youtube.com/@art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
                     <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
                         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
@@ -1102,15 +1020,12 @@
                     </div>
                     <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">YouTube</span>
                 </a>
-
             </div>
         </div>
     </section>
 
-    
     <footer class="bg-[#6c2603] text-[#fdfbf7] py-12 px-6 text-center border-t border-[#6c2603]/10 relative overflow-hidden">
         <div class="max-w-4xl mx-auto space-y-6">
-            
             <div class="opacity-30 text-[9px] uppercase tracking-[0.3em] space-y-2">
                 <p>Art Jenevieva © <span id="year">2026</span></p>
                 <p>MADE WITH MAGIC AND INK BY <a href="https://t.me/zirael777" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80 transition-opacity">Zirael777</a></p>
@@ -1118,29 +1033,9 @@
         </div>
     </footer>
 
-    
-    <div id="guide-modal" class="modal">
-        <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
-            <button onclick="closeModal('guide-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
-            <h4 class="text-lg font-bold uppercase tracking-wider mb-4">
-                <span data-lang="ru">Ваш гайд почти готов</span>
-                <span data-lang="en">Your Guide is Ready</span>
-                <span data-lang="ua">Ваш гайд майже готовий</span>
-            </h4>
-            <p class="text-xs text-[#6c2603]/70 mb-6">
-                <span data-lang="ru">Нажмите кнопку ниже, чтобы перейти в Telegram. Наш бот вышлет PDF-книгу мгновенно прямо в чат.</span>
-                <span data-lang="en">Click below to open Telegram. Our bot will send you the PDF book instantly in chat.</span>
-                <span data-lang="ua">Натисніть кнопку нижче, щоб перейти в Telegram. Наш бот надішле PDF-книгу миттєво просто у чат.</span>
-            </p>
-            <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#6c2603] text-[#fdfbf7] py-3 uppercase font-bold text-xs tracking-wider">
-                <span data-lang="ru">Открыть Telegram</span><span data-lang="en">Open Telegram</span><span data-lang="ua">Вiдкрити Telegram</span>
-            </a>
-        </div>
-    </div>
-
     <div id="order-modal" class="modal">
         <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
-            <button onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
+            <button type="button" onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
             <h4 class="text-lg font-bold uppercase tracking-wider mb-4">
                 <span data-lang="ru">Обсудить проект</span>
                 <span data-lang="en">Discuss the Project</span>
@@ -1157,22 +1052,14 @@
         </div>
     </div>
 
-    
-	<div id="image-viewer-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" onclick="closeImageViewerModal()">
-    	
-    	<span class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors z-10">&times;</span>
-    
-    	
-    	<img id="image-viewer-modal-img" src="" alt="Full screen" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm" onclick="event.stopPropagation()">
-	</div>
+    <div id="image-viewer-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" onclick="closeImageViewerModal()">
+        <span class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors z-10">&times;</span>
+        <img id="image-viewer-modal-img" src="" alt="Full screen" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm" onclick="event.stopPropagation()">
+    </div>
 
-    
-
-    
     <div id="guideModal" class="modal-overlay">
         <div class="modal-card">
-            <button class="modal-close" onclick="closeGuideModal()">&times;</button>
-            
+            <button type="button" class="modal-close" onclick="closeGuideModal()">&times;</button>
             
             <div id="modalFormBlock">
                 <h3 class="modal-title" data-i18n="guide_modal_title">Тихое искусство быть собой</h3>
@@ -1225,7 +1112,6 @@
                         <span class="error-message error-consent">Необходимо согласие</span>
                     </div>
                     
-                    
                     <input type="text" id="website" name="website" class="honeypot-field" tabindex="-1" autocomplete="off">
                     
                     <p class="form-hint" data-i18n="guide_form_hint">После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.</p>
@@ -1233,7 +1119,6 @@
                     <button type="submit" class="btn-accent btn-submit-guide" data-i18n="guide_submit_btn">✦ ЗАБРАТЬ ГАЙД И СКИДКУ 20% ✦</button>
                 </form>
             </div>
-            
             
             <div id="modalSuccessBlock" class="success-block">
                 <h3 class="modal-title success-title" data-i18n="guide_success_title">✦✦ Ваш гайд «Тихое искусство быть собой» готов! ✦✦</h3>
@@ -1245,7 +1130,7 @@
                 <div class="promo-block">
                     <span class="promo-label" data-i18n="guide_promo_label">Ваш промокод:</span>
                     <span class="promo-code" id="promoCode">MEDITATION20</span>
-                    <button class="btn-copy-outline" onclick="copyPromoCode()" data-i18n="guide_copy_btn">Скопировать</button>
+                    <button type="button" class="btn-copy-outline" onclick="copyPromoCode()" data-i18n="guide_copy_btn">Скопировать</button>
                 </div>
                 
                 <p class="form-hint promo-hint" data-i18n="guide_promo_hint">Промокод продублирован в ваш выбранный способ связи.</p>
@@ -1255,11 +1140,8 @@
         </div>
     </div>
 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
-    
     <script src="script.js" defer></script>
 </body>
 </html>
