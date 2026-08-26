@@ -379,30 +379,6 @@ button:active, .btn:active, a:active {
     z-index: 10;
 }
 
-/* Формат слева, цена справа */
-.price-row {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: baseline !important;
-    width: 100% !important;
-    margin-bottom: 6px !important;
-}
-
-/* Название формата (слева) */
-.price-row > span:first-child {
-    color: #5c2412 !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-}
-
-/* Цена (справа) */
-.price-row > span:last-child {
-    white-space: nowrap !important;
-    color: #1a1a1a !important;
-    opacity: 1 !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-}
 /* ==========================================================================
    4. LEAD MAGNET И ВЕЕР СТРАНИЦ
    ========================================================================== */
