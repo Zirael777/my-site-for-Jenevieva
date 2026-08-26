@@ -820,3 +820,35 @@ img,
     opacity: 0.75 !important;
     background: transparent !important;
 }
+
+/* ==========================================================================
+   ИКОНКА ПРИЦЕЛА (ЗУМА) ПРИ НАВЕДЕНИИ НА ПОРТФОЛИО
+   ========================================================================== */
+#portfolio .portfolio-item,
+#portfolio .portfolio-img-wrapper {
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+#portfolio .portfolio-item::after,
+#portfolio .portfolio-img-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cline x1='12' y1='7' x2='12' y2='17'/%3E%3Cline x1='7' y1='12' x2='17' y2='12'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+#portfolio .portfolio-item:hover::after,
+#portfolio .portfolio-img-wrapper:hover::after {
+    opacity: 1 !important;
+}
