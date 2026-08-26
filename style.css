@@ -84,10 +84,11 @@ nav a:not(.nav-btn-guide) {
     border-radius: 0 !important;
 }
 
-/* Стандартные контурные кнопки (Шоколадный стиль) */
+/* Стандартные контурные кнопки (Овальные с заливкой шоколадным) */
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close),
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link),
-.hero-btn-outline {
+.hero-btn-outline,
+.hero-btn {
     border-radius: 50px !important;
     background: transparent !important;
     border: 1px solid var(--chocolate) !important;
@@ -107,7 +108,8 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 
 button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):hover,
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):hover,
-.hero-btn-outline:hover {
+.hero-btn-outline:hover,
+.hero-btn:hover {
     background: var(--chocolate) !important;
     color: var(--bg-main) !important;
     border-color: var(--chocolate) !important;
@@ -239,14 +241,14 @@ button:active, .btn:active, a:active {
    ========================================================================== */
 .lead-magnet-section {
     width: 100%;
-    background: linear-gradient(135deg, #4d101e 0%, #68182b 50%, #3b0c17 100%);
-    color: #fdfbf7;
+    background: #F7E8EC; /* Нежный пастельно-брусничный фон */
+    color: #4d101e;
     padding: 80px 0;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    border-top: 1px solid rgba(253, 251, 247, 0.1);
-    border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+    border-top: 1px solid rgba(77, 16, 30, 0.08);
+    border-bottom: 1px solid rgba(77, 16, 30, 0.08);
     overflow: hidden;
 }
 
@@ -285,9 +287,9 @@ button:active, .btn:active, a:active {
     display: inline-block;
     padding: 6px 16px;
     border-radius: 50px;
-    background: rgba(253, 251, 247, 0.12);
-    border: 1px solid rgba(253, 251, 247, 0.25);
-    color: #fce4e8;
+    background: rgba(192, 108, 132, 0.12);
+    border: 1px solid rgba(192, 108, 132, 0.3);
+    color: #8c2b43;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -297,7 +299,7 @@ button:active, .btn:active, a:active {
 
 .lead-magnet-title {
     font-size: 2.5rem;
-    color: #fdfbf7;
+    color: #4d101e;
     margin: 0 0 12px 0;
     line-height: 1.2;
     font-weight: 700;
@@ -307,40 +309,41 @@ button:active, .btn:active, a:active {
 
 .lead-magnet-subtitle {
     font-size: 1.15rem;
-    color: #f2c4ce;
+    color: #7c243b;
     margin: 0 0 20px 0;
     font-weight: 500;
 }
 
 .lead-magnet-description {
     font-size: 0.95rem;
-    color: rgba(253, 251, 247, 0.85);
+    color: #5a1c2b;
     line-height: 1.7;
     margin: 0 0 32px 0;
     max-width: 540px;
 }
-
 /* Белая контрастная кнопка */
 .lead-magnet-btn {
-    background: #fdfbf7 !important;
-    color: #5c1325 !important;
-    border: 1px solid #fdfbf7 !important;
     border-radius: 50px !important;
-    padding: 16px 36px !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase;
+    background: var(--accent-pink) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--accent-pink) !important;
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
     cursor: pointer;
+    padding: 12px 28px;
     transition: all 0.3s ease !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .lead-magnet-btn:hover {
-    background: #f8e5e8 !important;
-    color: #3b0c17 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    background: #b85a72 !important;
+    border-color: #b85a72 !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
 }
 
 /* Веер карточек */
@@ -423,7 +426,7 @@ button:active, .btn:active, a:active {
 .guide-fan-hint {
     margin-top: 25px;
     font-size: 0.8rem;
-    color: rgba(253, 251, 247, 0.7);
+    color: rgba(77, 16, 30, 0.7);
     text-align: center;
     white-space: nowrap;
 }
