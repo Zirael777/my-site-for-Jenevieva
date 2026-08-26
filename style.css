@@ -61,6 +61,7 @@ nav a:not([class*="bg-"]):not([class*="btn"]),
 nav span, 
 .lang-switch {
     font-family: 'Cormorant Garamond', serif !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     color: #5c2412 !important;
