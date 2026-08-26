@@ -1,8 +1,6 @@
 /* ==========================================================================
    1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-
 :root {
     --bg-main: #FDFBF7;
     --text-main: #2B2A29;
@@ -10,8 +8,10 @@
     --accent-olive: #8A9A74;
     --border-color: rgba(43, 42, 41, 0.2);
     --white: #ffffff;
-    --chocolate: #6c2603;
+    --chocolate: #5c2412;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 body {
     font-family: 'Lora', serif;
@@ -20,7 +20,7 @@ body {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, .decorative-heading {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -48,12 +48,8 @@ hr, .decorative-divider {
     margin: 1rem auto;
 }
 
-.paper-bg { 
-    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); 
-}
-.logo-blend { 
-    mix-blend-mode: multiply; 
-}
+.paper-bg { background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); }
+.logo-blend { mix-blend-mode: multiply; }
 
 /* Локализация */
 body:not([data-active-lang]) [data-lang="en"], 
@@ -62,12 +58,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
 }
 
 .lang-switch {
-    background: transparent;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
     cursor: pointer;
     opacity: 0.4;
     transition: opacity 0.3s ease;
@@ -75,27 +65,27 @@ body:not([data-active-lang]) [data-lang="ua"] {
 .lang-switch.active {
     opacity: 1;
     font-weight: 700;
-    border-bottom: 1.5px solid var(--chocolate);
+    border-bottom: 1.5px solid var(--text-main);
 }
 
 /* ==========================================================================
-   2. КНОПКИ И ССЫЛКИ
+   2. КНОПКИ И ССЫЛКИ (Единый блок)
    ========================================================================== */
 
-/* Навигационные ссылки */
+/* Навигация (базовая) */
 nav a:not(.nav-btn-guide) {
     display: inline-block;
     line-height: 1;
     vertical-align: middle;
     background: transparent !important;
-    color: var(--chocolate) !important;
+    color: #6c2603 !important;
     padding: 0 !important;
     border: none !important;
     border-radius: 0 !important;
 }
 
-/* Контурные кнопки */
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):not(.guide-page-modal-nav):not(.guide-page-modal-close-btn):not(.lang-switch),
+/* Стандартные контурные кнопки (Шоколадный стиль) */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close),
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link),
 .hero-btn-outline {
     border-radius: 50px !important;
@@ -115,20 +105,22 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     text-decoration: none;
 }
 
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):not(.guide-page-modal-nav):not(.guide-page-modal-close-btn):not(.lang-switch):hover,
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):hover,
 .btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):hover,
 .hero-btn-outline:hover {
     background: var(--chocolate) !important;
     color: var(--bg-main) !important;
     border-color: var(--chocolate) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(108, 38, 3, 0.2);
+    box-shadow: 0 4px 15px rgba(92, 36, 18, 0.2);
 }
 
-/* Акцентные кнопки для гайда */
+/* Акцентные розовые кнопки */
 .nav-btn-guide,
 .lead-magnet-btn,
-.btn-accent {
+.btn-accent,
+.guide-banner-btn,
+.guide-modal-btn {
     border-radius: 50px !important;
     background: var(--accent-pink) !important;
     color: var(--white) !important;
@@ -146,7 +138,9 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 
 .nav-btn-guide:hover,
 .lead-magnet-btn:hover,
-.btn-accent:hover {
+.btn-accent:hover,
+.guide-banner-btn:hover,
+.guide-modal-btn:hover {
     background: #b85a72 !important;
     border-color: #b85a72 !important;
     color: var(--white) !important;
@@ -154,404 +148,590 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3);
 }
 
+/* Кнопки фильтров */
+.filter-btn {
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    transition: all 0.3s ease;
+    border-radius: 50px !important;
+}
+.filter-btn:hover {
+    border-color: var(--accent-pink) !important;
+    color: var(--accent-pink) !important;
+    transform: scale(1.02);
+}
+.filter-btn.active {
+    background-color: var(--accent-pink) !important;
+    color: var(--white) !important;
+    border-color: var(--accent-pink) !important;
+}
+
+/* Чистые текстовые ссылки (Behance и Каталог) — без рамок и обводок */
 .behance-link,
+#portfolio a.behance-link,
 .catalog-link {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
-    color: var(--chocolate) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #6c2603 !important;
     text-decoration: underline !important;
+    text-underline-offset: 3px;
     font-family: 'Lora', serif !important;
     font-weight: 500 !important;
+    text-transform: none !important;
     display: inline-block;
     transition: opacity 0.2s ease !important;
 }
 
 .behance-link:hover,
+#portfolio a.behance-link:hover,
 .catalog-link:hover {
+    background: transparent !important;
+    border: none !important;
+    color: #6c2603 !important;
     opacity: 0.7 !important;
+    text-decoration: underline !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+button:active, .btn:active, a:active {
+    transform: translateY(0) !important;
 }
 
 /* ==========================================================================
-   3. ГАЛЕРЕЯ И ПОРТФОЛИО
+   3. КАРТОЧКИ И СЕКЦИИ
    ========================================================================== */
-.portfolio-img-wrapper {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(108, 38, 3, 0.1);
-    background-color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.price-card, .portfolio-item, .card, .bg-white {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+.price-card:hover, .portfolio-item:hover, .card:hover, .bg-white:hover {
+    border-color: var(--accent-pink);
+    transform: translateY(-2px);
+    background-color: var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-.portfolio-img-wrapper:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(108, 38, 3, 0.12);
+.about-section img {
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07) !important;
+    border: none !important;
 }
-
-.portfolio-img-main {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+.about-section p {
+    line-height: 1.68 !important;
+    color: var(--text-main) !important;
+    margin-bottom: 16px;
 }
-
-.portfolio-img-thumb {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    display: block;
+.about-section .about-lead {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--chocolate) !important;
 }
 
 /* ==========================================================================
-   4. ЛИД-МАГНИТ СЕКЦИЯ (ГАЙД)
+   4. LEAD MAGNET И ВЕЕР СТРАНИЦ
    ========================================================================== */
 .lead-magnet-section {
-    max-width: 80rem;
-    margin: 4rem auto;
-    padding: 3rem 1.5rem;
-    background-color: rgba(108, 38, 3, 0.03);
-    border-top: 1px solid rgba(108, 38, 3, 0.1);
-    border-bottom: 1px solid rgba(108, 38, 3, 0.1);
+    width: 100%;
+    background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
+    border: 1px solid rgba(200, 107, 131, 0.25);
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .lead-magnet-content {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 40px;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
 }
 
-@media (min-width: 768px) {
-    .lead-magnet-content {
-        grid-template-columns: 1.2fr 0.8fr;
-    }
+.lead-magnet-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .lead-magnet-badge {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    font-weight: 700;
+    font-size: 0.75rem;
     color: var(--accent-pink);
-    display: block;
-    margin-bottom: 0.75rem;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .lead-magnet-title {
-    font-size: 2rem;
-    color: var(--chocolate);
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .lead-magnet-subtitle {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--chocolate);
-    margin-bottom: 1rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin: 0 0 24px 0;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .lead-magnet-description {
-    font-size: 0.875rem;
-    color: rgba(108, 38, 3, 0.8);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.7;
+    margin: 0 0 40px 0;
+    max-width: 540px;
+}
+
+.lead-magnet-fan-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .guide-fan-container {
-    display: flex;
-    justify-center;
-    align-items: center;
     position: relative;
-    height: 260px;
+    width: 320px;
+    height: 420px;
+    perspective: 1000px;
 }
 
 .guide-page {
     position: absolute;
-    width: 160px;
-    height: 220px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 260px;
+    height: 340px;
     border-radius: 4px;
+    box-shadow: 0 8px 30px rgba(43, 42, 41, 0.15);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
 .guide-page-inner {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-main) 0%, #f5f0e6 100%);
 }
 
 .guide-page-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
-.guide-page-1 {
-    transform: rotate(-6deg) translateX(-30px);
-    z-index: 2;
-}
-
-.guide-page-2 {
-    transform: rotate(0deg);
-    z-index: 3;
-}
-
-.guide-page-3 {
-    transform: rotate(6deg) translateX(30px);
-    z-index: 1;
-}
+.guide-page-1 { top: 30px; left: 20px; transform: rotate(-15deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
+.guide-page-2 { top: 0px; left: 30px; transform: rotate(0deg) scale(1.02); opacity: 1; z-index: 3; box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2); }
+.guide-page-3 { top: 30px; left: 40px; transform: rotate(15deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
 
 .guide-page:hover {
-    transform: scale(1.05) translateY(-5px);
-    z-index: 10;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    transform: translateY(-15px) scale(1.08) rotate(0deg) !important;
+    z-index: 10 !important;
+    box-shadow: 0 25px 70px rgba(43, 42, 41, 0.3);
+    opacity: 1 !important;
+    filter: brightness(1) !important;
 }
 
 .guide-fan-hint {
-    text-align: center;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.75rem;
-    color: rgba(108, 38, 3, 0.6);
-    margin-top: 1rem;
+    color: rgba(43, 42, 41, 0.6);
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* ==========================================================================
-   5. МОДАЛЬНЫЕ ОКНА
+   5. МОДАЛЬНЫЕ ОКНА И ФОРМЫ
    ========================================================================== */
-.modal,
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+.modal-overlay, .modal {
     display: none;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 42, 41, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
     justify-content: center;
-    padding: 1rem;
+    align-items: center;
+    padding: 20px;
 }
-
-.modal.active,
-.modal-overlay.active {
-    display: flex;
-}
+.modal-overlay.active, .modal.active { display: flex; }
 
 .modal-card {
-    background-color: var(--bg-main);
-    border: 1px solid rgba(108, 38, 3, 0.2);
-    padding: 2.5rem;
-    max-width: 28rem;
+    background: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
     width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px 24px;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
+/* Единственное верное правило для крестика закрытия */
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--chocolate);
-    opacity: 0.6;
+    top: 16px;
+    right: 20px;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    color: var(--chocolate) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    transition: opacity 0.3s ease;
 }
-.modal-close:hover {
-    opacity: 1;
-}
+.modal-close:hover { opacity: 0.7; }
 
 .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
     font-size: 1.5rem;
-    color: var(--chocolate);
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
 }
 
 .modal-description {
-    font-size: 0.8rem;
-    color: rgba(108, 38, 3, 0.8);
+    font-size: 0.95rem;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin: 0 0 20px 0;
     line-height: 1.5;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-    width: 100%;
-}
+/* Формы */
+.form-group { margin-bottom: 16px; }
 
 .modal-input {
     width: 100%;
-    padding: 0.75rem 1rem;
-    background-color: #ffffff;
-    border: 1px solid rgba(108, 38, 3, 0.2);
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 8px;
     font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    box-sizing: border-box;
+}
+.modal-input:focus { 
+    border-color: var(--accent-pink); 
+    outline: none; 
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: var(--text-main) !important;
+}
+
+/* Мессенджеры */
+.messenger-options { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.messenger-option input[type="radio"] { display: none; }
+.messenger-badge {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid rgba(43, 42, 41, 0.15);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    background: var(--white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.messenger-option:hover .messenger-badge { border-color: var(--accent-pink); }
+.messenger-option input[type="radio"]:checked + .messenger-badge {
+    background: var(--accent-pink);
+    color: var(--white);
+    border-color: var(--accent-pink);
+}
+
+/* Чекбокс согласия */
+.privacy-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0 12px;
+    width: 100%;
+}
+.privacy-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px !important;
+    cursor: pointer;
     font-size: 0.85rem;
     color: var(--text-main);
-    outline: none;
+    user-select: none;
 }
-.modal-input:focus {
-    border-color: var(--chocolate);
-}
-
-.messenger-label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--chocolate);
-    margin-bottom: 0.5rem;
+.privacy-label input[type="checkbox"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
-.messenger-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-}
-
-.messenger-option input {
+/* Ошибки валидации */
+.privacy-wrap .error-consent {
+    color: var(--accent-pink);
+    font-size: 0.85rem;
+    white-space: nowrap;
     display: none;
+    margin-left: auto;
 }
-
-.messenger-badge {
-    display: block;
-    text-align: center;
-    padding: 0.5rem;
-    border: 1px solid rgba(108, 38, 3, 0.2);
-    font-size: 0.75rem;
-    cursor: pointer;
-    background-color: #ffffff;
-    transition: all 0.2s ease;
+.privacy-wrap.error .error-consent { display: block; }
+.form-group.error .modal-input,
+.form-group.error .messenger-badge { border-color: var(--accent-pink); }
+.form-group.error .error-message {
+    display: block !important;
+    color: var(--accent-pink);
+    font-size: 0.8rem;
+    margin-top: 6px;
 }
-
-.messenger-option input:checked + .messenger-badge {
-    background-color: var(--chocolate);
-    color: #ffffff;
-    border-color: var(--chocolate);
-}
-
-.privacy-wrap {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.privacy-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    color: rgba(108, 38, 3, 0.7);
-    cursor: pointer;
-}
+.form-group:not(.error) .error-message { display: none; }
 
 .honeypot-field {
-    display: none;
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
 }
 
-.form-hint {
-    font-size: 0.7rem;
-    color: rgba(108, 38, 3, 0.6);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.error-message {
-    font-size: 0.7rem;
-    color: #c0392b;
-    display: none;
-    margin-top: 0.25rem;
-}
-
-/* Переключение на блок успеха */
-.success-block {
-    display: none;
-    text-align: center;
-}
-.success-block.active {
-    display: block;
-}
+/* Экраны Успеха и Промокоды */
+.success-block { display: none; }
+.success-block.active { display: block; }
 
 .promo-block {
-    background-color: rgba(108, 38, 3, 0.05);
-    border: 1px dashed var(--chocolate);
-    padding: 1rem;
-    margin: 1rem 0;
+    background: #fdf2f4;
+    border: 1px dashed var(--accent-pink);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
     display: flex;
-    flex-col;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+    gap: 12px;
 }
-
+.promo-label { font-size: 0.9rem; white-space: nowrap; }
 .promo-code {
-    font-weight: 700;
     font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    color: var(--chocolate);
+    font-weight: 700;
+    color: var(--accent-pink);
+    letter-spacing: 1px;
+    flex-grow: 1;
+    text-align: center;
 }
-
 .btn-copy-outline {
-    background: transparent;
-    border: 1px solid var(--chocolate);
-    padding: 0.25rem 0.75rem;
-    font-size: 0.7rem;
+    border-radius: 50px !important;
+    background: transparent !important;
+    border: 1px solid var(--accent-pink) !important;
+    color: var(--accent-pink) !important;
+    padding: 6px 14px !important;
+    font-size: 0.8rem !important;
     cursor: pointer;
-    text-transform: uppercase;
+    transition: all 0.3s ease !important;
+    white-space: nowrap;
+}
+.btn-copy-outline:hover {
+    background: var(--accent-pink) !important;
+    color: var(--white) !important;
 }
 
-/* Лайтбокс страниц гайда */
+/* Выравнивание кнопок в модалке */
+.modal-content .download-btn,
+.modal-content .order-link,
+#guideModal .download-btn,
+#guideModal .order-link {
+    display: flex !important;
+    margin: 16px auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.modal-card #modalFormBlock.hidden,
+.modal-card .success-block.hidden { display: none; }
+
+/* ==========================================================================
+   6. LIGHTBOX МОДАЛКА (Просмотр гайда)
+   ========================================================================== */
 .guide-page-modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1100;
-    background-color: rgba(0, 0, 0, 0.9);
     display: none;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
     justify-content: center;
-    padding: 2rem;
+    align-items: center;
 }
-
-.guide-page-modal-overlay.active {
-    display: flex;
-}
+.guide-page-modal-overlay.active { display: flex; }
 
 .guide-page-modal-close-btn {
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    color: #ffffff;
-    font-size: 2.5rem;
-    background: none;
+    top: 20px;
+    right: 30px;
+    background: transparent;
     border: none;
+    font-size: 40px;
+    color: var(--white);
     cursor: pointer;
+    z-index: 2010;
+    padding: 0;
 }
 
 .guide-page-modal-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #ffffff;
-    font-size: 3rem;
-    background: none;
+    background: transparent;
     border: none;
+    font-size: 48px;
+    color: var(--white);
     cursor: pointer;
-    padding: 1rem;
+    z-index: 2010;
+    padding: 10px 20px;
+    opacity: 0.7;
 }
-
-.guide-page-modal-prev { left: 1rem; }
-.guide-page-modal-next { right: 1rem; }
-
-.guide-page-modal-image-container {
-    max-width: 90vw;
-    max-height: 85vh;
-}
+.guide-page-modal-nav:hover { opacity: 1; }
+.guide-page-modal-prev { left: 20px; }
+.guide-page-modal-next { right: 20px; }
 
 .guide-page-modal-img {
-    max-width: 100%;
-    max-height: 85vh;
+    max-width: 90vw;
+    max-height: 90vh;
     object-fit: contain;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Адаптивность intlTelInput */
-.iti {
-    width: 100%;
+/* ==========================================================================
+   7. АДАПТИВНОСТЬ (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .lead-magnet-content { grid-template-columns: 1fr; padding: 0 20px; }
+    .lead-magnet-btn { width: 100%; }
+    .nav-btn-guide { padding: 6px 14px; font-size: 10px; }
+    
+    .guide-page-modal-nav { font-size: 36px; padding: 5px 10px; }
+    .guide-page-modal-close-btn { font-size: 32px; top: 15px; right: 20px; }
+    .guide-page-modal-prev { left: 10px; }
+    .guide-page-modal-next { right: 10px; }
+}
+/* ==========================================================================
+   Чистый стиль для всех изображений (без рамок, теней и эффектов)
+   ========================================================================== */
+img,
+.portfolio-img-wrapper,
+.portfolio-img-main,
+.portfolio-img-thumb,
+.about-section img {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    filter: none !important;
+    border-radius: 0 !important; /* Убирает скругления углов */
+    background: transparent !important;
+}
+
+/* Сброс тени и рамки при наведении на обертку картинки */
+.portfolio-img-wrapper:hover,
+.portfolio-item:hover img {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+/* ==========================================================================
+   ВОССТАНОВЛЕНИЕ КАРТОЧЕК ПОРТФОЛИО (Выравнивание и Zoom)
+   ========================================================================== */
+
+/* 1. Возвращаем контейнерам обрезку для плавного зума внутри карточек */
+#portfolio .portfolio-item,
+#portfolio .portfolio-img-wrapper,
+#portfolio .overflow-hidden {
+    overflow: hidden !important;
+    border-radius: 4px;
+}
+
+/* 2. Идеальное выравнивание миниатюр (Исходное фото / Детали) */
+/* Делает обе картинки сверху одинаковой квадратной формы и высоты */
+#portfolio .grid-cols-2 img,
+#portfolio .grid img,
+#portfolio .thumb-img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* 3. Возвращаем плавный зум изображений */
+#portfolio img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Эффект увеличения картинки при наведении */
+#portfolio .portfolio-item:hover img,
+#portfolio .group:hover img,
+#portfolio a:hover img {
+    transform: scale(1.04) !important;
+}
+
+/* 4. Безопасность ссылки Behance (текстовый вид без превращения в кнопку) */
+#portfolio a.behance-link,
+#portfolio a[target="_blank"] {
+    transform: none !important; /* На саму ссылку эффект зума не действует */
+    color: #6c2603 !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    border: none !important;
+}
+#portfolio a.behance-link:hover,
+#portfolio a[target="_blank"]:hover {
+    color: #6c2603 !important;
+    opacity: 0.75 !important;
+    background: transparent !important;
 }
