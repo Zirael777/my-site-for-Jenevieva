@@ -388,10 +388,21 @@ button:active, .btn:active, a:active {
     margin-bottom: 6px;
 }
 
-.price-row span:first-child {
+/* Название формата (левая колонка) */
+.price-row > span:first-child {
     white-space: nowrap;
-    color: #5c2412;
-    font-size: 0.85rem;
+    color: #5c2412 !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+/* Цена (правая колонка) */
+.price-row > span:last-child {
+    white-space: nowrap;
+    color: #1a1a1a !important;
+    opacity: 1 !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
 }
 
 .price-row::after {
