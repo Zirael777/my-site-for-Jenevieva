@@ -379,19 +379,13 @@ button:active, .btn:active, a:active {
     z-index: 10;
 }
 
-/* Выравнивание: формат слева, цена справа */
+/* Формат слева, цена справа */
 .price-row {
     display: flex !important;
     justify-content: space-between !important;
     align-items: baseline !important;
     width: 100% !important;
     margin-bottom: 6px !important;
-}
-
-/* Полностью отключаем пунктирную линию */
-.price-row::after {
-    display: none !important;
-    content: none !important;
 }
 
 /* Название формата (слева) */
