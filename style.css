@@ -379,29 +379,11 @@ button:active, .btn:active, a:active {
     z-index: 10;
 }
 
-/* Строка цен: формат слева, цена справа */
 .price-row {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: baseline !important;
-    width: 100% !important;
-    margin-bottom: 6px !important;
-}
-
-/* Название формата (левая колонка) */
-.price-row > span:first-child {
-    color: #5c2412 !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-}
-
-/* Цена (правая колонка) */
-.price-row > span:last-child {
-    white-space: nowrap !important;
-    color: #1a1a1a !important;
-    opacity: 1 !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
 }
 
 /* ==========================================================================
