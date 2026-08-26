@@ -239,91 +239,138 @@ button:active, .btn:active, a:active {
    ========================================================================== */
 .lead-magnet-section {
     width: 100%;
-    background: linear-gradient(135deg, rgba(200, 107, 131, 0.15) 0%, rgba(200, 107, 131, 0.05) 100%);
-    border: 1px solid rgba(200, 107, 131, 0.25);
+    background: linear-gradient(135deg, #4d101e 0%, #68182b 50%, #3b0c17 100%);
+    color: #fdfbf7;
     padding: 80px 0;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+    border-top: 1px solid rgba(253, 251, 247, 0.1);
+    border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+    overflow: hidden;
 }
 
 .lead-magnet-content {
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
     padding: 0 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 50px;
     align-items: center;
+}
+
+@media (min-width: 992px) {
+    .lead-magnet-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
 }
 
 .lead-magnet-text-col {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .lead-magnet-text-col {
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 .lead-magnet-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(253, 251, 247, 0.12);
+    border: 1px solid rgba(253, 251, 247, 0.25);
+    color: #fce4e8;
     font-size: 0.75rem;
-    color: var(--accent-pink);
-    margin: 0 0 12px 0;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 .lead-magnet-title {
     font-size: 2.5rem;
-    color: var(--text-main);
-    margin: 0 0 8px 0;
+    color: #fdfbf7;
+    margin: 0 0 12px 0;
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .lead-magnet-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-main);
-    margin: 0 0 24px 0;
+    font-size: 1.15rem;
+    color: #f2c4ce;
+    margin: 0 0 20px 0;
     font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
 }
 
 .lead-magnet-description {
-    font-size: 1.05rem;
-    color: var(--text-main);
+    font-size: 0.95rem;
+    color: rgba(253, 251, 247, 0.85);
     line-height: 1.7;
-    margin: 0 0 40px 0;
+    margin: 0 0 32px 0;
     max-width: 540px;
 }
 
+/* Белая контрастная кнопка */
+.lead-magnet-btn {
+    background: #fdfbf7 !important;
+    color: #5c1325 !important;
+    border: 1px solid #fdfbf7 !important;
+    border-radius: 50px !important;
+    padding: 16px 36px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.lead-magnet-btn:hover {
+    background: #f8e5e8 !important;
+    color: #3b0c17 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Веер карточек */
 .lead-magnet-fan-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    width: 100%;
 }
 
 .guide-fan-container {
     position: relative;
-    width: 320px;
-    height: 420px;
+    width: 300px;
+    height: 380px;
     perspective: 1000px;
 }
 
 .guide-page {
     position: absolute;
-    width: 260px;
-    height: 340px;
-    border-radius: 4px;
-    box-shadow: 0 8px 30px rgba(43, 42, 41, 0.15);
+    width: 220px;
+    height: 300px;
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #fff;
 }
 
 .guide-page-inner {
@@ -332,7 +379,6 @@ button:active, .btn:active, a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--bg-main) 0%, #f5f0e6 100%);
 }
 
 .guide-page-img {
@@ -342,25 +388,42 @@ button:active, .btn:active, a:active {
     pointer-events: none;
 }
 
-.guide-page-1 { top: 30px; left: 20px; transform: rotate(-15deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
-.guide-page-2 { top: 0px; left: 30px; transform: rotate(0deg) scale(1.02); opacity: 1; z-index: 3; box-shadow: 0 15px 50px rgba(43, 42, 41, 0.2); }
-.guide-page-3 { top: 30px; left: 40px; transform: rotate(15deg) scale(0.95); opacity: 0.85; z-index: 1; filter: brightness(0.92); }
+.guide-page-1 { 
+    top: 20px; 
+    left: 10px; 
+    transform: rotate(-12deg) scale(0.95); 
+    opacity: 0.9; 
+    z-index: 1; 
+}
+
+.guide-page-2 { 
+    top: 0px; 
+    left: 40px; 
+    transform: rotate(0deg) scale(1.02); 
+    opacity: 1; 
+    z-index: 3; 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5); 
+}
+
+.guide-page-3 { 
+    top: 20px; 
+    left: 70px; 
+    transform: rotate(12deg) scale(0.95); 
+    opacity: 0.9; 
+    z-index: 1; 
+}
 
 .guide-page:hover {
     transform: translateY(-15px) scale(1.08) rotate(0deg) !important;
     z-index: 10 !important;
-    box-shadow: 0 25px 70px rgba(43, 42, 41, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
     opacity: 1 !important;
-    filter: brightness(1) !important;
 }
 
 .guide-fan-hint {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    color: rgba(43, 42, 41, 0.6);
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: rgba(253, 251, 247, 0.7);
     text-align: center;
     white-space: nowrap;
 }
