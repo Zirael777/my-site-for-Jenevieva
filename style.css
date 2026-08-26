@@ -276,13 +276,15 @@ button:active, .btn:active, a:active {
 /* ==========================================================================
    3. КАРТОЧКИ И СЕКЦИИ
    ========================================================================== */
-.price-card, .portfolio-item, .card {
+
+/* Портфолио и Магазин (исходный стиль — НЕ ТРОГАЕМ) */
+.portfolio-item, .card {
     border: 1px solid var(--border-color);
     background-color: var(--bg-main);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
-.price-card:hover, .portfolio-item:hover, .card:hover {
+.portfolio-item:hover, .card:hover {
     border-color: var(--accent-pink);
     transform: translateY(-2px);
     background-color: var(--white);
@@ -305,6 +307,99 @@ button:active, .btn:active, a:active {
     color: var(--chocolate) !important;
 }
 
+/* --------------------------------------------------------------------------
+   СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ КАРТОЧЕК УСЛУГ (.price-card)
+   -------------------------------------------------------------------------- */
+
+/* Базовая карточка услуг */
+.price-card {
+    position: relative !important;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* Наведение: подъем на 6px, цвет фона НЕ меняется на белый */
+.price-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 14px 28px rgba(92, 36, 18, 0.12) !important;
+    border-color: rgba(92, 36, 18, 0.3) !important;
+    background-color: var(--bg-main) !important;
+}
+
+/* Весь текст карточки — шоколадный */
+.price-card {
+    color: #5c2412 !important;
+}
+
+/* Заголовок — шоколадный и более жирный */
+.price-card h3 {
+    color: #5c2412 !important;
+    font-weight: 700 !important;
+}
+
+/* Основное описание — шоколадное и чуть увеличенное (14px) */
+.price-card p:not([class*="tracking-widest"]) {
+    color: #5c2412 !important;
+    font-size: 0.875rem !important; 
+    line-height: 1.6 !important;
+}
+
+/* Строка «Срок» — чёткий глубокий чёрный */
+.price-card p[class*="tracking-widest"] {
+    color: #1a1a1a !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Цены — чёткий глубокий чёрный */
+.price-card .font-bold,
+.price-row span:last-child {
+    color: #1a1a1a !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Плашка «ХИТ» */
+.badge-hit {
+    position: absolute;
+    top: -11px;
+    right: 20px;
+    background-color: #B83B3B;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 3px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(184, 59, 59, 0.35);
+    z-index: 10;
+}
+
+/* Пунктирный разделитель между форматом и ценой */
+.price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.price-row span:first-child {
+    white-space: nowrap;
+    color: #5c2412;
+    font-size: 0.85rem;
+}
+
+.price-row::after {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 1px dotted rgba(92, 36, 18, 0.35);
+    margin: 0 8px;
+}
 /* ==========================================================================
    4. LEAD MAGNET И ВЕЕР СТРАНИЦ
    ========================================================================== */
