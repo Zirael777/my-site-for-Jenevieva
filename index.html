@@ -381,6 +381,7 @@
 </div>
 </section>
 
+	<!-- СЕКЦИЯ лид магнита гайда -->
     <section id="lead-magnet" class="lead-magnet-section">
         <div class="lead-magnet-content">
             
@@ -429,14 +430,14 @@
     <!-- Модальное окно для просмотра страниц гайда (лайтбокс с навигацией) -->
     <div id="guide-page-modal" class="guide-page-modal-overlay" onclick="closeGuidePageModal()">
         <button class="guide-page-modal-close-btn" onclick="closeGuidePageModal()">×</button>
-        <button class="guide-page-modal-nav guide-page-modal-prev" onclick="navigateGuidePage(-1)">‹</button>
-        <button class="guide-page-modal-nav guide-page-modal-next" onclick="navigateGuidePage(1)">›</button>
+        <button class="guide-page-modal-nav guide-page-modal-prev" onclick="navigateGuidePage(-1, event)">‹</button>
+        <button class="guide-page-modal-nav guide-page-modal-next" onclick="navigateGuidePage(1, event)">›</button>
         <div class="guide-page-modal-image-container" onclick="event.stopPropagation()">
             <img id="modal-page-img" src="" alt="Страница гайда" class="guide-page-modal-img">
         </div>
     </div>
 
-    
+  <!-- СЕКЦИЯ услуг -->  
     <section id="services" class="max-w-7xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -748,7 +749,7 @@
         </div>
     </section>
 
-    
+    <!-- СЕКЦИЯ магазин-->
     <section id="shop" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -800,7 +801,7 @@
         </div>
     </section>
 
-    
+   <!-- СЕКЦИЯ отзывы --> 
     <section id="reviews" class="max-w-6xl mx-auto px-6 py-20 border-t border-[#6c2603]/10">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#6c2603] decorative-heading">
@@ -1032,7 +1033,7 @@
         </div>
     </section>
 
-    
+  <!-- СЕКЦИЯ контакты -->  
     <section id="contact" class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-[#6c2603]/10">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 text-[#6c2603] decorative-heading">
@@ -1112,7 +1113,7 @@
         </div>
     </section>
 
-    
+    <!-- СЕКЦИЯ ПОдвал -->
     <footer class="bg-[#6c2603] text-[#fdfbf7] py-12 px-6 text-center border-t border-[#6c2603]/10 relative overflow-hidden">
         <div class="max-w-4xl mx-auto space-y-6">
             
