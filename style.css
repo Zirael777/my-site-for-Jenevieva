@@ -56,19 +56,14 @@ h4, h5, h6,
     background-color: transparent !important;
 }
 
-/* 3. МЕНЮ НАВИГАЦИИ И ВСЕ КНОПКИ — С засечками (Cormorant Garamond) */
-nav, 
-nav a, 
+/* 3. МЕНЮ НАВИГАЦИИ (Только текстовые ссылки, кнопку гайда не трогаем) */
+nav a:not([class*="bg-"]):not([class*="btn"]), 
 nav span, 
-.lang-switch, 
-button, 
-.btn, 
-a[class*="btn"],
-.modal-arrow, 
-.modal-close-btn {
+.lang-switch {
     font-family: 'Cormorant Garamond', serif !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.06em;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    color: #5c2412 !important;
 }
 
 /* 4. ОБЫЧНЫЙ ТЕКСТ (Описания, абзацы, списки) — Без засечек (Montserrat) */
