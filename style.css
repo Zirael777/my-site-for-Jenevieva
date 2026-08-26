@@ -11,61 +11,38 @@
     --chocolate: #5c2412;
 }
 
-/* Подключаем Cormorant Garamond (заголовки) и Montserrat (текст) */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500&display=swap');
+/* Подключаем шрифты: Cormorant Garamond (с засечками) и Montserrat (без засечек) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500&display=swap');
 
 /* Главный фон сайта */
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 
-/* ОБЩИЙ ТЕКСТ САЙТА (Без белых плашек, прозрачный фон) */
-p, li, blockquote, span, div {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.6;
-}
+/* ==========================================================================
+   РАСПРЕДЕЛЕНИЕ ШРИФТОВ
+   ========================================================================== */
 
-/* Убираем случайно возникший фон у любых текстовых элементов */
-p, li, blockquote, h1, h2, h3, h4, h5, h6, .lead-magnet-description, .modal-description {
+/* 1. ГЛАВНЫЕ ЗАГОЛОВКИ — С засечками, ЖИРНЫЕ */
+h1, h2, h3, 
+.main-title, 
+.section-title, 
+.lead-magnet-title,
+#txt-logo {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     background-color: transparent !important;
 }
 
-/* 1. ГЛАВНЫЕ ЗАГОЛОВКИ (Cormorant Garamond, ЖИРНЫЙ) */
-h1, h2, h3, 
-.main-title, 
-.section-title {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
+h1 { font-size: clamp(28px, 4vw, 42px) !important; line-height: 1.25 !important; }
+h2 { font-size: clamp(22px, 3vw, 32px) !important; line-height: 1.3 !important; }
 
-h1 { 
-    font-size: clamp(28px, 4vw, 42px) !important; 
-    line-height: 1.25 !important; 
-}
-
-h2 { 
-    font-size: clamp(22px, 3vw, 32px) !important; 
-    line-height: 1.3 !important; 
-}
-
-/* Заголовок гайда (розовый блок) */
-.lead-magnet-title {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-weight: 700 !important;
-    font-size: clamp(24px, 3.5vw, 36px) !important;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #4d101e !important;
-}
-
-/* 2. ПОДЗАГОЛОВКИ (Cormorant Garamond, НЕ жирный) */
+/* 2. ПОДЗАГОЛОВКИ — С засечками, НЕ жирные */
 h4, h5, h6,
 .lead-magnet-subtitle, 
 .hero-subtitle, 
@@ -76,9 +53,38 @@ h4, h5, h6,
     font-style: normal !important;
     font-size: clamp(18px, 2.5vw, 22px) !important;
     line-height: 1.4 !important;
+    background-color: transparent !important;
 }
 
-/* Технические элементы */
+/* 3. МЕНЮ НАВИГАЦИИ И ВСЕ КНОПКИ — С засечками (Cormorant Garamond) */
+nav, 
+nav a, 
+nav span, 
+.lang-switch, 
+button, 
+.btn, 
+a[class*="btn"],
+.modal-arrow, 
+.modal-close-btn {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
+}
+
+/* 4. ОБЫЧНЫЙ ТЕКСТ (Описания, абзацы, списки) — Без засечек (Montserrat) */
+p, li, blockquote, .card-text, .lead-magnet-description, .modal-description {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: transparent !important;
+}
+
+/* ==========================================================================
+   ВСПОМОГАТЕЛЬНЫЕ СТИЛИ
+   ========================================================================== */
+
 img, video {
     user-select: none;
     -webkit-user-drag: none;
@@ -117,10 +123,9 @@ body:not([data-active-lang]) [data-lang="ua"] {
 }
 .lang-switch.active {
     opacity: 1;
-    font-weight: 700;
+    font-weight: 700 !important;
     border-bottom: 1.5px solid var(--text-main);
 }
-
 /* ==========================================================================
    2. КНОПКИ И ССЫЛКИ (Единый блок)
    ========================================================================== */
