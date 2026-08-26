@@ -69,7 +69,7 @@ body:not([data-active-lang]) [data-lang="ua"] {
 }
 
 /* ==========================================================================
-   2. КНОПКИ И ССЫЛКИ (Единый блок)
+   2. КНОПКИ И ССЫЛКИ
    ========================================================================== */
 
 /* Навигация (базовая) */
@@ -84,10 +84,11 @@ nav a:not(.nav-btn-guide) {
     border-radius: 0 !important;
 }
 
-/* Стандартные контурные кнопки (Шоколадный стиль) */
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close),
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link),
-.hero-btn-outline {
+/* Стандартные контурные кнопки (включая "Посмотреть все работы" .catalog-link) */
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close),
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link),
+.hero-btn-outline,
+.catalog-link {
     border-radius: 50px !important;
     background: transparent !important;
     border: 1px solid var(--chocolate) !important;
@@ -97,17 +98,18 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     font-size: 0.85rem;
     letter-spacing: 0.05em;
     cursor: pointer;
-    padding: 12px 28px;
+    padding: 12px 28px !important;
     transition: all 0.3s ease !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):not(.modal-close):hover,
-.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.catalog-link):hover,
-.hero-btn-outline:hover {
+button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):not(.modal-close):hover,
+.btn:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-btn):not(.behance-link):hover,
+.hero-btn-outline:hover,
+.catalog-link:hover {
     background: var(--chocolate) !important;
     color: var(--bg-main) !important;
     border-color: var(--chocolate) !important;
@@ -167,10 +169,9 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     border-color: var(--accent-pink) !important;
 }
 
-/* Чистые текстовые ссылки (Behance и Каталог) — без рамок и обводок */
+/* Ссылка Behance (строго чистый текст с подчеркиванием) */
 .behance-link,
-#portfolio a.behance-link,
-.catalog-link {
+#portfolio a.behance-link {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -187,8 +188,7 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
 }
 
 .behance-link:hover,
-#portfolio a.behance-link:hover,
-.catalog-link:hover {
+#portfolio a.behance-link:hover {
     background: transparent !important;
     border: none !important;
     color: #6c2603 !important;
@@ -218,11 +218,15 @@ button:active, .btn:active, a:active {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-.about-section img {
-    border-radius: 16px !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07) !important;
+/* Блок "О себе" - фото без рамок и теней */
+.about-section img,
+.about-section .img-wrapper {
+    border-radius: 0 !important;
+    box-shadow: none !important;
     border: none !important;
+    outline: none !important;
 }
+
 .about-section p {
     line-height: 1.68 !important;
     color: var(--text-main) !important;
@@ -398,7 +402,6 @@ button:active, .btn:active, a:active {
     position: relative;
 }
 
-/* Единственное верное правило для крестика закрытия */
 .modal-close {
     position: absolute;
     top: 16px;
@@ -661,9 +664,12 @@ input:-webkit-autofill {
     .guide-page-modal-prev { left: 10px; }
     .guide-page-modal-next { right: 10px; }
 }
+
 /* ==========================================================================
-   Чистый стиль для всех изображений (без рамок, теней и эффектов)
+   8. НАСТРОЙКА КАРТОЧЕК ПОРТФОЛИО И ИЗОБРАЖЕНИЙ
    ========================================================================== */
+
+/* Сброс рамок, теней и обводок у фото */
 img,
 .portfolio-img-wrapper,
 .portfolio-img-main,
@@ -673,31 +679,20 @@ img,
     box-shadow: none !important;
     outline: none !important;
     filter: none !important;
-    border-radius: 0 !important; /* Убирает скругления углов */
+    border-radius: 0 !important;
     background: transparent !important;
 }
 
-/* Сброс тени и рамки при наведении на обертку картинки */
-.portfolio-img-wrapper:hover,
-.portfolio-item:hover img {
-    border: none !important;
-    box-shadow: none !important;
-    transform: none !important;
-}
-/* ==========================================================================
-   ВОССТАНОВЛЕНИЕ КАРТОЧЕК ПОРТФОЛИО (Выравнивание и Zoom)
-   ========================================================================== */
-
-/* 1. Возвращаем контейнерам обрезку для плавного зума внутри карточек */
-#portfolio .portfolio-item,
+/* Обертка для картинок портфолио */
 #portfolio .portfolio-img-wrapper,
-#portfolio .overflow-hidden {
+#portfolio .portfolio-item .overflow-hidden {
+    position: relative !important;
     overflow: hidden !important;
     border-radius: 4px;
+    cursor: pointer;
 }
 
-/* 2. Идеальное выравнивание миниатюр (Исходное фото / Детали) */
-/* Делает обе картинки сверху одинаковой квадратной формы и высоты */
+/* Ровные квадратные пропорции 1:1 для верхних миниатюр */
 #portfolio .grid-cols-2 img,
 #portfolio .grid img,
 #portfolio .thumb-img {
@@ -708,30 +703,33 @@ img,
     display: block !important;
 }
 
-/* 3. Возвращаем плавный зум изображений */
-#portfolio img {
+/* Плавный зум при наведении */
+#portfolio .portfolio-img-wrapper img,
+#portfolio .portfolio-item img {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Эффект увеличения картинки при наведении */
-#portfolio .portfolio-item:hover img,
-#portfolio .group:hover img,
-#portfolio a:hover img {
-    transform: scale(1.04) !important;
+#portfolio .portfolio-img-wrapper:hover img,
+#portfolio .portfolio-item:hover img {
+    transform: scale(1.05) !important;
 }
 
-/* 4. Безопасность ссылки Behance (текстовый вид без превращения в кнопку) */
-#portfolio a.behance-link,
-#portfolio a[target="_blank"] {
-    transform: none !important; /* На саму ссылку эффект зума не действует */
-    color: #6c2603 !important;
-    text-decoration: underline !important;
-    background: transparent !important;
-    border: none !important;
+/* Оверлей со значком лупы при наведении */
+#portfolio .portfolio-img-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(43, 42, 41, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
 }
-#portfolio a.behance-link:hover,
-#portfolio a[target="_blank"]:hover {
-    color: #6c2603 !important;
-    opacity: 0.75 !important;
-    background: transparent !important;
+
+#portfolio .portfolio-img-wrapper:hover::after {
+    opacity: 1;
 }
