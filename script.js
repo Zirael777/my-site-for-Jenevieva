@@ -189,42 +189,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Текущая страница в модальном окне гайда
-    let currentGuidePage = 1;
-    const totalGuidePages = 3;
+   // ==========================================
+// ЛОГИКА ПРОСМОТРА СТРАНИЦ ГАЙДА (ЛАЙТБОКС)
+// ==========================================
+let currentGuidePage = 1;
+const totalGuidePages = 3; // Укажите общее количество страниц гайда
 
-    // Открытие модального окна страницы гайда
-    window.openGuidePageModal = function(pageNum) {
-        currentGuidePage = pageNum || 1;
-        updateModalImage();
-        const modal = document.getElementById('guide-page-modal');
+// Открытие модального окна страницы гайда
+window.openGuidePageModal = function(pageNum) {
+    currentGuidePage = pageNum || 1;
+    updateModalImage();
+    const modal = document.getElementById('guide-page-modal');
+    if (modal) {
         modal.classList.add('active');
         modal.classList.remove('hidden');
+        modal.style.display = 'flex'; // Гарантирует отображение
         document.body.style.overflow = 'hidden';
-    };
-
-    // Обновление изображения в модальном окне
-    function updateModalImage() {
-        const imgSrc = `guide-page-${currentGuidePage}.png`;
-        document.getElementById('modal-page-img').src = imgSrc;
     }
+};
 
-    // Навигация по страницам гайда
-    window.navigateGuidePage = function(direction) {
-        currentGuidePage += direction;
-        if (currentGuidePage < 1) currentGuidePage = totalGuidePages;
-        else if (currentGuidePage > totalGuidePages) currentGuidePage = 1;
-        updateModalImage();
-    };
+// Обновление изображения в модальном окне
+function updateModalImage() {
+    const imgEl = document.getElementById('modal-page-img');
+    if (imgEl) {
+        // Укажите путь к вашим изображениям (guide-page-1.png, guide-page-2.png и т.д.)
+        imgEl.src = `guide-page-${currentGuidePage}.png`; 
+    }
+}
 
-    // Закрытие модального окна страницы гайда
-    window.closeGuidePageModal = function() {
-        const modal = document.getElementById('guide-page-modal');
+// Навигация по страницам гайда
+window.navigateGuidePage = function(direction, event) {
+    if (event) event.stopPropagation(); // Блокируем закрытие окна при клике на стрелки
+    currentGuidePage += direction;
+    if (currentGuidePage < 1) currentGuidePage = totalGuidePages;
+    else if (currentGuidePage > totalGuidePages) currentGuidePage = 1;
+    updateModalImage();
+};
+
+// Закрытие модального окна страницы гайда
+window.closeGuidePageModal = function() {
+    const modal = document.getElementById('guide-page-modal');
+    if (modal) {
         modal.classList.remove('active');
         modal.classList.add('hidden');
-        document.getElementById('modal-page-img').src = '';
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-    };
+    }
+};
 
     // Открытие модального окна гайда
     window.openGuideModal = function() {
