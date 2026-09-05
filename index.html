@@ -1043,87 +1043,102 @@
         </div>
     </section>
 
-  <!-- СЕКЦИЯ контакты -->  
-    <section id="contact" class="bg-[#6c2603]/5 py-16 px-6 text-center border-t border-[#6c2603]/10">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 text-[#6c2603] decorative-heading">
+  <!-- СЕКЦИЯ КОНТАКТЫ -->  
+    <section id="contacts" class="bg-[#6c2603]/5 py-20 px-6 border-t border-[#6c2603]/10 relative">
+        <div class="max-w-5xl mx-auto text-center">
+            
+            <!-- Заголовок секции -->
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-4 text-[#6c2603] decorative-heading">
                 <span data-lang="ru">Как со мной связаться</span>
                 <span data-lang="en">How to Contact Me</span>
                 <span data-lang="ua">Як зі мною зв'язатися</span>
             </h2>
             
-            <p class="text-sm md:text-base text-[#6c2603]/80 mb-8 font-medium">
-                <span data-lang="ru">Присоединяйтесь к мастерской в социальных сетях:</span>
-                <span data-lang="en">Join the creative space on social media:</span>
-                <span data-lang="ua">Приєднуйтесь до майстерні в соціальних мережах:</span>
+            <p class="text-sm md:text-base text-[#6c2603]/80 max-w-xl mx-auto mb-12 font-medium">
+                <span data-lang="ru">Буду рада обсудить ваш проект, ответить на вопросы или просто пообщаться о творчестве:</span>
+                <span data-lang="en">I would be glad to discuss your project, answer questions, or chat about creativity:</span>
+                <span data-lang="ua">Буду рада обговорити ваш проєкт, відповісти на запитання чи просто поспілкуватися про творчість:</span>
             </p>
 
-            
-            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-3xl mx-auto pt-4">
+            <!-- Двухколоночный карточный блок -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left max-w-4xl mx-auto items-stretch">
                 
-                
-                <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                    <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
-                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <path d="M21 5L2 12.5L9 15M21 5L18.5 20L9 15M21 5L9 15M9 15L10 20L13 17" />
+                <!-- Карточка 1: Главная кнопка быстрой связи (Telegram) -->
+                <div class="lg:col-span-2 bg-[#fdfbf7] border border-[#6c2603]/15 p-8 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -right-6 -bottom-6 opacity-5 pointer-events-none text-[#6c2603]">
+                        <svg width="220" height="220" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
                         </svg>
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Telegram</span>
-                </a>
 
-                
-                <a href="https://www.behance.net/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                    <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
-                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <path d="M4.5 10.5h3a2 2 0 0 1 0 4h-3zm0-4h2.5a2 2 0 0 1 0 4h-2.5z M13.5 12.5h5 M12.5 10.5 a3 3 0 0 1 6 0 v3a3 3 0 0 1 -6 0 z" />
-                        </svg>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                            <span data-lang="ru">Основной канал связи</span>
+                            <span data-lang="en">Main Communication Channel</span>
+                            <span data-lang="ua">Основний канал зв'язку</span>
+                        </span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+                            <span data-lang="ru">Прямой диалог в Telegram</span>
+                            <span data-lang="en">Direct Telegram Chat</span>
+                            <span data-lang="ua">Прямий діалог у Telegram</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[#6c2603]/80 leading-relaxed font-medium mb-8">
+                            <span data-lang="ru">Самый быстрый способ заказать портрет, уточнить детали заказа, согласовать эскиз или обсудить индивидуальный проект.</span>
+                            <span data-lang="en">The fastest way to order a portrait, clarify order details, approve a sketch, or discuss a custom art project.</span>
+                            <span data-lang="ua">Найшвидший спосіб замовити портрет, уточнити деталі замовлення, погодити ескіз або обговорити індивідуальний проєкт.</span>
+                        </p>
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Behance</span>
-                </a>
 
-                
-                <a href="https://www.pinterest.com/art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                    <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
-                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8c-2 0-3 1.5-3 3 0 1 0.5 2 1.5 2.5 M12 8c2 0 3 1.5 3 3 0 3-2 6-2 6" />
-                        </svg>
+                    <div>
+                        <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3.5 bg-[#6c2603] text-[#fdfbf7] text-xs uppercase font-bold tracking-widest hover:bg-[#521d02] transition-colors rounded-xl shadow-sm">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                            <span data-lang="ru">Написать @art_jenevieva</span>
+                            <span data-lang="en">Message @art_jenevieva</span>
+                            <span data-lang="ua">Написати @art_jenevieva</span>
+                        </a>
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Pinterest</span>
-                </a>
+                </div>
 
-                
-                <a href="https://cara.app/artjenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                    <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
-                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M15 9c-1.5-1-3.5-1-5 0-2 1.5-2 4.5 0 6 1.5 1 3.5 1 5 0" />
-                        </svg>
+                <!-- Карточка 2: Соцсети и арт-площадки -->
+                <div class="bg-[#fdfbf7] border border-[#6c2603]/15 p-8 rounded-2xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+                            <span data-lang="ru">Сообщество</span>
+                            <span data-lang="en">Social Media</span>
+                            <span data-lang="ua">Спільнота</span>
+                        </span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-4">
+                            <span data-lang="ru">Мои соцсети</span>
+                            <span data-lang="en">My Platforms</span>
+                            <span data-lang="ua">Мої соцмережі</span>
+                        </h3>
+                        
+                        <div class="space-y-3 pt-1">
+                            <a href="https://www.behance.net/art_jenevieva" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg border border-[#6c2603]/10 hover:border-[#6c2603]/40 hover:bg-[#6c2603]/5 transition-all text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span class="flex items-center gap-2">✦ Behance</span>
+                                <span class="text-[10px] opacity-50 font-normal lowercase">портфолио ↗</span>
+                            </a>
+                            <a href="https://www.pinterest.com/art_jenevieva" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg border border-[#6c2603]/10 hover:border-[#6c2603]/40 hover:bg-[#6c2603]/5 transition-all text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span class="flex items-center gap-2">✦ Pinterest</span>
+                                <span class="text-[10px] opacity-50 font-normal lowercase">вдохновение ↗</span>
+                            </a>
+                            <a href="https://cara.app/artjenevieva" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg border border-[#6c2603]/10 hover:border-[#6c2603]/40 hover:bg-[#6c2603]/5 transition-all text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span class="flex items-center gap-2">✦ Cara</span>
+                                <span class="text-[10px] opacity-50 font-normal lowercase">арт-сеть ↗</span>
+                            </a>
+                            <a href="https://www.youtube.com/@art_jenevieva" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg border border-[#6c2603]/10 hover:border-[#6c2603]/40 hover:bg-[#6c2603]/5 transition-all text-xs font-bold uppercase tracking-wider text-[#6c2603]">
+                                <span class="flex items-center gap-2">✦ YouTube</span>
+                                <span class="text-[10px] opacity-50 font-normal lowercase">видео ↗</span>
+                            </a>
+                        </div>
                     </div>
-                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">Cara</span>
-                </a>
-
-                
-                <a href="https://www.youtube.com/@art_jenevieva" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                    <div class="w-12 h-12 border border-[#6c2603]/25 group-hover:border-[#6c2603] transition duration-300 rounded-full flex items-center justify-center relative">
-                        <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 40 40" fill="none" stroke="currentColor"><path d="M5,5 L35,35 M35,5 L5,35 M5,20 L35,20" stroke-width="0.5"/></svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                            <rect x="2" y="4" width="20" height="16" rx="4" />
-                            <polygon points="10 9 15 12 10 15" />
-                        </svg>
-                    </div>
-                    <span class="text-[9px] uppercase tracking-widest mt-2 opacity-60 group-hover:opacity-100 transition duration-300">YouTube</span>
-                </a>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ ПОдвал -->
+	<!-- СЕКЦИЯ ПОдвал -->
     <footer class="bg-[#6c2603] text-[#fdfbf7] py-12 px-6 text-center border-t border-[#6c2603]/10 relative overflow-hidden">
         <div class="max-w-4xl mx-auto space-y-6">
             
