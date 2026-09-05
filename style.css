@@ -58,8 +58,7 @@ h4, h5, h6,
 
 /* 3. МЕНЮ НАВИГАЦИИ (Только текстовые ссылки, кнопку гайда не трогаем) */
 nav a:not([class*="bg-"]):not([class*="btn"]), 
-nav span, 
-.lang-switch {
+nav span {
     font-family: 'Cormorant Garamond', serif !important;
     font-size: 14px !important;
     font-weight: 700 !important;
@@ -112,16 +111,6 @@ body:not([data-active-lang]) [data-lang="ua"] {
     display: none; 
 }
 
-.lang-switch {
-    cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
-}
-.lang-switch.active {
-    opacity: 1;
-    font-weight: 700 !important;
-    border-bottom: 1.5px solid var(--text-main);
-}
 /* ==========================================================================
    2. КНОПКИ И ССЫЛКИ (Единый блок)
    ========================================================================== */
@@ -1094,25 +1083,46 @@ img,
     font-size: 0.9rem;
 }
 
-/* Дополнительно для переключателя языков и подвала */
+/* Единый стиль переключателя языков */
 .lang-switcher {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #6c2603;
 }
 
 .lang-switch {
-    background: none;
-    border: none;
-    color: #6c2603;
+    background: none !important;
+    border: none !important;
+    padding: 0 0 1px 0 !important;
+    margin: 0;
+    color: #6c2603 !important;
+    font: inherit !important;
     cursor: pointer;
-    opacity: 0.6;
-    font-weight: 500;
+    opacity: 0.35;
+    border-bottom: 2px solid transparent !important;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-switch:hover {
+    opacity: 0.7;
 }
 
 .lang-switch.active {
     opacity: 1;
-    border-bottom: 2px solid #6c2603;
+    border-bottom-color: #6c2603 !important;
 }
+
+.lang-divider {
+    opacity: 0.3;
+    font-weight: 300;
+    user-select: none;
+    color: #6c2603;
+}
+/* Дополнительно для переключателя языков и подвала */
 
 .legal-footer .footer-links {
     display: flex;
