@@ -1266,10 +1266,12 @@
                         </div>
                     </div>
                     
-                    <div class="privacy-wrap">
-                        <label class="privacy-label">
-                            <input type="checkbox" id="privacyConsent" checked>
-                            <span data-i18n="guide_privacy_text">Согласен(на) на обработку персональных данных</span>
+                    <div class="privacy-wrap my-3">
+                        <label class="privacy-label flex items-start gap-2 cursor-pointer text-xs">
+                            <input type="checkbox" id="privacyConsent" required checked class="mt-0.5 cursor-pointer">
+                            <span data-i18n="guide_privacy_text">
+                                Согласен(на) на <a href="legal/consent.html" target="_blank" class="underline hover:opacity-80">обработку персональных данных</a>
+                            </span>
                         </label>
                         <span class="error-message error-consent">Необходимо согласие</span>
                     </div>
