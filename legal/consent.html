@@ -4,114 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Согласие на обработку персональных данных — Art Jenevieva</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .paper-bg { background-color: #fdfbf7; }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body class="paper-bg text-[#6c2603] min-h-screen flex flex-col justify-between">
+<body class="legal-page">
 
-    <!-- Шапка / Навигация (ссылка ведет на уровень вверх на главную) -->
-    <header class="py-6 px-6 border-b border-[#6c2603]/10 bg-white/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="../index.html" class="inline-flex items-center gap-2 font-semibold text-sm hover:opacity-70 transition-opacity">
-                <span>←</span> На главную / Back to Home
+    <header class="legal-header">
+        <div class="legal-nav">
+            <a href="../index.html" class="back-link">
+                <span data-lang="ru">← На главную</span>
+                <span data-lang="ua">← На головну</span>
+                <span data-lang="en">← Back to Home</span>
             </a>
-            <span class="text-xs uppercase tracking-widest font-bold opacity-60">Art Jenevieva</span>
+
+            <!-- Переключатель языков -->
+            <div class="lang-switcher">
+                <button id="btn-ru" class="lang-switch active" onclick="switchLang('ru')">RU</button>
+                <button id="btn-ua" class="lang-switch" onclick="switchLang('ua')">UA</button>
+                <button id="btn-en" class="lang-switch" onclick="switchLang('en')">EN</button>
+            </div>
         </div>
     </header>
 
-    <!-- Основной контент -->
-    <main class="max-w-4xl mx-auto my-10 px-6 w-full flex-grow">
-        <div class="bg-white/90 border border-[#6c2603]/10 rounded-2xl p-6 sm:p-10 shadow-sm leading-relaxed">
-            <h1 class="text-2xl sm:text-3xl font-bold uppercase tracking-wider mb-2 text-[#6c2603]">
-                Согласие на обработку персональных данных
-            </h1>
-            <p class="text-xs sm:text-sm opacity-60 mb-8 border-b border-[#6c2603]/10 pb-4">
-                Сайт арт-мастерской Art Jenevieva
+    <main class="legal-content">
+
+        <!-- ================= РУССКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="ru">
+            <h1>Согласие на обработку персональных данных</h1>
+            <p class="effective-date">Сайт арт-мастерской Art Jenevieva</p>
+
+            <p class="intro-text">
+                Заполняя формы на сайте Art Jenevieva (далее — «Сайт»), оформляя заявки на получение материалов (включая скачивание PDF-гайдов, активацию промокодов) или оформляя заказ, я свободно, своей волей и в своем интересе даю согласие на обработку своих персональных данных на следующих условиях:
             </p>
 
-            <div class="space-y-8 text-sm sm:text-base">
-                <!-- Вводный текст -->
-                <p class="opacity-90 leading-relaxed">
-                    Заполняя формы на сайте Art Jenevieva (далее — «Сайт»), оформляя заявки на получение материалов (включая скачивание PDF-гайдов, активацию промокодов) или оформляя заказ, я свободно, своей волей и в своем интересе даю согласие на обработку своих персональных данных на следующих условиях:
-                </p>
+            <section>
+                <h2>1. Оператор персональных данных</h2>
+                <p>Art Jenevieva (Контактный e-mail: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a>).</p>
+            </section>
 
-                <!-- 1 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">1. Оператор персональных данных</h2>
-                    <p class="opacity-90">
-                        Art Jenevieva (Контактный e-mail: <a href="mailto:artjenevievaa@gmail.com" class="underline font-medium hover:opacity-70">artjenevievaa@gmail.com</a>).
-                    </p>
-                </section>
+            <section>
+                <h2>2. Состав собираемых персональных данных</h2>
+                <ul>
+                    <li>Имя / Никнейм;</li>
+                    <li>Адрес электронной почты (E-mail);</li>
+                    <li>Номер контактного телефона;</li>
+                    <li>Никнейм / аккаунт в мессенджерах (Telegram, Google Chat, WhatsApp);</li>
+                    <li>Почтовый адрес (при заказе печатной продукции: открыток, календарей).</li>
+                </ul>
+            </section>
 
-                <!-- 2 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">2. Состав собираемых персональных данных</h2>
-                    <ul class="list-disc pl-5 space-y-1.5 opacity-90">
-                        <li>Имя / Никнейм;</li>
-                        <li>Адрес электронной почты (E-mail);</li>
-                        <li>Номер контактного телефона;</li>
-                        <li>Никнейм / аккаунт в мессенджерах (Telegram, Google Chat, WhatsApp);</li>
-                        <li>Почтовый адрес (при заказе печатной продукции: открыток, календарей).</li>
-                    </ul>
-                </section>
+            <section>
+                <h2>3. Цели обработки персональных данных</h2>
+                <ul>
+                    <li>Предоставление доступа к запрашиваемым материалам Сайта (включая отправку и скачивание PDF-гайда, выдачу персональных промокодов);</li>
+                    <li>Связь со мной для консультации, обсуждения и выполнения индивидуальных заказов;</li>
+                    <li>Отправка сервисных сообщений и ответов на мои обращения;</li>
+                    <li>Организация доставки заказов (физических товаров) почтовыми и курьерскими службами.</li>
+                </ul>
+            </section>
 
-                <!-- 3 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">3. Цели обработки персональных данных</h2>
-                    <ul class="list-disc pl-5 space-y-2 opacity-90">
-                        <li>Предоставление доступа к запрашиваемым материалам Сайта (включая отправку и скачивание PDF-гайда, выдачу персональных промокодов);</li>
-                        <li>Связь со мной для консультации, обсуждения и выполнения индивидуальных заказов;</li>
-                        <li>Отправка сервисных сообщений и ответов на мои обращения;</li>
-                        <li>Организация доставки заказов (физических товаров) почтовыми и курьерскими службами.</li>
-                    </ul>
-                </section>
+            <section>
+                <h2>4. Перечень разрешенных действий с данными</h2>
+                <p>Настоящее согласие дается на совершение следующих действий с использованием средств автоматизации или без них: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (доступ логистическим службам исключительно для доставки), блокирование, удаление и уничтожение персональных данных.</p>
+            </section>
 
-                <!-- 4 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">4. Перечень разрешенных действий с данными</h2>
-                    <p class="opacity-90">
-                        Настоящее согласие дается на совершение следующих действий с использованием средств автоматизации или без них: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (доступ логистическим службам исключительно для доставки), блокирование, удаление и уничтожение персональных данных.
-                    </p>
-                </section>
+            <section>
+                <h2>5. Защита и передача третьим лицам</h2>
+                <p>Оператор обязуется не передавать полученные данные третьим лицам в рекламных или коммерческих целях. Передача данных допускается только службам доставки исключительно в объеме, необходимом для выполнения заказа.</p>
+            </section>
 
-                <!-- 5 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">5. Защита и передача третьим лицам</h2>
-                    <p class="opacity-90">
-                        Оператор обязуется не передавать полученные данные третьим лицам в рекламных или коммерческих целях. Передача данных допускается только службам доставки исключительно в объеме, необходимом для выполнения заказа.
-                    </p>
-                </section>
+            <section>
+                <h2>6. Срок действия и отзыв согласия</h2>
+                <p>Согласие действует с момента отправки формы на Сайте и до достижения целей обработки или до момента его отзыва.</p>
+                <p>Я могу отозвать данное согласие в любой момент, направив письмо с пометкой «Отзыв согласия на обработку персональных данных» на адрес электронной почты: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></p>
+            </section>
+        </article>
 
-                <!-- 6 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">6. Срок действия и отзыв согласия</h2>
-                    <p class="opacity-90 mb-3">
-                        Согласие действует с момента отправки формы на Сайте и до достижения целей обработки или до момента его отзыва.
-                    </p>
-                    <p class="opacity-90">
-                        Я могу отозвать данное согласие в любой момент, направив письмо с пометкой «Отзыв согласия на обработку персональных данных» на адрес электронной почты: 
-                        <a href="mailto:artjenevievaa@gmail.com" class="underline font-medium hover:opacity-70">artjenevievaa@gmail.com</a>
-                    </p>
-                </section>
-            </div>
-        </div>
+        <!-- ================= УКРАИНСКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="ua">
+            <h1>Згода на обробку персональних даних</h1>
+            <p class="effective-date">Сайт арт-майстерні Art Jenevieva</p>
+
+            <p class="intro-text">
+                Заповнюючи форми на сайті Art Jenevieva (далі — «Сайт»), оформлюючи заявки на отримання матеріалів (включаючи завантаження PDF-гайдів, активацію промокодів) або оформлюючи замовлення, я вільно, своєю волею та у своєму інтересі надаю згоду на обробку своїх персональних даних на наступних умовах:
+            </p>
+
+            <section>
+                <h2>1. Оператор персональних даних</h2>
+                <p>Art Jenevieva (Контактний e-mail: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a>).</p>
+            </section>
+
+            <section>
+                <h2>2. Склад персональних даних, що збираються</h2>
+                <ul>
+                    <li>Ім'я / Нікнейм;</li>
+                    <li>Адреса електронної пошти (E-mail);</li>
+                    <li>Номер контактного телефону;</li>
+                    <li>Нікнейм / акаунт у месенджерах (Telegram, Google Chat, WhatsApp);</li>
+                    <li>Поштова адреса (при замовленні друкованої продукції: листівок, календарів).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Цілі обробки персональних даних</h2>
+                <ul>
+                    <li>Надання доступу до запитуваних матеріалів Сайту (включаючи надсилання та завантаження PDF-гайду, видачу персональних промокодів);</li>
+                    <li>Зв'язок зі мною для консультації, обговорення та виконання індивідуальних замовлень;</li>
+                    <li>Надсилання сервісних повідомлень та відповідей на мої звернення;</li>
+                    <li>Організація доставки замовлень (фізичних товарів) поштовими та кур'єрськими службами.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Перелік дозволених дій з даними</h2>
+                <p>Ця згода надається на здійснення наступних дій з використанням засобів автоматизації або без них: збирання, запис, систематизація, накопичення, зберігання, уточнення (оновлення, зміна), вилучення, використання, передача (доступ логістичним службам виключно для доставки), блокування, видалення та знищення персональних даних.</p>
+            </section>
+
+            <section>
+                <h2>5. Захист та передача третім особам</h2>
+                <p>Оператор зобов'язується не передавати отримані дані третім особам у рекламних або комерційних цілях. Передача даних допускається лише службам доставки виключно в обсязі, необхідному для виконання замовлення.</p>
+            </section>
+
+            <section>
+                <h2>6. Термін дії та відкликання згоди</h2>
+                <p>Згода діє з моменту відправлення форми на Сайті та до досягнення цілей обробки або до моменту її відкликання.</p>
+                <p>Я можу відкликати цю згоду в будь-який момент, надіславши лист з позначкою «Відкликання згоди на обробку персональних даних» на адресу електронної пошти: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></p>
+            </section>
+        </article>
+
+        <!-- ================= АНГЛИЙСКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="en">
+            <h1>Consent to Personal Data Processing</h1>
+            <p class="effective-date">Website of the Art Jenevieva art studio</p>
+
+            <p class="intro-text">
+                By filling out forms on the Art Jenevieva website (hereinafter referred to as the "Website"), submitting requests for materials (including downloading PDF guides, activating promo codes), or placing an order, I freely, of my own will and in my own interest, consent to the processing of my personal data under the following conditions:
+            </p>
+
+            <section>
+                <h2>1. Personal Data Controller</h2>
+                <p>Art Jenevieva (Contact email: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a>).</p>
+            </section>
+
+            <section>
+                <h2>2. Scope of Collected Personal Data</h2>
+                <ul>
+                    <li>Name / Nickname;</li>
+                    <li>Email address;</li>
+                    <li>Contact phone number;</li>
+                    <li>Messenger nickname / account (Telegram, Google Chat, WhatsApp);</li>
+                    <li>Postal address (when ordering printed products: postcards, calendars).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Purposes of Personal Data Processing</h2>
+                <ul>
+                    <li>Providing access to requested Website materials (including sending and downloading the PDF guide, issuing personal promo codes);</li>
+                    <li>Contacting me for consultation, discussion, and execution of custom orders;</li>
+                    <li>Sending service messages and responses to my inquiries;</li>
+                    <li>Organizing delivery of orders (physical products) via postal and courier services.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. List of Permitted Actions with Data</h2>
+                <p>This consent covers the following actions with or without automated tools: collection, recording, systematization, accumulation, storage, clarification (updating, modification), extraction, use, transfer (access to logistics services solely for delivery), blocking, deletion, and destruction of personal data.</p>
+            </section>
+
+            <section>
+                <h2>5. Protection and Third-Party Transfer</h2>
+                <p>The Controller undertakes not to transfer the received data to third parties for advertising or commercial purposes. Data transfer is allowed only to delivery services, strictly to the extent necessary to fulfill the order.</p>
+            </section>
+
+            <section>
+                <h2>6. Term of Validity and Revocation</h2>
+                <p>This consent is valid from the moment the form is submitted on the Website until the processing purposes are achieved or until it is revoked.</p>
+                <p>I may revoke this consent at any time by sending an email marked "Revocation of consent to personal data processing" to: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></p>
+            </section>
+        </article>
+
     </main>
 
-    <!-- Подвал (ссылки между документами внутри папки legal) -->
-    <footer class="py-8 bg-[#6c2603] text-[#fdfbf7] text-xs text-center space-y-3">
-        <div class="flex justify-center gap-6 flex-wrap opacity-80">
-            <a href="privacy.html" class="hover:underline opacity-80">Политика конфиденциальности</a>
-            <a href="oferta.html" class="hover:underline opacity-80">Публичная оферта</a>
-            <a href="consent.html" class="underline">Согласие на обработку данных</a>
+    <footer class="legal-footer">
+        <div class="footer-links">
+            <a href="privacy.html">
+                <span data-lang="ru">Политика конфиденциальности</span>
+                <span data-lang="ua">Політика конфіденційності</span>
+                <span data-lang="en">Privacy Policy</span>
+            </a>
+            <a href="oferta.html">
+                <span data-lang="ru">Публичная оферта</span>
+                <span data-lang="ua">Публічна оферта</span>
+                <span data-lang="en">Public Offer</span>
+            </a>
+            <a href="consent.html" class="active-link">
+                <span data-lang="ru">Согласие на обработку данных</span>
+                <span data-lang="ua">Згода на обробку даних</span>
+                <span data-lang="en">Data Processing Consent</span>
+            </a>
         </div>
-        <p class="opacity-50">© 2026 Art Jenevieva. Все права защищены.</p>
+        <p>© <span id="year"></span> Art Jenevieva. <span data-lang="ru">Все права защищены.</span><span data-lang="ua">Усі права захищені.</span><span data-lang="en">All rights reserved.</span></p>
     </footer>
 
+    <script src="../script.js"></script>
 </body>
 </html>

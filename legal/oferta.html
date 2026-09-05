@@ -4,150 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Публичная оферта — Art Jenevieva</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .paper-bg { background-color: #fdfbf7; }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body class="paper-bg text-[#6c2603] min-h-screen flex flex-col justify-between">
+<body class="legal-page">
 
-    <!-- Шапка / Навигация (возврат на главную) -->
-    <header class="py-6 px-6 border-b border-[#6c2603]/10 bg-white/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="../index.html" class="inline-flex items-center gap-2 font-semibold text-sm hover:opacity-70 transition-opacity">
-                <span>←</span> На главную / Back to Home
+    <header class="legal-header">
+        <div class="legal-nav">
+            <a href="../index.html" class="back-link">
+                <span data-lang="ru">← На главную</span>
+                <span data-lang="ua">← На головну</span>
+                <span data-lang="en">← Back to Home</span>
             </a>
-            <span class="text-xs uppercase tracking-widest font-bold opacity-60">Art Jenevieva</span>
+
+            <!-- Переключатель языков -->
+            <div class="lang-switcher">
+                <button id="btn-ru" class="lang-switch active" onclick="switchLang('ru')">RU</button>
+                <button id="btn-ua" class="lang-switch" onclick="switchLang('ua')">UA</button>
+                <button id="btn-en" class="lang-switch" onclick="switchLang('en')">EN</button>
+            </div>
         </div>
     </header>
 
-    <!-- Основной контент -->
-    <main class="max-w-4xl mx-auto my-10 px-6 w-full flex-grow">
-        <div class="bg-white/90 border border-[#6c2603]/10 rounded-2xl p-6 sm:p-10 shadow-sm leading-relaxed">
-            <h1 class="text-2xl sm:text-3xl font-bold uppercase tracking-wider mb-2 text-[#6c2603]">
-                Публичная оферта
-            </h1>
-            <p class="text-xs sm:text-sm opacity-60 mb-8 border-b border-[#6c2603]/10 pb-4">
-                Договор на оказание услуг по созданию иллюстраций и продажу печатной продукции
-            </p>
+    <main class="legal-content">
 
-            <div class="space-y-8 text-sm sm:text-base">
+        <!-- ================= РУССКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="ru">
+            <h1>Публичная оферта</h1>
+            <p class="effective-date">Договор на оказание услуг по созданию иллюстраций и продажу печатной продукции</p>
+
+            <section>
+                <h2>1. Общие положения</h2>
+                <p>1.1. Данный документ является официальным предложением (публичной офертой) арт-мастерской Art Jenevieva (далее — «Исполнитель») и содержит все существенные условия по оказанию услуг по созданию цифровых иллюстраций, портретов, а также продаже печатной продукции (открыток, календарей, мерча).</p>
+                <p>1.2. Оплата заказа Клиентом или подтверждение заявки через Telegram, WhatsApp, Google Chat или Email является полным и безоговорочным акцептом данной оферты.</p>
+            </section>
+
+            <section>
+                <h2>2. Предмет договора</h2>
+                <p>2.1. Исполнитель обязуется оказать услуги по разработке цифровых иллюстраций или предоставить готовые физические товары (открытки, календари, принты), а Клиент обязуется оплатить и принять работу/товар на условиях настоящего Договора.</p>
+            </section>
+
+            <section>
+                <h2>3. Порядок оформления заказа и оплаты</h2>
+                <p>3.1. Заказ индивидуальной иллюстрации оформляется после обсуждения детализированного технического задания (ТЗ), стоимости и сроков выполнения. Согласованное ТЗ, стоимость и сроки фиксируются в личной переписке (в мессенджерах Telegram/WhatsApp, Google Chat или по Email) и являются официальным основанием для выполнения работ.</p>
+                <p>3.2. Работа над индивидуальным заказом начинается после внесения предоплаты в размере 50% или 100% (по предварительной договоренности).</p>
+                <p>3.3. Готовые физические товары (календари, открытки, принты) отправляются после 100% оплаты стоимости товара и услуг доставки.</p>
+            </section>
+
+            <section>
+                <h2>4. Права на интеллектуальную собственность</h2>
+                <p>4.1. Все авторские права на созданные иллюстрации принадлежат Исполнителю (Art Jenevieva).</p>
+                <p>4.2. Клиент получает право использовать полученное цифровое изображение исключительно в личных некоммерческих целях:</p>
                 
-                <!-- 1 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">1. Общие положения</h2>
-                    <p class="opacity-90 mb-2">
-                        1.1. Данный документ является официальным предложением (публичной офертой) арт-мастерской Art Jenevieva (далее — «Исполнитель») и содержит все существенные условия по оказанию услуг по созданию цифровых иллюстраций, портретов, а также продаже печатной продукции (открыток, календарей, мерча).
-                    </p>
-                    <p class="opacity-90">
-                        1.2. Оплата заказа Клиентом или подтверждение заявки через Telegram, WhatsApp, Google Chat или Email является полным и безоговорочным акцептом данной оферты.
-                    </p>
-                </section>
-
-                <!-- 2 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">2. Предмет договора</h2>
-                    <p class="opacity-90">
-                        2.1. Исполнитель обязуется оказать услуги по разработке цифровых иллюстраций или предоставить готовые физические товары (открытки, календари, принты), а Клиент обязуется оплатить и принять работу/товар на условиях настоящего Договора.
-                    </p>
-                </section>
-
-                <!-- 3 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">3. Порядок оформления заказа и оплаты</h2>
-                    <p class="opacity-90 mb-2">
-                        3.1. Заказ индивидуальной иллюстрации оформляется после обсуждения детализированного технического задания (ТЗ), стоимости и сроков выполнения. Согласованное ТЗ, стоимость и сроки фиксируются в личной переписке (в мессенджерах Telegram/WhatsApp, Google Chat или по Email) и являются официальным основанием для выполнения работ.
-                    </p>
-                    <p class="opacity-90 mb-2">
-                        3.2. Работа над индивидуальным заказом начинается после внесения предоплаты в размере 50% или 100% (по предварительной договоренности).
-                    </p>
-                    <p class="opacity-90">
-                        3.3. Готовые физические товары (календари, открытки, принты) отправляются после 100% оплаты стоимости товара и услуг доставки.
-                    </p>
-                </section>
-
-                <!-- 4 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">4. Права на интеллектуальную собственность</h2>
-                    <p class="opacity-90 mb-3">
-                        4.1. Все авторские права на созданные иллюстрации принадлежат Исполнителю (Art Jenevieva).
-                    </p>
-                    <div class="space-y-3 mb-4">
-                        <p class="opacity-90 font-medium">
-                            4.2. Клиент получает право использовать полученное цифровое изображение исключительно в личных некоммерческих целях:
-                        </p>
-                        <div class="pl-4 space-y-2">
-                            <div>
-                                <span class="font-semibold text-emerald-800">✓ Разрешено:</span>
-                                <ul class="list-disc pl-5 space-y-1 opacity-90 mt-1">
-                                    <li>устанавливать изображение на личный аватар в социальных сетях и мессенджерах;</li>
-                                    <li>публиковать иллюстрацию в личных профилях и блогах;</li>
-                                    <li>распечатывать файл для личного использования, украшения интерьера или в подарок.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-rose-800">✕ Запрещено:</span>
-                                <ul class="list-disc pl-5 space-y-1 opacity-90 mt-1">
-                                    <li>продавать иллюстрацию, ее копии или товары с ее изображением;</li>
-                                    <li>использовать иллюстрацию в коммерческой рекламе, брендах и логотипах (без отдельно оформленной лицензии);</li>
-                                    <li>передавать файл третьим лицам для коммерческого использования или перепродажи.</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="rights-block">
+                    <div class="allowed-block">
+                        <span class="status-title allowed">✓ Разрешено:</span>
+                        <ul>
+                            <li>устанавливать изображение на личный аватар в социальных сетях и мессенджерах;</li>
+                            <li>публиковать иллюстрацию в личных профилях и блогах;</li>
+                            <li>распечатывать файл для личного использования, украшения интерьера или в подарок.</li>
+                        </ul>
                     </div>
-                    <div>
-                        <p class="opacity-90 font-medium mb-1">4.3. Публикация работ и приватность:</p>
-                        <p class="opacity-90 mb-2">
-                            Исполнитель оставляет за собой право публиковать выполненные иллюстрации в своем портфолио, на сайте и в социальных сетях.
-                        </p>
-                        <p class="opacity-90 bg-[#6c2603]/5 p-4 rounded-xl border border-[#6c2603]/10 text-xs sm:text-sm">
-                            💡 <strong>Уважение к вашей приватности:</strong> Если заказ содержит личный портрет или является подарком-сюрпризом, Клиент может попросить отложить публикацию до нужной даты или вовсе отказаться от демонстрации работы. Пожалуйста, сообщите об этом при согласовании заказа.
-                        </p>
+
+                    <div class="prohibited-block">
+                        <span class="status-title prohibited">✕ Запрещено:</span>
+                        <ul>
+                            <li>продавать иллюстрацию, ее копии или товары с ее изображением;</li>
+                            <li>использовать иллюстрацию в коммерческой рекламе, брендах и логотипах (без отдельно оформленной лицензии);</li>
+                            <li>передавать файл третьим лицам для коммерческого использования или перепродажи.</li>
+                        </ul>
                     </div>
-                </section>
+                </div>
 
-                <!-- 5 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">5. Отмена заказа и возврат средств</h2>
-                    <p class="opacity-90 mb-2">
-                        5.1. При отказе Клиента от заказа на этапе скетча/наброска предоплата возвращается за вычетом 30% от общей стоимости заказа (компенсация за время, затраченное на разработку концепта).
-                    </p>
-                    <p class="opacity-90 mb-2">
-                        5.2. После утверждения скетча и перехода к детальной прорисовке и работе с цветом предоплата не возвращается.
-                    </p>
-                    <p class="opacity-90">
-                        5.3. Физические товары надлежащего качества (открытки, календари), изготовленные или отправленные по индивидуальному заказу, возврату и обмену не подлежат.
-                    </p>
-                </section>
+                <p><strong>4.3. Публикация работ и приватность:</strong></p>
+                <p>Исполнитель оставляет за собой право публиковать выполненные иллюстрации в своем портфолио, на сайте и в социальных сетях.</p>
+                
+                <div class="legal-note">
+                    💡 <strong>Уважение к вашей приватности:</strong> Если заказ содержит личный портрет или является подарком-сюрпризом, Клиент может попросить отложить публикацию до нужной даты или вовсе отказаться от демонстрации работы. Пожалуйста, сообщите об этом при согласовании заказа.
+                </div>
+            </section>
 
-                <!-- 6 -->
-                <section>
-                    <h2 class="text-lg font-bold mb-2">6. Контакты и реквизиты</h2>
-                    <p class="opacity-90 mb-3">Исполнитель: Art Jenevieva</p>
-                    <ul class="space-y-1 font-medium opacity-90">
-                        <li>Email: <a href="mailto:artjenevievaa@gmail.com" class="underline hover:opacity-70">artjenevievaa@gmail.com</a></li>
-                        <li>Telegram: <a href="https://t.me/Jenevieva_18" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-70">@Jenevieva_18</a></li>
-                        <li>WhatsApp: <span class="opacity-80">@artjenevieva</span></li>
-                    </ul>
-                </section>
+            <section>
+                <h2>5. Отмена заказа и возврат средств</h2>
+                <p>5.1. При отказе Клиента от заказа на этапе скетча/наброска предоплата возвращается за вычетом 30% от общей стоимости заказа (компенсация за время, затраченное на разработку концепта).</p>
+                <p>5.2. После утверждения скетча и перехода к детальной прорисовке и работе с цветом предоплата не возвращается.</p>
+                <p>5.3. Физические товары надлежащего качества (открытки, календари), изготовленные или отправленные по индивидуальному заказу, возврату и обмену не подлежат.</p>
+            </section>
 
-            </div>
-        </div>
+            <section>
+                <h2>6. Контакты и реквизиты</h2>
+                <p>Исполнитель: Art Jenevieva</p>
+                <ul>
+                    <li>Email: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/Jenevieva_18" target="_blank" rel="noopener noreferrer">@Jenevieva_18</a></li>
+                    <li>WhatsApp: <span>@artjenevieva</span></li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- ================= УКРАИНСКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="ua">
+            <h1>Публічна оферта</h1>
+            <p class="effective-date">Договір про надання послуг зі створення ілюстрацій та продаж друкованої продукції</p>
+
+            <section>
+                <h2>1. Загальні положення</h2>
+                <p>1.1. Цей документ є офіційною пропозицією (публічною офертою) арт-майстерні Art Jenevieva (далі — «Виконавець») і містить усі істотні умови щодо надання послуг зі створення цифрових ілюстрацій, портретів, а також продажу друкованої продукції (листівок, календарів, мерчу).</p>
+                <p>1.2. Оплата замовлення Клієнтом або підтвердження заявки через Telegram, WhatsApp, Google Chat або Email є повним і беззастережним акцептом цієї оферти.</p>
+            </section>
+
+            <section>
+                <h2>2. Предмет договору</h2>
+                <p>2.1. Виконавець зобов'язується надати послуги з розробки цифрових ілюстрацій або надати готові фізичні товари (листівки, календарі, принти), а Клієнт зобов'язується оплатити та прийняти роботу/товар на умовах цього Договору.</p>
+            </section>
+
+            <section>
+                <h2>3. Порядок оформления замовлення та оплати</h2>
+                <p>3.1. Замовлення індивідуальної ілюстрації оформляється після обговорення деталізованого технічного завдання (ТЗ), вартості та термінів виконання. Узгоджене ТЗ, вартість і терміни фіксуються в особистому листуванні (у месенджерах Telegram/WhatsApp, Google Chat або по Email) і є офіційною підставою для виконання робіт.</p>
+                <p>3.2. Робота над індивідуальним замовленням починається після внесення передоплати у розмірі 50% або 100% (за попередньою домовленістю).</p>
+                <p>3.3. Готові фізичні товари (календарі, листівки, принти) відправляються після 100% оплати вартості товару та послуг доставки.</p>
+            </section>
+
+            <section>
+                <h2>4. Права на інтелектуальну власність</h2>
+                <p>4.1. Усі авторські права на створені ілюстрації належать Виконавцю (Art Jenevieva).</p>
+                <p>4.2. Клієнт отримує право використовувати отримане цифрове зображення виключно в особистих некомерційних цілях:</p>
+                
+                <div class="rights-block">
+                    <div class="allowed-block">
+                        <span class="status-title allowed">✓ Дозволено:</span>
+                        <ul>
+                            <li>встановлювати зображення на особистий аватар у соціальних мережах та месенджерах;</li>
+                            <li>публікувати ілюстрацію в особистих профілях та блогах;</li>
+                            <li>роздруковувати файл для особистого використання, прикраси інтер'єру або в подарунок.</li>
+                        </ul>
+                    </div>
+
+                    <div class="prohibited-block">
+                        <span class="status-title prohibited">✕ Заборонено:</span>
+                        <ul>
+                            <li>продавати ілюстрацію, її копії або товари з її зображенням;</li>
+                            <li>використовувати ілюстрацію в комерційній рекламі, брендах та логотипах (без окремо оформленої ліцензії);</li>
+                            <li>передавати файл третім особам для комерційного використання або перепродажу.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>4.3. Публікація робіт та приватність:</strong></p>
+                <p>Виконавець залишає за собою право публікувати виконані ілюстрації у своєму портфоліо, на сайті та в соціальних мережах.</p>
+                
+                <div class="legal-note">
+                    💡 <strong>Повага до вашої приватності:</strong> Якщо замовлення містить особистий портрет або є подарунком-сюрпризом, Клієнт може попросити відкласти публікацію до потрібної дати або зовсім відмовитися від демонстрації роботи. Будь ласка, повідомте про це під час узгодження замовлення.
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Скасування замовлення та повернення коштів</h2>
+                <p>5.1. У разі відмови Клієнта від замовлення на етапі скетчу/начерку передоплата повертається за вирахуванням 30% від загальної вартості замовлення (компенсація за час, витрачений на розробку концепту).</p>
+                <p>5.2. Після затвердження скетчу та переходу до детального промальовування і роботи з кольором передоплата не повертається.</p>
+                <p>5.3. Фізичні товари належної якості (листівки, календарі), виготовлені або відправлені за індивідуальним замовленням, поверненню та обміну не підлягають.</p>
+            </section>
+
+            <section>
+                <h2>6. Контакти та реквізити</h2>
+                <p>Виконавець: Art Jenevieva</p>
+                <ul>
+                    <li>Email: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/Jenevieva_18" target="_blank" rel="noopener noreferrer">@Jenevieva_18</a></li>
+                    <li>WhatsApp: <span>@artjenevieva</span></li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- ================= АНГЛИЙСКАЯ ВЕРСИЯ ================= -->
+        <article data-lang="en">
+            <h1>Public Offer</h1>
+            <p class="effective-date">Agreement for the provision of illustration services and sale of printed products</p>
+
+            <section>
+                <h2>1. General Provisions</h2>
+                <p>1.1. This document is an official offer (public offer) of the Art Jenevieva art studio (hereinafter referred to as the "Contractor") and contains all essential terms for providing services for creating digital illustrations, portraits, as well as selling printed products (postcards, calendars, merch).</p>
+                <p>1.2. Payment of the order by the Client or confirmation of the application via Telegram, WhatsApp, Google Chat, or Email constitutes full and unconditional acceptance of this offer.</p>
+            </section>
+
+            <section>
+                <h2>2. Subject of Agreement</h2>
+                <p>2.1. The Contractor undertakes to provide services for the development of digital illustrations or provide finished physical goods (postcards, calendars, prints), and the Client undertakes to pay for and accept the work/goods under the terms of this Agreement.</p>
+            </section>
+
+            <section>
+                <h2>3. Order Placement and Payment Procedure</h2>
+                <p>3.1. An order for a custom illustration is processed after discussing a detailed technical assignment (TA), cost, and deadline. The agreed TA, cost, and deadline are fixed in personal correspondence (via Telegram/WhatsApp, Google Chat, or Email) and serve as an official basis for executing the work.</p>
+                <p>3.2. Work on a custom order begins after an advance payment of 50% or 100% is made (by prior agreement).</p>
+                <p>3.3. Finished physical goods (calendars, postcards, prints) are shipped after 100% payment for the goods and delivery services.</p>
+            </section>
+
+            <section>
+                <h2>4. Intellectual Property Rights</h2>
+                <p>4.1. All copyrights to the created illustrations belong to the Contractor (Art Jenevieva).</p>
+                <p>4.2. The Client receives the right to use the provided digital image exclusively for personal, non-commercial purposes:</p>
+                
+                <div class="rights-block">
+                    <div class="allowed-block">
+                        <span class="status-title allowed">✓ Allowed:</span>
+                        <ul>
+                            <li>set the image as a personal profile avatar in social networks and messengers;</li>
+                            <li>publish the illustration on personal profiles and blogs;</li>
+                            <li>print the file for personal use, interior decoration, or as a gift.</li>
+                        </ul>
+                    </div>
+
+                    <div class="prohibited-block">
+                        <span class="status-title prohibited">✕ Prohibited:</span>
+                        <ul>
+                            <li>sell the illustration, its copies, or merchandise featuring it;</li>
+                            <li>use the illustration in commercial advertising, branding, and logos (without a separately issued license);</li>
+                            <li>transfer the file to third parties for commercial use or resale.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>4.3. Publication of works and privacy:</strong></p>
+                <p>The Contractor reserves the right to publish completed illustrations in their portfolio, on the website, and on social media.</p>
+                
+                <div class="legal-note">
+                    💡 <strong>Respect for your privacy:</strong> If an order contains a personal portrait or is a surprise gift, the Client may request to delay publication until a specific date or decline public demonstration altogether. Please inform us about this when coordinating the order.
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Order Cancellation and Refunds</h2>
+                <p>5.1. If the Client cancels the order at the sketch/concept stage, the advance payment is refunded minus 30% of the total order cost (compensation for the time spent developing the concept).</p>
+                <p>5.2. After the sketch is approved and work moves to detailed drawing and color, the advance payment is non-refundable.</p>
+                <p>5.3. Physical goods of proper quality (postcards, calendars) produced or shipped for a custom order are non-returnable and non-exchangeable.</p>
+            </section>
+
+            <section>
+                <h2>6. Contacts</h2>
+                <p>Contractor: Art Jenevieva</p>
+                <ul>
+                    <li>Email: <a href="mailto:artjenevievaa@gmail.com">artjenevievaa@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/Jenevieva_18" target="_blank" rel="noopener noreferrer">@Jenevieva_18</a></li>
+                    <li>WhatsApp: <span>@artjenevieva</span></li>
+                </ul>
+            </section>
+        </article>
+
     </main>
 
-    <!-- Подвал (ссылки на документы внутри папки legal) -->
-    <footer class="py-8 bg-[#6c2603] text-[#fdfbf7] text-xs text-center space-y-3">
-        <div class="flex justify-center gap-6 flex-wrap opacity-80">
-            <a href="privacy.html" class="hover:underline opacity-80">Политика конфиденциальности</a>
-            <a href="oferta.html" class="underline">Публичная оферта</a>
-            <a href="consent.html" class="hover:underline opacity-80">Согласие на обработку данных</a>
+    <footer class="legal-footer">
+        <div class="footer-links">
+            <a href="privacy.html">
+                <span data-lang="ru">Политика конфиденциальности</span>
+                <span data-lang="ua">Політика конфіденційності</span>
+                <span data-lang="en">Privacy Policy</span>
+            </a>
+            <a href="oferta.html" class="active-link">
+                <span data-lang="ru">Публичная оферта</span>
+                <span data-lang="ua">Публічна оферта</span>
+                <span data-lang="en">Public Offer</span>
+            </a>
+            <a href="consent.html">
+                <span data-lang="ru">Согласие на обработку данных</span>
+                <span data-lang="ua">Згода на обробку даних</span>
+                <span data-lang="en">Data Processing Consent</span>
+            </a>
         </div>
-        <p class="opacity-50">© 2026 Art Jenevieva. Все права защищены.</p>
+        <p>© <span id="year"></span> Art Jenevieva. <span data-lang="ru">Все права защищены.</span><span data-lang="ua">Усі права захищені.</span><span data-lang="en">All rights reserved.</span></p>
     </footer>
 
+    <script src="../script.js"></script>
 </body>
 </html>

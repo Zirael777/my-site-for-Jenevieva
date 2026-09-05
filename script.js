@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal: {
             modalTitle: { ru: 'Тихое искусство быть собой', en: 'The Quiet Art of Being Yourself', ua: 'Тихе мистецтво бути собою' },
             modalDescription: { ru: 'Пошаговый путь к себе через медитативное рисование. Авторский гайд с практиками, которые помогут замедлиться, успокоить ум и найти внутреннюю опору.', en: "A step-by-step journey to yourself through meditative drawing. Author's guide with practices to help you slow down, calm your mind and find inner support.", ua: 'Покроковий шлях до себе через медитативне малювання. Авторський гайд з практиками, які допоможуть сповільнитися, заспокоїти розум і знайти внутрішню опору.' },
-            formHint: { ru: 'После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.', en: 'After submitting the form you can immediately download the PDF guide and get a 20% promo code for your first purchase.', ua: 'Після відправки форми ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.' },
+            formHint: { ru: 'После отправки формы вы сможете сразу скачать PDF-гайд и получить промокод 20% на первую покупку.', en: 'After submitting the form you can immediately download the PDF guide and get a 20% promo code for your first purchase.', ua: 'Після відправки формы ви зможете одразу завантажити PDF-гайд і отримати промокод 20% на першу покупку.' },
             submitBtn: { ru: 'Забрать гайд и скидку 20%', en: 'Get the Guide and 20% Discount', ua: 'Отримати гайд і знижку 20%' },
             checkboxLabel: { ru: 'Согласен(на) на обработку персональных данных', en: 'I agree to the processing of personal data', ua: 'Згоден(на) на обробку персональних даних' },
             messengerLabel: { ru: 'Предпочитаемый способ связи:', en: 'Preferred contact method:', ua: "Бажаний спосіб зв'язку:" },
@@ -101,13 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn) btn.classList.add('active');
         document.body.setAttribute('data-active-lang', lang);
         localStorage.setItem('site_lang', lang);
+        
         document.querySelectorAll('[data-lang]').forEach(el => {
-            el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+            if (el.getAttribute('data-lang') === lang) {
+                el.style.display = (el.tagName === 'SPAN' || el.tagName === 'A') ? 'inline' : 'block';
+            } else {
+                el.style.display = 'none';
+            }
         });
+
         updatePlaceholders(lang);
         updateI18nElements(lang);
         updateModalTexts(lang);
     };
+
+    // Алиас для вызовов из legal-страниц
+    window.switchLang = window.setLanguage;
 
     // Открытие модального окна
     window.openModal = function(id) {
@@ -179,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
             modals.forEach(({ checker, closer }) => { if (checker()) closer(); });
         }
         
-        // Навигация стрелками влево/вправо при открытом модальном окне гайда
         if (isGuidePageModalOpen) {
             if (event.key === 'ArrowLeft') {
                 navigateGuidePage(-1);
@@ -189,55 +197,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-   // ==========================================
-// ЛОГИКА ПРОСМОТРА СТРАНИЦ ГАЙДА (ЛАЙТБОКС)
-// ==========================================
-let currentGuidePage = 1;
-const totalGuidePages = 3; // Укажите общее количество страниц гайда
+    // ==========================================
+    // ЛОГИКА ПРОСМОТРА СТРАНИЦ ГАЙДА (ЛАЙТБОКС)
+    // ==========================================
+    let currentGuidePage = 1;
+    const totalGuidePages = 3;
 
-// Открытие модального окна страницы гайда
-window.openGuidePageModal = function(pageNum) {
-    currentGuidePage = pageNum || 1;
-    updateModalImage();
-    const modal = document.getElementById('guide-page-modal');
-    if (modal) {
-        modal.classList.add('active');
-        modal.classList.remove('hidden');
-        modal.style.display = 'flex'; // Гарантирует отображение
-        document.body.style.overflow = 'hidden';
+    window.openGuidePageModal = function(pageNum) {
+        currentGuidePage = pageNum || 1;
+        updateModalImage();
+        const modal = document.getElementById('guide-page-modal');
+        if (modal) {
+            modal.classList.add('active');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    function updateModalImage() {
+        const imgEl = document.getElementById('modal-page-img');
+        if (imgEl) {
+            imgEl.src = `guide-page-${currentGuidePage}.png`; 
+        }
     }
-};
 
-// Обновление изображения в модальном окне
-function updateModalImage() {
-    const imgEl = document.getElementById('modal-page-img');
-    if (imgEl) {
-        // Укажите путь к вашим изображениям (guide-page-1.png, guide-page-2.png и т.д.)
-        imgEl.src = `guide-page-${currentGuidePage}.png`; 
-    }
-}
+    window.navigateGuidePage = function(direction, event) {
+        if (event) event.stopPropagation();
+        currentGuidePage += direction;
+        if (currentGuidePage < 1) currentGuidePage = totalGuidePages;
+        else if (currentGuidePage > totalGuidePages) currentGuidePage = 1;
+        updateModalImage();
+    };
 
-// Навигация по страницам гайда
-window.navigateGuidePage = function(direction, event) {
-    if (event) event.stopPropagation(); // Блокируем закрытие окна при клике на стрелки
-    currentGuidePage += direction;
-    if (currentGuidePage < 1) currentGuidePage = totalGuidePages;
-    else if (currentGuidePage > totalGuidePages) currentGuidePage = 1;
-    updateModalImage();
-};
+    window.closeGuidePageModal = function() {
+        const modal = document.getElementById('guide-page-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    };
 
-// Закрытие модального окна страницы гайда
-window.closeGuidePageModal = function() {
-    const modal = document.getElementById('guide-page-modal');
-    if (modal) {
-        modal.classList.remove('active');
-        modal.classList.add('hidden');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-};
-
-    // Открытие модального окна гайда
     window.openGuideModal = function() {
         const modal = document.getElementById('guideModal');
         if (modal) {
@@ -247,7 +249,6 @@ window.closeGuidePageModal = function() {
         }
     };
 
-    // Закрытие модального окна гайда
     window.closeGuideModal = function() {
         const modal = document.getElementById('guideModal');
         if (modal) {
@@ -274,7 +275,6 @@ window.closeGuidePageModal = function() {
         }
     };
 
-    // Переход к услугам
     window.goToServices = function() {
         const modal = document.getElementById('guideModal');
         modal?.classList.remove('active');
@@ -282,7 +282,6 @@ window.closeGuidePageModal = function() {
         document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // Инициализация телефонного ввода
     function initPhoneInput() {
         const phoneInput = document.getElementById('guidePhone');
         if (!phoneInput || typeof intlTelInput === 'undefined') return;
@@ -302,7 +301,6 @@ window.closeGuidePageModal = function() {
         });
     }
 
-    // Валидация формы
     function validateForm() {
         let isValid = true;
         const honeypot = document.getElementById('website');
@@ -330,7 +328,6 @@ window.closeGuidePageModal = function() {
         return isValid;
     }
 
-    // Получение выбранного способа связи
     function getSelectedContactMethod() {
         const selected = document.querySelector('input[name="messenger"]:checked');
         if (!selected) return '';
@@ -338,7 +335,6 @@ window.closeGuidePageModal = function() {
         return map[selected.value] || '';
     }
 
-    // Обработка отправки формы гайда
     window.handleGuideSubmit = function(event) {
         event.preventDefault();
         if (!validateForm()) return;
@@ -372,7 +368,6 @@ window.closeGuidePageModal = function() {
         }
     };
 
-    // Копирование промокода
     window.copyPromoCode = function() {
         const lang = document.body.getAttribute('data-active-lang') || 'ru';
         navigator.clipboard.writeText(PROMO_CODE).then(() => {
