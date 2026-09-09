@@ -385,4 +385,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearElement = document.getElementById('year');
     if (yearElement) yearElement.textContent = new Date().getFullYear();
     initPhoneInput();
+
+    // ==========================================
+    // ПОДГРУЗКА И ОТОБРАЖЕНИЕ ПОРТФОЛИО ИЗ projects.json
+    // ==========================================
+    async function loadPortfolio() {
+        // Находим контейнер для карточек (по id или классу)
+        const portfolioContainer = document.getElementById('portfolio-grid') || document.querySelector('.portfolio-grid');
+        if (!portfolioContainer) return;
+
+        try {
+            const response = await fetch('projects.json');
+            if (!response.ok) {
+                throw new Error(`Не удалось загрузить projects.json (статус: ${response.status})`);
+            }
+
+            const projects = await response.json();
+            portfolioContainer.innerHTML = ''; // Очищаем старые тестовые карточки
+
+            projects.forEach(project => {
+                const item = document.createElement('div');
+                item.className = 'portfolio-item all';
+                
+                // Формируем верстку карточки
+                item.innerHTML = `
+                    <div class="portfolio-card" onclick="openImageViewerModal('${project.cover}')" style="cursor: pointer;">
+                        <img src="${project.cover}" alt="${project.title}" loading="lazy" class="portfolio-img">
+                        <div class="portfolio-info">
+                            <h3>${project.title}</h3>
+                            <p class="portfolio-category">${project.category || ''}</p>
+                        </div>
+                    </div>
+                `;
+
+                portfolioContainer.appendChild(item);
+            });
+
+            console.log(`Успешно загружено проектов: ${projects.length}`);
+        } catch (error) {
+            console.error('Ошибка подгрузки портфолио:', error);
+        }
+    }
+
+    // Вызываем подгрузку при открытии страницы
+    loadPortfolio();
 });
