@@ -1187,24 +1187,43 @@
         </div>
     </div>
 
-    <div id="order-modal" class="modal">
-        <div class="bg-[#fdfbf7] p-8 max-w-md w-full mx-4 border border-[#6c2603]/20 relative text-center">
-            <button onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-sm font-bold opacity-50 hover:opacity-100">✕</button>
-            <h4 class="text-lg font-bold uppercase tracking-wider mb-4">
-                <span data-lang="ru">Обсудить проект</span>
-                <span data-lang="en">Discuss the Project</span>
-                <span data-lang="ua">Обговорити проєкт</span>
-            </h4>
-            <p class="text-xs text-[#6c2603]/70 mb-6">
-                <span data-lang="ru">Напишите мне напрямую в Telegram, чтобы рассчитать точную стоимость и сроки под ваши задачи.</span>
-                <span data-lang="en">Message me directly on Telegram to estimate the exact price and timeline for your request.</span>
-                <span data-lang="ua">Напишіть мені напряму в Telegram, щоб розрахувати точну вартість та терміни під ваші завдання.</span>
-            </p>
-            <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#6c2603] text-[#fdfbf7] py-3 uppercase font-bold text-xs tracking-wider">
-                <span data-lang="ru">Написать в Telegram</span><span data-lang="en">Message on Telegram</span><span data-lang="ua">Написати в Telegram</span>
-            </a>
-        </div>
+<div id="order-modal" class="modal">
+    <div class="modal-card text-center">
+        <button onclick="closeModal('order-modal')" class="modal-close">✕</button>
+        
+        <h4 class="modal-title">
+            <span data-lang="ru">Обсудить проект</span>
+            <span data-lang="en">Discuss the Project</span>
+            <span data-lang="ua">Обговорити проєкт</span>
+        </h4>
+        
+        <p class="modal-description">
+            <span data-lang="ru">Напишите мне напрямую в Telegram, чтобы рассчитать точную стоимость и сроки под ваши задачи.</span>
+            <span data-lang="en">Message me directly on Telegram to estimate the exact price and timeline for your request.</span>
+            <span data-lang="ua">Напишіть мені напряму в Telegram, щоб розрахувати точну вартість та терміни під ваші завдання.</span>
+        </p>
+        
+        <!-- Овальная кнопка из style.css -->
+        <a href="https://t.me/art_jenevieva" target="_blank" rel="noopener noreferrer" class="btn mb-4">
+            <span data-lang="ru">Написать в Telegram</span>
+            <span data-lang="en">Message on Telegram</span>
+            <span data-lang="ua">Написати в Telegram</span>
+        </a>
+
+        <!-- Тихий альтернативный текст -->
+        <p class="text-xs opacity-70 mt-2">
+            <span data-lang="ru">
+                Нет Telegram? Напишите <a href="mailto:artjenevievaa@gmail.com" class="underline">на почту</a> или посмотрите <a href="#contacts" onclick="closeModal('order-modal')" class="underline">другие контакты</a>
+            </span>
+            <span data-lang="en">
+                No Telegram? Write an <a href="mailto:artjenevievaa@gmail.com" class="underline">email</a> or check <a href="#contacts" onclick="closeModal('order-modal')" class="underline">other contacts</a>
+            </span>
+            <span data-lang="ua">
+                Немає Telegram? Напишіть <a href="mailto:artjenevievaa@gmail.com" class="underline">на пошту</a> або перегляньте <a href="#contacts" onclick="closeModal('order-modal')" class="underline">інші контакти</a>
+            </span>
+        </p>
     </div>
+</div>
 
     
 	<div id="image-viewer-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300" onclick="closeImageViewerModal()">
