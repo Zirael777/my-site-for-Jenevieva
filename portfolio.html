@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио | Art Jenevieva</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Подключаем шрифты Cormorant Garamond и Lora для эстетики крафтовой мастерской -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Шрифт Cormorant Garamond и Montserrat (как в style.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Подключение внешних стилей -->
+    <!-- Tailwind CSS (только для макета) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Основные стили из файла -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="paper-bg min-h-screen flex flex-col">
@@ -17,30 +21,24 @@
     <!-- НАВИГАЦИЯ -->
     <header class="sticky top-0 z-[100] bg-[#fdfbf7]/95 backdrop-blur-md border-b border-[#6c2603]/10 px-4 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="font-bold uppercase tracking-widest text-sm text-[#6c2603] hover:opacity-70 transition-opacity">
+            
+            <!-- Кнопка возврата (стили из style.css) -->
+            <a href="index.html" class="back-link">
                 ← <span data-lang="ru">На главную</span><span data-lang="en">Home</span><span data-lang="ua">На головну</span>
             </a>
-            
-            <nav class="hidden md:flex space-x-6 text-xs uppercase font-bold tracking-widest text-[#6c2603]">
-                <a href="index.html#about" class="hover:opacity-70"><span data-lang="ru">Обо мне</span><span data-lang="en">About</span><span data-lang="ua">Про мене</span></a>
-                <a href="portfolio.html" class="underline underline-offset-4"><span data-lang="ru">Портфолио</span><span data-lang="en">Portfolio</span><span data-lang="ua">Портфоліо</span></a>
-                <a href="index.html#services" class="hover:opacity-70"><span data-lang="ru">Услуги</span><span data-lang="en">Services</span><span data-lang="ua">Послуги</span></a>
-                <a href="index.html#shop" class="hover:opacity-70"><span data-lang="ru">Магазин</span><span data-lang="en">Shop</span><span data-lang="ua">Магазин</span></a>
-                <a href="index.html#reviews" class="hover:opacity-70"><span data-lang="ru">Отзывы</span><span data-lang="en">Reviews</span><span data-lang="ua">Відгуки</span></a>
-                <a href="index.html#contacts" class="hover:opacity-70"><span data-lang="ru">Контакты</span><span data-lang="en">Contacts</span><span data-lang="ua">Контакти</span></a>
-            </nav>
 
-            <!-- Переключатель языков -->
-            <div class="flex space-x-2 pl-4 uppercase font-bold text-xs tracking-wider text-[#6c2603]">
+            <!-- Переключатель языков (стили .lang-switcher, .lang-switch, .lang-divider из style.css) -->
+            <div class="lang-switcher">
                 <span id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</span>
-                <span class="opacity-30">|</span>
+                <span class="lang-divider">|</span>
                 <span id="btn-en" class="lang-switch" onclick="setLanguage('en')">EN</span>
-                <span class="opacity-30">|</span>
+                <span class="lang-divider">|</span>
                 <span id="btn-ua" class="lang-switch" onclick="setLanguage('ua')">UA</span>
             </div>
+
         </div>
     </header>
-
+    
     <!-- ЗАГОЛОВОК СТРАНИЦЫ И ФИЛЬТРЫ -->
     <main class="max-w-7xl mx-auto px-4 py-10 flex-grow w-full">
         <div class="text-center mb-10">
