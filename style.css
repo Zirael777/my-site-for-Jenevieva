@@ -37,6 +37,7 @@ h1, h2, h3,
     text-transform: uppercase;
     letter-spacing: 0.04em;
     background-color: transparent !important;
+   color: var(--chocolate) !important;
 }
 
 h1 { font-size: clamp(28px, 4vw, 42px) !important; line-height: 1.25 !important; }
