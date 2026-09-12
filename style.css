@@ -346,7 +346,7 @@ button:active, .btn:active, a:active {
 }
 
 /* Цены — чёткий глубокий чёрный */
-.price-card .font-bold,
+.price-card .font-bold:not(h3)
 .price-row span:last-child {
     color: #1a1a1a !important;
     opacity: 1 !important;
