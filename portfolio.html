@@ -28,13 +28,13 @@
             </a>
 
             <!-- Переключатель языков (стили .lang-switcher, .lang-switch, .lang-divider из style.css) -->
-            <div class="lang-switcher">
-                <span id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</span>
-                <span class="lang-divider">|</span>
-                <span id="btn-en" class="lang-switch" onclick="setLanguage('en')">EN</span>
-                <span class="lang-divider">|</span>
-                <span id="btn-ua" class="lang-switch" onclick="setLanguage('ua')">UA</span>
-            </div>
+            <<div class="flex space-x-2 pl-4 uppercase font-bold text-xs tracking-wider text-[#6c2603]">
+                    <span id="btn-ua" class="lang-switch" onclick="setLanguage('ua')">UA</span>
+					<span class="opacity-30">/</span>
+					<span id="btn-en" class="lang-switch" onclick="setLanguage('en')">EN</span>
+					<span class="opacity-30">/</span>
+					 <span id="btn-ru" class="lang-switch active" onclick="setLanguage('ru')">RU</span>
+                </div>
 
         </div>
     </header>
