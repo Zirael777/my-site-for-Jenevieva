@@ -122,7 +122,9 @@ nav a:not(.nav-btn-guide) {
     line-height: 1;
     vertical-align: middle;
     background: transparent !important;
-    color: #6c2603 !important;
+    color: var(--chocolate) !important;
+    font-weight: 700 !important;
+    -webkit-text-stroke: 0.3px var(--chocolate);
     padding: 0 !important;
     border: none !important;
     border-radius: 0 !important;
