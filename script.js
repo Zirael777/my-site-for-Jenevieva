@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(data => callback(data.country_code))
                     .catch(() => callback('ru'));
             },
-            preferredCountries: ['ru', 'ua', 'us', 'de', 'kz'],
+            preferredCountries: [ 'ua', 'us', 'de', 'kz'],
             separateDialCode: true,
             autoPlaceholder: 'polite',
             utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js'
