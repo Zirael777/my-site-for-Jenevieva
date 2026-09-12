@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --bg-main: #FDFBF7;
-    --text-main: #2B2A29;
+    --text-main: #5c2412;
     --accent-pink: #C86B83;
     --accent-olive: #8A9A74;
     --border-color: rgba(43, 42, 41, 0.2);
@@ -1013,7 +1013,7 @@ img,
 
 .legal-page {
     background-color: #fcfbfa;
-    color: #333;
+    color: #5c2412;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
@@ -1048,13 +1048,13 @@ img,
 
 .legal-content h1 {
     font-size: 2.2rem;
-    color: #1a1a1a;
+    color: #5c2412;
     margin-bottom: 10px;
 }
 
 .legal-content h2 {
     font-size: 1.3rem;
-    color: #6c2603;
+    color: #5c2412;
     margin-top: 30px;
     margin-bottom: 10px;
 }
