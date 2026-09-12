@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateModalImage() {
         const imgEl = document.getElementById('modal-page-img');
         if (imgEl) {
-            imgEl.src = `guide-page-${currentGuidePage}.png`; 
+            imgEl.src = `assets/images/guide/guide-page-${currentGuidePage}.png`;
         }
     }
 
