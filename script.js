@@ -287,14 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!phoneInput || typeof intlTelInput === 'undefined') return;
         phoneInputInstance?.destroy();
         phoneInputInstance = intlTelInput(phoneInput, {
-            initialCountry: 'auto',
-            geoIpLookup: callback => {
-                fetch('https://ipapi.co/json')
-                    .then(res => res.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback('ru'));
-            },
-            preferredCountries: [ 'ua', 'us', 'de', 'kz'],
+            initialCountry: 'ua', // <-- Установлена Украина по умолчанию
+            preferredCountries: ['ua', 'de', 'pl', 'us'], // <-- Украина первая в выпадающем списке
             separateDialCode: true,
             autoPlaceholder: 'polite',
             utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js'
