@@ -338,18 +338,15 @@ button:active, .btn:active, a:active {
     line-height: 1.6 !important;
 }
 
-/* Строка «Срок» — чёткий глубокий чёрный */
-.price-card p[class*="tracking-widest"] {
-    color: #1a1a1a !important;
-    opacity: 1 !important;
-    font-weight: 700 !important;
+/* Строка «Срок» — шоколадный */
+.price-card p[class*="tracking-widest"],
+.price-card .font-bold {
+    color: #5c2412 !important;
 }
 
 /* Цены — чёткий глубокий чёрный */
-.price-card .font-bold:not(h3)
 .price-row span:last-child {
     color: #1a1a1a !important;
-    opacity: 1 !important;
     font-weight: 700 !important;
 }
 
